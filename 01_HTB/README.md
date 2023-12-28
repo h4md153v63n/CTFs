@@ -1,4 +1,4 @@
-# <img src="https://avatars.githubusercontent.com/u/67481186?v=4" width="40"> Hack-The-Box-Writeups
+# <img src="https://avatars.githubusercontent.com/u/67481186?v=4" width="25"> Hack-The-Box-Writeups
 
 
 # Easy
