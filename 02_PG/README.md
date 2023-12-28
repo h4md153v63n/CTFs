@@ -1,4 +1,4 @@
-# <img src="https://www.offsec.com/wp-content/themes/OffSec/assets/images/offsec-header-logo.svg" width="200">  Proving-Grounds-Writeups
+# <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*qI2nolBN5VmdOoa_msaZRw.png" width="50">  Proving-Grounds-Writeups
 
 
 # Easy
