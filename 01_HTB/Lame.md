@@ -169,5 +169,8 @@ Samba < 3.6.2 (x86) - Denial of Service (PoC)                                   
 ---------------------------------------------------------------------------------- ---------------------------------
 Shellcodes: No Results
 ```
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/aec3ce24-da30-4450-a730-d0bd6f04e125)
+'Samba 3.0.20 < 3.0.25rc3 - 'Username' map script' Command Execution (Metasploit)  | unix/remote/16320.rb'
+
 
 
