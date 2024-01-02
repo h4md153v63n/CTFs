@@ -1,8 +1,7 @@
 # Lame
-Machine IP : 10.10.10.3
+Machine ip : 10.10.10.3
 
 ## Enumeration
-
 + `masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.3 -e tun0 > ports`
 ```
 Starting masscan 1.3.2 (http://bit.ly/14GZzcT) at 2024-01-02 13:58:37 GMT
@@ -64,7 +63,6 @@ Nmap done: 1 IP address (1 host up) scanned in 55.07 seconds
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1d356312-dcb1-4989-b3b3-e10cab5fc63a)
 
 ## Findings
-
 ### port 21 - ftp:
 + Anonymous ftp login: `ftp 10.10.10.3`
 ```
