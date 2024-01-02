@@ -3,7 +3,6 @@ Machine IP : 10.10.10.3
 
 ## Enumeration
 
-### nmap
 `masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.3 -e tun0 > ports`
 ```
 Starting masscan 1.3.2 (http://bit.ly/14GZzcT) at 2024-01-02 13:58:37 GMT
