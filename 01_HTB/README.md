@@ -4,7 +4,7 @@
 # Easy
 |S.No| Name of the Box    | Link    |
 |----|--------------------|---------|
-|1   |                    |         |
+|1   |Lame                |[Lame](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/Lame.md)|
 
 
 # Intermediate
