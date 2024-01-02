@@ -1,5 +1,5 @@
 # Lame
-Machine ip : 10.10.10.3
+**Machine ip:** 10.10.10.3
 
 ## Enumeration
 + `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.3 -e tun0 > ports`
