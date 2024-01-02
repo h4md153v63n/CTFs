@@ -1,9 +1,6 @@
 # Lame
 Machine ip : 10.10.10.3
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/25547631-8075-462e-8d2a-550702f38563)
-
-
 ## Enumeration
 + `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.3 -e tun0 > ports`
 ```
