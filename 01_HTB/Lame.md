@@ -4,6 +4,7 @@ Machine ip : 10.10.10.3
 ## Enumeration
 + `masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.3 -e tun0 > ports`
 ```
+└─$ masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.3 -e tun0 > ports
 Starting masscan 1.3.2 (http://bit.ly/14GZzcT) at 2024-01-02 13:58:37 GMT
 Initiating SYN Stealth Scan
 Scanning 1 hosts [131070 ports/host]
@@ -17,6 +18,7 @@ Scanning 1 hosts [131070 ports/host]
 
 + `sudo nmap -Pn -sV -sC -p$ports 10.10.10.3`
 ```
+└─$ sudo nmap -Pn -sV -sC -p$ports 10.10.10.3
 Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-01-02 09:01 EST
 Nmap scan report for 10.10.10.3
 Host is up (0.066s latency).
@@ -66,6 +68,7 @@ Nmap done: 1 IP address (1 host up) scanned in 55.07 seconds
 ### port 21 - ftp:
 + Anonymous ftp login: `ftp 10.10.10.3`
 ```
+└─$ ftp 10.10.10.3
 Connected to 10.10.10.3.
 220 (vsFTPd 2.3.4)
 Name (10.10.10.3:kali): anonymous
@@ -95,6 +98,7 @@ There is nothing interesting!
 Check null sessions.
 + `smbmap -H 10.10.10.3`
 ```
+└─$ smbmap -H 10.10.10.3
     ________  ___      ___  _______   ___      ___       __         _______
    /"       )|"  \    /"  ||   _  "\ |"  \    /"  |     /""\       |   __ "\
   (:   \___/  \   \  //   |(. |_)  :) \   \  //   |    /    \      (. |__) :)
@@ -122,6 +126,7 @@ Check null sessions.
 
 + `smbclient //10.10.10.3/tmp -N`
 ```
+└─$ smbclient //10.10.10.3/tmp -N
 Anonymous login successful
 Try "help" to get a list of possible commands.
 smb: \> dir
@@ -143,5 +148,25 @@ smb: \> exit
 There is nothing interesting!
 
 ## Exploits
++ `searchsploit samba 3.0`
+```
+└─$ searchsploit samba 3.0
+---------------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                                    |  Path
+---------------------------------------------------------------------------------- ---------------------------------
+Samba 3.0.10 (OSX) - 'lsa_io_trans_names' Heap Overflow (Metasploit)              | osx/remote/16875.rb
+Samba 3.0.10 < 3.3.5 - Format String / Security Bypass                            | multiple/remote/10095.txt
+Samba 3.0.20 < 3.0.25rc3 - 'Username' map script' Command Execution (Metasploit)  | unix/remote/16320.rb
+Samba 3.0.21 < 3.0.24 - LSA trans names Heap Overflow (Metasploit)                | linux/remote/9950.rb
+Samba 3.0.24 (Linux) - 'lsa_io_trans_names' Heap Overflow (Metasploit)            | linux/remote/16859.rb
+Samba 3.0.24 (Solaris) - 'lsa_io_trans_names' Heap Overflow (Metasploit)          | solaris/remote/16329.rb
+Samba 3.0.27a - 'send_mailslot()' Remote Buffer Overflow                          | linux/dos/4732.c
+Samba 3.0.29 (Client) - 'receive_smb_raw()' Buffer Overflow (PoC)                 | multiple/dos/5712.pl
+Samba 3.0.4 - SWAT Authorisation Buffer Overflow                                  | linux/remote/364.pl
+Samba < 3.0.20 - Remote Heap Overflow                                             | linux/remote/7701.txt
+Samba < 3.6.2 (x86) - Denial of Service (PoC)                                     | linux_x86/dos/36741.py
+---------------------------------------------------------------------------------- ---------------------------------
+Shellcodes: No Results
+```
 
 
