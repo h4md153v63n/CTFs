@@ -279,10 +279,7 @@ Password:
 <br>
 
 + Got the shell as root: `nc -lnvp 4444`
-+ Stable shell.
-```
-python -c 'import pty; pty.spawn("/bin/bash")'
-```
++ Stable shell: `python -c 'import pty; pty.spawn("/bin/bash")'`
 
 <br>
 
