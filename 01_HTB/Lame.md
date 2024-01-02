@@ -176,6 +176,20 @@ Shellcodes: No Results
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/25853d56-2c6b-46be-b6e4-1b3e98b2b17f)
 
++ `searchsploit -m unix/remote/16320.rb`
+```
+└─$ searchsploit -m unix/remote/16320.rb
+  Exploit: Samba 3.0.20 < 3.0.25rc3 - 'Username' map script' Command Execution (Metasploit)
+      URL: https://www.exploit-db.com/exploits/16320
+     Path: /usr/share/exploitdb/exploits/unix/remote/16320.rb
+    Codes: CVE-2007-2447, OSVDB-34700
+ Verified: True
+File Type: Ruby script, ASCII text
+Copied to: /home/kali/16320.rb
+
+```
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/edcacaab-c3d0-4469-aba4-3c8c9d05bc2d)
+
 
 
 
