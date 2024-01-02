@@ -318,3 +318,5 @@ root@lame:/#
 + https://0xdf.gitlab.io/2020/04/07/htb-lame.html
 + https://medium.com/@dw3113r/hack-the-box-lame-writeup-without-metasploit-d2ac62ae3468
 + https://u1sp00kies.medium.com/hack-the-box-htb-lame-walkthrough-eac5d94e8ec2
++ https://medium.com/@maideglr5/lame-makine-çözümü-htb-47731bc5705f
++ https://blog.artis3nal.com/writeups/htb-lame-msf/
