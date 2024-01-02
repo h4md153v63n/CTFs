@@ -65,7 +65,7 @@ Nmap done: 1 IP address (1 host up) scanned in 55.07 seconds
 
 ## Findings
 
-### ftp:
+### port 21 - ftp:
 + Anonymous ftp login: `ftp 10.10.10.3`
 ```
 Connected to 10.10.10.3.
@@ -89,12 +89,13 @@ drwxr-xr-x    2 0        65534        4096 Mar 17  2010 ..
 ftp> exit
 221 Goodbye.
 ```
-Port 21 - ftp: nothing!
+There is nothing interesting!
 <br>
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a2882d78-2172-4430-87ec-a1d1e58c2c0d)
 
-### smb:
-+ Check null session: `smbmap -H 10.10.10.3`
+### port 445 - smb:
+Check null sessions.
++ `smbmap -H 10.10.10.3`
 ```
     ________  ___      ___  _______   ___      ___       __         _______
    /"       )|"  \    /"  ||   _  "\ |"  \    /"  |     /""\       |   __ "\
@@ -136,9 +137,13 @@ smb: \> dir
   vgauthsvclog.txt.0                  R     1600  Tue Jan  2 07:59:42 2024
 
 		7282168 blocks of size 1024. 5386520 blocks available
+smb: \> exit
+
 ```
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f4d634cd-8ec5-4d52-8901-2f0c06f5119f)
 <br>
 There is nothing interesting!
+
+## Exploits
 
 
