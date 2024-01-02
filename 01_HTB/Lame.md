@@ -64,6 +64,8 @@ Nmap done: 1 IP address (1 host up) scanned in 55.07 seconds
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1d356312-dcb1-4989-b3b3-e10cab5fc63a)
 
 ## Findings
+
+### ftp:
 + Anonymous ftp login: `ftp 10.10.10.3`
 ```
 Connected to 10.10.10.3.
@@ -91,6 +93,7 @@ Port 21 - ftp: nothing!
 <br>
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a2882d78-2172-4430-87ec-a1d1e58c2c0d)
 
+### smb:
 + Check null session: `smbmap -H 10.10.10.3`
 ```
     ________  ___      ___  _______   ___      ___       __         _______
@@ -118,6 +121,24 @@ Port 21 - ftp: nothing!
 ```
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2afe74b5-ee2e-4d78-8caf-39fae6076adb)
 
++ `smbclient //10.10.10.3/tmp -N`
+```
+Anonymous login successful
+Try "help" to get a list of possible commands.
+smb: \> dir
+  .                                   D        0  Tue Jan  2 09:22:20 2024
+  ..                                 DR        0  Sat Oct 31 03:33:58 2020
+  5587.jsvc_up                        R        0  Tue Jan  2 08:00:52 2024
+  .ICE-unix                          DH        0  Tue Jan  2 07:59:44 2024
+  vmware-root                        DR        0  Tue Jan  2 07:59:50 2024
+  .X11-unix                          DH        0  Tue Jan  2 08:00:15 2024
+  .X0-lock                           HR       11  Tue Jan  2 08:00:15 2024
+  vgauthsvclog.txt.0                  R     1600  Tue Jan  2 07:59:42 2024
 
+		7282168 blocks of size 1024. 5386520 blocks available
+```
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f4d634cd-8ec5-4d52-8901-2f0c06f5119f)
+<br>
+There is nothing interesting!
 
 
