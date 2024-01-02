@@ -277,9 +277,8 @@ Password:
 
 <br>
 <br>
-Got the shell as root.
-`nc -lnvp 4444`
-Stable shell.
++ Got the shell as root: `nc -lnvp 4444`
++ Stable shell.
 ```
 python -c 'import pty; pty.spawn("/bin/bash")'
 ```
@@ -303,9 +302,5 @@ Root-Flag
 root@lame:/# 
 
 ```
-
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1a5a2e60-d47a-4e55-8509-dcf184ef2cfc)
-
-
-
 
