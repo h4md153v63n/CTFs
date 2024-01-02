@@ -88,6 +88,7 @@ ftp> exit
 221 Goodbye.
 ```
 Port 21 - ftp: nothing!
+<br>
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a2882d78-2172-4430-87ec-a1d1e58c2c0d)
 
 + Check null session: `smbmap -H 10.10.10.3`
