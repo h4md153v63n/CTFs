@@ -176,7 +176,7 @@ Shellcodes: No Results
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/25853d56-2c6b-46be-b6e4-1b3e98b2b17f)
 
-+ `searchsploit -m unix/remote/16320.rb`
++ Pull the exploit: `searchsploit -m unix/remote/16320.rb`
 ```
 └─$ searchsploit -m unix/remote/16320.rb
   Exploit: Samba 3.0.20 < 3.0.25rc3 - 'Username' map script' Command Execution (Metasploit)
@@ -307,4 +307,8 @@ root@lame:/#
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a4f76804-26f4-4da9-b912-64d84dd541fb)
 
-
+# References:
++ https://vvmlist.github.io/#lame
++ https://0xdf.gitlab.io/2020/04/07/htb-lame.html
++ https://medium.com/@dw3113r/hack-the-box-lame-writeup-without-metasploit-d2ac62ae3468
++ https://u1sp00kies.medium.com/hack-the-box-htb-lame-walkthrough-eac5d94e8ec2
