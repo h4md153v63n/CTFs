@@ -2,9 +2,9 @@
 Machine ip : 10.10.10.3
 
 ## Enumeration
-+ `masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.3 -e tun0 > ports`
++ `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.3 -e tun0 > ports`
 ```
-└─$ masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.3 -e tun0 > ports
+└─$ sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.3 -e tun0 > ports
 Starting masscan 1.3.2 (http://bit.ly/14GZzcT) at 2024-01-02 13:58:37 GMT
 Initiating SYN Stealth Scan
 Scanning 1 hosts [131070 ports/host]
@@ -13,7 +13,8 @@ Scanning 1 hosts [131070 ports/host]
 
 + `ports=$(cat ports | awk -F " " '{print $4}' | awk -F "/" '{print $1}' | sort -n | tr '\n' ',' | sed 's/,$//')`
 ```
- 
+└─$ ports=$(cat ports | awk -F " " '{print $4}' | awk -F "/" '{print $1}' | sort -n | tr '\n' ',' | sed 's/,$//')
+
 ```
 
 + `sudo nmap -Pn -sV -sC -p$ports 10.10.10.3`
