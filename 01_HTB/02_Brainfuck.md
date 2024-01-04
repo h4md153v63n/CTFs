@@ -19,7 +19,7 @@
 + Subdomains and `orestis@brainfuck.htb` mail address.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c11338d1-dd89-4813-a8b0-c65bd48adffa)
 
-+ Add subdomains into `/etc/hosts` file.
++ Add subdomains into `/etc/hosts` file.                        
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b7b15b39-ace4-4dd3-acf5-f0e3de926e54)
 
 + Navigate to `https://brainfuck.htb` or `https://www.brainfuck.htb` as they're the same.
