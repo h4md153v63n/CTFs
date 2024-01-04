@@ -470,6 +470,14 @@ Regards
 + Login `https://sup3rs3cr3t.brainfuck.htb/` using  `orestis`:`kHGuERB29DNiNE` credentials:
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/567ba3d0-7263-4b29-9471-66a57411d765)
 
++ Check the forum especially `Key` and `SSH Access` parts.
++ `Key` thread seems encrypted.
++ Each orestis’ posts' second lines on both `Key` and `SSH Access` are in the same structure.
+```
+Orestis - Hacking for fun and profit -> Pieagnm - Jkoijeg nbw zwx mle grwsnn
+Orestis - Hacking for fun and profit -> Wejmvse - Fbtkqal zqb rso rnl cwihsf
+Orestis - Hacking for fun and profit -> Qbqquzs - Pnhekxs dpi fca fhf zdmgzt
+```
 
 
 ## Tools
@@ -478,7 +486,7 @@ Regards
 + wpscan
 
 
-## References:
+# References & Alternatives:
 + https://medium.com/@v1per/brainfuck-hackthebox-writeup-9a326bcb426a
 + https://4st1nus.gitbook.io/hackthebox/htb/hack-the-box-brainfuck-walkthrough-without-metasploit
 + https://0xdf.gitlab.io/2022/05/16/htb-brainfuck.html
