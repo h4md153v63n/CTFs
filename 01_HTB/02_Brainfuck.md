@@ -12,7 +12,7 @@
 + Check scan results, and see subdomains.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ce226c16-5d40-40ca-956a-1d2105d79691)
 
-+ Navigate to `https://10.10.17`
++ Navigate to `https://10.10.10.17`
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/e76efcd5-a6e6-4c52-85d6-2bf7e53ab1c6)
 
 + Control TLS certificate.
