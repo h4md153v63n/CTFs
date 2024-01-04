@@ -20,7 +20,6 @@
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c11338d1-dd89-4813-a8b0-c65bd48adffa)
 
 + Add subdomains into `/etc/hosts` file.
-
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ad998dc4-0323-4ca3-9781-63674edddf0e)
 
 + Navigate to `https://brainfuck.htb` or `https://www.brainfuck.htb` as they're the same.
