@@ -520,7 +520,9 @@ ckmybrainfuckmybrainfuckmybra
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/196769e8-4de0-4ec1-8a18-488642546b30)
 
 + Show password: `john --show id_rsa.hash` and login ssh: `ssh -i id_rsa orestis@brainfuck.htb`
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b6687895-60f3-4764-b1e9-d766076f5b07)
++ Cat the user.txt.
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a195cc6d-e538-4a25-9b12-443606396d97)
+
 
 
 
