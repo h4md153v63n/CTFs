@@ -4,7 +4,7 @@
 # Easy
 |S.No| Name of the Box  | Link | Tags    |
 |----|------------------|------|---------|
-|1   |Lame              |[Lame](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/01_Lame.md)|unix, smb|
+|1   |Lame              |[Lame](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/01_Lame.md)|unix,smb,samba,smbmap,smbclient,distccd,process,udev|
 
 
 # Intermediate
