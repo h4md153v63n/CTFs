@@ -540,7 +540,7 @@ ckmybrainfuckmybrainfuckmybra
 + And transfer the file tar.gz file to the target machine.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/829bece2-deab-46f0-a874-cc351acc1df4)
 
-+ Then run these commands:
+Then run these commands:
 + `lxc image import ./alpine-v3.13-x86_64-20210218_0139.tar.gz --alias image01`
 + `lxc image list`
 + `lxc init image01 ignite -c security.privileged=true`
