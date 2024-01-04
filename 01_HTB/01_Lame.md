@@ -313,7 +313,7 @@ root@lame:/#
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a4f76804-26f4-4da9-b912-64d84dd541fb)
 
-# References & Alternative Solutions:
+# References & Alternatives:
 + https://vvmlist.github.io/#lame
 + https://0xdf.gitlab.io/2020/04/07/htb-lame.html
 + https://medium.com/@dw3113r/hack-the-box-lame-writeup-without-metasploit-d2ac62ae3468
