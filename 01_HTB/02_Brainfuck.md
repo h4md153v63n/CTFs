@@ -1,5 +1,5 @@
 # Brainfuck
-**Machine ip:** 
+**Machine ip:** 10.10.10.17
 
 ## Enumeration
 + `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.17 -e tun0 > ports`
@@ -30,10 +30,12 @@
 + Go to `/wp-admin` , and see Wordpress login page. You can try default username:passwords.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a4bb3416-457e-4aad-af23-4e967edf01ac)
 
-+ Instead of brute force trial and errors, use wpscan: `wpscan --url https://brainfuck.htb/ --disable-tls-checks`
++ Instead of brute force trial and errors, use wpscan: `wpscan --url https://brainfuck.htb/ -e ap,at,u --disable-tls-checks`
 ```
 
+                                                                                    
 ```
+
 
 + Navigate to `sup3rs3cr3t.brainfuck.htb`
 + It's a forum.
