@@ -484,9 +484,8 @@ Orestis - Hacking for fun and profit -> Qbqquzs - Pnhekxs dpi fca fhf zdmgzt
 <br>
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3b9183ae-e7db-43af-9802-499bfbaa79e5)
 
-+ It looks like Vigenère cipher. But yet, check it. You can benefit from the followings:
-https://www.boxentriq.com/code-breaking/cipher-identifier
-https://merri.cx/enigmator/cryptanalysis/crypto_identifier.html
++ It looks like Vigenère cipher. But yet, check it. You can benefit from [boxentriq](https://www.boxentriq.com/code-breaking/cipher-identifier) or [enigmator](https://merri.cx/enigmator/cryptanalysis/crypto_identifier.html).
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/e52c7fd7-e3f3-4143-b35f-7c04195a0fc1)
 <br>
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/42cb4616-ed4f-4f9d-897c-ee142fd968c8)
