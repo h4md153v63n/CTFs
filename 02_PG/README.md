@@ -2,18 +2,18 @@
 
 
 # Easy
-|S.No| Name of the Box    | Link    |
-|----|--------------------|---------|
-|1   |                    |         |
+|S.No| Name of the Box  | Link | Tags    |
+|----|------------------|------|---------|
+|1   |                  |      |         |
 
 
 # Intermediate
-|S.No| Name of the box  | Link |
-|----|------------------|------|
-|1   |                  |      |
+|S.No| Name of the box  | Link | Tags    |
+|----|------------------|------|---------|
+|1   |                  |      |         |
 
 
 # Hard
-|S.No| Name of the box  | Link |
-|----|------------------|------|
-|1   |                  |      |
+|S.No| Name of the box  | Link | Tags    |
+|----|------------------|------|---------|
+|1   |                  |      |         |
