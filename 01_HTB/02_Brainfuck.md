@@ -22,7 +22,7 @@
 + Add subdomains into `/etc/hosts` file.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ad998dc4-0323-4ca3-9781-63674edddf0e)
 
-+ Navigate to https://brainfuck.htb` or `https://www.brainfuck.htb` as they're the same.
++ Navigate to `https://brainfuck.htb` or `https://www.brainfuck.htb` as they're the same.
 + There is a Wordpress site.
 + admin account username, SMTP integration and `orestis@brainfuck.htb` mail address.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/13aa2d1f-c897-4bfa-8a00-e6b4857f4843)
