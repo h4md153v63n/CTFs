@@ -473,11 +473,46 @@ Regards
 + Check the forum especially `Key` and `SSH Access` parts.
 + `Key` thread seems encrypted.
 + Each orestis’ posts' second lines on both `Key` and `SSH Access` are in the same structure.
++ 7 letter word + dash + 7 letter word + 3 letter word + and + 6 letter word, even if the letters are being changed.
 ```
 Orestis - Hacking for fun and profit -> Pieagnm - Jkoijeg nbw zwx mle grwsnn
 Orestis - Hacking for fun and profit -> Wejmvse - Fbtkqal zqb rso rnl cwihsf
 Orestis - Hacking for fun and profit -> Qbqquzs - Pnhekxs dpi fca fhf zdmgzt
 ```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2ed038c9-2ce2-4e8b-b8b3-71e1eab1cffd)
+<br>
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3b9183ae-e7db-43af-9802-499bfbaa79e5)
+
++ It looks like Vigenère cipher. But yet, check it. You can benefit from the followings:
+https://www.boxentriq.com/code-breaking/cipher-identifier
+https://merri.cx/enigmator/cryptanalysis/crypto_identifier.html
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/e52c7fd7-e3f3-4143-b35f-7c04195a0fc1)
+<br>
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/42cb4616-ed4f-4f9d-897c-ee142fd968c8)
+
++ Find out the key using [Vigenère cipher](https://planetcalc.com/2468/):
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d44c7045-3017-488b-9470-a296e88e9c36)
+
++ Alternatively using [Vigenere-Cipher-Key-Finder](https://github.com/4st1nus/Vigenere-Cipher-Key-Finder):
+```
+┌──(kali㉿kali)-[~/Desktop/Tools/Cipher/Vigenere-Cipher-Key-Finder]
+└─$ python2 decipher.py
+Vigenere Decipher
+
+Text must be entered without Symbols or Space
+
+Enter Known Text: OrestisHackingforfunandprofit
+Enter the corresponding Encrypted text to the known text: QbqquzsPnhekxsdpifcafhfzdmgzt
+ckmybrainfuckmybrainfuckmybra
+                                    
+```                                     
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2d1734ba-a453-4b3f-b34b-c8547ca1dc6e)
+
++ Crack the 'mnvze://zsrivszwm.rfz/8cr5ai10r915218697i1w658enqc0cs8/ozrxnkc/ub_sja'. It looks like a url.
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/38fe4034-b7a5-4363-a5b0-ae2ce8317df4)
+
++ Alternatively, you can use [cyberchef](https://gchq.github.io/CyberChef/#recipe=Vigen%C3%A8re_Decode('fuckmybrain')&input=bW52emU6Ly96c3JpdnN6d20ucmZ6LzhjcjVhaTEwcjkxNTIxODY5N2kxdzY1OGVucWMwY3M4L296cnhua2MvdWJfc2ph) and [boxentriq](https://www.boxentriq.com/code-breaking/vigenere-cipher).
 
 
 ## Tools
