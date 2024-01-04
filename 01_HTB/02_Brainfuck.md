@@ -494,6 +494,9 @@ https://merri.cx/enigmator/cryptanalysis/crypto_identifier.html
 + Find out the key using [Vigenère cipher](https://planetcalc.com/2468/):
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d44c7045-3017-488b-9470-a296e88e9c36)
 
++ Crack the 'mnvze://zsrivszwm.rfz/8cr5ai10r915218697i1w658enqc0cs8/ozrxnkc/ub_sja'. It looks like a url.
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/38fe4034-b7a5-4363-a5b0-ae2ce8317df4)
+
 + Alternatively using [Vigenere-Cipher-Key-Finder](https://github.com/4st1nus/Vigenere-Cipher-Key-Finder):
 ```
 ┌──(kali㉿kali)-[~/Desktop/Tools/Cipher/Vigenere-Cipher-Key-Finder]
@@ -509,10 +512,9 @@ ckmybrainfuckmybrainfuckmybra
 ```                                     
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2d1734ba-a453-4b3f-b34b-c8547ca1dc6e)
 
-+ Crack the 'mnvze://zsrivszwm.rfz/8cr5ai10r915218697i1w658enqc0cs8/ozrxnkc/ub_sja'. It looks like a url.
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/38fe4034-b7a5-4363-a5b0-ae2ce8317df4)
++ Alternatively, you can use [CyberChef](https://gchq.github.io/CyberChef/): [find the key](https://gchq.github.io/CyberChef/#recipe=Vigen%C3%A8re_Decode('OrestisHackingforfunandprofit')&input=UGllYWdubSAtIEprb2lqZWcgbmJ3IHp3eCBtbGUgZ3J3c25u) and [decode ssh url](https://gchq.github.io/CyberChef/#recipe=Vigen%C3%A8re_Decode('fuckmybrain')&input=bW52emU6Ly96c3JpdnN6d20ucmZ6LzhjcjVhaTEwcjkxNTIxODY5N2kxdzY1OGVucWMwY3M4L296cnhua2MvdWJfc2ph). In same the way [boxentriq](https://www.boxentriq.com/code-breaking/vigenere-cipher).
 
-+ Alternatively, you can use [cyberchef](https://gchq.github.io/CyberChef/#recipe=Vigen%C3%A8re_Decode('fuckmybrain')&input=bW52emU6Ly96c3JpdnN6d20ucmZ6LzhjcjVhaTEwcjkxNTIxODY5N2kxdzY1OGVucWMwY3M4L296cnhua2MvdWJfc2ph) and [boxentriq](https://www.boxentriq.com/code-breaking/vigenere-cipher).
++ Get the `id_rsa_key`: `curl https://brainfuck.htb/8ba5aa10e915218697d1c658cdee0bb8/orestis/id_rsa -k`
 
 
 ## Tools
