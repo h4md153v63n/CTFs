@@ -22,6 +22,7 @@ feroxbuster -u http://10.10.10.68 -x html,php,json,js,sh,cgi,pl,docx,pdf,txt -w 
 
 + Click one of the php files, and gain a shell.
 + Cat user.txt
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a7c07f5a-dc65-41f9-983c-1aa0f5697877)
 
 
