@@ -7,6 +7,7 @@
 + `sudo nmap -Pn -sV -sC -p$ports 10.10.10.56`
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c189963f-1f1f-47e3-8143-3c3590c67d76)
 <br>
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6d921d69-f5a3-4b01-8abf-b2705292468b)
 
 + Navigate to `http://10.10.10.56/`
