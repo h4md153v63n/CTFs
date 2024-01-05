@@ -2,18 +2,18 @@
 
 
 # Easy
-|S.No| Name of the Box  | Link | CVE     | Tags    |
+|S.No| Machine          | Link | CVE     | Tags    |
 |----|------------------|------|---------|---------|
 |1   |                  |      |         |         |
 
 
 # Intermediate
-|S.No| Name of the Box  | Link | CVE     | Tags    |
+|S.No| Machine          | Link | CVE     | Tags    |
 |----|------------------|------|---------|---------|
 |1   |                  |      |         |         |
 
 
 # Hard
-|S.No| Name of the Box  | Link | CVE     | Tags    |
+|S.No| Machine          | Link | CVE     | Tags    |
 |----|------------------|------|---------|---------|
 |1   |                  |      |         |         |
