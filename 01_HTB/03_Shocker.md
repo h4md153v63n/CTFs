@@ -11,7 +11,8 @@
 + Navigate to `http://10.10.10.56/`
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/53721866-1078-4c64-a195-7717114fc1a3)
 
-+ Fuzzing: `feroxbuster -u http://10.10.10.56 -x html,php,json,js,sh,cgi,pl,docx,pdf,txt -w /usr/share/wordlists/dirb/common.txt --depth 2 --filter-status 403,404,500 -r --extract-links`
++ Fuzzing:
+`feroxbuster -u http://10.10.10.56 -x html,php,json,js,sh,cgi,pl,docx,pdf,txt -w /usr/share/wordlists/dirb/common.txt --depth 2 --filter-status 403,404,500 -r --extract-links`
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3a9ac037-a36f-41a4-9778-b82bdc5dbbc4)
 
 + Check `/cgi-bin/user.sh`: `curl http://10.10.10.56/cgi-bin/user.sh`
