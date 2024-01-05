@@ -20,7 +20,7 @@ feroxbuster -u http://10.10.10.56 -x html,php,json,js,sh,cgi,pl,docx,pdf,txt -w 
 + Check `/cgi-bin/user.sh`: `curl http://10.10.10.56/cgi-bin/user.sh`
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/47df5820-0a25-4802-a8fb-a4a987b0ad8e)
 
-+ Shellshock vulnerability - [CVE-2014-6271](https://github.com/b4keSn4ke/CVE-2014-6271)
++ [Shellshock vulnerability](https://github.com/opsxcq/exploit-CVE-2014-6271): [CVE-2014-6271](https://github.com/b4keSn4ke/CVE-2014-6271)
 + `nmap -sV -p 80 --script http-shellshock --script-args uri=/cgi-bin/user.sh 10.10.10.56`
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bc9402cf-aee0-410f-b78c-9ac7069a0151)
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/15545c15-606a-4e45-8555-0d886bd63fc2)
