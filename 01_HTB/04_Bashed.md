@@ -1,4 +1,4 @@
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/db5e4f9b-b6bc-43c8-98a9-e7fb7ba2aa16)# Bashed
+# Bashed
 
 **Machine ip:** 10.10.10.68
 
