@@ -205,7 +205,6 @@ by Ben "epi" Risher 🤓                 ver: 2.10.1
 + Check `http://10.10.10.75/nibbleblog/README`, and also `http://10.10.10.75/nibbleblog/update.php`
 + Nibbleblog's version is 4.0.3.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/578a25c8-a820-4467-97f4-3950ee7fdb8d)
-
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8fb46a8c-c479-40e5-b29e-a0472dfae564)
 
 <br>
@@ -217,13 +216,23 @@ by Ben "epi" Risher 🤓                 ver: 2.10.1
 + Navigate to `http://10.10.10.75/nibbleblog/content/private/config.xml`
 + `admin` user found. 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7a644a06-2448-41d7-99e9-590043555368)
-
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a23156d6-1ba7-4663-b09c-8fc24208004c)
 
 + Login `http://10.10.10.75/nibbleblog/admin.php`, and try default passwords.
 + Default tries like admin:admin or admin:pass don't work. Instead, `admin`:`nibbles` works.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4033177a-6eca-4f2c-917e-9ff4003418a3)
 
+## Exploitation:
++ `searchsploit nibble 4.0.3`
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5d5e4952-3dc6-44ea-aa6e-d2e2a30269ac)
+
++ Use [CVE-2015-6967](https://github.com/dix0nym/CVE-2015-6967)
+
++ `cp /usr/share/webshells/php/php-reverse-shell.php shell.php`
++ Change ip address and port number to your attack machine.
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/25f418ba-986a-44b0-9708-61663df3c527)
+
++ Start netcat listener: `nc -lnvp 5555`
 
 
 
