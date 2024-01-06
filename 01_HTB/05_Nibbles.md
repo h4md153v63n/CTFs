@@ -202,6 +202,32 @@ by Ben "epi" Risher 🤓                 ver: 2.10.1
 ```
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/fb2eb882-0f65-4ab2-9d9a-24373c6d2303)
 
++ Check `http://10.10.10.75/nibbleblog/README`, and also `http://10.10.10.75/nibbleblog/update.php`
++ Nibbleblog's version is 4.0.3.
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/578a25c8-a820-4467-97f4-3950ee7fdb8d)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8fb46a8c-c479-40e5-b29e-a0472dfae564)
+
+<br>
+
++ Navigate to `http://10.10.10.75/nibbleblog/admin.php`
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d59f8eef-f1b5-44a1-aa5c-d8a9f030b0f3)
+
++ Navigate to `http://10.10.10.75/nibbleblog/content/private/users.xml`
++ Navigate to `http://10.10.10.75/nibbleblog/content/private/config.xml`
++ `admin` user found. 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7a644a06-2448-41d7-99e9-590043555368)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a23156d6-1ba7-4663-b09c-8fc24208004c)
+
++ Login `http://10.10.10.75/nibbleblog/admin.php`, and try default passwords.
++ Default tries like admin:admin or admin:pass don't work. Instead, `admin`:`nibbles` works.
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4033177a-6eca-4f2c-917e-9ff4003418a3)
+
+
+
+
+
 
 
 
@@ -210,5 +236,5 @@ by Ben "epi" Risher 🤓                 ver: 2.10.1
 
 
 # References & Alternatives:
-+ 
++ https://0xdf.gitlab.io/2018/06/30/htb-nibbles.html
 
