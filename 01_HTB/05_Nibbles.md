@@ -150,6 +150,56 @@ feroxbuster -u http://10.10.10.75 -x html,php,json,js,sh,cgi,pl,docx,pdf,txt -w 
 ```
 feroxbuster -u http://10.10.10.75/nibbleblog -x html,php,json,js,sh,cgi,pl,docx,pdf,txt -w /usr/share/wordlists/dirb/common.txt --depth 2 -s 200 301 302 -N 287,288,305,326 -r --extract-links
 ```
+```
+└─$ feroxbuster -u http://10.10.10.75/nibbleblog -x html,php,json,js,sh,cgi,pl,docx,pdf,txt -w /usr/share/wordlists/dirb/common.txt --depth 2 -s 200 301 302 -N 287,288,305,326 -r --extract-links
+
+ ___  ___  __   __     __      __         __   ___
+|__  |__  |__) |__) | /  `    /  \ \_/ | |  \ |__
+|    |___ |  \ |  \ | \__,    \__/ / \ | |__/ |___
+by Ben "epi" Risher 🤓                 ver: 2.10.1
+───────────────────────────┬──────────────────────
+ 🎯  Target Url            │ http://10.10.10.75/nibbleblog
+ 🚀  Threads               │ 50
+ 📖  Wordlist              │ /usr/share/wordlists/dirb/common.txt
+ 👌  Status Codes          │ [200, 301, 302]
+ 💥  Timeout (secs)        │ 7
+ 🦡  User-Agent            │ feroxbuster/2.10.1
+ 💉  Config File           │ /etc/feroxbuster/ferox-config.toml
+ 💢  Line Count Filter     │ 287
+ 💢  Line Count Filter     │ 288
+ 💢  Line Count Filter     │ 305
+ 💢  Line Count Filter     │ 326
+ 🔎  Extract Links         │ true
+ 💲  Extensions            │ [html, php, json, js, sh, cgi, pl, docx, pdf, txt]
+ 🏁  HTTP methods          │ [GET]
+ 📍  Follow Redirects      │ true
+ 🔃  Recursion Depth       │ 2
+───────────────────────────┴──────────────────────
+ 🏁  Press [ENTER] to use the Scan Management Menu™
+──────────────────────────────────────────────────
+200      GET       61l      168w     2986c http://10.10.10.75/nibbleblog/
+200      GET       22l      126w     2127c http://10.10.10.75/nibbleblog/admin/
+200      GET       27l       96w     1401c http://10.10.10.75/nibbleblog/admin.php
+200      GET       18l       82w     1353c http://10.10.10.75/nibbleblog/content/
+200      GET        8l       15w      300c http://10.10.10.75/nibbleblog/feed.php
+200      GET       61l      168w     2986c http://10.10.10.75/nibbleblog/index.php
+200      GET       88l      174w     1622c http://10.10.10.75/nibbleblog/update.php
+200      GET        1l       11w       78c http://10.10.10.75/nibbleblog/install.php
+200      GET       27l      181w     3167c http://10.10.10.75/nibbleblog/languages/
+200      GET      675l     5644w    35148c http://10.10.10.75/nibbleblog/LICENSE.txt
+200      GET       30l      214w     3777c http://10.10.10.75/nibbleblog/plugins/
+200      GET       63l      643w     4628c http://10.10.10.75/nibbleblog/README
+200      GET       11l       13w      401c http://10.10.10.75/nibbleblog/sitemap.php
+200      GET       20l      104w     1741c http://10.10.10.75/nibbleblog/themes/
+200      GET      146l     1032w    82541c http://10.10.10.75/nibbleblog/admin/templates/easy4/css/img/grey.png
+[####################] - 2m     52536/52536   0s      found:15      errors:0      
+[####################] - 2m     50754/50754   556/s   http://10.10.10.75/nibbleblog/ 
+[####################] - 0s     50754/50754   204653/s http://10.10.10.75/nibbleblog/admin/ => Directory listing
+[####################] - 0s     50754/50754   187284/s http://10.10.10.75/nibbleblog/content/ => Directory listing
+[####################] - 1s     50754/50754   35894/s http://10.10.10.75/nibbleblog/languages/ => Directory listing
+[####################] - 3s     50754/50754   19966/s http://10.10.10.75/nibbleblog/plugins/ => Directory listing
+[####################] - 0s     50754/50754   153800/s http://10.10.10.75/nibbleblog/themes/ => Directory listing 
+```
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/fb2eb882-0f65-4ab2-9d9a-24373c6d2303)
 
 
