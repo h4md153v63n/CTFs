@@ -131,7 +131,7 @@ Completed in 5 minute(s) and 27 second(s)
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b2240455-98da-4620-9610-e51e88a7c721)
 
-+ Navigate`to `http://10.10.10.75/`
++ Navigateto `http://10.10.10.75/`
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4a6e4c26-b14f-4560-b51a-c856039e7d9e)
 
 + Directory fuzzing `http://10.10.10.75/` and there is no found.
