@@ -134,13 +134,13 @@ Completed in 5 minute(s) and 27 second(s)
 + Navigate to `http://10.10.10.75/`
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4a6e4c26-b14f-4560-b51a-c856039e7d9e)
 
-+ Directory fuzzing `http://10.10.10.75/` and there is no found.
++ Directory fuzzing `http://10.10.10.75/`, and there is no found.
 ```
 feroxbuster -u http://10.10.10.75 -x html,php,json,js,sh,cgi,pl,docx,pdf,txt -w /usr/share/wordlists/dirb/common.txt --depth 2 -s 200 301 302 -r --extract-links
 ```
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b32bc692-6942-47ab-b62f-1a2bb8798b4f)
 
-+ View page source and see `/nibbleblog`. 
++ View page source, and see `/nibbleblog`. 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/013e1861-d697-4345-9459-3b118743b547)
 
 + Navigate to `http://10.10.10.75/nibbleblog`
@@ -203,7 +203,7 @@ by Ben "epi" Risher 🤓                 ver: 2.10.1
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/fb2eb882-0f65-4ab2-9d9a-24373c6d2303)
 
 + Check `http://10.10.10.75/nibbleblog/README`, and also `http://10.10.10.75/nibbleblog/update.php`
-+ Nibbleblog's version is 4.0.3.
++ Nibbleblog's version is **4.0.3**.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/578a25c8-a820-4467-97f4-3950ee7fdb8d)
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8fb46a8c-c479-40e5-b29e-a0472dfae564)
 
@@ -214,12 +214,12 @@ by Ben "epi" Risher 🤓                 ver: 2.10.1
 
 + Navigate to `http://10.10.10.75/nibbleblog/content/private/users.xml`
 + Navigate to `http://10.10.10.75/nibbleblog/content/private/config.xml`
-+ `admin` user found. 
++ **admin** user found. 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7a644a06-2448-41d7-99e9-590043555368)
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a23156d6-1ba7-4663-b09c-8fc24208004c)
 
 + Login `http://10.10.10.75/nibbleblog/admin.php`, and try default passwords.
-+ Default tries like admin:admin or admin:pass don't work. Instead, `admin`:`nibbles` works.
++ Default tries like admin:admin, admin:pass and nibbles:nibbles don't work. Instead, `admin`:`nibbles` works.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4033177a-6eca-4f2c-917e-9ff4003418a3)
 
 ## Exploitation:
@@ -238,7 +238,13 @@ by Ben "epi" Risher 🤓                 ver: 2.10.1
 python3 exploit.py --url http://10.10.10.75/nibbleblog/ --username admin --password nibbles --payload shell.php
 ```
 
-+ More stable shell: `python3 -c 'import pty; pty.spawn("/bin/bash")'`
++ Stable shell:
+```
+python3 -c 'import pty; pty.spawn("/bin/bash")'
+Ctrl + Z
+stty raw -echo; fg
+```
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/74939561-8d9a-4e2a-9f24-8b5661abd10a)
 
 ## Privilege Escalation:
@@ -255,8 +261,9 @@ bash
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2b882521-2b36-4314-9a10-ca2394f638ac)
 
 
-
 # References & Alternatives:
++ https://vvmlist.github.io/#nibbles
 + https://0xdf.gitlab.io/2018/06/30/htb-nibbles.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/nibbles-writeup-w-o-metasploit
-
++ https://medium.com/@JAlblas/hackthebox-nibbles-walkthrough-259ad8c014e9
++ https://medium.com/@shahar_78444/htb-nibbles-writeup-2a69d0c4eb66
