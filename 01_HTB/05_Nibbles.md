@@ -131,6 +131,30 @@ Completed in 5 minute(s) and 27 second(s)
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b2240455-98da-4620-9610-e51e88a7c721)
 
++ Navigate`to `http://10.10.10.75/`
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4a6e4c26-b14f-4560-b51a-c856039e7d9e)
+
++ Directory fuzzing `http://10.10.10.75/` and there is no found.
+```
+feroxbuster -u http://10.10.10.75 -x html,php,json,js,sh,cgi,pl,docx,pdf,txt -w /usr/share/wordlists/dirb/common.txt --depth 2 -s 200 301 302 -r --extract-links
+```
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b32bc692-6942-47ab-b62f-1a2bb8798b4f)
+
++ View page source and see `/nibbleblog`. 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/013e1861-d697-4345-9459-3b118743b547)
+
++ Navigate`to `http://10.10.10.75/nibbleblog`
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/22e15b9a-8762-4518-b97c-4aa3162c1736)
+
++ Directory fuzzing `http://10.10.10.75/nibbleblog`
+```
+feroxbuster -u http://10.10.10.75/nibbleblog -x html,php,json,js,sh,cgi,pl,docx,pdf,txt -w /usr/share/wordlists/dirb/common.txt --depth 2 -s 200 301 302 -N 287,288,305,326 -r --extract-links
+```
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/fb2eb882-0f65-4ab2-9d9a-24373c6d2303)
+
+
+
+
 
 
 
