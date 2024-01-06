@@ -258,4 +258,5 @@ bash
 
 # References & Alternatives:
 + https://0xdf.gitlab.io/2018/06/30/htb-nibbles.html
++ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/nibbles-writeup-w-o-metasploit
 
