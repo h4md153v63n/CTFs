@@ -143,7 +143,7 @@ feroxbuster -u http://10.10.10.75 -x html,php,json,js,sh,cgi,pl,docx,pdf,txt -w 
 + View page source and see `/nibbleblog`. 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/013e1861-d697-4345-9459-3b118743b547)
 
-+ Navigate`to `http://10.10.10.75/nibbleblog`
++ Navigate to `http://10.10.10.75/nibbleblog`
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/22e15b9a-8762-4518-b97c-4aa3162c1736)
 
 + Directory fuzzing `http://10.10.10.75/nibbleblog`
