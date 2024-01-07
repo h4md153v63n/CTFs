@@ -316,6 +316,7 @@ root@lame:/#
 # References & Alternatives:
 + https://vvmlist.github.io/#lame
 + https://0xdf.gitlab.io/2020/04/07/htb-lame.html
++ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/lame-writeup-w-o-metasploit
 + https://medium.com/@dw3113r/hack-the-box-lame-writeup-without-metasploit-d2ac62ae3468
 + https://u1sp00kies.medium.com/hack-the-box-htb-lame-walkthrough-eac5d94e8ec2
 + https://medium.com/@maideglr5/lame-makine-çözümü-htb-47731bc5705f
