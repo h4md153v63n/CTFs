@@ -7,6 +7,7 @@
 |1   |Lame              |[Lame](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/01_Lame.md)|CVE-2007-2447,CVE-2004-2687,CVE-2009-1185|unix,smb,samba,smbmap,smbclient,distccd,process,udev|
 |2   |Shocker           |[Shocker](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/03_Shocker.md)|CVE-2014-6271|unix,cgi-bin,user.sh,shellshock,gtfobins,sudo|
 |3   |Bashed            |[Bashed](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/04_Bashed.md)|-|unix,sudo,cronjob,scheduled task|
+|4   |Nibbles           |[Nibbles](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/05_Nibbles.md)|CVE-2015-6967,CVE-2017-16995|unix,sudo,nibbleblog,kernel|
 
 
 # Intermediate
