@@ -1,6 +1,6 @@
 # Nibbles
 
-**Machine ip:** 10.10.10.68
+**Machine ip:** 10.10.10.75
 
 ## Enumeration
 + `./nmapAutomator.sh -H 10.10.10.75 -t All`
