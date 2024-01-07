@@ -20,7 +20,7 @@ feroxbuster -u http://10.10.10.68 -x html,php,json,js,sh,cgi,pl,docx,pdf,txt -w 
 + Check `http://10.10.10.68/dev/`
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5fd4e705-edbc-413a-aea1-c21d4bb841fe)
 
-+ Click one of the php files, and gain a shell.
++ Click one of the php files, and gain a semi-interactive web shell.
 + Cat user.txt
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a7c07f5a-dc65-41f9-983c-1aa0f5697877)
@@ -73,5 +73,6 @@ import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s
 # References & Alternatives:
 + https://vvmlist.github.io/#bashed
 + https://0xdf.gitlab.io/2018/04/29/htb-bashed.html
++ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/bashed-writeup-w-o-metasploit
 + https://danishzia.medium.com/hackthebox-htb-bashed-walkthrough-ab402b9f4715
 + https://lastlistener.github.io/Walkthroughs--HackTheBox_Bashed_Walkthrough_and_Lessons.html
