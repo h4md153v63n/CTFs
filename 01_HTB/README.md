@@ -27,6 +27,5 @@
 # Insane
 |S.No| Machine          | Link |    CVE     | Tags    |
 |----|------------------|------|------------|---------|
-|1   |Brainfuck         |[Brainfuck](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/02_Brainfuck.md)|CVE:N/A [1](https://www.exploit-db.com/exploits/41006)  [2](https://www.exploit-db.com/exploits/46978) 
-  |smtp,pop3,email,ssh,id_rsa,ssh2john,john,tls,subdomain,wordpress,vigenere,RSA,lxd,lxc,ssh|
+|1   |Brainfuck         |[Brainfuck](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/02_Brainfuck.md)|CVE:N/A [1](https://www.exploit-db.com/exploits/41006)  [2](https://www.exploit-db.com/exploits/46978)|smtp,pop3,email,ssh,id_rsa,ssh2john,john,tls,subdomain,wordpress,vigenere,RSA,lxd,lxc,ssh|
 
