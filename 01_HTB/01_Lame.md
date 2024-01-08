@@ -321,3 +321,4 @@ root@lame:/#
 + https://u1sp00kies.medium.com/hack-the-box-htb-lame-walkthrough-eac5d94e8ec2
 + https://medium.com/@maideglr5/lame-makine-çözümü-htb-47731bc5705f
 + https://blog.artis3nal.com/writeups/htb-lame-msf/
++ https://medium.com/@orhan_yildirim/lame-hackthebox-write-up-8c7b9e7639d6
