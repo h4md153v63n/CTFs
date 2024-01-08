@@ -145,6 +145,7 @@ Finished
 + Login ssh using `root`:`jEhdIekWmdjE`: `ssh root@10.10.10.7`
 + If meet an error, check [1](https://www.iclarified.com/85252/how-to-fix-no-matching-key-exchange-method-found-on-mac) [2](https://askubuntu.com/questions/836048/ssh-returns-no-matching-host-key-type-found-their-offer-ssh-dss)
 + Login `ssh -o KexAlgorithms=diffie-hellman-group14-sha1 -oHostKeyAlgorithms=+ssh-rsa root@10.10.10.7`
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4cf306f2-3f06-4311-ba44-3fba99817893)
 
 
 
