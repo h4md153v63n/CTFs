@@ -7,7 +7,7 @@
 |1   |                  |      |         |         |
 
 
-# Intermediate
+# Medium
 |S.No| Machine          | Link | CVE     | Tags    |
 |----|------------------|------|---------|---------|
 |1   |                  |      |         |         |
