@@ -11,10 +11,10 @@
 |5   |Beep              |[Beep](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/06_Beep.md)|CVE:N/A [1](https://www.exploit-db.com/exploits/37637), CVE-2012-4869,CVE-2014-6271,CVE-2012-4867,CVE-2016-1713,CVE-2015-6000|unix,sudo,Elastix,PBX,LFI,svwar,webmin,shellshock,email,vTiger CRM|
 
 
-# Intermediate
+# Medium
 |S.No| Machine          | Link | CVE  | Tags    |
 |----|------------------|------|------|---------|
-|1   |                  |      |      |         |
+|1   |Cronos            |[Cronos](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/07_Cronos.md)|      |         |
 
 
 # Hard
