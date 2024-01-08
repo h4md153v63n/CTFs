@@ -269,3 +269,4 @@ bash
 + https://www.siberportal.org/red-team/penetration-testing/hack-the-box-nibbles-cozumu/
 + https://medium.com/@JAlblas/hackthebox-nibbles-walkthrough-259ad8c014e9
 + https://medium.com/@shahar_78444/htb-nibbles-writeup-2a69d0c4eb66
++ https://brcyrr.medium.com/hack-the-box-nibbles-414a992fae5b
