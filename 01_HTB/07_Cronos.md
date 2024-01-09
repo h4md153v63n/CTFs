@@ -54,11 +54,9 @@ echo "10.10.10.13 cronos.htb admin.cronos.htb ns1.cronos.htb www.cronos.htb" >> 
 
 + Enumerate subdomain:
 ```
-gobuster dns -d cronos.htb -w /usr/share/seclists/Discovery/DNS/bitquark-subdomains-top100000.txt
-
-
-gobuster vhost -u http://cronos.htb/ -w /usr/share/wordlists/seclists/Discovery/DNS/namelist.txt
+ffuf -w /usr/share/wordlists/seclists/Discovery/DNS/namelist.txt -H "Host: FUZZ.cronos.htb" -u http://cronos.htb -fs 11439
 ```
+
 
 
 
@@ -66,4 +64,4 @@ gobuster vhost -u http://cronos.htb/ -w /usr/share/wordlists/seclists/Discovery/
 + https://vvmlist.github.io/#cronos
 + https://0xdf.gitlab.io/2020/04/14/htb-cronos.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/cronos-writeup-w-o-metasploit
-+ https://systemweakness.com/htb-cronos-walkthrough-3f669386b681
++ 
