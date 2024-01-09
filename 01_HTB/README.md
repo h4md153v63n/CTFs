@@ -14,7 +14,8 @@
 # Medium
 |S.No| Machine          | Link | CVE  | Tags    |
 |----|------------------|------|------|---------|
-|1   |Cronos            |[Cronos](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/07_Cronos.md)|CVE-2017-16995,CVE-2018-15133|unix,burp,cronjob/scheduled task,DNS,DNS zone transfer,subdomain,sqli,RCE,reverse shell,KERNEL,Dirty COW,Laravel|
+|1   |Cronos            |[Cronos](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/07_Cronos.md)|CVE-2017-16995,CVE-2018-15133|unix,burp,cronjob/scheduled task,DNS,DNS zone transfer,subdomain,sqli,RCE,reverse shell,KERNEL,Laravel|
+|2   |Nineveh           |[Nineveh](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/08_Nineveh.md)||unix,bruteforce/decrypt/decode,port knock,rce,reverse shell,ssh,stego,system binary exploit,system/config/backup file|
 
 
 # Hard
