@@ -54,8 +54,12 @@ echo "10.10.10.13 cronos.htb admin.cronos.htb ns1.cronos.htb www.cronos.htb" >> 
 
 + Enumerate subdomain:
 ```
-ffuf -w /usr/share/wordlists/seclists/Discovery/DNS/namelist.txt -H "Host: FUZZ.cronos.htb" -u http://cronos.htb -fs 11439
+ffuf -w /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt -H "Host: FUZZ.cronos.htb" -u http://cronos.htb -fs 11439
 ```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/209adaa6-de35-489b-9c5f-d606c9f6ae37)
+
+
 
 
 
