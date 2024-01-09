@@ -23,19 +23,19 @@ Address: 10.10.10.13#53
 
 ```
 
-+ dns enumeration: `nslookup 10.10.10.13`
++ dns enumeration: `nslookup 10.10.10.13 10.10.10.13`
 ```
 └─$ nslookup 10.10.10.13 10.10.10.13
 13.10.10.10.in-addr.arpa	name = ns1.cronos.htb.
 
 ```
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8878f5ed-c712-45c6-aa14-0b093ff5139c)
+
 + Zone transfer: `host -l cronos.htb 10.10.10.13`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/85af127e-788f-4388-960a-f43543698b49)
 
-
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8878f5ed-c712-45c6-aa14-0b093ff5139c)
 
 + Zoner transfer: `dig axfr @10.10.10.13 cronos.htb`
 
