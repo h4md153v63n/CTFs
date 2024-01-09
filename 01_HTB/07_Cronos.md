@@ -23,6 +23,8 @@ Address: 10.10.10.13#53
 
 ```
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8878f5ed-c712-45c6-aa14-0b093ff5139c)
+
 + dns enumeration: `nslookup 10.10.10.13 10.10.10.13`
 ```
 └─$ nslookup 10.10.10.13 10.10.10.13
@@ -30,7 +32,7 @@ Address: 10.10.10.13#53
 
 ```
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8878f5ed-c712-45c6-aa14-0b093ff5139c)
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/08c7ad57-ee86-4e75-8e75-e12dd33f9c64)
 
 + Zone transfer: `host -l cronos.htb 10.10.10.13`
 
