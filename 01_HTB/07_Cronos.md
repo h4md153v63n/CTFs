@@ -104,5 +104,7 @@ gobuster dns -d cronos.htb -w /usr/share/wordlists/seclists/Discovery/DNS/nameli
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/cronos-writeup-w-o-metasploit
 + https://alessandrocristofanilli.xyz/posts/htb-cronos/
 + https://systemweakness.com/htb-cronos-walkthrough-3f669386b681
++ https://dev.to/sshad0w/hack-the-box-writeup-cronos-21bn
++ https://www.noobsec.net/hackthebox/htb-cronos/
 + https://medium.com/cronos-htb-walkthough/cronos-htb-walkthrough-9ef91750726
 + https://sevenlayers.com/index.php/133-hackthebox-cronos-walkthrough
