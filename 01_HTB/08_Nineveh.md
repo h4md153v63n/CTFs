@@ -1,4 +1,4 @@
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3dd5ce0f-fc3c-439e-bb16-77b68696e8de)# Nineveh
+# Nineveh
 
 **Machine ip:** 10.10.10.43
 
