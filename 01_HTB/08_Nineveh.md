@@ -25,10 +25,10 @@ gobuster dns -d nineveh.htb -w /usr/share/seclists/Discovery/DNS/bitquark-subdom
 
 + Directory fuzzing:
 ```
-gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u http://nineveh.htb/ -b 403,404
+gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://nineveh.htb/ -b 403,404
 ```
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2f1439c6-9f22-4b06-8c53-eca3877bb296)
+
 
 + Navigate to `https://nineveh.htb/`
 
@@ -36,10 +36,10 @@ gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u http://nineveh.htb/ -
 
 + Directory fuzzing:
 ```
-gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u https://nineveh.htb/ -b 403,404 -k
+gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u https://nineveh.htb/ -b 403,404 -k
 ```
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/14cf9201-76d1-41ef-b34c-dc090ab04004)
+
 
 
 
