@@ -34,7 +34,7 @@ gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u http://nineveh.htb/ -
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/27f0d95d-b1e2-4e72-b56d-b8746e2e7505)
 
-+ Directory fuzzing::
++ Directory fuzzing:
 ```
 gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u https://nineveh.htb/ -b 403,404 -k
 ```
