@@ -14,10 +14,10 @@
 + Add: `echo "10.10.10.43 nineveh.htb" >> /etc/hosts`
 + Check for subdomains, and there is nothing.
 ```
-gobuster dns -d nineveh.htb -w /usr/share/seclists/Discovery/DNS/bitquark-subdomains-top100000.txt
+wfuzz -c -u http://10.10.10.43/ -H "Host: FUZZ.nineveh.htb" -w /usr/share/seclists/Discovery/DNS/bitquark-subdomains-top100000.txt --hh 178
 ```
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/63ad2d6e-c2e7-461f-9ee0-77c476454634)
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/74415df0-f7e4-44e6-bf1c-6f634abeb157)
 
 + Navigate to `http://nineveh.htb/`
 
@@ -25,10 +25,10 @@ gobuster dns -d nineveh.htb -w /usr/share/seclists/Discovery/DNS/bitquark-subdom
 
 + Directory fuzzing:
 ```
-gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://nineveh.htb/ -b 403,404
+gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -u http://nineveh.htb/ -x asp,aspx,cgi,htm,html,js,json,jsp,php,pl,py,sh -b 403,404
 ```
 
-
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6e68ff8c-ecb5-49c5-9e96-bf3c5facc224)
 
 + Navigate to `https://nineveh.htb/`
 
@@ -36,7 +36,7 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
 
 + Directory fuzzing:
 ```
-gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u https://nineveh.htb/ -b 403,404 -k
+gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -u https://nineveh.htb/ -x asp,aspx,cgi,htm,html,js,json,jsp,php,pl,py,sh -b 403,404 -k
 ```
 
 
