@@ -41,6 +41,33 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-m
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/34694892-72fd-468e-80f8-28492c074369)
 
++ Navigate to `https://nineveh.htb/db/`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7e71e97a-0e14-4f5d-9b7d-65f8b6759cd5)
+
++ `searchsploit phpliteadmin 1.9`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4c1cf7ee-61d0-4f0e-bab8-46f67b876537)
+
++ [PHPLiteAdmin 1.9.3 - Remote PHP Code Injection requires authentication](https://www.exploit-db.com/exploits/24044)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d9322e69-d1ee-4397-8419-26f919a5e2a5)
+
++ Capture the login request.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/810117ad-cc91-492e-a8a8-bd2c8ee34b80)
+
++ Send to intruder, and set the payloads.
++ Brute force using the wordlist: `/usr/share/seclists/Passwords/twitter-banned.txt`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5725fbfc-755a-438c-8500-071ee78463e5)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/55fafbd0-eb21-431a-be79-3db22feed399)
+
++ `password123` discovered.
++ Okay go back to [PHPLiteAdmin 1.9.3 - Remote PHP Code Injection requires authentication](https://www.exploit-db.com/exploits/24044) again.
++ 
+
 
 
 
