@@ -177,14 +177,7 @@ export SHELL=bash
 
 ## Privilege Escalation:
 
-### 1.Solution:
-+ Run `./LinEnum.sh`
-+ Check kernel exploit: [CVE-2017-16995](https://www.exploit-db.com/exploits/45010)
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9a6683a9-0aed-49b1-b75f-eefd28943e50)
-
-+ Download on your attack machine: `wget https://www.exploit-db.com/download/45010 -O exploit.c`
-+ Compile it on the attack machine: ``
 
 
 
