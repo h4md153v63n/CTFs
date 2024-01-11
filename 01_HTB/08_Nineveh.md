@@ -171,12 +171,8 @@ export SHELL=bash
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ca14a5be-2b4c-4845-a4bf-df1920bf9209)
 
 
-+ Download [LinEnum.sh](https://github.com/rebootuser/LinEnum/blob/master/LinEnum.sh) and transfer it to the target.
-
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/fd7bf5da-cae9-49fe-bf09-f0a1be5f1cb7)
-
 ## Privilege Escalation:
-
++ x
 
 
 
