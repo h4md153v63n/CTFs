@@ -19,7 +19,7 @@ wfuzz -c -u http://10.10.10.43/ -H "Host: FUZZ.nineveh.htb" -w /usr/share/seclis
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/74415df0-f7e4-44e6-bf1c-6f634abeb157)
 
-+ Firstly, navigate to `http://nineveh.htb/`
++ **Firstly**, navigate to `http://nineveh.htb/`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c2011036-a4ab-432c-a4ad-ff243b9dcd85)
 
@@ -34,6 +34,10 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-m
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ef0dda2e-fd83-4edf-bcce-864d10ac9c29)
 
++ Page view source. **admin** and **amrois** users discovered on **http://nineveh.htb/department/login.php**
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2ffc5eeb-eb9f-46a3-a9f2-e1dc57192d63)
+
 + Brute force using the wordlist: `/usr/share/wordlists/seclists/Passwords/xato-net-10-million-passwords-1000.txt`
 ```
 hydra -l admin -P /usr/share/wordlists/seclists/Passwords/xato-net-10-million-passwords-10000.txt 10.10.10.43 http-post-form "/department/login.php:username=^USER^&password=^PASS^:Invalid" -t 64
@@ -45,9 +49,15 @@ hydra -l admin -P /usr/share/wordlists/seclists/Passwords/xato-net-10-million-pa
 + `admin`:`1q2w3e4r5t` credentials discovered on **http://nineveh.htb/department/login.php**
 
 
-+ Secondly, navigate to `https://nineveh.htb/`
++ **Secondly**, navigate to `https://nineveh.htb/`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/27f0d95d-b1e2-4e72-b56d-b8746e2e7505)
+
++ Check SSL certificate status: `curl https://nineveh.htb/ -vkI`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bf1f60d7-c3fd-40ba-81f1-7891c0b4b2f7)
+
++ `admin` username discovered on **https://nineveh.htb/db/**
 
 + Directory fuzzing:
 ```
@@ -60,7 +70,6 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-m
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7e71e97a-0e14-4f5d-9b7d-65f8b6759cd5)
 
-
 + `searchsploit phpliteadmin 1.9`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4c1cf7ee-61d0-4f0e-bab8-46f67b876537)
@@ -69,7 +78,7 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-m
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d9322e69-d1ee-4397-8419-26f919a5e2a5)
 
-+ Capture the login request.
++ Capture the login request on Burp proxy.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/810117ad-cc91-492e-a8a8-bd2c8ee34b80)
 
@@ -80,7 +89,19 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-m
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/55fafbd0-eb21-431a-be79-3db22feed399)
 
-+ `password123` discovered on **https://nineveh.htb/db/**
++ `admin`:`password123` username and password discovered on **https://nineveh.htb/db/**
+
+## Exploitation
++ Navigate to `http://nineveh.htb/department/login.php`
++ Loging with credentials `admin`:`1q2w3e4r5t`
++ Navigate to `http://nineveh.htb/department/manage.php?notes=files/ninevehNotes.txt`
++ Check the path whether is vulnerable to LFI.
++ Use the LFI payload: `../../../../../../../etc/passwd`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d6c83b59-310c-4bf9-8d2f-94b4d6771a15)
+
++ Keep going on chain.
+
 + Okay go back to [PHPLiteAdmin 1.9.3 - Remote PHP Code Injection requires authentication](https://www.exploit-db.com/exploits/24044) again.
 + 
 
