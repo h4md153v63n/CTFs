@@ -19,7 +19,7 @@ wfuzz -c -u http://10.10.10.43/ -H "Host: FUZZ.nineveh.htb" -w /usr/share/seclis
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/74415df0-f7e4-44e6-bf1c-6f634abeb157)
 
-+ Navigate to `http://nineveh.htb/`
++ Firstly, navigate to `http://nineveh.htb/`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c2011036-a4ab-432c-a4ad-ff243b9dcd85)
 
@@ -30,7 +30,22 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-m
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6e68ff8c-ecb5-49c5-9e96-bf3c5facc224)
 
-+ Navigate to `https://nineveh.htb/`
++ Navigate to `http://nineveh.htb/department/login.php`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ef0dda2e-fd83-4edf-bcce-864d10ac9c29)
+
++ Brute force using the wordlist: `/usr/share/wordlists/seclists/Passwords/xato-net-10-million-passwords-1000.txt`
+```
+hydra -l admin -P /usr/share/wordlists/seclists/Passwords/xato-net-10-million-passwords-10000.txt 10.10.10.43 http-post-form "/department/login.php:username=^USER^&password=^PASS^:Invalid" -t 64
+
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/e7a8f92b-97ca-4876-8cd3-84091385722d)
+
++ `admin`:`1q2w3e4r5t` credentials discovered on **http://nineveh.htb/department/login.php**
+
+
++ Secondly, navigate to `https://nineveh.htb/`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/27f0d95d-b1e2-4e72-b56d-b8746e2e7505)
 
@@ -44,6 +59,7 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-m
 + Navigate to `https://nineveh.htb/db/`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7e71e97a-0e14-4f5d-9b7d-65f8b6759cd5)
+
 
 + `searchsploit phpliteadmin 1.9`
 
@@ -64,7 +80,7 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-m
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/55fafbd0-eb21-431a-be79-3db22feed399)
 
-+ `password123` discovered.
++ `password123` discovered on **https://nineveh.htb/db/**
 + Okay go back to [PHPLiteAdmin 1.9.3 - Remote PHP Code Injection requires authentication](https://www.exploit-db.com/exploits/24044) again.
 + 
 
