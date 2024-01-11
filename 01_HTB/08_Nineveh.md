@@ -39,6 +39,9 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-m
 gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -u https://nineveh.htb/ -x asp,aspx,cgi,htm,html,js,json,jsp,php,pl,py,sh -b 403,404 -k
 ```
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/34694892-72fd-468e-80f8-28492c074369)
+
+
 
 
 
