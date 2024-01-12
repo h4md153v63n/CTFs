@@ -38,16 +38,25 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-m
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2ffc5eeb-eb9f-46a3-a9f2-e1dc57192d63)
 
++ Enumerate users: **admin** is valid, and **amrois** is invalid.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/52055f07-ffa7-4897-b6f9-bf5008c487be)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/02475b5c-f269-4172-9890-045056c6cea8)
+
 + Brute force using the wordlist: `/usr/share/wordlists/seclists/Passwords/xato-net-10-million-passwords-1000.txt`
 ```
 hydra -l admin -P /usr/share/wordlists/seclists/Passwords/xato-net-10-million-passwords-10000.txt 10.10.10.43 http-post-form "/department/login.php:username=^USER^&password=^PASS^:Invalid" -t 64 -f
-
 ```
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/e7a8f92b-97ca-4876-8cd3-84091385722d)
 
 + `admin`:`1q2w3e4r5t` credentials discovered on **http://nineveh.htb/department/login.php**
 
++ **Alternatively**, fill out `admin` for username, and **inspect** for password as well as adding `[]` to value `name="password[]"`.
++ Click login button, and login without authentication.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/47354141-5b8d-4739-a9f1-33934d06fd69)
 
 + **Secondly**, navigate to `https://nineveh.htb/`
 
