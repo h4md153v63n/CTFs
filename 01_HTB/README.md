@@ -15,7 +15,7 @@
 |S.No| Machine          | Link | CVE  | Tags    |
 |----|------------------|------|------|---------|
 |1   |Cronos            |[Cronos](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/07_Cronos.md)|CVE-2017-16995,CVE-2018-15133|unix,burp,cronjob/scheduled task,DNS,DNS zone transfer,subdomain,sqli,RCE,reverse shell,KERNEL,Laravel|
-|2   |Nineveh           |[Nineveh](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/08_Nineveh.md)|CVE:N/A [1](https://www.exploit-db.com/exploits/24044) ,CVE-2014-0476|unix,info.php,bruteforce/decrypt/decode,hydra,LFI,rce,phpliteadmin,reverse shell,pspy,cronjob/scheduled task,chkrootkit,strings,ssh,stego,binwalk,system binary exploit,system/config/backup file,port knock,knockd|
+|2   |Nineveh           |[Nineveh](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/08_Nineveh.md)|CVE:N/A [1](https://www.exploit-db.com/exploits/24044) ,CVE-2014-0476|unix,info.php,bruteforce/decrypt/decode,hydra,PHP comparisons,type juggling,php login bypass type juggling,LFI,rce,phpliteadmin,reverse shell,pspy,cronjob/scheduled task,chkrootkit,strings,ssh,stego,binwalk,system binary exploit,system/config/backup file,port knock,knockd|
 
 
 # Hard
