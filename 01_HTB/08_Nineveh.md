@@ -54,7 +54,7 @@ hydra -l admin -P /usr/share/wordlists/seclists/Passwords/xato-net-10-million-pa
 + `admin`:`1q2w3e4r5t` credentials discovered on **http://nineveh.htb/department/login.php**
 
 + **Alternatively**, fill out `admin` for username, and **inspect** for password to add `[]` into value `name="password[]"`.
-+ For more, check it the [link](gobuster dir -u http://10.10.10.43 -w /usr/share/seclists/Discovery/Web-Content/directory-li).
++ For more, check it the [link](https://book.hacktricks.xyz/pentesting-web/login-bypass#bypass-regular-login).
 + Click login button, and login without authentication.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/47354141-5b8d-4739-a9f1-33934d06fd69)
@@ -99,7 +99,7 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-m
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/55fafbd0-eb21-431a-be79-3db22feed399)
 
-+ Alternatively, crack using hydra:
++ **Alternatively**, crack using hydra:
 ```
 hydra -l admin -P /usr/share/seclists/Passwords/twitter-banned.txt nineveh.htb https-post-form "/db/index.php:password=^PASS^&remember=yes&login=Log+In&proc_login=true&F:Incorrect password." -f
 ```
