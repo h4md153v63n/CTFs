@@ -54,7 +54,8 @@ hydra -l admin -P /usr/share/wordlists/seclists/Passwords/xato-net-10-million-pa
 + `admin`:`1q2w3e4r5t` credentials discovered on **http://nineveh.htb/department/login.php**
 
 + **Alternatively**, fill out `admin` for username, and **inspect** for password to add `[]` into value `name="password[]"`.
-+ For more, check it the [link](https://book.hacktricks.xyz/pentesting-web/login-bypass#bypass-regular-login).
++ For more, check [1](https://book.hacktricks.xyz/pentesting-web/login-bypass#bypass-regular-login)  [2](https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/php-tricks-esp).
++ Search about [PHP comparisons error exploit and php login bypass type juggling](https://benheater.com/hackthebox-nineveh/#More+Enumeration).
 + Click login button, and login without authentication.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/47354141-5b8d-4739-a9f1-33934d06fd69)
