@@ -9,6 +9,7 @@
 |3   |Bashed            |[Bashed](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/04_Bashed.md)|-|unix,sudo,cronjob/scheduled task,RCE,reverse shell|
 |4   |Nibbles           |[Nibbles](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/05_Nibbles.md)|CVE-2015-6967,CVE-2017-16995|unix,sudo,nibbleblog,kernel,RCE,default creds,source code inspection|
 |5   |Beep              |[Beep](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/06_Beep.md)|CVE:N/A [1](https://www.exploit-db.com/exploits/37637), CVE-2012-4869,CVE-2014-6271,CVE-2012-4867,CVE-2016-1713,CVE-2015-6000,CVE-2013-3214,CVE-2013-3215|unix,sudo,Elastix,PBX,LFI,svwar,webmin,shellshock,cgi-*,smtp,pop3,email,vTiger CRM,reverse shell,ssh|
+|6   |Sense             |[Sense](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/09_Sense.md)|CVE-2014-4688,CVE-2016-10709|unix,default creds,rce,stored creds,pfsense|
 
 
 # Medium
