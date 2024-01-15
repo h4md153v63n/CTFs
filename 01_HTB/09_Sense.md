@@ -62,4 +62,5 @@ password: company defaults
 
 # References & Alternatives:
 + https://vvmlist.github.io/#sense
++ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/sense-writeup-w-o-metasploit
 + https://0xdf.gitlab.io/2021/03/11/htb-sense.html
