@@ -555,7 +555,7 @@ Then run these commands:
 # References & Alternatives:
 + https://0xdf.gitlab.io/2022/05/16/htb-brainfuck.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/brainfuck-writeup-w-o-metasploit
++ https://benheater.com/hackthebox-brainfuck/
 + https://medium.com/@v1per/brainfuck-hackthebox-writeup-9a326bcb426a
 + https://4st1nus.gitbook.io/hackthebox/htb/hack-the-box-brainfuck-walkthrough-without-metasploit
 + https://medium.com/@toneemarqus/brainfuck-htb-manual-walkthrough-2023-oscp-prep-47858603b2d6
-+ https://benheater.com/hackthebox-brainfuck/
