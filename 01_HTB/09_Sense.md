@@ -56,8 +56,7 @@ password: company defaults
 
 + Get root shell.
 
-+ 
-
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/35e0d755-020d-4e1f-92e6-e8405893a3c0)
 
 
 
