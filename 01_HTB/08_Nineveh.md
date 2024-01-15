@@ -222,3 +222,6 @@ Try ssh connection [analyzing **secure_notes** image file](https://rana-khalil.g
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/nineveh-writeup-w-o-metasploit
 + https://benheater.com/hackthebox-nineveh/
 + https://systemweakness.com/htb-nineveh-writeup-8cf43e5a605d
++ https://ethicalhacs.com/nineveh-hackthebox-walkthrough/
++ https://v3ded.github.io/ctf/htb-nineveh
++ https://steflan-security.com/hack-the-box-nineveh-walkthrough/
