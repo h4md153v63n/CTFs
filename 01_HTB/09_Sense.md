@@ -36,7 +36,7 @@ password: company defaults
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6601d0fd-d8aa-440c-b85e-eb1598afba6e)
 
-+ Login pfsense using credentials `rohit`:`[pfsense](https://docs.netgate.com/pfsense/en/latest/usermanager/defaults.html)`
++ Login [pfsense](https://docs.netgate.com/pfsense/en/latest/usermanager/defaults.html) using credentials `rohit`:`pfsense`
 
 
 
