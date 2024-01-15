@@ -74,5 +74,6 @@ import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s
 + https://vvmlist.github.io/#bashed
 + https://0xdf.gitlab.io/2018/04/29/htb-bashed.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/bashed-writeup-w-o-metasploit
++ https://benheater.com/hackthebox-bashed/
 + https://danishzia.medium.com/hackthebox-htb-bashed-walkthrough-ab402b9f4715
 + https://lastlistener.github.io/Walkthroughs--HackTheBox_Bashed_Walkthrough_and_Lessons.html
