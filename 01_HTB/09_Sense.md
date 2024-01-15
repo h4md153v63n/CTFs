@@ -10,20 +10,23 @@
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6749553f-08d1-460f-aad6-1fbb09ae51ea)
 
++ Port 80 redirects to port 443 so we really only have one port to enumerate.
 + Navigate to `https://10.10.10.60/`
 + pfsense login panel.
++ Try [pfsense](https://docs.netgate.com/pfsense/en/latest/usermanager/defaults.html) default username and password.
++ Try brute force trial and errors.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d249333a-0934-4e18-a2ff-d8eeb457d36c)
 
-+ Directory fuzzing:
++ No works, and continue with directory fuzzing:
 ```
 gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u https://10.10.10.60/ -k -n -x html,php,txt -t 50
 ```
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9a9704e1-f08a-4337-8340-8807b3a9efb4)
 
-+ **system-users.txt** is interesting, and check it out.
-+ Navigate to `https://10.10.10.60/system-users.txt`
++ **system-users.txt** and changelog.txt are interesting, and check them out.
++ Navigate to `https://10.10.10.60/system-users.txt` and `https://10.10.10.60/changelog.txt`
 ```
 ####Support ticket###
 
@@ -36,11 +39,13 @@ password: company defaults
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6601d0fd-d8aa-440c-b85e-eb1598afba6e)
 
-+ Login [pfsense](https://docs.netgate.com/pfsense/en/latest/usermanager/defaults.html) using credentials `rohit`:`pfsense`
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/cd931495-72f9-4c8f-b47b-d3f125ba4868)
+
++ Login pfsense using credentials `rohit`:`pfsense`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/97eb08bc-2825-44a1-a5ba-897c186d2689)
 
-+ `searchsploit pfsense`
++ View any vulnerabilities that pfsense is associated with : `searchsploit pfsense`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d1945b44-4ad0-402f-add2-f2206ebf4ad8)
 
