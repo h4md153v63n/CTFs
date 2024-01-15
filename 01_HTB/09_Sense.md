@@ -45,7 +45,7 @@ password: company defaults
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/97eb08bc-2825-44a1-a5ba-897c186d2689)
 
-+ See that verison is 2.1.3
++ See that version is **2.1.3**
 + View any vulnerabilities that pfsense is associated with : `searchsploit pfsense`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d1945b44-4ad0-402f-add2-f2206ebf4ad8)
