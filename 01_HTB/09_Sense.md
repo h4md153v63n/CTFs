@@ -17,8 +17,12 @@
 
 + Directory fuzzing:
 ```
-feroxbuster -u https://10.10.10.60 -x html,php -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt --depth 2 -C 403,404,500 -W 0 -r --extract-links -k -x asp,aspx,cgi,htm,html,js,json,jsp,php,pl,py,sh
+gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u https://10.10.10.60/ -k -n -x html,php,txt -t 50
 ```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7a1ed04d-7802-41e9-ba64-9c3712a2f0bb)
+
+
 
 
 # References & Alternatives:
