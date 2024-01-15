@@ -265,6 +265,7 @@ bash
 + https://vvmlist.github.io/#nibbles
 + https://0xdf.gitlab.io/2018/06/30/htb-nibbles.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/nibbles-writeup-w-o-metasploit
++ https://benheater.com/hackthebox-nibbles/
 + https://infosecwriteups.com/hackthebox-write-up-nibble-d871f0fea300
 + https://www.siberportal.org/red-team/penetration-testing/hack-the-box-nibbles-cozumu/
 + https://medium.com/@JAlblas/hackthebox-nibbles-walkthrough-259ad8c014e9
