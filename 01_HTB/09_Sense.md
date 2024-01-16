@@ -50,6 +50,10 @@ password: company defaults
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d1945b44-4ad0-402f-add2-f2206ebf4ad8)
 
++ For more perspective: https://sploitus.com
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0e8107b4-dc87-45ac-b91e-5f8fdbf561ee)
+
 + pfSense < 2.1.4 - 'status_rrd_graph_img.php' Command Injection: [CVE-2014-4688](https://www.exploit-db.com/exploits/43560)
 + Check the vulnerability what's doing.
 
@@ -70,3 +74,8 @@ password: company defaults
 + https://vvmlist.github.io/#sense
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/sense-writeup-w-o-metasploit
 + https://0xdf.gitlab.io/2021/03/11/htb-sense.html
++ https://benheater.com/hackthebox-sense/
++ https://xavilok.es/posts/Sense.php
++ https://ethicalhacs.com/sense-hackthebox-walkthrough/
++ https://v3ded.github.io/ctf/htb-sense
++ https://medium.com/@andr3w_hilton/htb-sense-walkthrough-6236970644c1
