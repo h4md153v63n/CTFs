@@ -119,7 +119,7 @@ pass: P@55W0rd1!2@
 ## Privilege Escalation
 + Transfer pspy to the target.
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/04ff62d7-5383-4e7d-ad65-1b84ffd22bc8)
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/cc163b76-6979-4950-a22d-234e76fbe523)
 
 + Check processess:
 
