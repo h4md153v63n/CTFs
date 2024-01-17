@@ -15,6 +15,7 @@ Port 25: JAMES smtpd 2.3.2
 Port 80: httpd 2.4.25
 Port 110: JAMES pop3d 2.3.2
 Port 119: JAMES nntpd
+Port 4555: rsip?
 ```
 
 
