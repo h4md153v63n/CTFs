@@ -17,7 +17,7 @@
 |----|------------------|------|------|---------|
 |1   |Cronos            |[Cronos](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/07_Cronos.md)|CVE-2017-16995,CVE-2018-15133|unix,burp,cronjob/scheduled task,DNS,DNS zone transfer,subdomain,sqli,RCE,reverse shell,KERNEL,Laravel|
 |2   |Nineveh           |[Nineveh](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/08_Nineveh.md)|CVE:N/A [1](https://www.exploit-db.com/exploits/24044) ,CVE-2014-0476,CVE-2017-16995|unix,info.php,bruteforce/decrypt/decode,hydra,php login bypass,php comparisons error exploit,type juggling,php login bypass type juggling,LFI,rce,phpliteadmin,reverse shell,pspy,cronjob/scheduled task,chkrootkit,strings,ssh,stego,binwalk,system binary exploit,system/config/backup file,mail,port knock,knockd,chisel,ssh authorized keys,public SSH keystring,private SSH keystring,kernel|
-|3   |SolidState        |[SolidState](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/10_SolidState.md)|-|unix,James Mail Server,smtp,pop3,email,ssh,sshpass,authenticated rce,cron/scheduled tasks,pspy,rbash/restricted shell,smtp/pop/imap,ssh,default creds,telnet,/etc/bash_completion.d|
+|3   |SolidState        |[SolidState](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/10_SolidState.md)|-|unix,James Mail Server,smtp,pop3,email,ssh,sshpass,authenticated rce,cron/scheduled tasks,pspy,rbash(restricted bash shell)/restricted shell,smtp/pop/imap,ssh,default creds,telnet,/etc/bash_completion.d|
 
 
 # Hard
