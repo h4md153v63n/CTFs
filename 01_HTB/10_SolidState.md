@@ -29,6 +29,8 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt -
 
 + There is nothing here.
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a88a97d5-5224-41c7-858f-a171f12f9339)
+
 + James stands for Java Apache Mail Enterprise Server. James Mail Server listens on four ports which are SMTP on TCP 25, POP3 on TCP 110, NNTP on TCP 119 and TCP 4555.
 + Firstly, check TCP port 4555 because it is the James administration port.
 + `searchsploit james 2.3.2`
@@ -99,12 +101,12 @@ pass: P@55W0rd1!2@
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/73ddfa83-30ee-48e4-8936-8a8df777c9e1)
 
-+ Try ssl login with `mindy`:`P@55W0rd1!2@` : `ssh mindy@10.10.10.51 `
++ Try ssl login with `mindy`-`P@55W0rd1!2@` : `ssh mindy@10.10.10.51 `
 + Get user.txt:
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2afc76f7-1f35-4a2f-b398-5c0b2cea2755)
 
-+ As prveiously said on the second mail, access is restricted:
++ As previously said on the second mail, access is restricted:
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c8ded426-603e-4d03-860d-b2f9606647d5)
 
