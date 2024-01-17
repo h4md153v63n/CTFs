@@ -81,18 +81,34 @@ LIST
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/92417947-5654-4752-983c-be79a936f3af)
 
-+ Check mindy's mail.
++ Check **mindy**'s mail.
 + There are 2 mails.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5ba2891c-17c9-408d-a446-a3298b47a897)
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/156327e7-c701-47f5-b872-c11f1ea4f5d0)
 
-+ On the second mail, discovered mindy's ssh credentials:
++ On the second mail, discovered mindy's **ssh** credentials:
 ```
 username: mindy
 pass: P@55W0rd1!2@
 ```
+
++ **Lastly**, check **mailadmin**.
++ There is no mail.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/73ddfa83-30ee-48e4-8936-8a8df777c9e1)
+
++ Try ssl login with `mindy`:`P@55W0rd1!2@` : `ssh mindy@10.10.10.51 `
++ As prveiously said on the second mail, access is restricted
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c8ded426-603e-4d03-860d-b2f9606647d5)
+
++ mindy’s shell is rbash.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/dd5f965b-922d-4a3b-90eb-b4dcdf6c6319)
+
+
 
 
 
