@@ -27,7 +27,7 @@ Port 4555: JAMES Remote Administration Tool 2.3.2
 gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt -u http://10.10.10.51/ -k -n -x html,php,txt -r -t 50
 ```
 
-+ There is nothing here.
++ There is nothing interesting here.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a88a97d5-5224-41c7-858f-a171f12f9339)
 
@@ -42,7 +42,7 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt -
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c43603ab-f981-4e94-8d30-edf92e1effb1)
 
-+ Connect to port 4555 with `root`:`root` using nc: `nc 10.10.10.51 4555`
++ Connect to port 4555 with `root`-`root` using nc: `nc 10.10.10.51 4555`
 + List commands: `HELP`
 + To list users: `listusers`
 
@@ -114,16 +114,16 @@ pass: P@55W0rd1!2@
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/dd5f965b-922d-4a3b-90eb-b4dcdf6c6319)
 
-+ To escape: `sshpass -p 'P@55W0rd1!2@' ssh mindy@10.10.10.51 -t bash`
++ Add `-t bash` to the SSH connection command to escape: `sshpass -p 'P@55W0rd1!2@' ssh mindy@10.10.10.51 -t bash`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/507882d1-c29e-471e-b6fe-9320d168cd60)
 
 ## Privilege Escalation
-+ Transfer pspy to the target.
++ Transfer [pspy](https://github.com/DominicBreuker/pspy) to the target.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/cc163b76-6979-4950-a22d-234e76fbe523)
 
-+ Check processess, and see `python /opt/tmp.py` is being run every three minutes.
++ Check processess, and see `python /opt/tmp.py` is being run every three minutes by root.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b73f6b8a-3828-497b-9e9c-c6a78793aaad)
 
