@@ -112,7 +112,16 @@ pass: P@55W0rd1!2@
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/dd5f965b-922d-4a3b-90eb-b4dcdf6c6319)
 
++ To escape: `sshpass -p 'P@55W0rd1!2@' ssh mindy@10.10.10.51 -t bash`
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/507882d1-c29e-471e-b6fe-9320d168cd60)
+
+## Privilege Escalation
++ Transfer pspy to the target.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/dac53633-9cbf-4e6f-94f2-3c12387cf9e1)
+
++ Check processess:
 
 
 
