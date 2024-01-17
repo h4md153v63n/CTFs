@@ -105,10 +105,15 @@ pass: P@55W0rd1!2@
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/73ddfa83-30ee-48e4-8936-8a8df777c9e1)
 
-+ Try ssl login with `mindy`-`P@55W0rd1!2@` : `ssh mindy@10.10.10.51 `
++ Try ssl login with `mindy`-`P@55W0rd1!2@` : `ssh mindy@10.10.10.51`
 + Get user.txt:
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2afc76f7-1f35-4a2f-b398-5c0b2cea2755)
+
++ Alternatively, it is also possible to run ad-hoc commands through SSH using a connection string like this: `ssh username@host <command-here>`
++ `ssh mindy@10.10.10.51 'cat /home/mindy/user.txt'`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/605bb879-df74-4eed-8769-9bcc2ca54791)
 
 + As previously said on the second mail, access is restricted:
 
