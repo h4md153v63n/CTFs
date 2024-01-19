@@ -140,7 +140,8 @@ myP14ceAdm1nAcc0uNT:manchester
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/09a27b2a-3c5b-4c57-9f8d-eb142218df6a)
 
-+ Crack it using fcrackzip: `fcrackzip -u -D -p /usr/share/wordlists/rockyou.txt decoded.file`
++ Crack it using **fcrackzip**: `fcrackzip -u -D -p /usr/share/wordlists/rockyou.txt decoded.file`
++ **Alternatively**, try **zip2john** with **john** to crack it.
 ```
 ┌──(kali㉿kali)-[~/Desktop]
 └─$ fcrackzip -u -D -p /usr/share/wordlists/rockyou.txt decoded.file
