@@ -164,7 +164,23 @@ const backup_key  = '45fac180e9eee72f4fd2d9386ea7033e52b7c740afc3d98a8d023016710
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3ad6fec3-13ff-4dbd-bd8d-29f5c298cbd3)
 
++ Login ssh with the discovered credentials `mark`:`5AYRft73VtFpc84k`
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/58a4685a-5d78-402a-9748-0dc47e611ecd)
+
++ Mark doesn't have read permission to read user.txt.
++ Check processes: `ps aux | grep -i tom`
+```
+mark@node:~$ ps aux | grep -i tom
+tom       1233  0.0  5.9 1074104 45424 ?       Ssl  08:02   0:03 /usr/bin/node /var/scheduler/app.js
+tom       1237  0.0  7.4 1029352 56552 ?       Ssl  08:02   0:04 /usr/bin/node /var/www/myplace/app.js
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8cff493d-1519-47ae-b447-d079edd5b2f6)
+
++ Focus on **/var/scheduler/app.js** process, and it's being run every 30 seconds by tom.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f5c0ab3e-fb47-469d-84a4-ce2c6f5bebaf)
 
 
 
