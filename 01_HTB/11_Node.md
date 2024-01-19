@@ -248,8 +248,21 @@ stty rows 55 columns 285
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/900399b4-a04c-4cc9-aa77-56f21bfa75df)
 
 + Run the file with the arguments.
++ The command will create a backup for any directory we want.
++ Back up /root, and copy on your kali vm:
+```
+/usr/local/bin/backup -q 45fac180e9eee72f4fd2d9386ea7033e52b7c740afc3d98a8d0230167104d474 /root
+```
 
++ Base64 decode it: `cat file | base64 -d > backup.zip`
++ Decompress it with 7z using tha previos password `magicword`
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4627d289-3498-4e5f-ae77-0ea827b14329)
+
++ Cat root.txt
++ It is junk.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/471f106f-6477-4998-af09-76a5497bac4c)
 
 
 
