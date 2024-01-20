@@ -226,6 +226,7 @@ stty rows 55 columns 285
 + Check kernel version: `uname -a`
 + `searchsploit 4.4.0-`
 + `searchsploit -m 44298`
++ Review [CVE-2017-16995](https://www.exploit-db.com/exploits/44298)
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1d6d1251-a747-4f64-a070-e64b9bd2a3da)
 
