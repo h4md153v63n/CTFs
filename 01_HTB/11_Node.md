@@ -300,3 +300,7 @@ cat root.txt
 # References & Alternatives:
 + https://0xdf.gitlab.io/2021/06/08/htb-node.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/node-writeup-w-o-metasploit
++ https://benheater.com/hackthebox-node/
++ https://sanaullahamankorai.medium.com/hackthebox-node-walkthrough-f774ae2ece5c
++ https://manuelvazquez-contact.gitbook.io/oscp-prep/hack-the-box/node/scanning-and-enumeration
++ https://fmash16.github.io/content/writeups/hackthebox/htb-Node.html
