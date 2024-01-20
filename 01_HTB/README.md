@@ -10,6 +10,7 @@
 |4   |Nibbles           |[Nibbles](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/05_Nibbles.md)|CVE-2015-6967,CVE-2017-16995|unix,sudo,nibbleblog,kernel,RCE,default creds,source code inspection|
 |5   |Beep              |[Beep](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/06_Beep.md)|CVE:N/A [1](https://www.exploit-db.com/exploits/37637), CVE-2012-4869,CVE-2014-6271,CVE-2012-4867,CVE-2016-1713,CVE-2015-6000,CVE-2013-3214,CVE-2013-3215|unix,sudo,Elastix,PBX,LFI,svwar,webmin,shellshock,cgi-*,smtp,pop3,email,vTiger CRM,reverse shell,ssh|
 |6   |Sense             |[Sense](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/09_Sense.md)|CVE-2014-4688,CVE-2016-10709|unix,default creds,rce,stored creds,pfsense|
+|7   |Valentine         |[Valentine](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/12_Valentine.md)|-|unix,bruteforce/decrypt/decode,hash/encrypted/encoded,kernel exploit,ssh,system binary exploit|
 
 
 # Medium
@@ -18,7 +19,7 @@
 |1   |Cronos            |[Cronos](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/07_Cronos.md)|CVE-2017-16995,CVE-2018-15133|unix,burp,cronjob/scheduled task,DNS,DNS zone transfer,subdomain,sqli,RCE,reverse shell,KERNEL,Laravel|
 |2   |Nineveh           |[Nineveh](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/08_Nineveh.md)|CVE:N/A [1](https://www.exploit-db.com/exploits/24044) ,CVE-2014-0476,CVE-2017-16995|unix,info.php,bruteforce/decrypt/decode,hydra,php login bypass,php comparisons error exploit,type juggling,php login bypass type juggling,LFI,rce,phpliteadmin,reverse shell,pspy,cronjob/scheduled task,chkrootkit,strings,ssh,stego,binwalk,system binary exploit,system/config/backup file,mail,port knock,knockd,chisel,ssh authorized keys,public SSH keystring,private SSH keystring,kernel|
 |3   |SolidState        |[SolidState](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/10_SolidState.md)|CVE:N/A [1](https://www.exploit-db.com/exploits/35513) [2](https://www.exploit-db.com/exploits/50347)|unix,Apache James Mail Server,smtp,pop3,email,mutt,ssh,sshpass,authenticated rce,cron/scheduled tasks,pspy,rbash(restricted bash shell)/restricted shell,smtp/pop/imap,ssh,default creds,telnet,/etc/bash_completion.d,RSIP|
-|4   |Node              |[Node](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/11_Node.md)|-|unix,Express Node.js,API,hadoop,big data,crackstation.net,MongoDB,NoSQL,base64,unzip,fcrackzip,zip2john,john,ssh,cron/scheduled tasks,SUID,binary analysis,ltrace,unzip,7z,libc buffer overflow|
+|4   |Node              |[Node](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/11_Node.md)|CVE-2017-16995|unix,Express Node.js,API,hadoop,big data,crackstation.net,MongoDB,NoSQL,base64,unzip,fcrackzip,zip2john,john,ssh,cron/scheduled tasks,kernel exploit,SUID,binary analysis,ltrace,unzip,7z,libc buffer overflow|
 
 
 # Hard
