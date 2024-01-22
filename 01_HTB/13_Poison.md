@@ -25,7 +25,7 @@ Port 443: Apache httpd 2.2.22 - ssl/http
 + Directory fuzzing:
 ```
 gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u 10.10.10.79 -k -n -r -t 40
-
+```
 
 
 
