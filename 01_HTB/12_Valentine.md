@@ -49,7 +49,7 @@ gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u 10.10.10.79 -k -n -r 
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c1e082bc-05d6-4068-acd0-45d969777a71)
 
-+ Do more enumeration: `sudo nmap -Pn -n --script vuln -p$ports 10.10.10.79`
++ **Do more enumeration:** `sudo nmap -Pn -n --script vuln -p$ports 10.10.10.79`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ff889a3f-83fa-49a3-9646-8c17dcc949db)
 
@@ -131,7 +131,7 @@ python2 32745.py 10.10.10.79 | grep -v 00 | grep -v "00 00 00" | grep -v "11 11 
 ## Privilege Escalation
 
 ### 1.Method:
-+ Transfer linpeas.sh, and run.
++ Transfer [linpeas.sh](https://linpeas.sh/), and run.
 + Check kernel version: `uname -a`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b0a23f83-78ec-4ce6-b7ed-d903449fe0fb)
