@@ -108,18 +108,18 @@ User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/boo
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d0e7c4c7-2e19-41f0-9a08-0d641aa1318a)
 
-+ Navigate to **http://10.10.10.79/decode.php**. Copy the **text** value, and decode it. **Also**, you can use an online base64 decoder.
-
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8043e8ba-37eb-4804-adc4-599ff419d146)
-
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7fe3609b-9537-4bb9-be08-aa29b64eefff)
-
 + **Alternatively 2**, **32745.py** can be used.
 ```
 python2 32745.py 10.10.10.79 | grep -v 00 | grep -v "00 00 00" | grep -v "11 11 11"
 ```
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3044b71e-2c8c-46cd-b735-3b22fb8b1d09)
+
++ Navigate to **http://10.10.10.79/decode.php**. Copy the **text** value, and decode it. **Also**, you can use an online base64 decoder.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8043e8ba-37eb-4804-adc4-599ff419d146)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7fe3609b-9537-4bb9-be08-aa29b64eefff)
 
 + Use the decoded value `heartbleedbelievethehype` on ssh login.
 + Try to login ssh again: `ssh -i id_rsa hype@10.10.10.79`
