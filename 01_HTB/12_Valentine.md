@@ -45,7 +45,7 @@ gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u 10.10.10.79 -k -n -r 
 
 + Login ssh: `ssh -i id_rsa hype@10.10.10.79`
 + `chmod 600 id_rsa`
-+ It requires password.
++ It requires a password.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c1e082bc-05d6-4068-acd0-45d969777a71)
 
