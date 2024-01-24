@@ -101,7 +101,7 @@ http://10.10.10.84/browse.php?file=/usr/local/etc/apache24/httpd.conf
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/473a6f5a-8495-474c-b2d1-dcb9984a49cb)
 
-+ Connect to VNC on the attack machine with previous transferred and decompressed **secret** file: `vncviewer 127.0.0.1:7777 -passwd secret`
++ Connect to VNC with previous transferred and decompressed **secret** file on the attack machine: `vncviewer 127.0.0.1:7777 -passwd secret`
 + Get the VNC connection with root privileges, and view the root.txt file.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/556d55dc-b294-4080-9030-42426a5bb802)
