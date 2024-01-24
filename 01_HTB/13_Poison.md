@@ -21,11 +21,19 @@ Port 80: Apache httpd 2.4.29
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1c32c4dc-e26f-4728-ba3e-1518b918c928)
 
++ When entering **listfiles.php** into **Scriptname** textbox, **pwdbackup.txt** is interesting.
 
-+ Directory fuzzing:
-```
-gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u 10.10.10.84 -k -n -r -t 40
-```
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bb8237de-e6cc-41e0-8bef-d003d7e1ae08)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a643911b-431e-4fb0-aea8-fcce9e4e28aa)
+
++ Enter **pwdbackup.txt** into the textbox, and you'll see base64 encoding.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/755d1b04-96a4-44ce-936f-87f6ff1d3753)
+
++ This means that the application is vulnerable to local file inclusion (LFI).
+
+
 
 
 
