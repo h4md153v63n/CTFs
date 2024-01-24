@@ -91,19 +91,20 @@ http://10.10.10.84/browse.php?file=/usr/local/etc/apache24/httpd.conf
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/87501dde-45a3-4f89-a68a-8618111014a6)
 
-+ Since VNC is a graphical user interface software, we can’t access it through our target machine. We need port forwarding.
-```
-ssh -L 7777:127.0.0.1:5901 charix@10.10.10.84
-```
++ Since VNC is a graphical user interface software, we can’t access it through our target machine.
++ We need port forwarding.
++ Run on your kali attack machine with previous password `Charix!2#4%6&8(0`: `ssh -L 7777:127.0.0.1:5901 charix@10.10.10.84`
 
-+ Verify that the command:
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7b07e577-d046-4075-9d07-93c93ddf8bff)
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b5ce72fc-1dd7-44a7-87f6-ef23d7dc5f89)
++ Verify that the command is working:
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/079d1502-7daf-45e7-90b5-4e501f3a36bd)
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/473a6f5a-8495-474c-b2d1-dcb9984a49cb)
 
++ Connect to VNC on the attack machine with previous transferred and decompressed **secret** file: `vncviewer 127.0.0.1:7777 -passwd secret`
++ Get the VNC connection with root privileges, and view the root.txt file.
 
-
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/556d55dc-b294-4080-9030-42426a5bb802)
 
 
 
