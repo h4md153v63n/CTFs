@@ -55,10 +55,9 @@ Port 80: Apache httpd 2.4.29
 + The user should be `charix`:`Charix!2#4%6&8(0`
 + It belongs to Charix. Login ssh into charix account using the discovered credentials.
 + `ssh charix@10.10.10.84`
++ Get the user shell and user flag.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bd4b9cf9-8dee-4b01-b130-9f79a2776d93)
-
-+ Get the user shell and user flag.
 
   
 
