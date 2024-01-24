@@ -35,6 +35,13 @@ Port 80: Apache httpd 2.4.29
 
 + This means that the application is vulnerable to local file inclusion (LFI).
 
++ And also check whether it is vulnerable to RFI.
++ Navigate to `http://10.10.10.84/browse.php?file=phpinfo.php`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/e35caf5f-568a-40da-9480-be78f16123f4)
+
++ There is no direct RFI as **allow_url_include** is off. Setting allow_url_include to off in your configuration means that your PHP code on your server will not be able to include remote files.
+
 ## 1.Method:
 + Let's crack the base64 encoding of **pwdbackup.txt**
 
@@ -59,7 +66,12 @@ Port 80: Apache httpd 2.4.29
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bd4b9cf9-8dee-4b01-b130-9f79a2776d93)
 
-  
+## 2.Method:  
++ Find where the log files are located.
+```
+http://10.10.10.84/browse.php?file=/usr/local/etc/apache24/httpd.conf
+```
+
 
 
 # References & Alternatives:
