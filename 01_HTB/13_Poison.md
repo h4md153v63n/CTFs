@@ -22,19 +22,31 @@ Port 80: Apache httpd 2.4.29
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1c32c4dc-e26f-4728-ba3e-1518b918c928)
 
 + When entering **listfiles.php** into **Scriptname** textbox, **pwdbackup.txt** is interesting.
++ `http://10.10.10.84/browse.php?file=listfiles.php`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bb8237de-e6cc-41e0-8bef-d003d7e1ae08)
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a643911b-431e-4fb0-aea8-fcce9e4e28aa)
 
 + Enter **pwdbackup.txt** into the textbox, and you'll see base64 encoding.
++ `http://10.10.10.84/browse.php?file=pwdbackup.txt`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/755d1b04-96a4-44ce-936f-87f6ff1d3753)
 
 + This means that the application is vulnerable to local file inclusion (LFI).
 
+## 1.Method:
++ Let's crack the base64 encoding of **pwdbackup.txt**
 
++ **Firstly**, crack in bash script [here](https://github.com/h4md153v63n/Bash_Scripts/tree/main/base64-multiple-decoder).
 
++ Decoded form: `Charix!2#4%6&8(0`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a60378d4-e4e3-4d17-bd7f-385c8af1a0d9)
+
++ **Second Alternative**, try this online tool: https://base64-multiple-decode.netlify.app
+
+![image](https://github.com/h4md153v63n/Bash_Scripts/assets/5091265/27a222f4-dc74-4795-ada0-86bda6fae3b6)
 
 
 # References & Alternatives:
