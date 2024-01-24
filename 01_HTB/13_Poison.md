@@ -21,7 +21,7 @@ Port 80: Apache httpd 2.4.29
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1c32c4dc-e26f-4728-ba3e-1518b918c928)
 
-+ When entering **listfiles.php** into **Scriptname** textbox, **pwdbackup.txt** is interesting.
++ When entering **listfiles.php** into **Scriptname** textbox, **pwdbackup.txt** looks interesting.
 + `http://10.10.10.84/browse.php?file=listfiles.php`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bb8237de-e6cc-41e0-8bef-d003d7e1ae08)
@@ -43,13 +43,16 @@ Port 80: Apache httpd 2.4.29
 + There is no direct RFI as **allow_url_include** is off. Setting allow_url_include to off in your configuration means that your PHP code on your server will not be able to include remote files.
 
 ## 1.Method:
-+ Let's crack the base64 encoding of **pwdbackup.txt**
++ Let's crack the base64 encoding of **pwdbackup.txt**.
++ The encoded form has been base64 encoded 13 times.
 
 + **Firstly**, crack in bash script [here](https://github.com/h4md153v63n/Bash_Scripts/tree/main/base64-multiple-decoder).
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a60378d4-e4e3-4d17-bd7f-385c8af1a0d9)
 
-+ **Second Alternative**, try this online tool: https://base64-multiple-decode.netlify.app
++ **Secondly**, try [python script](https://github.com/h4md153v63n/Python_Security_Codes/tree/master/base64-multiple-decoder).
+
++ **Third Alternative**, try this online tool: https://base64-multiple-decode.netlify.app
 
 ![image](https://github.com/h4md153v63n/Bash_Scripts/assets/5091265/27a222f4-dc74-4795-ada0-86bda6fae3b6)
 
@@ -73,10 +76,12 @@ http://10.10.10.84/browse.php?file=/usr/local/etc/apache24/httpd.conf
 ```
 
 ## Privilege Escalation:
-+ Transfer **secret.zip** to your kali attack vm.
++ There is a **secret.zip** file on charix’s home directory.
++ Unable to unzip it on the target.
++ Transfer **secret.zip** to your kali attack vm using scp.
 + `scp -P 22 charix@10.10.10.84:/home/charix/secret.zip .` with previous password `Charix!2#4%6&8(0`
 + unzip with the same password `Charix!2#4%6&8(0`: `unzip secret.zip`
-+ There's no useful thing!
++ There's no meaningful thing!
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5ec32bc7-b10c-47d6-82ee-cab8ceaf8898)
 
@@ -107,8 +112,9 @@ http://10.10.10.84/browse.php?file=/usr/local/etc/apache24/httpd.conf
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/556d55dc-b294-4080-9030-42426a5bb802)
 
 
-
-
 # References & Alternatives:
 + https://vvmlist.github.io/#poison
++ https://medium.com/@Inching-Towards-Intelligence/htb-poison-35-100-3ac2da3ff622
++ https://0xdf.gitlab.io/2018/09/08/htb-poison.html
++ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/poison-writeup-w-o-metasploit#id-46e8
 + 
