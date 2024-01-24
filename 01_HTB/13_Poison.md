@@ -78,9 +78,34 @@ http://10.10.10.84/browse.php?file=/usr/local/etc/apache24/httpd.conf
 + unzip with the same password `Charix!2#4%6&8(0`: `unzip secret.zip`
 + There's no useful thing!
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5ec32bc7-b10c-47d6-82ee-cab8ceaf8898)
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a4245b7b-e57c-496c-bf6b-08378b235a83)
 
-+ 
++ Lists ports: `netstat -an`
++ 5801 and 5901 are VNC ports for remote desktop access.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/fb6bd861-6308-44b7-b9f7-787ccd94b1d9)
+
++ List process of vnc: `ps -auwwx | grep vnc`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/87501dde-45a3-4f89-a68a-8618111014a6)
+
++ Since VNC is a graphical user interface software, we can’t access it through our target machine. We need port forwarding.
+```
+ssh -L 7777:127.0.0.1:5901 charix@10.10.10.84
+```
+
++ Verify that the command:
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b5ce72fc-1dd7-44a7-87f6-ef23d7dc5f89)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/079d1502-7daf-45e7-90b5-4e501f3a36bd)
+
+
+
+
+
 
 
 # References & Alternatives:
