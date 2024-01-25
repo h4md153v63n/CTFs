@@ -120,6 +120,7 @@ Port 80: Apache httpd 2.4.29
 + https://vvmlist.github.io/#poison
 + https://medium.com/@Inching-Towards-Intelligence/htb-poison-35-100-3ac2da3ff622
 + https://www.hackingarticles.in/hack-the-box-poison-walkthrough/
++ https://www.absolomb.com/2018-09-08-HackTheBox-Poison/
 + https://0xdf.gitlab.io/2018/09/08/htb-poison.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/poison-writeup-w-o-metasploit#id-46e8
 + https://benheater.com/hackthebox-poison/
