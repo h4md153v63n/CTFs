@@ -42,7 +42,7 @@ Port 80: Apache httpd 2.4.29
 
 + There is no direct RFI as **allow_url_include** is off. Setting allow_url_include to off in your configuration means that your PHP code on your server will not be able to include remote files.
 
-## 1.Method:
+## Gaining Access:
 + Let's crack the base64 encoding of **pwdbackup.txt**.
 + The encoded form has been base64 encoded 13 times.
 
@@ -56,24 +56,25 @@ Port 80: Apache httpd 2.4.29
 
 ![image](https://github.com/h4md153v63n/Bash_Scripts/assets/5091265/27a222f4-dc74-4795-ada0-86bda6fae3b6)
 
-+ Get the password of decoded form as `Charix!2#4%6&8(0`
++ The final resulting string is `Charix!2#4%6&8(0`, which seems like a possible password. Or the username is `Charix` and the password is `!2#4%6&8(0`.
 + Get the users: `http://10.10.10.84/browse.php?file=/etc/passwd`
 + Discovered users: **root**, **toor** and **charix**
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/00e56373-ad34-4087-a00e-7c9efcbf5fae)
 
-+ The user should be `charix`:`Charix!2#4%6&8(0`
++ The username:password should be `charix`:`Charix!2#4%6&8(0`
 + It belongs to Charix. Login ssh into charix account using the discovered credentials.
 + `ssh charix@10.10.10.84`
 + Get the user shell and user flag.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bd4b9cf9-8dee-4b01-b130-9f79a2776d93)
 
-## 2.Method:  
-+ Find where the log files are located.
-```
-http://10.10.10.84/browse.php?file=/usr/local/etc/apache24/httpd.conf
-```
++ **Alternatively**, try log posining method. But it didn't work for me.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/cd771766-18e8-4abb-b95f-0524b99982cf)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1bc6d871-1708-4a64-9776-58a0f7f56aa6)
+
 
 ## Privilege Escalation:
 + There is a **secret.zip** file on charix’s home directory.
@@ -88,7 +89,7 @@ http://10.10.10.84/browse.php?file=/usr/local/etc/apache24/httpd.conf
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a4245b7b-e57c-496c-bf6b-08378b235a83)
 
 + Lists ports: `netstat -an`
-+ 5801 and 5901 are VNC ports for remote desktop access.
++ [5801](https://www.speedguide.net/port.php?port=5801) and [5901](https://www.speedguide.net/port.php?port=5901) are VNC ports for remote desktop access.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/fb6bd861-6308-44b7-b9f7-787ccd94b1d9)
 
@@ -111,10 +112,20 @@ http://10.10.10.84/browse.php?file=/usr/local/etc/apache24/httpd.conf
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/556d55dc-b294-4080-9030-42426a5bb802)
 
++ **Alternatively**, crack secret file using the script [1](https://github.com/jeroennijhof/vncpwd)  [2](https://github.com/trinitronx/vncpasswd.py).
++ Then login using the decrypted password: `vncviewer 127.0.0.1:7777`
+
 
 # References & Alternatives:
 + https://vvmlist.github.io/#poison
 + https://medium.com/@Inching-Towards-Intelligence/htb-poison-35-100-3ac2da3ff622
 + https://0xdf.gitlab.io/2018/09/08/htb-poison.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/poison-writeup-w-o-metasploit#id-46e8
-+ 
++ https://benheater.com/hackthebox-poison/
++ https://ethicalhacs.com/poison-hackthebox-walkthrough/
+
+
+# More:
++ **vnc pentesting:** https://book.hacktricks.xyz/network-services-pentesting/pentesting-vnc
++ https://github.com/jeroennijhof/vncpwd
++ https://github.com/trinitronx/vncpasswd.py
