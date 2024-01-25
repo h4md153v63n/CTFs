@@ -50,6 +50,8 @@ Port 6787: http
 
 + **sammy** and **sunny** users exist, and **test** user doesn't exist.
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/edfc743d-7113-4830-94f0-979bf6bbd8b6)
+
 
 ## Gaining Access:
 
