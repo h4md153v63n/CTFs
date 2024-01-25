@@ -56,7 +56,7 @@ Port 80: Apache httpd 2.4.29
 
 ![image](https://github.com/h4md153v63n/Bash_Scripts/assets/5091265/27a222f4-dc74-4795-ada0-86bda6fae3b6)
 
-+ The final resulting string is `Charix!2#4%6&8(0`, which seems like a possible password. Or the username is `Charix` and the password is `!2#4%6&8(0`.
++ The final resulting string is `Charix!2#4%6&8(0`, which seems like a possible password. The username is `Charix` and the password is `Charix!2#4%6&8(0`.
 + Get the users: `http://10.10.10.84/browse.php?file=/etc/passwd`
 + Discovered users: **root**, **toor** and **charix**
 
