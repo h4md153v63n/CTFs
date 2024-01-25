@@ -119,13 +119,20 @@ Port 80: Apache httpd 2.4.29
 # References & Alternatives:
 + https://vvmlist.github.io/#poison
 + https://medium.com/@Inching-Towards-Intelligence/htb-poison-35-100-3ac2da3ff622
++ https://www.hackingarticles.in/hack-the-box-poison-walkthrough/
 + https://0xdf.gitlab.io/2018/09/08/htb-poison.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/poison-writeup-w-o-metasploit#id-46e8
 + https://benheater.com/hackthebox-poison/
 + https://ethicalhacs.com/poison-hackthebox-walkthrough/
++ https://sanaullahamankorai.medium.com/hackthebox-poison-walkthrough-f34509cff535
++ https://manuelvazquez-contact.gitbook.io/oscp-prep/hack-the-box/poison
++ https://systemweakness.com/htb-poison-writeup-w-o-metasploit-5d3b27e25a7e
++ https://github.com/Bengman/CTF-writeups/blob/master/Hackthebox/poison.md
 
 
 # More:
 + **vnc pentesting:** https://book.hacktricks.xyz/network-services-pentesting/pentesting-vnc
-+ https://github.com/jeroennijhof/vncpwd
-+ https://github.com/trinitronx/vncpasswd.py
+  + https://github.com/jeroennijhof/vncpwd
+  + https://github.com/trinitronx/vncpasswd.py
++ https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/File%20Inclusion
+  + https://www.insomniasec.com/downloads/publications/phpinfolfi.py
