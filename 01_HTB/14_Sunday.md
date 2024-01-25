@@ -10,12 +10,13 @@ First thing first, start port scan:
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/084798c8-75d7-4cf3-b753-3ea877b8b0c9)
 
-+ The result shows that 4 TCP ports are open:
++ The result shows that 5 TCP ports are open:
 ```
 Port 79: finger?
 Port 111: rpcbind 2-4
 Port 515: printer
 Port 6787: http
+Port 22022: ssh
 ```
 
 + Start off with enumerating port 79, and it is **finger** service.
