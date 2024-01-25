@@ -72,7 +72,8 @@ hydra -L users.txt -P /usr/share/seclists/Passwords/probable-v2-top1575.txt 10.1
 
 
 ## Privilege Escalation:
-
++ We need to escalate our privileges to Sammy.
+  
 
 # References & Alternatives:
 + https://vvmlist.github.io/#poison
