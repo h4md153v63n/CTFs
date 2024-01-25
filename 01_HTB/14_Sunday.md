@@ -8,7 +8,7 @@ First thing first, start port scan:
 + `ports=$(cat ports | awk -F " " '{print $4}' | awk -F "/" '{print $1}' | sort -n | tr '\n' ',' | sed 's/,$//')`
 + `sudo nmap -Pn -sV -sC -p$ports 10.10.10.84`
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/dc6230c3-bc5c-468e-821e-514f8e0828fd)
+
 
 + The result shows that 2 TCP ports are open:
 ```
