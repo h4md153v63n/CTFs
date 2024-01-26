@@ -1,4 +1,5 @@
 # Sense
+
 **Machine ip:** 10.10.10.60
 
 ## Enumeration
