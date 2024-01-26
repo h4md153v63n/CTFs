@@ -164,11 +164,16 @@ const backup_key  = '45fac180e9eee72f4fd2d9386ea7033e52b7c740afc3d98a8d023016710
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3ad6fec3-13ff-4dbd-bd8d-29f5c298cbd3)
 
+
+## Gainin Access
+
 + Login ssh with the discovered credentials `mark`:`5AYRft73VtFpc84k`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/58a4685a-5d78-402a-9748-0dc47e611ecd)
 
 + Mark doesn't have read permission to read user.txt.
+
+## Privilege Escalation: from 'mark' to 'tom'
 
 + Escalate the privileges to Tom's privilege.
 + Check processes: `ps aux | grep -i tom`
@@ -220,7 +225,7 @@ export SHELL=bash
 stty rows 55 columns 285
 ```
 
-## Privilege Escalation
+## Privilege Escalation: from 'tom' to 'root'
 
 ### 1.Method:
 + Check kernel version: `uname -a`
