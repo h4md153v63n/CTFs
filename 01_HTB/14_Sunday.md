@@ -120,6 +120,10 @@ sunny:$5$iRMbpnBv$Zh7s6D7ColnogCdiVE5Flz9vCZOMkUFxklRhhaShxv3:17636::::::
 
 + Cracked `sammy`:`cooldude!`
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/dd51bb99-c289-4229-b878-3db5082ddba4)
+
+
+
 # References & Alternatives:
 + https://vvmlist.github.io/#poison
 + 
