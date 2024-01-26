@@ -109,7 +109,7 @@ hydra -l admin -P /usr/share/seclists/Passwords/twitter-banned.txt nineveh.htb h
 
 + `admin` username and `password123` password discovered on **https://nineveh.htb/db/**
 
-## Exploitation
+## Gaining Access
 + Navigate to `http://nineveh.htb/department/login.php`
 + Loging with credentials `admin`:`1q2w3e4r5t`
 + Navigate to `http://nineveh.htb/department/manage.php?notes=files/ninevehNotes.txt`
