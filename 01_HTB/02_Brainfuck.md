@@ -501,7 +501,7 @@ Orestis - Hacking for fun and profit -> Qbqquzs - Pnhekxs dpi fca fhf zdmgzt
 + Crack the `mnvze://zsrivszwm.rfz/8cr5ai10r915218697i1w658enqc0cs8/ozrxnkc/ub_sja`. It looks like a url.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/38fe4034-b7a5-4363-a5b0-ae2ce8317df4)
 
-+ Alternatively using [Vigenere-Cipher-Key-Finder](https://github.com/4st1nus/Vigenere-Cipher-Key-Finder):
++ **Alternatively**, using [Vigenere-Cipher-Key-Finder](https://github.com/4st1nus/Vigenere-Cipher-Key-Finder):
 ```
 ┌──(kali㉿kali)-[~/Desktop/Tools/Cipher/Vigenere-Cipher-Key-Finder]
 └─$ python2 decipher.py
@@ -516,7 +516,7 @@ ckmybrainfuckmybrainfuckmybra
 ```                                     
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2d1734ba-a453-4b3f-b34b-c8547ca1dc6e)
 
-+ Alternatively, you can use [CyberChef](https://gchq.github.io/CyberChef/): [find the key](https://gchq.github.io/CyberChef/#recipe=Vigen%C3%A8re_Decode('OrestisHackingforfunandprofit')&input=UGllYWdubSAtIEprb2lqZWcgbmJ3IHp3eCBtbGUgZ3J3c25u) and [decode ssh url](https://gchq.github.io/CyberChef/#recipe=Vigen%C3%A8re_Decode('fuckmybrain')&input=bW52emU6Ly96c3JpdnN6d20ucmZ6LzhjcjVhaTEwcjkxNTIxODY5N2kxdzY1OGVucWMwY3M4L296cnhua2MvdWJfc2ph). In same the way [boxentriq](https://www.boxentriq.com/code-breaking/vigenere-cipher).
++ **Alternatively**, you can use [CyberChef](https://gchq.github.io/CyberChef/): [find the key](https://gchq.github.io/CyberChef/#recipe=Vigen%C3%A8re_Decode('OrestisHackingforfunandprofit')&input=UGllYWdubSAtIEprb2lqZWcgbmJ3IHp3eCBtbGUgZ3J3c25u) and [decode ssh url](https://gchq.github.io/CyberChef/#recipe=Vigen%C3%A8re_Decode('fuckmybrain')&input=bW52emU6Ly96c3JpdnN6d20ucmZ6LzhjcjVhaTEwcjkxNTIxODY5N2kxdzY1OGVucWMwY3M4L296cnhua2MvdWJfc2ph). In same the way [boxentriq](https://www.boxentriq.com/code-breaking/vigenere-cipher).
 
 + Get the `id_rsa_key`: `curl https://brainfuck.htb/8ba5aa10e915218697d1c658cdee0bb8/orestis/id_rsa -ks -o id_rsa`
 + Change the permissions on id_rsa: `chmod 600 id_rsa`
