@@ -100,6 +100,10 @@ sunny:$5$iRMbpnBv$Zh7s6D7ColnogCdiVE5Flz9vCZOMkUFxklRhhaShxv3:17636::::::
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/321c70bc-5af0-4fd6-92c4-5b02ae02a4a4)
 
++ `john hash.txt --show`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/66bdf411-8ca1-4b95-859e-3dac32645544)
+
 + **Using hashcat:**
 + Now, copy **sammy**'s password hash, and save in the **hash** file.
 + Specify the hash type from checking [hashcat.net](https://hashcat.net/wiki/doku.php?id=example_hashes).
@@ -110,8 +114,11 @@ sunny:$5$iRMbpnBv$Zh7s6D7ColnogCdiVE5Flz9vCZOMkUFxklRhhaShxv3:17636::::::
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b004bd76-5a97-48ee-96b0-52036b0aeec1)
 
++ `hashcat hash --show`
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/82fae4ab-8672-403b-8bbb-6dacc755fe04)
 
++ Cracked `sammy`:`cooldude!`
 
 # References & Alternatives:
 + https://vvmlist.github.io/#poison
