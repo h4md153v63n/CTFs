@@ -121,6 +121,9 @@ python2 32745.py 10.10.10.79 | grep -v 00 | grep -v "00 00 00" | grep -v "11 11 
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7fe3609b-9537-4bb9-be08-aa29b64eefff)
 
+
+## Gainin Access
+
 + Use the decoded value `heartbleedbelievethehype` on ssh login.
 + Try to login ssh again: `ssh -i id_rsa hype@10.10.10.79`
 + If you face a problem **sign_and_send_pubkey: no mutual signature supported**, check [the link](https://hazercloud.com/blog/sign_and_send_pubkey-no-mutual-signature-supported/).
@@ -128,9 +131,10 @@ python2 32745.py 10.10.10.79 | grep -v 00 | grep -v "00 00 00" | grep -v "11 11 
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ab0a4080-0c44-44b8-8073-e4f321d78fc9)
 
+
 ## Privilege Escalation
 
-### 1.Method:
+### Method 1:
 + Transfer [linpeas.sh](https://linpeas.sh/), and run.
 + Check kernel version: `uname -a`
 
@@ -155,7 +159,7 @@ gcc -pthread 40839.c -o exploit -lcrypt
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9c9a866b-e555-4cb2-b6b6-d95a75651378)
 
-### 2.Method:
+### Method 2:
 + Transfer linpeas.sh, and run.
 + Linpeas found a tmux session that can be used to escalate privilege.
 
