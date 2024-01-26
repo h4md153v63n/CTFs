@@ -106,7 +106,7 @@ sunny:$5$iRMbpnBv$Zh7s6D7ColnogCdiVE5Flz9vCZOMkUFxklRhhaShxv3:17636::::::
 + We already know sunny's password therefore we're not going to crack it.
 + Use john or hashcat to crack the hash.
 
-+ **Using john:**
+**Using john:**
 + Now, copy **sammy**'s password hash, and save it in the file **hash.txt**. 
 + `john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt`
 
@@ -117,7 +117,7 @@ sunny:$5$iRMbpnBv$Zh7s6D7ColnogCdiVE5Flz9vCZOMkUFxklRhhaShxv3:17636::::::
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/66bdf411-8ca1-4b95-859e-3dac32645544)
 
 
-+ **Using hashcat:**
+**Using hashcat:**
 + Now, copy **sammy**'s password hash, and save in the **hash** file.
 + Determine which type of hash algorithm: `hashid hash`
 + `hashcat -h | grep SHA256`
