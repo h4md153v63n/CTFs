@@ -1,4 +1,5 @@
 # Node
+
 **Machine ip:** 10.10.10.58
 
 ## Enumeration
@@ -227,7 +228,7 @@ stty rows 55 columns 285
 
 ## Privilege Escalation: from 'tom' to 'root'
 
-### 1.Method:
+### Method 1
 + Check kernel version: `uname -a`
 + `searchsploit 4.4.0-`
 + `searchsploit -m 44298`
@@ -242,7 +243,7 @@ stty rows 55 columns 285
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c475b937-09b3-430a-8c42-65c1c8a6e518)
 
-### 2.Method:
+### Method 2
 + Look for SUID: `find / -group admin -ls 2>/dev/null`
 + SUID bit is set for the file, it will execute with the level of privilege that matches the user who owns the file.
 + **/usr/local/bin/backup** file is owned by root, and Tom is in 1002(admin) group. If we run it with tom, it still going to be running as root!
@@ -303,7 +304,7 @@ cat root.txt
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/58658eaa-f0bc-43f9-94c6-7da273786cfa)
 
 
-# References & Alternatives:
+# References & Alternatives
 + https://0xdf.gitlab.io/2021/06/08/htb-node.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/node-writeup-w-o-metasploit
 + https://benheater.com/hackthebox-node/
