@@ -74,7 +74,7 @@ password: company defaults
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/35e0d755-020d-4e1f-92e6-e8405893a3c0)
 
 
-# References & Alternatives:
+# References & Alternatives
 + https://vvmlist.github.io/#sense
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/sense-writeup-w-o-metasploit
 + https://0xdf.gitlab.io/2021/03/11/htb-sense.html
