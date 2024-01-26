@@ -1,4 +1,5 @@
 # Lame
+
 **Machine ip:** 10.10.10.3
 
 ## Enumeration
@@ -66,7 +67,7 @@ Nmap done: 1 IP address (1 host up) scanned in 55.07 seconds
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1d356312-dcb1-4989-b3b3-e10cab5fc63a)
 
 ## Findings
-### port 21 - ftp:
+### port 21 - ftp
 + Anonymous ftp login: `ftp 10.10.10.3`
 ```
 └─$ ftp 10.10.10.3
@@ -95,7 +96,7 @@ There is nothing interesting!
 <br>
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a2882d78-2172-4430-87ec-a1d1e58c2c0d)
 
-### port 445 - smb:
+### port 445 - smb
 Check null sessions.
 + `smbmap -H 10.10.10.3`
 ```
@@ -315,7 +316,7 @@ root@lame:/#
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a4f76804-26f4-4da9-b912-64d84dd541fb)
 
-# References & Alternatives:
+# References & Alternatives
 + https://vvmlist.github.io/#lame
 + https://0xdf.gitlab.io/2020/04/07/htb-lame.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/lame-writeup-w-o-metasploit
