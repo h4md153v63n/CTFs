@@ -524,6 +524,7 @@ ckmybrainfuckmybrainfuckmybra
 + And then crack it with john: `john id_rsa.hash --wordlist=/usr/share/wordlists/rockyou.txt`
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/196769e8-4de0-4ec1-8a18-488642546b30)
 
+## Gaining Access
 + Show password: `john --show id_rsa.hash` and login ssh: `ssh -i id_rsa orestis@brainfuck.htb`
 + Cat the user.txt.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a195cc6d-e538-4a25-9b12-443606396d97)
@@ -552,7 +553,7 @@ Then run these commands:
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/51b549db-190c-4407-8854-02e2527e7cca)
 
 
-# References & Alternatives:
+# References & Alternatives
 + https://0xdf.gitlab.io/2022/05/16/htb-brainfuck.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/brainfuck-writeup-w-o-metasploit
 + https://benheater.com/hackthebox-brainfuck/
