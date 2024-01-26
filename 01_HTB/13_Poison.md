@@ -42,7 +42,7 @@ Port 80: Apache httpd 2.4.29
 
 + There is no direct RFI as **allow_url_include** is off. Setting allow_url_include to off in your configuration means that your PHP code on your server will not be able to include remote files.
 
-## Gaining Access:
+## Gaining Access
 + Let's crack the base64 encoding of **pwdbackup.txt**.
 + The encoded form has been base64 encoded 13 times.
 
@@ -76,7 +76,7 @@ Port 80: Apache httpd 2.4.29
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1bc6d871-1708-4a64-9776-58a0f7f56aa6)
 
 
-## Privilege Escalation:
+## Privilege Escalation
 + There is a **secret.zip** file on charix’s home directory.
 + Unable to unzip it on the target.
 + Transfer **secret.zip** to your kali attack vm using scp.
@@ -116,7 +116,7 @@ Port 80: Apache httpd 2.4.29
 + Then login using the decrypted password: `vncviewer 127.0.0.1:7777`
 
 
-# References & Alternatives:
+# References & Alternatives
 + https://vvmlist.github.io/#poison
 + https://medium.com/@Inching-Towards-Intelligence/htb-poison-35-100-3ac2da3ff622
 + https://www.hackingarticles.in/hack-the-box-poison-walkthrough/
@@ -130,8 +130,7 @@ Port 80: Apache httpd 2.4.29
 + https://systemweakness.com/htb-poison-writeup-w-o-metasploit-5d3b27e25a7e
 + https://github.com/Bengman/CTF-writeups/blob/master/Hackthebox/poison.md
 
-
-# More:
+# More
 + **vnc pentesting:** https://book.hacktricks.xyz/network-services-pentesting/pentesting-vnc
   + https://github.com/jeroennijhof/vncpwd
   + https://github.com/trinitronx/vncpasswd.py
