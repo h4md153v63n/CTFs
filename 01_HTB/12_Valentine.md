@@ -134,7 +134,7 @@ python2 32745.py 10.10.10.79 | grep -v 00 | grep -v "00 00 00" | grep -v "11 11 
 
 ## Privilege Escalation
 
-### Method 1:
+### Method 1
 + Transfer [linpeas.sh](https://linpeas.sh/), and run.
 + Check kernel version: `uname -a`
 
@@ -159,7 +159,7 @@ gcc -pthread 40839.c -o exploit -lcrypt
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9c9a866b-e555-4cb2-b6b6-d95a75651378)
 
-### Method 2:
+### Method 2
 + Transfer linpeas.sh, and run.
 + Linpeas found a tmux session that can be used to escalate privilege.
 
@@ -171,7 +171,7 @@ gcc -pthread 40839.c -o exploit -lcrypt
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1a64fd13-4e8a-4a5c-9e60-070aca2760ec)
 
 
-# References & Alternatives:
+# References & Alternatives
 + https://vvmlist.github.io/#valentine
 + https://0xdf.gitlab.io/2018/07/28/htb-valentine.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/valentine-writeup-w-o-metasploit
