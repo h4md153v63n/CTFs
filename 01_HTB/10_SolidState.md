@@ -43,9 +43,9 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt -
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c43603ab-f981-4e94-8d30-edf92e1effb1)
 
-## Exploitation
+## Gaining Access
 
-### 1.Method:
+### Method 1:
 + Connect to port 4555 with `root`-`root` using nc: `nc 10.10.10.51 4555`
 + When you first start the TCP connection with the server, it takes a moment before you're prompted to login. Be patient!
 + List commands: `HELP`
@@ -148,7 +148,7 @@ pass: P@55W0rd1!2@
 - [Multiple Methods to Bypass Restricted Shell](https://www.hackingarticles.in/multiple-methods-to-bypass-restricted-shell/)
 - https://book.hacktricks.xyz/linux-hardening/privilege-escalation/escaping-from-limited-bash#get-bash-from-ssh
 
-### 2.Method:
+### Method 2:
 + Log back to james remote admin server: `nc 10.10.10.51 4555`
 + Create a user with the username `../../../../../../../../etc/bash_completion.d` and password `123`.
 + This creates a file in **/etc/bash_completion.d** that contains the reverse shell. So that next time any user logs in, get a shell as that user.
@@ -180,7 +180,7 @@ FROM: test
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1ab9e6be-224e-4740-ae13-3695b6317f04)
 
-### 3.Method:
+### Method 3:
 + [Apache James Server 2.3.2 - Remote Command Execution (RCE) (Authenticated) (2)](https://www.exploit-db.com/exploits/50347)
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8441d1ab-28a1-4abe-b16b-71a17f49b74a)
