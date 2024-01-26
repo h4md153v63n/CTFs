@@ -101,7 +101,7 @@ sunny:$5$iRMbpnBv$Zh7s6D7ColnogCdiVE5Flz9vCZOMkUFxklRhhaShxv3:17636::::::
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/321c70bc-5af0-4fd6-92c4-5b02ae02a4a4)
 
 + **Using hashcat:**
-+ Now, copy all line of sammy's password hash after sammy, and save in the **hash** file.
++ Now, copy **sammy**'s password hash, and save in the **hash** file.
 + Specify the hash type from checking [hashcat.net](https://hashcat.net/wiki/doku.php?id=example_hashes).
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f0658f0b-36d3-4081-9d7a-4c93ece481f0)
