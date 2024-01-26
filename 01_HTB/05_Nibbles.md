@@ -222,7 +222,7 @@ by Ben "epi" Risher 🤓                 ver: 2.10.1
 + Default tries like admin:admin, admin:pass and nibbles:nibbles don't work. Instead, `admin`:`nibbles` works.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4033177a-6eca-4f2c-917e-9ff4003418a3)
 
-## Exploitation:
+## Gaining Access
 + `searchsploit nibble 4.0.3`
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5d5e4952-3dc6-44ea-aa6e-d2e2a30269ac)
 
