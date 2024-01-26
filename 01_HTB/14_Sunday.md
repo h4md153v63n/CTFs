@@ -179,6 +179,9 @@ sudo wget --use-askpass=$TF 0
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/afd94b35-eb23-48b4-b1ef-2960847d9e3a)
 
 + Pass to **sammy**'s session, and view the list of allowed commands the user can run as root.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3e31b1c4-2cde-49dc-994f-b66278ab6f04)
+
 + **Terminal [1]:** Create a **rev_shell.py** file on your kali attack vm, and serve it with SimpleHTTPServer.
 ```
 #!/usr/bin/env python
