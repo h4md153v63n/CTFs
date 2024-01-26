@@ -83,7 +83,7 @@ hydra -L users.txt -P /usr/share/seclists/Passwords/probable-v2-top1575.txt 10.1
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/75521922-5eea-4e98-8c9a-b44f26b5bd71)
 
 
-## Privilege Escalation: from sunny to sammy
+## Privilege Escalation: from 'sunny' to 'sammy'
 + We need to escalate our privileges to Sammy.
 + Check **shadow.backup** in **/backup** directory.
 + It's a backup of the shadow file, and that is world readable.
@@ -145,7 +145,7 @@ sunny:$5$iRMbpnBv$Zh7s6D7ColnogCdiVE5Flz9vCZOMkUFxklRhhaShxv3:17636::::::
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ae58cbf1-749c-4d00-b846-98da777ca45c)
 
-## Privilege Escalation: from sammy to root
+## Privilege Escalation: from 'sammy' to 'root'
 
 ### Method 1:
 + Run `sudo -ll` command to view the list of allowed commands the user can run as root.
