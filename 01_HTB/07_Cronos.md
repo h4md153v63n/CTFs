@@ -70,6 +70,8 @@ gobuster dns -d cronos.htb -w /usr/share/wordlists/seclists/Discovery/DNS/nameli
 
 + Use `;` to inject command, and that works.
 
+### Gainin Access
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5933aa22-258b-4e2a-a2ec-dd75145e7892)
 
 + Start a netcat listener: `nc -lnvp 4444`
@@ -77,6 +79,9 @@ gobuster dns -d cronos.htb -w /usr/share/wordlists/seclists/Discovery/DNS/nameli
 + Get shell.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/765ae797-f4f3-4efc-8602-2587e6aeba6a)
+
+
+### Privilege Escalation
 
 + Check cronjobs: `cat /etc/crontab` on the target.
 
