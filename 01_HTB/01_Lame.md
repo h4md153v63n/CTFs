@@ -154,6 +154,8 @@ There is nothing interesting!
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/dbaf9db6-b70c-4052-b950-4b2f8f81b28b)
 
 
+## Privilege Escalation
+
 ### samba 3.0.20
 + `searchsploit samba 3.0.20`
 ```
