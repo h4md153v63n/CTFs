@@ -247,7 +247,7 @@ stty raw -echo; fg
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/74939561-8d9a-4e2a-9f24-8b5661abd10a)
 
-## Privilege Escalation:
+## Privilege Escalation
 + `sudo -ll`
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0dcbc002-98b1-46f4-8363-778c5a22622b)
 
@@ -261,7 +261,7 @@ bash
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2b882521-2b36-4314-9a10-ca2394f638ac)
 
 
-# References & Alternatives:
+# References & Alternatives
 + https://vvmlist.github.io/#nibbles
 + https://0xdf.gitlab.io/2018/06/30/htb-nibbles.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/nibbles-writeup-w-o-metasploit
