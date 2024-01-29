@@ -219,7 +219,7 @@ stty rows 55 columns 285
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/70b504a7-b501-4227-a809-3ec1a9f4535a)
 
-+ User **www-data** can run **sudo** with **no** password and with **onuma's privileges** for **/bin/tar** 
++ User **www-data** can run **sudo** with **no** password and with **onuma's privileges** for **/bin/tar**.
 + Check gtfobins for [tar](https://gtfobins.github.io/gtfobins/tar/), and [sudo](https://gtfobins.github.io/gtfobins/tar/#sudo)
 + Run the command to get a shell with onuma's privileges:
 ```
@@ -230,6 +230,9 @@ sudo -u onuma tar -cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exe
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/18610516-2939-4b21-b7eb-31b9bd6d80bd)
 
+
+## Privilege Escalation: from 'onuma' to 'root'
++ 
 
 
 # References & Alternatives
