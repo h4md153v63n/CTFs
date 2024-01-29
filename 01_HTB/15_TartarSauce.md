@@ -8,18 +8,19 @@ First thing first, start port scan:
 + `ports=$(cat ports | awk -F " " '{print $4}' | awk -F "/" '{print $1}' | sort -n | tr '\n' ',' | sed 's/,$//')`
 + `sudo nmap -Pn -sV -sC -p$ports 10.10.10.88`
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/e468c3a4-979b-4729-8cd7-db225339bf95)
 
-
-+ The result shows that 5 TCP ports are open:
++ The result shows that only 1 TCP port is open:
 ```
-Port 79: finger?
-Port 111: rpcbind 2-4
-Port 515: printer
-Port 6787: http
-Port 22022: OpenSSH 8.4
+Port 80: Apache httpd 2.4.18
 ```
 
-+ Start off with enumerating port 79, and it is **finger** service.
++ As usual, always start off with enumerating web server first.
++ Visit the web application.
++ Navigate to `http://10.10.10.88/`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1a3fed0d-ed3c-4538-ab8f-86b7cdd88fa8)
+
 
 
 
