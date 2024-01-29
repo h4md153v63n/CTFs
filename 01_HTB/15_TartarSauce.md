@@ -32,6 +32,9 @@ Port 80: Apache httpd 2.4.18
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/398c8557-d481-432f-8698-eb87791097ae)
 
 + Check whether it has any exploits.
++ `searchsploit monstra 3.0.4`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/45ee5d57-f857-4376-a13b-28698b5f264a)
 
 
 
