@@ -158,11 +158,21 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0b6a4373-c567-43c9-ba70-54a862f0de0e)
 
-+ Run wpscan to enumerate plugins, themes, and users: `wpscan --url http://10.10.10.88/webservices/wp/ -e p,t,u`
++ Run wpscan adding **--plugins-detection aggressive** to enumerate plugins, themes, and users: `wpscan --url http://10.10.10.88/webservices/wp/ -e u,ap --plugins-detection aggressive`
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5967d7d3-7050-4bef-b957-15648818260a)
 
++ Check **gwolle** plugin whether it is vulnerable: `searchsploit gwolle`
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a09586d5-f4a6-4338-83bc-7be62342d4da)
 
++ It is vulnerable to a remote file inclusion (RFI), and transfer it into your kali attack vm: `searchsploit -m 38861`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/62b7937a-5b63-4033-9776-711f35bacc24)
+
++ Check the vulnerability.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ab590840-a92a-4baf-8fac-ec2c3e5dc227)
 
 ## Gaining Access
 + xxx
