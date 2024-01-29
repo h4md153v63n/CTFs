@@ -33,10 +33,12 @@ Port 80: Apache httpd 2.4.18
 
 + Check whether it has any exploits.
 + `searchsploit monstra 3.0.4`
++ It's vulnerable to an authenticated RCE exploit. But firstly, it's a must to find credentials.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/45ee5d57-f857-4376-a13b-28698b5f264a)
 
-
++ Navigate to `http://10.10.10.88/webservices/monstra-3.0.4/admin/`
++ As always, try default values `admin`:`admin`
 
 
 
