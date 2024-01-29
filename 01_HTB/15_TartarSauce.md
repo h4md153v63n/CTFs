@@ -21,11 +21,18 @@ Port 80: Apache httpd 2.4.18
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1a3fed0d-ed3c-4538-ab8f-86b7cdd88fa8)
 
-+ There's nothing interesting on the home page. Check the robots.txt file.
++ There's nothing interesting on the home page. Check the **robots.txt** file.
 + **robots.txt** gives a list of URLs that web robots are instructed not to visit.
 + Navigate to `http://10.10.10.88/robots.txt`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1422866c-9dd2-4e85-a981-5bff15e6bf6c)
+
++ Discovered a **Monstra Content Management System (CMS)**, and the version number is **3.0.4**.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/398c8557-d481-432f-8698-eb87791097ae)
+
++ Check whether it has any exploits.
+
 
 
 
