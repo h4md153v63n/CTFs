@@ -39,6 +39,11 @@ Port 80: Apache httpd 2.4.18
 
 + Navigate to `http://10.10.10.88/webservices/monstra-3.0.4/admin/`
 + As always, try default values `admin`:`admin`
++ OK, we successfully logged on with `admin`:`admin`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0ca184f3-7767-4244-8475-72d37a2ce9d5)
+
++ Now, transfer the exploit: `searchsploit -m 43348`
 
 
 
