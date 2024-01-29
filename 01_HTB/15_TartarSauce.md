@@ -232,7 +232,10 @@ sudo -u onuma tar -cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exe
 
 
 ## Privilege Escalation: from 'onuma' to 'root'
-+ 
++ Transfer [pspy32](https://github.com/DominicBreuker/pspy/releases) to the target.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2b023d1f-6172-4a79-b4ae-586a6e56fde8)
+
 
 
 # References & Alternatives
