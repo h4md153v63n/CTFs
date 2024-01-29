@@ -146,6 +146,23 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d5fb65f7-640b-4e1e-a939-2e9f1c1c6cc5)
 
++ Navigate to `http://10.10.10.88/webservices/wp/`, and it's a wordpress application.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ed217df8-091e-41ea-baff-b67d0dcf8206)
+
++ View page source, and see tartarsauce.htb links. 
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/cbcfbf29-64f8-476f-8d65-deaa7c0e03b0)
+
++ Add **tartarsauce.htb** into /etc/hosts file, and check one more time again. There's nothing interesting here.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0b6a4373-c567-43c9-ba70-54a862f0de0e)
+
++ Run wpscan to enumerate plugins, themes, and users: `wpscan --url http://10.10.10.88/webservices/wp/ -e p,t,u`
+
+
+
+
 
 ## Gaining Access
 + xxx
