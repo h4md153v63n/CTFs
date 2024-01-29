@@ -158,7 +158,10 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0b6a4373-c567-43c9-ba70-54a862f0de0e)
 
-+ Run wpscan adding **--plugins-detection aggressive** to enumerate plugins, themes, and users: `wpscan --url http://10.10.10.88/webservices/wp/ -e u,ap --plugins-detection aggressive`
++ Run wpscan adding **--plugins-detection aggressive** to enumerate plugins, themes, and users:
+```
+wpscan --url http://10.10.10.88/webservices/wp/ -e u,ap --plugins-detection aggressive
+```
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5967d7d3-7050-4bef-b957-15648818260a)
 
