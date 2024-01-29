@@ -236,6 +236,12 @@ sudo -u onuma tar -cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exe
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2b023d1f-6172-4a79-b4ae-586a6e56fde8)
 
++ And run: `./pspy32`
++ It shows a script **/usr/sbin/backuperer** that runs as root every 5 minutes.
+
+
+
+
 
 
 # References & Alternatives
