@@ -142,6 +142,9 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
 gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://10.10.10.88/webservices -k -n -x html,php,txt -r -t 50
 ```
 
++ **wp** directory discovered under webservices.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d5fb65f7-640b-4e1e-a939-2e9f1c1c6cc5)
 
 
 ## Gaining Access
