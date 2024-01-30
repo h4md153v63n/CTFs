@@ -276,9 +276,11 @@ int main()
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/978f3a19-e39f-4815-bc2b-5677fbea21e7)
 
-+ Try compile one more time again, and transfer it into **/home/onuma/var/www/html** on the target.
++ Try compile one more time again, and `chmod u+s setuid`.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c42190b6-ca36-424f-bd71-e58bfa37ebdc)
+
++ Transfer it into **/home/onuma/var/www/html** on the target.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/71ba51ab-d3a0-4d70-8d18-65cbf7d5512d)
 
