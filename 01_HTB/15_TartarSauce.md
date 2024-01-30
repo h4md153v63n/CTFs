@@ -389,5 +389,3 @@ until [[ $(find /var/tmp/ -maxdepth 1 -type f -name '.*') ]] ; do sleep 3 ; done
 + https://benheater.com/hackthebox-tartarsauce/
 + https://0xdf.gitlab.io/2018/10/20/htb-tartarsauce.html
 + xxx
-
-  
