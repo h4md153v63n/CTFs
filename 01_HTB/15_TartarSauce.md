@@ -322,7 +322,7 @@ fi
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a126b40f-eceb-4243-a387-ba4e6a6440ef)
 
-+ **4.** Here where the real work start, with zipping using tar command the $basedir (i.e./var/www/html) to the file $tmpfile which is a tar zipped file with sha1sum naming and starts with **.**, here is how it looks like: `.h93f032e69e2e221528b5c1c2ea7fa946a806743`
++ **4.** Here where the real work start, with zipping using tar command the $basedir (i.e./var/www/html) to the file $tmpfile which is a tar zipped file with sha1sum naming and starts with **.**, here is how it looks like: `.e84f032e69e2e221528b5c1c2ea7fa946a905584`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/fecc28bd-1792-459a-bae2-057b02fc4271)
 
