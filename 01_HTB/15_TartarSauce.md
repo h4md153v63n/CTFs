@@ -386,6 +386,6 @@ until [[ $(find /var/tmp/ -maxdepth 1 -type f -name '.*') ]] ; do sleep 3 ; done
 
 # References & Alternatives
 + https://vvmlist.github.io/#TartarSauce
-+ https://benheater.com/hackthebox-tartarsauce/
++ https://benheater.com/hackthebox-tartarsauce/#evaluating-the-backup-script
 + https://0xdf.gitlab.io/2018/10/20/htb-tartarsauce.html
-+ xxx
++ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/tartarsauce-writeup-w-o-metasploit
