@@ -324,7 +324,29 @@ fi
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/fecc28bd-1792-459a-bae2-057b02fc4271)
 
-+ **5.** 
++ **5.** After creating the zip, it sleeps for 30 seconds, this is for if they have big files to zip.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1c6fbce7-b632-447f-b54a-ca027e9ecfdf)
+
++ **6.** Here we have integrity_chk() function which is not called yet, it compares $basedir to the $check$basedir to see if there is any differences, if there is a difference that means there is an attack (as they are thinking).
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d18dedb7-f023-4fc0-b78e-8412c2fee4bf)
+
++ **7.** Now the script creating check directory and decompress the tar zip file into it (i.e. /var/tmp/check).
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c69d4dc4-8dd3-4d2f-9e6c-3bc99e499106)
+
++ **8.** Now the function from step (6) is called, and it’s used to find any differences as we discussed.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bbba8b0b-6fb8-4100-af94-845a90d9ffb1)
+
++ **9.** If there is any differences, the decompressed files inside $check will be kept there, so the developers team can check it later and see what happened, but they only have 5 minutes to check because the script will run again and delete $check directory.
+ 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5878fa90-f7e4-4d0f-802f-d8a5647faa31)
+
++ If there is nothing reported, the zip will be added to $bkpdir/onuma-www-dev.bak and $check directory will be removed.
+
+
 
 
 # References & Alternatives
