@@ -241,11 +241,72 @@ sudo -u onuma tar -cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exe
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b0642ba4-bd97-4c02-b0ff-5a4176d6fe41)
 
-+ Check **backuperer.timer** files.
++ Check **backuperer.timer** files, and see it runs every 5 minutes.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/60a9fe10-19fc-4a52-b8e5-4f121de388a5)
 
-+ In **backuperer** binary file, when the backup is being created, the script sleeps 30 seconds before it executes the rest of the commands. Use 30 seconds to replace the backup tar file that the script created with our own malicious file. After 30 seconds, it will create a directory called "check" and decompress our malicious backup tar file there. Then it will go through the integrity check and fail, thereby giving us 5 minutes before the next scheduled task is run, to escalate privileges. Once the 5 minutes are up, the backuperer program is run again and our files get deleted.
++ Examine the script what is doing.
+```bash
+#!/bin/bash
+
+#-------------------------------------------------------------------------------------
+# backuperer ver 1.0.2 - by ȜӎŗgͷͼȜ
+# ONUMA Dev auto backup program
+# This tool will keep our webapp backed up incase another skiddie defaces us again.
+# We will be able to quickly restore from a backup in seconds ;P
+#-------------------------------------------------------------------------------------
+
+# Set Vars Here
+basedir=/var/www/html
+bkpdir=/var/backups
+tmpdir=/var/tmp
+testmsg=$bkpdir/onuma_backup_test.txt
+errormsg=$bkpdir/onuma_backup_error.txt
+tmpfile=$tmpdir/.$(/usr/bin/head -c100 /dev/urandom |sha1sum|cut -d' ' -f1)
+check=$tmpdir/check
+
+# formatting
+printbdr()
+{
+    for n in $(seq 72);
+    do /usr/bin/printf $"-";
+    done
+}
+bdr=$(printbdr)
+
+# Added a test file to let us see when the last backup was run
+/usr/bin/printf $"$bdr\nAuto backup backuperer backup last ran at : $(/bin/date)\n$bdr\n" > $testmsg
+
+# Cleanup from last time.
+/bin/rm -rf $tmpdir/.* $check
+
+# Backup onuma website dev files.
+/usr/bin/sudo -u onuma /bin/tar -zcvf $tmpfile $basedir &
+
+# Added delay to wait for backup to complete if large files get added.
+/bin/sleep 30
+
+# Test the backup integrity
+integrity_chk()
+{
+    /usr/bin/diff -r $basedir $check$basedir
+}
+
+/bin/mkdir $check
+/bin/tar -zxvf $tmpfile -C $check
+if [[ $(integrity_chk) ]]
+then
+    # Report errors so the dev can investigate the issue.
+    /usr/bin/printf $"$bdr\nIntegrity Check Error in backup last ran :  $(/bin/date)\n$bdr\n$tmpfile\n" >> $errormsg
+    integrity_chk >> $errormsg
+    exit 2
+else
+    # Clean up and save archive to the bkpdir.
+    /bin/mv $tmpfile $bkpdir/onuma-www-dev.bak
+    /bin/rm -rf $check .*
+    exit 0
+fi
+```
 
 
 
