@@ -282,7 +282,9 @@ int main()
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/71ba51ab-d3a0-4d70-8d18-65cbf7d5512d)
 
-+ 
++ Compress the **var** directory, and save it to the file called **exploit**: `tar -zcvf exploit var`
++ copy to our target machine in /var/tmp
+
 
 
 # References & Alternatives
