@@ -340,7 +340,7 @@ fi
 
 + **8.** Now the function from step (6) is called, and it’s used to find any differences as we discussed.
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bbba8b0b-6fb8-4100-af94-845a90d9ffb1)
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/80d8866b-a2fa-4d09-ba4e-31bed31ac739)
 
 + **9.** If there is any differences, the decompressed files inside $check will be kept there, so the developers team can check it later and see what happened, but they only have 5 minutes to check because the script will run again and delete $check directory.
  
