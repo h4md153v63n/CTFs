@@ -308,7 +308,23 @@ else
 fi
 ```
 
++ **1.** Putting directories into variables.
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/439e13f0-5369-46df-8611-12c53fe84cef)
+
++ **2.** Creating a file using the $tmpdir variable path (i.e. /var/tmp) + sha1sum hash, also declaring check variable to contain $tmpdir path, inside that path there will be new directory called **check**.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/55add5f6-156e-42f5-8966-3becd94bee79)
+
++ **3.** Before staring, it cleans the $tmpdir from any files start with ‘.’ and delete’s $check directory (i.e. /var/tmp/check).
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a126b40f-eceb-4243-a387-ba4e6a6440ef)
+
++ **4.** Here where the real work start, with zipping using tar command the $basedir (i.e./var/www/html) to the file $tmpfile which is a tar zipped file with sha1sum naming and starts with ‘.’, here is how it looks like: `.h93f032e69e2e221528b5c1c2ea7fa946a806743`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/fecc28bd-1792-459a-bae2-057b02fc4271)
+
++ **5.** 
 
 
 # References & Alternatives
