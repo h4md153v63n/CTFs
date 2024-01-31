@@ -173,7 +173,7 @@ wpscan --url http://10.10.10.88/webservices/wp/ -e u,ap --plugins-detection aggr
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/62b7937a-5b63-4033-9776-711f35bacc24)
 
-+ Check the vulnerability.
++ Check the vulnerability: [CVE-2015-8351](https://www.exploit-db.com/exploits/38861)
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ab590840-a92a-4baf-8fac-ec2c3e5dc227)
 
