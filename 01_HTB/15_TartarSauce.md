@@ -348,7 +348,9 @@ fi
 
 + If there is nothing reported, the zip will be added to $bkpdir/onuma-www-dev.bak and $check directory will be removed.
 
-+ **We didn't get the root shell here.**
++ **We didn't get the root shell here.** 
++ I handled different approaches and alternatives but they didn't work here.
++ I tried to create **my own suid binary** but I faced the error **glibc_2.34 not found**. I didn't overcome the issue.
 
 ## Getting 'root flag'
 + We can see the script is run at five minute intervals by inspecting **/var/backups/onuma_backup_test.txt**, and observing the last run timestamp.
