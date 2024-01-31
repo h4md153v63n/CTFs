@@ -45,7 +45,7 @@ Port 80: Apache httpd 2.4.18
 
 + Now, transfer the exploit: `searchsploit -m 43348`
 + Check the exploit:
-```
+```bash
 Exploit Title: Monstra CMS - 3.0.4 RCE
 Vendor Homepage: http://monstra.org/
 Software Link:
