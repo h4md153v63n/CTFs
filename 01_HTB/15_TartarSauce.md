@@ -245,6 +245,8 @@ sudo -u onuma tar -cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exe
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/60a9fe10-19fc-4a52-b8e5-4f121de388a5)
 
++ To watch how much time is left before the scheduled service is going to run again: `systemctl list-timers`
+
 + Examine the script what is doing.
 ```bash
 #!/bin/bash
