@@ -61,6 +61,7 @@ nmap -d -p 6697,8067,65534 --script irc-unrealircd-backdoor 10.10.10.117
 
 
 
+
 ## Gaining Access
 + x
 
