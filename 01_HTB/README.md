@@ -13,6 +13,7 @@
 |7   |Valentine         |[Valentine](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/12_Valentine.md)|CVE-2014-0160, CVE-2014-0346, CVE-2016-5195|unix,heartbleed ssl/tsl,sslyze,bruteforce/decrypt/decode,hash/encrypted/encoded,ssh,openssl,kernel exploit,dirtycow,system binary exploit,tmux session|
 |8   |Sunday            |[Sunday](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/14_Sunday.md)|-|unix,bruteforce/decrypt/decode,finger,hydra,hash/encrypted/encoded,ssh,stored creds,sudo,suid,system/config/backup file,shadow.backup,hashid,john,hashcat,wget,gtfobins,openssl,passwd,wget --post-file,Overwrite Different SUID Binary,Overwrite shadow,Overwrite sudoers,/etc/sudoers,pspy,solaris,powershell|
 |9   |Irked             |[Irked](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/16_Irked.md)|CVE-2010-2075, CVE-2016-1531, CVE-2018-6789|unix,hidden file,rce,reverse shell,stego,steghide,stored creds,suid,IRC,UnrealIRCd,Irssi,hexchat,Exim,ltrace|
+|10  |FriendZone        |[FriendZone](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/17_FriendZone.md)|-|unix,bruteforce/decrypt/decode,burp,directory traversal,dns,hash/encrypted/encoded,library hijack,local file inclusion,rce,reverse shell,smb,source code inspection,stored creds,system/config/backup file|
 
 
 # Medium
