@@ -92,6 +92,14 @@ stty rows 55 columns 285
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/54a47658-1c3e-4daa-ac61-9b5ce93d48b7)
 
 
+### Method 2
++ Check whether it has any exploits: `searchsploit UnrealIRCd`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6933e0b2-171c-4182-b635-9cf19572cdaf)
+
++ CVE-2010-2075 [1-metasploit](https://www.exploit-db.com/exploits/16922) [2-manual](https://www.exploit-db.com/exploits/13853)
+
+
 ## Privilege Escalation: from 'ircd' to 'djmardov'
 + **Alternatively**, you can skip this step, and continue directly with root privilege escalation step [Privilege Escalation: from 'djmardov' to 'root'](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/16_Irked.md#privilege-escalation-from-djmardov-to-root). It's up to you.
 + In **/home/djmardov/Documents**, there's a hidden file **.backup**.
@@ -135,5 +143,6 @@ steghide extract -sf irked.jpg -p UPupDOWNdownLRlrBAbaSSss
 
 # References & Alternatives
 + https://vvmlist.github.io/#irked
++ https://0xdf.gitlab.io/2019/04/27/htb-irked.html
 + 
 
