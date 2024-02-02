@@ -93,6 +93,7 @@ stty rows 55 columns 285
 
 
 ## Privilege Escalation: from 'ircd' to 'djmardov'
++ **Alternatively**, you can skip this step, and continue directly with root privilege escalation step [Privilege Escalation: from 'djmardov' to 'root'](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/16_Irked.md#privilege-escalation-from-djmardov-to-root). It's up to you.
 + In **/home/djmardov/Documents**, there's a hidden file **.backup**.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4cd93b71-8d2b-4e62-ad71-4cc5ff375314)
