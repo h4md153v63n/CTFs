@@ -128,6 +128,12 @@ export TERM=xterm
 export SHELL=bash
 ```
 
++ **Alternatively**, it is possible to write your own backdoor exploit like [here](https://0xdf.gitlab.io/2019/04/27/htb-irked.html#script-it).
++ I copied it to [my scripts repo](https://github.com/h4md153v63n/Python_Scripts/tree/master/unreal_irc_backdoor).
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/eef00843-2e99-4fd6-b6b5-ab5b850fd4a9)
+
+
 
 ## Privilege Escalation: from 'ircd' to 'djmardov'
 + **Alternatively**, you can skip this step, and continue directly with root privilege escalation step [Privilege Escalation: from 'djmardov' to 'root'](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/16_Irked.md#privilege-escalation-from-djmardov-to-root). It's up to you.
@@ -173,5 +179,5 @@ steghide extract -sf irked.jpg -p UPupDOWNdownLRlrBAbaSSss
 # References & Alternatives
 + https://vvmlist.github.io/#irked
 + https://0xdf.gitlab.io/2019/04/27/htb-irked.html
-+ 
++ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/irked-writeup-w-o-metasploit
 
