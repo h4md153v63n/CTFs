@@ -129,10 +129,13 @@ export SHELL=bash
 ```
 
 + **Alternatively**, it is possible to write your own backdoor exploit like [here](https://0xdf.gitlab.io/2019/04/27/htb-irked.html#script-it).
-+ I copied it to [my scripts repo](https://github.com/h4md153v63n/Python_Scripts/tree/master/unreal_irc_backdoor).
++ [script 1](https://github.com/h4md153v63n/Python_Scripts/blob/master/unreal_irc_backdoor/README.md#exploitpy).
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/eef00843-2e99-4fd6-b6b5-ab5b850fd4a9)
 
++ [script 2](https://github.com/h4md153v63n/Python_Scripts/blob/master/unreal_irc_backdoor/README.md#exploit2py).
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/591f1bad-ad38-45d0-b1fa-b39b769700d5)
 
 
 ## Privilege Escalation: from 'ircd' to 'djmardov'
@@ -163,11 +166,14 @@ steghide extract -sf irked.jpg -p UPupDOWNdownLRlrBAbaSSss
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/57b570f0-e63f-4226-9bef-a3f499d408a0)
 
-+ We arent't familiar with the file **/usr/bin/viewuser**. Run it to see what it does.
++ We arent't familiar with the file, unknown SUID binary **/usr/bin/viewuser**, and run it to see what it does.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/353a8dc7-b660-48c6-91be-04c6e3862ba3)
 
-+ It throws an error saying that sh can't find **/tmp/listusers**.
++ Trying to run the file we see it is trying to execute /tmp/listusers, and it is being executed as root.
++ Interestingly, this file doesn't exist in /tmp, and it throws an error saying that sh can't find **/tmp/listusers**.
++ **Since the file is owned by root, the file will execute with root privileges.**
+
 + Add `echo bash > /tmp/listusers`, and give execute permission `chmod +x /tmp/listusers`.
 + Then run: `viewuser`.
 + Get the root shell, and read root flag.
@@ -180,4 +186,6 @@ steghide extract -sf irked.jpg -p UPupDOWNdownLRlrBAbaSSss
 + https://vvmlist.github.io/#irked
 + https://0xdf.gitlab.io/2019/04/27/htb-irked.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/irked-writeup-w-o-metasploit
++ https://manuelvazquez-contact.gitbook.io/oscp-prep/hack-the-box/irked
++ https://medium.com/@Inching-Towards-Intelligence/htb-irked-50-100-ff10595be50d
 
