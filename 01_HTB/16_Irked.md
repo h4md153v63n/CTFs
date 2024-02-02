@@ -99,7 +99,10 @@ stty rows 55 columns 285
 
 + Take note of `UPupDOWNdownLRlrBAbaSSss` with the reference to steg.
 + Then download the emoji image file on **http://10.10.10.117/** irc home page: `wget 10.10.10.117/irked.jpg`
-+ Try to extract data from image **irked.jpg** with discovered passphrase `UPupDOWNdownLRlrBAbaSSss`: `steghide extract -sf irked.jpg -p UPupDOWNdownLRlrBAbaSSss`
++ Try to extract data from image **irked.jpg** with discovered passphrase `UPupDOWNdownLRlrBAbaSSss`:
+```
+steghide extract -sf irked.jpg -p UPupDOWNdownLRlrBAbaSSss
+```
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8f73a461-00a4-487a-b18e-cbc48d325ae6)
 
