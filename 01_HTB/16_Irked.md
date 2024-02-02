@@ -107,11 +107,28 @@ steghide extract -sf irked.jpg -p UPupDOWNdownLRlrBAbaSSss
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8f73a461-00a4-487a-b18e-cbc48d325ae6)
 
 + Discovered **djmardov**'s password `Kab6h+m+bbp2J:HG`.
-+ Login with `djmardov`:`Kab6h+m+bbp2J:HG` credentials.
++ Login with `djmardov`:`Kab6h+m+bbp2J:HG` credentials with **su** or **ssh**.
 + Get the user flag with djmardov's privileges.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9d597387-811b-42a8-94dd-cdf4ced48cb8)
 
+
+## Privilege Escalation: from 'djmardov' to 'root'
++ Check the file which has the SUID bit set.
++ `find / -type f -user root -perm /4000 -exec ls -l {} \; 2>/dev/null`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/57b570f0-e63f-4226-9bef-a3f499d408a0)
+
++ We arent't familiar with the file **/usr/bin/viewuser**. Run it to see what it does.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/353a8dc7-b660-48c6-91be-04c6e3862ba3)
+
++ It throws an error saying that sh can't find **/tmp/listusers**.
++ Add `echo bash > /tmp/listusers`, and give execute permission `chmod +x /tmp/listusers`.
++ Then run: `viewuser`.
++ Get the root shell, and read root flag.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/52f52285-3812-4d81-bf7b-927e71b9ae4c)
 
 
 
