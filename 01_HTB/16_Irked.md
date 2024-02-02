@@ -40,7 +40,17 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/78ebc503-c04b-4742-81c6-fa9919dae27a)
 
 + Check other ports. Ports 22 OpenSSH 6.7p1, and port 111 rpcbind 2–4 aren't promising. Ports 6697, 8067 and 65534 runs UnrealIRCd.
-+ 
++ Check if there are any nmap scripts for irc.
++ `ls /usr/share/nmap/scripts/irc*`
++ `find /usr/share/nmap/scripts -name '*irc*'`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3d0e30f9-e813-4d2b-8100-6225d57fb637)
+
++ Check `/usr/share/nmap/scripts/irc-unrealircd-backdoor.nse` script. It shows us that nmap detects if it's vulnerable, and also it starts a netcat listener that would give the attack machine a shell on the target system.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/53d45740-786a-4444-bc30-86628f3f09f1)
+
+
 
 
 
