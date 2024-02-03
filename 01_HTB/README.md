@@ -14,6 +14,8 @@
 |8   |Sunday            |[Sunday](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/14_Sunday.md)|unix, bruteforce/decrypt/decode, finger, hydra, hash/encrypted/encoded, ssh, stored creds, sudo, suid, system/config/backup file, shadow.backup, hashid, john, hashcat, wget, gtfobins, openssl, passwd, wget --post-file, Overwrite Different SUID Binary, Overwrite shadow, Overwrite sudoers, /etc/sudoers, pspy, solaris, powershell|
 |9   |Irked             |[Irked](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/16_Irked.md)|CVE-2010-2075, CVE-2016-1531, CVE-2018-6789, unix, hidden file, rce, reverse shell, stego, steghide, stored creds, suid, IRC, UnrealIRCd, Irssi, hexchat, Exim, ltrace|
 |10  |FriendZone        |[FriendZone](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/17_FriendZone.md)|unix, bruteforce/decrypt/decode, burp, directory traversal, dns, hash/encrypted/encoded,library hijack, local file inclusion, rce, reverse shell, smb, source code inspection, stored creds, system/config/backup file|
+|11  |CozyHosting       |[CozyHosting](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/18_CozyHosting.md)|unix, whitelabel error page, Spring Boot framework, actuator, session cookie, burp, rce, obfuscate, base64/URL encoded reverse shell, whitespaces not allowed, bypass without space, $IFS, obfuscate,  java archive, jar xf, jd-gui, application.properties,  postgresql, psql, hash/encrypted/encoded, john, hashcat, bcrypt, sudo, gtfobins, ssh|
+|12  |Keeper            |[Keeper](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/19_Keeper.md)|unix, |
 
 
 # Medium
