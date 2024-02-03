@@ -11,4 +11,5 @@ https://www.hackthebox.com/achievement/machine/184261/559
 
 
 I share alternative solutions, and different approaches links in the below:
++ x
 + 
