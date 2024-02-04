@@ -15,7 +15,8 @@
 |9   |Irked             |[Irked](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/16_Irked.md)|CVE-2010-2075, CVE-2016-1531, CVE-2018-6789, unix, hidden file, rce, reverse shell, stego, steghide, stored creds, suid, IRC, UnrealIRCd, Irssi, hexchat, Exim, ltrace|
 |10  |FriendZone        |[FriendZone](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/17_FriendZone.md)|unix, bruteforce/decrypt/decode, burp, directory traversal, dns, hash/encrypted/encoded,library hijack, local file inclusion, rce, reverse shell, smb, source code inspection, stored creds, system/config/backup file|
 |11  |CozyHosting       |[CozyHosting](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/18_CozyHosting.md)|unix, whitelabel error page, Spring Boot framework, actuator, session cookie, burp, rce, obfuscate, base64/URL encoded reverse shell, whitespaces not allowed, bypass without space, $IFS, obfuscate,  java archive, jar xf, jd-gui, application.properties,  postgresql, psql, hash/encrypted/encoded, john, hashcat, bcrypt, sudo, gtfobins, ssh|
-|12  |Keeper            |[Keeper](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/19_Keeper.md)|unix, |
+|12  |Keeper            |[Keeper](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/19_Keeper.md)|CVE-2023-32784, unix, Request Tracker, default creds, unzip, password manager, KeePass, .kdbx, .dmp, keepas2, .NET, dotnet, Danish dish, rødgrød med fløde, PuTTY PPK, .ppk, .pem, puttygen, putty, ssh|
+|13  |Analytics         |[Analytics](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/20_Analytics.md)|unix, |
 
 
 # Medium
