@@ -11,6 +11,7 @@ https://www.hackthebox.com/achievement/machine/184261/559
 
 
 I share alternative solutions, and different approaches links in the below:
++ https://medium.com/@hachikohax/cracking-the-code-htb-cozyhosting-machine-84f1e44a9272
 + https://p3ntesterinstanc3.hashnode.dev/cozyhosting-htb-writeupwalkthrough
 + https://techyrick.com/cozyhosting-htb-walkthrough/
 + https://medium.com/@aniketdas07770/hackthebox-cozyhosting-writeup-61e832873e68
