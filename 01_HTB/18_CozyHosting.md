@@ -7,8 +7,7 @@ I solved the machine, but I won't publish a write-up.
 
 https://www.hackthebox.com/achievement/machine/184261/559
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/420393c3-a795-49de-8a22-25f63674f4f4)
-
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c0b61325-e9bb-4823-959c-bd2a4a0acbb1)
 
 I share alternative solutions, and different approaches links in the below:
 + https://medium.com/@hachikohax/cracking-the-code-htb-cozyhosting-machine-84f1e44a9272
