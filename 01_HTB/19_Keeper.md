@@ -24,5 +24,5 @@ I share alternative solutions, and different approaches links in the below:
 + https://github.com/vdohney/keepass-password-dumper
 
 
-## TechnicaL Knowledge
+## Technical Knowledge
 + https://superuser.com/questions/1647896/putty-key-format-too-new-when-using-ppk-file-for-putty-ssh-key-authentication
