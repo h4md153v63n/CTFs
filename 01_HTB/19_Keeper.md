@@ -7,8 +7,7 @@ I solved the machine, but I won't publish a write-up.
 
 https://www.hackthebox.com/achievement/machine/184261/556
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/11ad4857-1fce-4e47-be23-b4de09bded3e)
-
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ada0b1b1-44cd-4ecb-99a8-a0b04b09ee33)
 
 I share alternative solutions, and different approaches links in the below:
 + https://techyrick.com/keeper-htb-walkthrough/
@@ -27,5 +26,3 @@ I share alternative solutions, and different approaches links in the below:
 
 ## TechnicaL Knowledge
 + https://superuser.com/questions/1647896/putty-key-format-too-new-when-using-ppk-file-for-putty-ssh-key-authentication
-
-  
