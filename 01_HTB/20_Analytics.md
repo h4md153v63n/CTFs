@@ -18,7 +18,7 @@ I share alternative solutions, and different approaches links in the below:
 + https://www.zpast0r.com/Analytics.html
 
 
-## TechnicaL Knowledge
+## Technical Knowledge
 + https://infosecwriteups.com/cve-2023-38646-metabase-pre-auth-rce-866220684396
 + https://www.assetnote.io/resources/research/chaining-our-way-to-pre-auth-rce-in-metabase-cve-2023-38646
 + https://github.com/shamo0/CVE-2023-38646-PoC
