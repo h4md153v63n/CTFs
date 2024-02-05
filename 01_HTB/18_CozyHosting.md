@@ -19,7 +19,7 @@ I share alternative solutions, and different approaches links in the below:
 + https://www.turkhackteam.org/konular/htb-cozyhosting-kurabiye-ifsasi-ve-komut-enjeksiyonu.2054386/
 
 
-## TechnicaL Knowledge
+## Technical Knowledge
 + https://f002.backblazeb2.com/file/sec-news-backup/files/writeup/deadpool.sh/_2017_RCE_Springs_/index.html
 + https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Command%20Injection/README.md#bypass-without-space
 + https://hasura.io/blog/top-psql-commands-and-flags-you-need-to-know-postgresql/
