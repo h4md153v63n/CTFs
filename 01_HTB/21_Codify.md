@@ -7,7 +7,7 @@ I solved the machine, but I won't publish a write-up.
 
 https://www.hackthebox.com/achievement/machine/184261/574
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/43a0711b-82b6-4d8b-9014-253284dcb664)
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7b947554-6f4f-4026-9232-9a515da49535)
 
 I share alternative solutions, and different approaches links in the below:
 + https://medium.com/@sselvakumar2407/htb-writeup-codify-7c9b3c0dfef5
