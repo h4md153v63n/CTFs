@@ -17,7 +17,7 @@ I share alternative solutions, and different approaches links in the below:
 + https://www.turkhackteam.org/konular/hackthebox-devvortex.2052825/
 
 
-## TechnicaL Knowledge
+## Technical Knowledge
 + https://github.com/Acceis/exploit-CVE-2023-23752
 + https://vulncheck.com/blog/joomla-for-rce
 + https://www.exploit-db.com/exploits/51334
