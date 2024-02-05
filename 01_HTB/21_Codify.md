@@ -16,7 +16,7 @@ I share alternative solutions, and different approaches links in the below:
 + https://maddevs.io/writeups/hackthebox-codify/
 
 
-## TechnicaL Knowledge
+## Technical Knowledge
 + https://github.com/anordal/shellharden/blob/master/how_to_do_things_safely_in_bash.md
 + https://gist.github.com/leesh3288/e4aa7b90417b0b0ac7bcd5b09ac7d3bd
 + https://www.uptycs.com/blog/exploitable-vm2-vulnerabilities
@@ -24,5 +24,3 @@ I share alternative solutions, and different approaches links in the below:
 
 ## Tools
 + **Scripts:** https://github.com/h4md153v63n/Python_Scripts/blob/master/Brute_Force/README.md
-  
-  
