@@ -7,7 +7,7 @@ I solved the machine, but I won't publish a write-up.
 
 https://www.hackthebox.com/achievement/machine/184261/569
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f8cae5d5-0b3c-45f6-ba24-44d3d857cc86)
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/91f2aa5c-6c81-4cde-94f5-7706a532b789)
 
 I share alternative solutions, and different approaches links in the below:
 + https://techyrick.com/analytics-htb-walkthrough-by-rick/
