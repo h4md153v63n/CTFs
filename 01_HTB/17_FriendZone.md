@@ -19,17 +19,20 @@ First thing first, start port scan:
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ef8b3771-9af0-4ec8-a2e5-53372526c791)
 
 + The result shows that 7 tcp ports and 2 udp ports are open:
++ Open tcp ports:
 ```
 Port tcp 21: vsftpd 3.0.3
 Port tcp 22: OpenSSH 7.6p1 Ubuntu 4
 Port tcp 53: ISC BIND 9.11.3-1ubuntu1.2
-Port udp 53: ISC BIND 9.11.3-1ubuntu1.2
 Port tcp 80: Apache httpd 2.4.29
-Port udp 137: Samba nmbd netbios-ns
 Port tcp 139: Samba smbd 3.X - 4.X
 Port tcp 443: Apache httpd 2.4.29
 Port tcp 445: Samba smbd 4.7.6-Ubuntu
-
+```
++ Open udp ports:
+```
+Port udp 53: ISC BIND 9.11.3-1ubuntu1.2
+Port udp 137: Samba nmbd netbios-ns
 ```
 
 + As usual, always start off with enumerating web server first.
