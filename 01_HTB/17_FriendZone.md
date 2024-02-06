@@ -44,6 +44,7 @@ Check port scan results:
 
 
 ## Enumeration
++ Add **friendzone.red** into the **/etc/hosts** file.
 + As usual, always start off with enumerating web server first. In this case both http and https are open.
 + Visit the web applications.
 + **Firstly**, navigate to `http://10.10.10.123/`, and take note of **info@friendzoneportal.red** which **friendzoneportal.red** may be a possible domain name.
@@ -77,9 +78,27 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d8a4d69e-0102-4fa9-873b-d0202f5644ab)
 
 
-+ **Secondly**, navigate to `https://10.10.10.123/`, and it gives not found error.
++ **Secondly**, navigate to `https://10.10.10.123/`, and it gives 'not found' error.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3cb404f7-d7af-479c-8b4f-9cdd6ac478fc)
+
++ Visit `https://friendzone.red/`, and see the https site is different from the http site.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b376d6c0-a098-429b-8fb7-9034436672ba)
+
++ Directory fuzzing to enumerate directories:
+```
+gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u https://friendzone.red/ -k -n -x html,php,txt -r -t 40
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/79a164c6-0165-4eef-a09e-cebdc97b7d35)
+
++ admin directory is empty,  and visit **https://friendzone.red/js**.
++ Check `https://friendzone.red/js/js/`, and there's nothing useful.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f9cbc884-adea-43d6-81e6-2335306495d1)
+
+
 
 
 
