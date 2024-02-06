@@ -3,7 +3,7 @@
 **Machine ip:** 10.10.10.123
 
 ## Reconnaissance
-First thing first, start port scan to see which ports are open and which services are running on those ports.
+First thing first, start with port scan to see which ports are open and which services are running on those ports.
 + `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.123 -e tun0 > ports`
 + `ports=$(cat ports | awk -F " " '{print $4}' | awk -F "/" '{print $1}' | sort -n | tr '\n' ',' | sed 's/,$//')`
 + `sort -n -k4 ports`
