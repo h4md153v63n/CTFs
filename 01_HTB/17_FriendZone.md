@@ -45,8 +45,8 @@ Check port scan results:
 
 ## Enumeration
 + As usual, always start off with enumerating web server first. In this case both http and https are open.
-+ Visit the web application.
-+ Navigate to `http://10.10.10.123/`, and take note of **info@friendzoneportal.red** which **friendzoneportal.red** may be a possible domain name.
++ Visit the web applications.
++ **Firstly**, navigate to `http://10.10.10.123/`, and take note of **info@friendzoneportal.red** which **friendzoneportal.red** may be a possible domain name.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c55ce1b0-e667-422a-ba94-3dda95e47fab)
 
@@ -56,8 +56,31 @@ Check port scan results:
 
 + Directory fuzzing to enumerate directories:
 ```
-gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://10.10.10.123/ -k -n -x html,php,txt -r -t 50
+gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://10.10.10.123/ -k -n -x html,php,txt -r -t 40
 ```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f67ccdbb-3c35-45d0-91fe-49400d791e26)
+
++ Do more directory fuzzing on **wordpress** directory:
+```
+gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://10.10.10.123/wordpress -k -n -x html,php,txt -r -t 40
+```
+
++ **wordpress** directory and **robots.txt** are empty.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1d71713b-aa5d-4238-9c06-54350b13d483)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/37b6a433-9b7a-45ab-8c5c-41c6676c7388)
+
++ There is nothing here.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d8a4d69e-0102-4fa9-873b-d0202f5644ab)
+
+
++ **Secondly**, navigate to `https://10.10.10.123/`, and it gives not found error.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3cb404f7-d7af-479c-8b4f-9cdd6ac478fc)
+
 
 
 ## Gaining Access
