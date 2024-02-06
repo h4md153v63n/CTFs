@@ -44,6 +44,8 @@ Check port scan results:
 
 
 ## Enumeration
+
+### http-https
 + Add **friendzone.red** into the **/etc/hosts** file.
 + As usual, always start off with enumerating web server first. In this case both http and https are open.
 + Visit the web applications.
@@ -99,6 +101,8 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f9cbc884-adea-43d6-81e6-2335306495d1)
 
 
+### smb
++ 
 
 
 
