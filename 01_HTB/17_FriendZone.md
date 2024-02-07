@@ -148,7 +148,28 @@ admin:WORKWORKHhallelujah@#
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d2c9d528-d9b5-4d70-b646-4269b35e2de7)
 
 
-### 
+### dns
+TCP is only used in DNS when the response size is greater than 512 bytes. Typically, this is associated with Zone Transfers, where the server give all the information it has for a domain. There are a few things to try to enumerate DNS, but the fact that the host is listening on TCP 53 suggests the first thing to try is a Zone Transfer.
++ **Firstly**, **dig** with **friendzone.red** domain on tls certificate after port scan results:
+```
+dig axfr @10.10.10.123 friendzone.red
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4dfc3112-628c-428f-921b-4cfa30cbf12a)
+
++ **Secondly**, **dig** with **friendzoneportal.red** from 'info@friendzoneportal.red' mail address on the first webpage:
+```
+dig axfr @10.10.10.123 friendzoneportal.red
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8824b51e-478e-49d0-9340-afdf8cf92c50)
+
++ After these discovered subdomains, let's update hosts file for each of them.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/41fc16cd-582c-4049-9cf2-3860ebbf1d3a)
+
+
+
 
 
 ## Gaining Access
