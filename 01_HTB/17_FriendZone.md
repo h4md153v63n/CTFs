@@ -88,6 +88,10 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b376d6c0-a098-429b-8fb7-9034436672ba)
 
++ View page source.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/42f53c2f-e8bc-48b7-846f-0308e17f16e8)
+
 + Directory fuzzing to enumerate directories:
 ```
 gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u https://friendzone.red/ -k -n -x html,php,txt -r -t 40
@@ -210,7 +214,97 @@ vpn.friendzoneportal.red -> Not Found
 + `https://imports.friendzoneportal.red/`: **Not Found.**
 + `https://vpn.friendzoneportal.red/`: **Not Found.**
 
-+ **Primarily**, as always, try default credentials on the admin sites **https://admin.friendzone.red/** and **https://administrator1.friendzone.red/**, but they don't work.
++ **Alternatively**, to be more quick: `cat domains.txt | aquatone`
+```
+┌──(kali㉿kali)-[~/Desktop]
+└─$ cat domains.txt | aquatone                                                    
+aquatone v1.7.0 started at 2024-02-08T01:21:05+03:00
+
+Using unreliable Google Chrome for screenshots. Install Chromium for better results.
+
+Targets    : 8
+Threads    : 4
+Ports      : 80, 443, 8000, 8080, 8443
+Output dir : .
+
+friendzoneportal.red: port 443 open
+friendzoneportal.red: port 80 open
+admin.friendzoneportal.red: port 80 open
+hr.friendzone.red: port 80 open
+administrator1.friendzone.red: port 80 open
+uploads.friendzone.red: port 80 open
+vpn.friendzoneportal.red: port 80 open
+files.friendzoneportal.red: port 80 open
+imports.friendzoneportal.red: port 80 open
+admin.friendzoneportal.red: port 443 open
+administrator1.friendzone.red: port 443 open
+hr.friendzone.red: port 443 open
+http://friendzoneportal.red/: 200 OK
+uploads.friendzone.red: port 443 open
+vpn.friendzoneportal.red: port 443 open
+files.friendzoneportal.red: port 443 open
+imports.friendzoneportal.red: port 443 open
+https://friendzoneportal.red/: 200 OK
+http://admin.friendzoneportal.red/: 200 OK
+http://hr.friendzone.red/: 200 OK
+http://administrator1.friendzone.red/: 200 OK
+http://vpn.friendzoneportal.red/: 200 OK
+http://uploads.friendzone.red/: 200 OK
+http://files.friendzoneportal.red/: 200 OK
+http://imports.friendzoneportal.red/: 200 OK
+https://admin.friendzoneportal.red/: 200 OK
+https://administrator1.friendzone.red/: 200 OK
+https://hr.friendzone.red/: 404 Not Found
+https://uploads.friendzone.red/: 200 OK
+https://files.friendzoneportal.red/: 404 Not Found
+https://vpn.friendzoneportal.red/: 404 Not Found
+https://imports.friendzoneportal.red/: 404 Not Found
+http://friendzoneportal.red/: screenshot successful
+http://hr.friendzone.red/: screenshot successful
+http://admin.friendzoneportal.red/: screenshot successful
+https://friendzoneportal.red/: screenshot successful
+http://administrator1.friendzone.red/: screenshot successful
+http://vpn.friendzoneportal.red/: screenshot successful
+http://uploads.friendzone.red/: screenshot successful
+http://files.friendzoneportal.red/: screenshot successful
+http://imports.friendzoneportal.red/: screenshot successful
+https://admin.friendzoneportal.red/: screenshot successful
+https://hr.friendzone.red/: screenshot successful
+https://uploads.friendzone.red/: screenshot successful
+https://administrator1.friendzone.red/: screenshot successful
+https://files.friendzoneportal.red/: screenshot successful
+https://vpn.friendzoneportal.red/: screenshot successful
+https://imports.friendzoneportal.red/: screenshot successful
+Calculating page structures... done
+Clustering similar pages... done
+Generating HTML report... done
+
+Writing session file...Time:
+ - Started at  : 2024-02-08T01:21:05+03:00
+ - Finished at : 2024-02-08T01:21:45+03:00
+ - Duration    : 39s
+
+Requests:
+ - Successful : 16
+ - Failed     : 0
+
+ - 2xx : 12
+ - 3xx : 0
+ - 4xx : 4
+ - 5xx : 0
+
+Screenshots:
+ - Successful : 16
+ - Failed     : 0
+
+Wrote HTML report to: aquatone_report.html
+
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/512f63bc-27ea-4eb8-9b89-f28169dee4f4)
+
++ Focus on login pages **https://admin.friendzone.red/** and **https://administrator1.friendzone.red/**.
++ **Primarily**, as always, try default credentials on the admin sites, but they don't work.
 + **Firstly**, navigate to `https://admin.friendzone.red/`, and login with previously discovered credentials `admin`:`WORKWORKHhallelujah@#` from SMB. It doesn't work, and skip it.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/113209b8-24c7-4eaa-8272-42d85b3e9f81)
@@ -372,7 +466,9 @@ p=subprocess.call(["/bin/bash","-i"]);
 + https://vvmlist.github.io/#FriendZone
 + https://0xdf.gitlab.io/2019/07/13/htb-friendzone.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/friendzone-writeup-w-o-metasploit
++ https://manuelvazquez-contact.gitbook.io/oscp-prep/hack-the-box/friendzoned
 + 
+
 
 # Technical Knowledge
 + [Python Library Hijacking](https://rastating.github.io/privilege-escalation-via-python-library-hijacking/): https://rastating.github.io/privilege-escalation-via-python-library-hijacking/
