@@ -106,7 +106,10 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4c08c882-fdd7-4bae-9046-9639f94a64fb)
 
-+ **Alternatively**, get a similar list without Permissions from **smbclient** using **-N** for **null session** or **no auth** and **-L** to list: `smbclient -N -L //10.10.10.123`
++ **Alternatively**, get a similar list without permissions from **smbclient** using **-N** for **null session** or **no auth** and **-L** to list:
+```
+smbclient -N -L //10.10.10.123
+```
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/601c4600-35c8-456b-bd2f-a78696fa7ef7)
 
@@ -144,6 +147,8 @@ admin:WORKWORKHhallelujah@#
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d2c9d528-d9b5-4d70-b646-4269b35e2de7)
 
+
+### 
 
 
 ## Gaining Access
