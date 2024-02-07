@@ -354,3 +354,6 @@ p=subprocess.call(["/bin/bash","-i"]);
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/friendzone-writeup-w-o-metasploit
 + 
 
+# Technical Knowledge
++ [Python Library Hijacking](https://rastating.github.io/privilege-escalation-via-python-library-hijacking/): https://rastating.github.io/privilege-escalation-via-python-library-hijacking/
++ 
