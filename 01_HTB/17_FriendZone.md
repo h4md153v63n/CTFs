@@ -170,25 +170,25 @@ dig axfr @10.10.10.123 friendzoneportal.red
 
 + Check all of 8 subdomains:
 ```
-friendzoneportal.red
-administrator1.friendzone.red
-hr.friendzone.red
-uploads.friendzone.red
-admin.friendzoneportal.red
-files.friendzoneportal.red
-imports.friendzoneportal.red
-vpn.friendzoneportal.red
+friendzoneportal.red -> Michael Jackson's image
+administrator1.friendzone.red -> Login Form for FriendZone
+hr.friendzone.red -> Not Found
+uploads.friendzone.red -> upload page
+admin.friendzoneportal.red -> login panel
+files.friendzoneportal.red -> Not Found
+imports.friendzoneportal.red -> Not Found
+vpn.friendzoneportal.red -> Not Found
 ```
 
 + Visit `https://friendzoneportal.red`, and see Michael Jackson's image.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f3f025a0-5a0b-4b14-bc3e-0cd6eaf92f23)
 
-+ Visit `https://administrator1.friendzone.red/`, andf there is a Login Form for FriendZone.
++ Visit `https://administrator1.friendzone.red/`, and there is a Login Form for FriendZone.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/604e18a2-6e68-4f64-8720-db50fd46d781)
 
-+ `https://hr.friendzone.red/`: Not Found.
++ `https://hr.friendzone.red/`: **Not Found.**
   
 + Visit `https://uploads.friendzone.red/`, and see upload page.
 
@@ -198,18 +198,30 @@ vpn.friendzoneportal.red
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a1523542-8f14-4f94-92c2-1e386ae2504a)
 
-+ `https://files.friendzoneportal.red/`: Not Found.
-+ `https://imports.friendzoneportal.red/`: Not Found.
-+ `https://vpn.friendzoneportal.red/`: Not Found.
-
-  
++ `https://files.friendzoneportal.red/`: **Not Found.**
++ `https://imports.friendzoneportal.red/`: **Not Found.**
++ `https://vpn.friendzoneportal.red/`: **Not Found.**
 
 
++ **Firstly**, navigate to `https://admin.friendzone.red/`, and login with previously discovered credentials `admin`:`WORKWORKHhallelujah@#` from SMB. It doesn't work, and skip it.
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/113209b8-24c7-4eaa-8272-42d85b3e9f81)
+
++ **Next**, try the credentials `admin`:`WORKWORKHhallelujah@#` on `https://administrator1.friendzone.red/`.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/110cc9bc-4fe3-4d45-932b-2690d57d2196)
+
++ Visit the **/dashboard.php**. It seems to be a page that allows to view images on the site. We will probably try to gain initial access through this page.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5d9e54aa-b4fd-402d-92af-307e66312ede)
 
 
 ## Gaining Access
-+ xxx
++ The **dashboard.php** page gives instructions on how to view an image.
++ Append the suggested parameters **?image_id=a.jpg&pagename=timestamp** to the url, and visit `https://administrator1.friendzone.red/dashboard.php?image_id=a.jpg&pagename=timestamp`.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c73a2714-1bf3-461f-b856-9c023ac49200)
+
 
 
 
