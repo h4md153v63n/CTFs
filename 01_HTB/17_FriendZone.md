@@ -80,7 +80,7 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d8a4d69e-0102-4fa9-873b-d0202f5644ab)
 
 
-+ **Secondly**, navigate to `https://10.10.10.123/`, and it gives 'Not found' error.
++ **Secondly**, navigate to `https://10.10.10.123/`, and it gives 'Not Found' error.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3cb404f7-d7af-479c-8b4f-9cdd6ac478fc)
 
@@ -167,6 +167,42 @@ dig axfr @10.10.10.123 friendzoneportal.red
 + After these discovered subdomains, let's update hosts file for each of them.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/41fc16cd-582c-4049-9cf2-3860ebbf1d3a)
+
++ Check all of 8 subdomains:
+```
+friendzoneportal.red
+administrator1.friendzone.red
+hr.friendzone.red
+uploads.friendzone.red
+admin.friendzoneportal.red
+files.friendzoneportal.red
+imports.friendzoneportal.red
+vpn.friendzoneportal.red
+```
+
++ Visit `https://friendzoneportal.red`, and see Michael Jackson's image.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f3f025a0-5a0b-4b14-bc3e-0cd6eaf92f23)
+
++ Visit `https://administrator1.friendzone.red/`, andf there is a Login Form for FriendZone.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/604e18a2-6e68-4f64-8720-db50fd46d781)
+
++ `https://hr.friendzone.red/`: Not Found.
+  
++ Visit `https://uploads.friendzone.red/`, and see upload page.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/938b0401-c97a-4e74-9523-73572dea06b7)
+
++ Visit `https://admin.friendzone.red`, and see the login panel.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a1523542-8f14-4f94-92c2-1e386ae2504a)
+
++ `https://files.friendzoneportal.red/`: Not Found.
++ `https://imports.friendzoneportal.red/`: Not Found.
++ `https://vpn.friendzoneportal.red/`: Not Found.
+
+  
 
 
 
