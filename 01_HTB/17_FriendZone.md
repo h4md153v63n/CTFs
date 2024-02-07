@@ -301,7 +301,33 @@ db_name=FZ
 
 
 ## Privilege Escalation: from 'friend' to 'root'
-+ 
++ Transfer [pspy32](https://github.com/DominicBreuker/pspy/releases) to the target, and run: `./pspy32`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/e74f2b68-c2df-4737-8b43-59da607df922)
+
++ Check processess, and see **/opt/server_admin/reporter.py** is being run every two minutes by root.
++ `ls -l /opt/server_admin/reporter.py`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6e22c398-27be-41f5-99ee-77781fdb9593)
+
++ We only have read permission, and view the content of the file: `cat /opt/server_admin/reporter.py`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9bc7768b-eb20-4ed3-85e4-0fb7fff7ffaf)
+
++ It says it's incomplete, and doesn't do much of anything.
++ Most of the script is commented out so there isn’t much to do there.
++ It does import the os module. It may be hijacked.
++ Locate the module on the machine: `locate os.py`
++ Navigate to the directory: `cd /usr/lib/python2.7`
++ View the permissions: `ls -l os.py`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4be0605e-d48e-4b27-b7aa-1f6d6355f4c7)
+
+
+
+
+
+
 
 
 # References & Alternatives
