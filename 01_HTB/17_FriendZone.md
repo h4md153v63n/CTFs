@@ -102,7 +102,21 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
 
 
 ### smb
-+ 
++ List available shares and permissions: `smbmap -H 10.10.10.123 `
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4c08c882-fdd7-4bae-9046-9639f94a64fb)
+
++ **Alternatively**, get a similar list without Permissions from **smbclient** using **-N** for **null session** or **no auth** and **-L** to list: `smbclient -N -L //10.10.10.123`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/601c4600-35c8-456b-bd2f-a78696fa7ef7)
+
++ There are **READ** permission on the **general** share, and **READ/WRITE** permissions on the **Development** share.
++ List recursively directories and files on all accessible shares: `smbmap -R -H 10.10.10.123`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9c20d2ac-c6dd-40fb-9af2-9f2c6dcd031d)
+
++ There's nothing on the **Development** share, but the **general** directory has a file called **creds.txt**.
++ View more information about the shares: `smbclient -L //10.10.10.123`
 
 
 
