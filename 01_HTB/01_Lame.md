@@ -326,3 +326,8 @@ root@lame:/#
 + https://medium.com/@maideglr5/lame-makine-çözümü-htb-47731bc5705f
 + https://blog.artis3nal.com/writeups/htb-lame-msf/
 + https://medium.com/@orhan_yildirim/lame-hackthebox-write-up-8c7b9e7639d6
++ https://medium.com/@ismailplt3458/hack-the-box-lame-machi%CC%87ne-li%CC%87kes-oscp-soluti%CC%87on-1ecbe11241f9
+
+# CVE Scripting
++ https://github.com/amriunix/CVE-2007-2447
++ https://github.com/Ziemni/CVE-2007-2447-in-Python
