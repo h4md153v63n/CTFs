@@ -164,11 +164,19 @@ dig axfr @10.10.10.123 friendzoneportal.red
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8824b51e-478e-49d0-9340-afdf8cf92c50)
 
++ Alternatively, you can try the commands in the below:
+```
+host -l friendzone.red 10.10.10.123
+host -l friendzoneportal.red 10.10.10.123
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9039b9cb-a1fe-410e-af5e-531cfa506f2a)
+
 + After these discovered subdomains, let's update hosts file for each of them.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/41fc16cd-582c-4049-9cf2-3860ebbf1d3a)
 
-+ Check all of 8 subdomains:
++ Check all of 8 subdomains visiting. Remember to visit them over both HTTP and HTTPS because it may give different results.
 ```
 friendzoneportal.red -> Michael Jackson's image
 administrator1.friendzone.red -> Login Form for FriendZone
@@ -202,7 +210,7 @@ vpn.friendzoneportal.red -> Not Found
 + `https://imports.friendzoneportal.red/`: **Not Found.**
 + `https://vpn.friendzoneportal.red/`: **Not Found.**
 
-
++ **Primarily**, as always, try default credentials on the admin sites **https://admin.friendzone.red/** and **https://administrator1.friendzone.red/**, but they don't work.
 + **Firstly**, navigate to `https://admin.friendzone.red/`, and login with previously discovered credentials `admin`:`WORKWORKHhallelujah@#` from SMB. It doesn't work, and skip it.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/113209b8-24c7-4eaa-8272-42d85b3e9f81)
@@ -246,8 +254,9 @@ jaVasCript:/-///'/"/*/(//oNcliCk=alert(1) )//%0D%0A%0d%0a //</stYle/</titLe/</te
 
 ### pagename
 + Remember duration of the enumeration phase, we discovered the **Development** share with READ and WRITE permissions from SMB, and it's likely that the files uploaded on that share are stored in the location /etc/Development based on the **Comments** column.
-+ Try to upload a php revershell file, and then exploit the LFI vulnerability to get a reverse shell.
-+ Log into the Development share: `smbclient -N //10.10.10.123/Development`
++ Try to upload a php revershell file to the target machine, and then exploit the LFI vulnerability to get a reverse shell.
++ Change the IP address and port number on a copy of **/usr/share/webshells/php/php-reverse-shell.php**.
++ Login into the Development share: `smbclient -N //10.10.10.123/Development`
 + Transfer the **shell.php** file from the attack machine to the share: `put shell.php`
 + **Alternatively**, `smbclient -N //10.10.10.123/Development -c 'put shell.php'`
 + **Alternatively 2**, `smbclient -N //10.10.10.123/Development -c 'put php-reverse-shell.php shell.php'`
@@ -261,6 +270,7 @@ jaVasCript:/-///'/"/*/(//oNcliCk=alert(1) )//%0D%0A%0d%0a //</stYle/</titLe/</te
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/187e2901-f577-42a9-b14e-9782f24b8989)
 
++ **Alternatively**, try to upload a [webshell](https://0xdf.gitlab.io/2019/07/13/htb-friendzone.html#webshell), and get a [reverse shell](https://0xdf.gitlab.io/2019/07/13/htb-friendzone.html#shell) using [webshell](https://0xdf.gitlab.io/2019/07/13/htb-friendzone.html#webshell).
 + Upgrade it to a better shell, do more stable.
 ```
 python -c 'import pty; pty.spawn("/bin/bash")'
@@ -283,7 +293,14 @@ stty rows 55 columns 285
 + Escalate privileges to get the root flag.
 
 
+## Privilege Escalation: from 'www-data' to 'root'
++ This step is similar with [Privilege Escalation: from 'friend' to 'root'](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/17_FriendZone.md#privilege-escalation-from-friend-to-root).
++ Continue directly with [root privilege escalation](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/17_FriendZone.md#privilege-escalation-from-friend-to-root) step.
++ It's up to you.
+
+
 ## Privilege Escalation: from 'www-data' to 'friend'
++ **Alternatively**, you can skip this step, and continue directly with root privilege escalation step [Privilege Escalation: from 'friend' to 'root'](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/17_FriendZone.md#privilege-escalation-from-friend-to-root). It's up to you.
 + Check the file **mysql_data.conf** in **/var/www** directory.
 + Try to login with su or ssh using discovered these credentials `friend`:`Agpyu12!0.213$`.
 ```
@@ -320,10 +337,13 @@ db_name=FZ
 + Locate the module on the machine: `locate os.py`
 + Navigate to the directory: `cd /usr/lib/python2.7`
 + View the permissions: `ls -l os.py`
++ **Alternatively**, `find -type f -writable -ls`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4be0605e-d48e-4b27-b7aa-1f6d6355f4c7)
 
-+ Add the python reverse shell code to the bottom of the os.py file.
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a33af8f7-b88b-42fe-a2a0-c58cdb8842bd)
+
++ Add the python reverse shell code to the bottom of the **os.py** file.
 + Remove **os** from **os.dup2()**, and just write **dup2()** since we're in the os module.
 + Check [Python Library Hijacking](https://rastating.github.io/privilege-escalation-via-python-library-hijacking/) about more.
 
