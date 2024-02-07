@@ -222,6 +222,12 @@ vpn.friendzoneportal.red -> Not Found
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c73a2714-1bf3-461f-b856-9c023ac49200)
 
++ Directory fuzzing to enumerate directories on **https://administrator1.friendzone.red/**:
+```
+gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u https://administrator1.friendzone.red/ -k -n -x html,php,txt -r -t 40
+```
+
+
 
 
 
