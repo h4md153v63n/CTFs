@@ -111,12 +111,23 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/601c4600-35c8-456b-bd2f-a78696fa7ef7)
 
 + There are **READ** permission on the **general** share, and **READ/WRITE** permissions on the **Development** share.
++ And also results on the **Comment** column show that the files in the **Files** share are stored in **/etc/Files** on the system. Maybe **general** and **Development** follow the same pattern. No need to take risks using nmap nse:
+```
+nmap --script smb-enum-shares -p139,445 -T4 -Pn 10.10.10.123
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/174e2a79-5ada-46c5-810f-6ffbec20e8b8)
+
++ Take note of this piece of information as it may be required in the exploitation phase.
+
 + List recursively directories and files on all accessible shares: `smbmap -H 10.10.10.123 -r`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9c20d2ac-c6dd-40fb-9af2-9f2c6dcd031d)
 
 + There's nothing on the **Development** share, but the **general** directory has a file called **creds.txt**.
-+ Results on the **Comment** column show that the files in the **Files** share are stored in **/etc/Files** on the system. Therefore, the files in the **Development** share which there is write premission may be stored in **/etc/Development**. Take note of this piece of information as it may be required in the exploitation phase.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a6fdb45c-29ea-4870-8e8e-5d351d74a793)
+
 + Login to null session general share anonymously without a password: `smbclient //10.10.10.123/general -N`
 + Download the creds.txt file from the target machine to the attack machine: `get creds.txt`
 
