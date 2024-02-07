@@ -284,10 +284,29 @@ stty rows 55 columns 285
 
 
 ## Privilege Escalation: from 'www-data' to 'friend'
-+ xxx
++ Check the file **mysql_data.conf** in **/var/www** directory.
++ Try to login with su or ssh using discovered these credentials `friend`:`Agpyu12!0.213$`.
+```
+www-data@FriendZone:/var/www$ cat mysql_data.conf 
+for development process this is the mysql creds for user friend
+
+db_user=friend
+
+db_pass=Agpyu12!0.213$
+
+db_name=FZ
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/02686888-3b74-4157-9865-6ffc699fab31)
+
+
+## Privilege Escalation: from 'friend' to 'root'
++ 
 
 
 # References & Alternatives
 + https://vvmlist.github.io/#FriendZone
-+ xxx
++ https://0xdf.gitlab.io/2019/07/13/htb-friendzone.html
++ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/friendzone-writeup-w-o-metasploit
++ 
 
