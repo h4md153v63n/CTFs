@@ -80,7 +80,7 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d8a4d69e-0102-4fa9-873b-d0202f5644ab)
 
 
-+ **Secondly**, navigate to `https://10.10.10.123/`, and it gives 'not found' error.
++ **Secondly**, navigate to `https://10.10.10.123/`, and it gives 'Not found' error.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3cb404f7-d7af-479c-8b4f-9cdd6ac478fc)
 
@@ -111,12 +111,23 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/601c4600-35c8-456b-bd2f-a78696fa7ef7)
 
 + There are **READ** permission on the **general** share, and **READ/WRITE** permissions on the **Development** share.
-+ List recursively directories and files on all accessible shares: `smbmap -R -H 10.10.10.123`
++ List recursively directories and files on all accessible shares: `smbmap -H 10.10.10.123 -r`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9c20d2ac-c6dd-40fb-9af2-9f2c6dcd031d)
 
 + There's nothing on the **Development** share, but the **general** directory has a file called **creds.txt**.
-+ View more information about the shares: `smbclient -L //10.10.10.123`
++ Results on the **Comment** column show that the files in the **Files** share are stored in **/etc/Files** on the system. Therefore, the files in the **Development** share which there is write premission may be stored in **/etc/Development**. Take note of this piece of information as it may be required in the exploitation phase.
++ Login to null session general share anonymously without a password: `smbclient //10.10.10.123/general -N`
++ Download the creds.txt file from the target machine to the attack machine: `get creds.txt`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1308a185-f789-40f4-9468-ead9cc38def9)
+
++ View the content of the file: `cat creds.txt`
+```
+creds for the admin THING:
+
+admin:WORKWORKHhallelujah@#
+```
 
 
 
