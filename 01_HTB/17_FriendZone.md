@@ -129,6 +129,10 @@ creds for the admin THING:
 admin:WORKWORKHhallelujah@#
 ```
 
++ Try these credentials on ftp login and ssh login, but they don't work.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d2c9d528-d9b5-4d70-b646-4269b35e2de7)
+
 
 
 ## Gaining Access
