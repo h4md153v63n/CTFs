@@ -4,6 +4,9 @@
 
 **Machine ip:** 10.10.10.117
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9a69c46b-d01a-4b04-a017-c941d6d634e6)
+
+
 ## Enumeration
 First thing first, start port scan:
 + `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.117 -e tun0 > ports`
