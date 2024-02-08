@@ -1,5 +1,7 @@
 # Beep
 
+**Links:** [1](https://www.hackthebox.com/machines/beep)  [2](https://app.hackthebox.com/machines/Beep)
+
 **Machine ip:** 10.10.10.7
 
 ## Enumeration
