@@ -1,5 +1,7 @@
 # Shocker
 
+**Links:** [1](https://www.hackthebox.com/machines/shocker)  [2](https://app.hackthebox.com/machines/Shocker)
+
 **Machine ip:** 10.10.10.56
 
 ## Enumeration
