@@ -521,7 +521,7 @@ echo "system ('cp /bin/bash /tmp/rootbash; chmod +s /tmp/rootbash')" >> /usr/lib
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/99dcb078-442a-463b-a8b6-09b57ec37f26)
 
-+ For more, you can try [CVE-2019-10149]: https://github.com/Diefunction/CVE-2019-10149, and [an alternative different approach](https://ivanitlearning.wordpress.com/2020/11/20/hackthebox-friendzone/).
++ For more, you can try [CVE-2019-10149](https://github.com/Diefunction/CVE-2019-10149), and [an alternative different approach](https://ivanitlearning.wordpress.com/2020/11/20/hackthebox-friendzone/).
 
 
 ## Root Privilege Escalation: Alternative 2
