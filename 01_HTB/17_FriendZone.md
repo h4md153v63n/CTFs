@@ -525,7 +525,7 @@ echo "system ('cp /bin/bash /tmp/rootbash; chmod +s /tmp/rootbash')" >> /usr/lib
 
 
 ## Root Privilege Escalation: Alternative 2
-+ Check [CVE-2021-3156](https://www.exploit-db.com/exploits/49522) Sudo Baron Samedit vulnerability, and try to exploit using https://github.com/blasty/CVE-2021-3156.
++ Check [CVE-2021-3156](https://www.exploit-db.com/exploits/49522) for Sudo Baron Samedit vulnerability, and try to exploit using https://github.com/blasty/CVE-2021-3156.
 + For more, check https://hackmd.io/@Mecanico/Syu8fKUAc#⏫Root-Privesc.
 
 
