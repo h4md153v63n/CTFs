@@ -1,5 +1,7 @@
 # Nibbles
 
+**Links:** [1](https://www.hackthebox.com/machines/nibbles)  [2](https://app.hackthebox.com/machines/Nibbles)
+
 **Machine ip:** 10.10.10.75
 
 ## Enumeration
