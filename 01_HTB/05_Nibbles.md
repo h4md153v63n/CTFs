@@ -4,6 +4,9 @@
 
 **Machine ip:** 10.10.10.75
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/691e8039-49fa-4cf0-a6fd-0c54dbb34c30)
+
+
 ## Enumeration
 + `./nmapAutomator.sh -H 10.10.10.75 -t All`
 ```
