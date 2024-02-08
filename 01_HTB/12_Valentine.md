@@ -1,5 +1,7 @@
 # Valentine
 
+**Links:** [1](https://www.hackthebox.com/machines/valentine)  [2](https://app.hackthebox.com/machines/Valentine)
+
 **Machine ip:** 10.10.10.79
 
 ## Enumeration
