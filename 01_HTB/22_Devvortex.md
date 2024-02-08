@@ -1,6 +1,8 @@
 # Devvortex
 
-Machine ip: 10.10.11.242
+**Links:** [1](https://www.hackthebox.com/machines/devvortex)  [2](https://app.hackthebox.com/machines/Devvortex)
+
+**Machine ip:** 10.10.11.242
 
 ## Solutions
 I solved the machine, but I won't publish a write-up. 
