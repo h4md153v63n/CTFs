@@ -1,5 +1,7 @@
 # Sense
 
+**Links:** [1](https://www.hackthebox.com/machines/sense)  [2](https://app.hackthebox.com/machines/Sense)
+
 **Machine ip:** 10.10.10.60
 
 ## Enumeration
