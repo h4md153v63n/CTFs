@@ -4,6 +4,9 @@
 
 **Machine ip:** 10.10.10.68
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6cf650ac-4c3d-4149-9393-626c443b2480)
+
+
 ## Enumeration
 + `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.68 -e tun0 > ports`
 + `ports=$(cat ports | awk -F " " '{print $4}' | awk -F "/" '{print $1}' | sort -n | tr '\n' ',' | sed 's/,$//')`
