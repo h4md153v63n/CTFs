@@ -4,6 +4,9 @@
 
 **Machine ip:** 10.10.10.17
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0532c5d5-597a-4322-96b4-4e25cfeb8e29)
+
+
 ## Enumeration
 + `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.17 -e tun0 > ports`
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2131bd03-d3bc-47ad-b0e0-5386ecbaaed1)
