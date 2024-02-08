@@ -1,5 +1,7 @@
 # TartarSauce
 
+**Links:** [1](https://www.hackthebox.com/machines/tartarsauce)  [2](https://app.hackthebox.com/machines/TartarSauce)
+
 **Machine ip:** 10.10.10.88
 
 ## Enumeration
