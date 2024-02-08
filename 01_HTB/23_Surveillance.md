@@ -1,6 +1,8 @@
 # Surveillance
 
-Machine ip: 10.10.11.245
+**Links:** [1](https://www.hackthebox.com/machines/surveillance)  [2](https://app.hackthebox.com/machines/Surveillance)
+
+**Machine ip:** 10.10.11.245
 
 ## Solutions
 I solved the machine, but I won't publish a write-up. 
