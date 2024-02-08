@@ -1,5 +1,7 @@
 # Cronos
 
+**Links:** [1](https://www.hackthebox.com/machines/cronos)  [2](https://app.hackthebox.com/machines/Cronos)
+
 **Machine ip:** 10.10.10.13
 
 ## Enumeration
