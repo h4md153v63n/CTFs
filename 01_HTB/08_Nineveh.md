@@ -225,3 +225,9 @@ Try ssh connection [analyzing **secure_notes** image file](https://rana-khalil.g
 + https://ethicalhacs.com/nineveh-hackthebox-walkthrough/
 + https://v3ded.github.io/ctf/htb-nineveh
 + https://steflan-security.com/hack-the-box-nineveh-walkthrough/
+
+
+# Technical Knowledge
++ **procmon.sh:** https://github.com/ivanitlearning/CTF-Repos/blob/master/HTB/Friendzone/Failed-procmon.md
++ **IppSec's Video:** https://www.youtube.com/watch?v=K9DKULxSBK4&t=1890s
+
