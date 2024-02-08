@@ -1,5 +1,7 @@
 # Irked
 
+**Links:** [1](https://www.hackthebox.com/machines/irked)  [2](https://app.hackthebox.com/machines/Irked)
+
 **Machine ip:** 10.10.10.117
 
 ## Enumeration
