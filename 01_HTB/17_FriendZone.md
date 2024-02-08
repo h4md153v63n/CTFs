@@ -41,11 +41,11 @@ Port udp 137: Samba nmbd netbios-ns
 ```
 
 Check port scan results:
-+ Port tcp 21, ftp: Anonymous login is not allowed, then it requires credentials to access the FTP server. Moreover, the version is 3.0.3 which does not have any critical exploits.
-+ Port tcp 22, ssh: There isn't any critical exploit associated with the version, so we need credentials for this service as well.
-+ Port tcp/udp 53, dns: The first thing to do for this service is get the domain name with nslookup, and try a zone transfer to enumerate name servers, hostnames, etc. The ssl-cert from the port scan gives us the common name friendzone.red. Take note of it as it may be the target domain name.
-+ Ports tcp 80/443, http/https are different page titles. It could be a virtual hosts routing configuration. If we discover other hosts, we need to enumerate them over both HTTP and HTTPS since they may give different results.
-+ Ports tcp 139/445, and udp 137: Samba SMB ports are open. Check usual controls: try for anonymous login, list shares and check permissions on shares.
++ **Port tcp 21, ftp:** Anonymous login is not allowed, then it requires credentials to access the FTP server. Moreover, the version is 3.0.3 which does not have any critical exploits.
++ **Port tcp 22, ssh:** There isn't any critical exploit associated with the version, so we need credentials for this service as well.
++ **Port tcp/udp 53, dns:** The first thing to do for this service is get the domain name with nslookup, and try a zone transfer to enumerate name servers, hostnames, etc. The ssl-cert from the port scan gives us the common name friendzone.red. Take note of it as it may be the target domain name.
++ **Ports tcp 80/443, http/https** are different page titles. It could be a virtual hosts routing configuration. If we discover other hosts, we need to enumerate them over both HTTP and HTTPS since they may give different results.
++ **Ports tcp 139/445, and udp 137:** Samba SMB ports are open. Check usual controls: try for anonymous login, list shares and check permissions on shares.
 
 
 ## Enumeration
@@ -413,14 +413,7 @@ stty rows 55 columns 285
 + Escalate privileges to get the root flag.
 
 
-## Privilege Escalation: from 'www-data' to 'root'
-+ This step is similar with [Privilege Escalation: from 'friend' to 'root'](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/17_FriendZone.md#privilege-escalation-from-friend-to-root).
-+ Continue directly with [root privilege escalation](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/17_FriendZone.md#privilege-escalation-from-friend-to-root) step.
-+ It's up to you.
-
-
 ## Privilege Escalation: from 'www-data' to 'friend'
-+ **Alternatively**, you can skip this step, and continue directly with root privilege escalation step [Privilege Escalation: from 'friend' to 'root'](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/17_FriendZone.md#privilege-escalation-from-friend-to-root). It's up to you.
 + Check the file **mysql_data.conf** in **/var/www** directory.
 + Try to login with su or ssh using discovered these credentials `friend`:`Agpyu12!0.213$`.
 ```
@@ -510,12 +503,11 @@ cd /tmp
 echo "system ('cat /root/root.txt > /tmp/flag.txt')" >> /usr/lib/python2.7/os.py
 ```
 
-+ If not run, try this **alternatively**:
-```
-echo "infile = open(\"/root/root.txt\", \"r\").read()" > /usr/lib/python2.7/os.py
-echo "outfile = open(\"/tmp/root.txt\", \"w\").write(infile)" >> /usr/lib/python2.7/os.py
-echo "outfile.close()" >> /usr/lib/python2.7/os.py
-```
++ Try these **alternatively**.
++ **1.** https://www.jeroenvansaane.com/posts/htb/friendzone/#privilege-escalation
++ **2.** https://github.com/jebidiah-anthony/htb_friendzone?tab=readme-ov-file#part-4--privilege-escalation-friend---root
++ **3.** https://xavilok.es/posts/FriendZone.php
+
 
 ## Root Privilege Escalation: Alternative 1
 + Check smtp port on the target's localhost: `netstat -ant | grep 25`
@@ -528,19 +520,6 @@ echo "outfile.close()" >> /usr/lib/python2.7/os.py
 ## Root Privilege Escalation: Alternative 2
 + Check [CVE-2021-3156](https://www.exploit-db.com/exploits/49522) Sudo Baron Samedit vulnerability, and try to exploit using https://github.com/blasty/CVE-2021-3156.
 + For more, check https://hackmd.io/@Mecanico/Syu8fKUAc#⏫Root-Privesc.
-
-
-# References & Alternatives
-+ https://vvmlist.github.io/#FriendZone
-+ https://0xdf.gitlab.io/2019/07/13/htb-friendzone.html
-+ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/friendzone-writeup-w-o-metasploit
-+ https://0xrick.github.io/hack-the-box/friendzone/
-+ https://ethicalhacs.com/friendzone-hackthebox-walkthrough/
-+ https://www.hackingarticles.in/hack-the-box-friendzone-walkthrough/
-+ https://github.com/jebidiah-anthony/htb_friendzone
-+ https://manuelvazquez-contact.gitbook.io/oscp-prep/hack-the-box/friendzoned
-+ https://rootissh.in/hackthebox-friendzone-walkthrough-htb-e438711443f7
-+ https://hackmd.io/@Mecanico/Syu8fKUAc
 
 
 # Technical Knowledge
@@ -557,3 +536,23 @@ echo "outfile.close()" >> /usr/lib/python2.7/os.py
 + **CVE-2021-3156**: https://github.com/blasty/CVE-2021-3156
 + https://www.exploit-db.com/exploits/49522
 + https://hackmd.io/@Mecanico/Syu8fKUAc#⏫Root-Privesc
+
+
+# References & Alternatives
++ https://vvmlist.github.io/#FriendZone
++ https://0xdf.gitlab.io/2019/07/13/htb-friendzone.html
++ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/friendzone-writeup-w-o-metasploit
++ https://0xrick.github.io/hack-the-box/friendzone/
++ https://ethicalhacs.com/friendzone-hackthebox-walkthrough/
++ https://tanzilrehman.com/friendzone-htb-oscp-box-6cfacbdb5870
++ https://www.hackingarticles.in/hack-the-box-friendzone-walkthrough/
++ https://github.com/jebidiah-anthony/htb_friendzone
++ https://manuelvazquez-contact.gitbook.io/oscp-prep/hack-the-box/friendzoned
++ https://rootissh.in/hackthebox-friendzone-walkthrough-htb-e438711443f7
++ https://docs.gorigorisensei.com/hack-the-box-write-ups/htb-friendzone-22
++ https://hackmd.io/@Mecanico/Syu8fKUAc
++ https://xavilok.es/posts/FriendZone.php
++ https://hipotermia.pw/htb/friendzone
++ https://blog.mzfr.me/HackTheBox-writeups/Friendzone/
++ https://snowscan.io/htb-writeup-friendzone/#
+
