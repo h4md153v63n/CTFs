@@ -1,5 +1,7 @@
 # Brainfuck
 
+**Links:** [1](https://www.hackthebox.com/machines/brainfuck)  [2](https://app.hackthebox.com/machines/Brainfuck)
+
 **Machine ip:** 10.10.10.17
 
 ## Enumeration
