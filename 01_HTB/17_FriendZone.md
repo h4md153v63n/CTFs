@@ -531,7 +531,7 @@ echo "system ('cat /root/root.txt > /tmp/flag.txt')" >> /usr/lib/python2.7/os.py
 
 
 # CVE Scripting
-+ [CVE-2019-10149]: https://github.com/Diefunction/CVE-2019-10149
++ **CVE-2019-10149**: https://github.com/Diefunction/CVE-2019-10149
 + https://ivanitlearning.wordpress.com/2020/11/20/hackthebox-friendzone/
 + **CVE-2021-3156**: https://github.com/blasty/CVE-2021-3156
 + https://www.exploit-db.com/exploits/49522
