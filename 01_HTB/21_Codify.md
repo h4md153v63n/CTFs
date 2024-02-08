@@ -1,6 +1,8 @@
 # Codify
 
-Machine ip: 10.10.11.239
+**Links:** [1](https://www.hackthebox.com/machines/Codify)  [2](https://app.hackthebox.com/machines/Codify)
+
+**Machine ip:** 10.10.11.239
 
 ## Solutions
 I solved the machine, but I won't publish a write-up. 
