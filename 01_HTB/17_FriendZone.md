@@ -1,5 +1,7 @@
 # FriendZone
 
+**Links:** [1](https://www.hackthebox.com/machines/friendzone)  [2](https://app.hackthebox.com/machines/FriendZone)
+
 **Machine ip:** 10.10.10.123
 
 ## Reconnaissance
