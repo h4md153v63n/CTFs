@@ -28,12 +28,12 @@ Port tcp 80: Apache httpd 2.4.29
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/867650f8-07a9-4a97-9db1-afa666204b13)
 
-+ Add **swagshop.htb** into **hosts** file, again revisit.
++ Add **swagshop.htb** into **hosts** file, and again revisit.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5cdd986e-32af-41a3-a1e1-01757f0f2dce)
 
 + The application is magento that is an open-source e-commerce platform written in PHP.
-+ As always on each web app, start directory fuzzing:
++ As always, on each web app, start directory fuzzing:
 ```
 gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://swagshop.htb/ -k -n -x html,php,txt -r -t 50
 ```
