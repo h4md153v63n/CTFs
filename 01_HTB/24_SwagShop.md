@@ -38,6 +38,9 @@ Port tcp 80: Apache httpd 2.4.29
 gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://swagshop.htb/ -k -n -x html,php,txt -r -t 50
 ```
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d41e6d29-b58c-4b19-ba61-7b7a4e072b87)
+
++ We need to discover the version of magento.
 
 ## Gaining Access
 + xxx
