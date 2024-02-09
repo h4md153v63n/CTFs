@@ -62,10 +62,13 @@ gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u http://swagshop.htb/i
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f07c0b07-b08c-44f9-ba1f-fbf1d54e4234)
 
 
-
-
 ## Gaining Access
-+ xxx
++ Check whether it has any exploits: `searchsploit magento`
++ Focus rce ones, and download **37977.py** with **37811.py**.
+
+
+
+
 
 
 
