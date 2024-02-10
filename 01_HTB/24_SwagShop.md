@@ -89,7 +89,14 @@ gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u http://swagshop.htb/i
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/31fd6e3c-e7e5-4112-b3e8-3e9804c6dbf6)
 
-+ Follow 
++ Follow Catalog -> Manage Products -> Click of the name on products -> Custom Options -> Add New Option: Fill out the fields with anything -> Save
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4fb0a78c-13fd-425d-9f14-1872887b7f1a)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/313ebb45-331c-40bf-93c2-d46a10d22203)
+
+
+
 
 
 ## Privilege Escalation
