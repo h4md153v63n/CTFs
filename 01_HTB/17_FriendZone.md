@@ -391,7 +391,7 @@ jaVasCript:/-///'/"/*/(//oNcliCk=alert(1) )//%0D%0A%0d%0a //</stYle/</titLe/</te
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/187e2901-f577-42a9-b14e-9782f24b8989)
 
 + **Alternatively**, try to upload a [webshell](https://0xdf.gitlab.io/2019/07/13/htb-friendzone.html#webshell), and get a [reverse shell](https://0xdf.gitlab.io/2019/07/13/htb-friendzone.html#shell) using [webshell](https://0xdf.gitlab.io/2019/07/13/htb-friendzone.html#webshell).
-+ Upgrade it to a better shell, do more stable.
++ We have partially interactive bash shell. Upgrade it to get a fully interactive shell, do more stable with a better shell.
 ```
 python -c 'import pty; pty.spawn("/bin/bash")'
 script /dev/null -c bash
