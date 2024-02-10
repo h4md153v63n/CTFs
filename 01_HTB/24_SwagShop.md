@@ -64,11 +64,30 @@ gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u http://swagshop.htb/i
 
 ## Gaining Access
 + Check whether it has any exploits: `searchsploit magento`
-+ Focus rce ones, and download **37977.py** with **37811.py**.
++ Focus rce ones, and check **37977.py** with **37811.py**.
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/49088aa5-5b40-4b65-9c92-598bc22df3f8)
 
++ **Firstly**, when tried to exploit with 37811.py it gives errors **mechanize._form_controls.AmbiguityError: more than one control matching name ‘login[username]’** and **AttributeError: ‘NoneType’ object has no attribute ‘group’**. Check the links: [1](https://forum.hackthebox.com/t/swagshop-rce/1959) [2](https://forum.hackthebox.com/t/was-swagshop-patched-again/3832) [3](https://forum.hackthebox.com/t/swagshop-errors-in-script-37811-py/1965).
++ I didn't try the solution with [burp broxy](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/swagshop-writeup-w-o-metasploit#id-26dd).
 
++ **Secondly**, focus on **37977.py**, and copy the exploit.
++ Open the exploit, and change **target** as `http://swagshop.htb/index.php/`.
++ Delete the 9-23th lines and after the 62nd line.
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a57b0991-8ae7-4301-8c4a-9f2dde48f4fb)
+
++ If wanna to specify username:pass different from **forme:forme**, try **test:test**.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7f5f7a01-8539-4792-b5ac-c0d76cfa9836)
+
++ Run exploit with python2: `python2 37977.py` and see it worked.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/68df934e-dbfb-46b6-b1d4-80013065526c)
+
++ Login the admin login panel with **test:test**: `http://swagshop.htb/index.php/admin`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/31fd6e3c-e7e5-4112-b3e8-3e9804c6dbf6)
 
 
 
