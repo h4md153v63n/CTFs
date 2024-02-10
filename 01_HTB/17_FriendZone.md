@@ -409,7 +409,7 @@ stty rows 55 columns 285
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/29bb6a71-cbb5-4db0-b5ff-3038f7f9aede)
 
-+ Now that we are on an interactive shell, and read the user flag, since the privileges are enough. 
++ Now that we are on an interactive shell, and read the user flag, since the privileges of **web daemon user (www-data)** are enough. 
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f63315ec-5a66-49f5-be9f-7a1fa1208b6b)
 
