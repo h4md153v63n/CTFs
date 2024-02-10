@@ -80,7 +80,7 @@ nmap -p 8067 --script=irc-unrealircd-backdoor --script-args=irc-unrealircd-backd
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b1a5b205-1807-4db2-8333-5c924009a39d)
 
 
-+ Do more stable shell.
++ We have partially interactive bash shell. Upgrade it to get a fully interactive shell, do more stable with a better shell.
 ```
 script /dev/null -c bash
 CTRL^Z: Ctrl + Z
