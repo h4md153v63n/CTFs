@@ -150,7 +150,7 @@ stty rows 55 columns 285
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5a18351b-25b3-4a5e-b513-2cc9f403ab54)
   
-+ User www-data can run sudo with no password and with root's privileges for **/usr/bin/vi**.
++ User **www-data** can run sudo with **no** password and with root's privileges for **/usr/bin/vi** under **/var/www/html/**.
 + Check gtfobins for [vi](https://gtfobins.github.io/gtfobins/vi/).
 + Run the commands to get the root shell:
 ```
