@@ -124,7 +124,7 @@ gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u http://swagshop.htb/i
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f283088e-d95e-4d02-a123-46941339b6a1)
 
-+ But yet we need to elevate root privilege.
++ But yet we need to elevate root privilege, too.
 
 
 ### Shell Upgrade
