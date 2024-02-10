@@ -85,7 +85,7 @@ gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u http://swagshop.htb/i
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/68df934e-dbfb-46b6-b1d4-80013065526c)
 
-+ Login the admin login panel with **test:test**: `http://swagshop.htb/index.php/admin`
++ Login the admin login panel with **test:test**: `http://swagshop.htb/index.php/admin`, and see that worked.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/31fd6e3c-e7e5-4112-b3e8-3e9804c6dbf6)
 
