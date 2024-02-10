@@ -33,7 +33,7 @@ Port tcp 80: Apache httpd 2.4.29
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5cdd986e-32af-41a3-a1e1-01757f0f2dce)
 
 + The application is magento that is an open-source e-commerce platform written in PHP.
-+ We need to discover the version of magento.
++ You can also try to discover the version of magento with [Mage Scan](https://github.com/steverobbins/magescan) tool, too.
 + As always, on each web app, start directory fuzzing:
 ```
 gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://swagshop.htb/ -k -n -x html,php,txt -r -t 50
@@ -68,16 +68,17 @@ gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u http://swagshop.htb/i
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/49088aa5-5b40-4b65-9c92-598bc22df3f8)
 
-+ **Firstly**, when tried to exploit with 37811.py, it gives errors **mechanize._form_controls.AmbiguityError: more than one control matching name ‘login[username]’** and **AttributeError: ‘NoneType’ object has no attribute ‘group’**. Check the links: [1](https://forum.hackthebox.com/t/swagshop-rce/1959) [2](https://forum.hackthebox.com/t/was-swagshop-patched-again/3832) [3](https://forum.hackthebox.com/t/swagshop-errors-in-script-37811-py/1965).
++ **Firstly**, when tried to exploit with **37811.py** with CVE:N/A [1](https://www.exploit-db.com/exploits/37811), it gives errors **mechanize._form_controls.ControlNotFoundError** with **mechanize._form_controls.AmbiguityError: more than one control matching name ‘login[username]’** and **tunnel = tunnel.group(1)** with **AttributeError: ‘NoneType’ object has no attribute ‘group’**. Check the links: [1](https://forum.hackthebox.com/t/swagshop-rce/1959) [2](https://forum.hackthebox.com/t/was-swagshop-patched-again/3832) [3](https://forum.hackthebox.com/t/swagshop-errors-in-script-37811-py/1965).
 + I didn't try the solution with [burp broxy](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/swagshop-writeup-w-o-metasploit#id-26dd).
 
-+ **Secondly**, concentrate on **37977.py**, and copy the exploit.
-+ Open the exploit, and change **target** as `http://swagshop.htb/index.php/`.
-+ Delete the 9-23th lines and after the 62nd line.
++ **Secondly**, concentrate on **37977.py** with [CVE-2015-1397](https://www.exploit-db.com/exploits/37977), and copy the exploit.
++ Open the exploit, and change **target** variable as `http://swagshop.htb/index.php/`.
++ That doesn't require authentication.
++ Remove all the uncommented comments and explanation (or you'll face compilation errors). In this scope, delete the 9-23th lines and after the 62nd line.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a57b0991-8ae7-4301-8c4a-9f2dde48f4fb)
 
-+ If wanna to specify username:pass different from **forme:forme**, try **test:test**.
++ Change the username:password from **forme:forme** to any random:random values(optional), and try **test:test**.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7f5f7a01-8539-4792-b5ac-c0d76cfa9836)
 
@@ -120,7 +121,7 @@ gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u http://swagshop.htb/i
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d7a200d7-f925-4f1f-af42-f6dc2bbf28f6)
 
-+ Get low level shell, and see the www-data's privilege is enough to view the content of the user flag.
++ Get low level shell, and see the web **daemon user (www-data)**'s privilege is enough to view the content of the user flag.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f283088e-d95e-4d02-a123-46941339b6a1)
 
@@ -159,10 +160,19 @@ sudo /usr/bin/vi /var/www/html/test
 # on vi editor:
 :!bash
 
-# alternatively, on vi:
+# alternatively 1:
+sudo /usr/bin/vi /var/www/html/test -c ':!/bin/bash' /dev/null
+
+# alternatively 2, on vi:
 :set shell=/bin/sh
 :shell
+
+# alternatively 3, on vi:
+:set shell=/bin/bash
+:shell
 ```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/76ed5e7c-e99f-4273-a1e2-8c438bf68a91)
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/e815cb80-6768-44e3-b989-e788070d7042)
 
@@ -176,12 +186,15 @@ sudo /usr/bin/vi /var/www/html/test
 
 
 # Technical Knowledge
++ **Mage Scan:** https://github.com/steverobbins/magescan
 + https://websec.wordpress.com/2014/12/08/magento-1-9-0-1-poi/
-+ 
++ https://medium.com/swlh/magento-exploitation-from-customer-to-server-user-access-70929e7bb634
 
 
 # CVE Scripting
-+ xxx
++ **CVE-N/A:** https://www.exploit-db.com/exploits/37811
++ **CVE-2015-1397:** https://www.exploit-db.com/exploits/37977
++ https://github.com/joren485/Magento-Shoplift-SQLI/blob/master/poc.py
 
 
 # References & Alternatives
@@ -191,3 +204,11 @@ sudo /usr/bin/vi /var/www/html/test
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/swagshop-writeup-w-o-metasploit
 + https://manuelvazquez-contact.gitbook.io/oscp-prep/hack-the-box/swagshop/scanning-and-enumeration
 + https://medium.com/@v1per/swagshop-hackthebox-writeup-a23f18e6b88b
+
+
+# For More
++ **A simple backdoor'ed Magento package:** https://github.com/lavalamp-/LavaMagentoBD
++ https://dustri.org/b/writing-a-simple-extensionbackdoor-for-magento.html
+
+
+  
