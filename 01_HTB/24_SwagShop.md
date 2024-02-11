@@ -1,4 +1,5 @@
 # SwagShop
+[This box was definitely more complicated than what its rating suggested. Seems like machines released from 2019 onwards are more difficult in general even if marked Easy. It takes editing multiple exploits just to get a shell.](https://ivanitlearning.wordpress.com/2020/09/15/hackthebox-swagshop/)
 
 **Links:** [1](https://www.hackthebox.com/machines/swagshop)  [2](https://app.hackthebox.com/machines/swagshop)
 
@@ -47,6 +48,7 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bab5becc-4821-4cdd-bce0-ed8f3ed80de7)
 
 + View page source, and discover unfamiliar directory of **/index.php/**.
++ index.php is really a Web folder **not** a file.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/72089ffb-ed32-4861-bae5-91a7d381be1a)
 
@@ -69,7 +71,7 @@ gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u http://swagshop.htb/i
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/49088aa5-5b40-4b65-9c92-598bc22df3f8)
 
 + **Firstly**, when tried to exploit with **37811.py** with CVE:N/A [1](https://www.exploit-db.com/exploits/37811), it gives errors **mechanize._form_controls.ControlNotFoundError** with **mechanize._form_controls.AmbiguityError: more than one control matching name ‘login[username]’** and **tunnel = tunnel.group(1)** with **AttributeError: ‘NoneType’ object has no attribute ‘group’**. Check the links: [1](https://forum.hackthebox.com/t/swagshop-rce/1959) [2](https://forum.hackthebox.com/t/was-swagshop-patched-again/3832) [3](https://forum.hackthebox.com/t/swagshop-errors-in-script-37811-py/1965).
-+ I didn't try the solution with [burp broxy](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/swagshop-writeup-w-o-metasploit#id-26dd).
++ Try the solution with burp broxy [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/swagshop-writeup-w-o-metasploit#id-26dd) [2](https://readmedium.com/en/https:/dtwh.medium.com/hack-the-box-swagshop-walkthrough-without-metasploit-8b9f03c480e7) [3](https://ivanitlearning.wordpress.com/2020/09/15/hackthebox-swagshop/) [4](https://epi052.gitlab.io/notes-to-self/blog/2019-09-12-hack-the-box-swagshop/).
 
 + **Secondly**, concentrate on **37977.py** with [CVE-2015-1397](https://www.exploit-db.com/exploits/37977), and copy the exploit.
 + Open the exploit, and change **target** variable as `http://swagshop.htb/index.php/`.
@@ -145,6 +147,16 @@ stty rows 55 columns 285
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/63a9d3b8-9bc0-4d88-bb02-ca5e422acf27)
 
 
+## Gaining Access: Alternative Approach
++ Try the [Froghopper Attack](https://www.foregenix.com/blog/anatomy-of-a-magento-attack-froghopper) that is a file upload attack. It got its name from the pepe frog image that was used as a meme to get the shell by the author of the exploit.
++ Check [1](https://www.hackingarticles.in/swagshop-hackthebox-walkthrough/)  [2](https://0xrick.github.io/hack-the-box/swagshop/) [3](https://www.rffuste.com/2022/02/21/htb-swagshop/) [4](https://t3chnocat.com/htb-swagshop/) [5](https://coldfusionx.github.io/posts/SwagshopHTB/).
+
+
+## Gaining Access: Alternative Approach 2 (Removed)
++ [It's not valid getting a shell using **Filesystem**](https://0xdf.gitlab.io/2019/09/28/htb-swagshop.html#rce-2---magento-package).
++ Check [1](https://sarthaksaini.com/2019/may/swagshop/writeup.html) [2](https://hipotermia.pw/htb/swagshop) [3](https://www.webyeti.ninja/blog/htb-swagshop) [4](https://medium.com/@dontblamethenetwork/htb-walkthrough-swagshop-3892c22ae5aa).
+
+
 ## Privilege Escalation
 + Escalate privileges to get the root flag.
 + View commands the user can run using sudo without a password: `sudo -l`
@@ -186,29 +198,45 @@ sudo /usr/bin/vi /var/www/html/test -c ':!/bin/bash' /dev/null
 
 
 # Technical Knowledge
++ https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/advanced.html
 + **Mage Scan:** https://github.com/steverobbins/magescan
 + https://websec.wordpress.com/2014/12/08/magento-1-9-0-1-poi/
 + https://medium.com/swlh/magento-exploitation-from-customer-to-server-user-access-70929e7bb634
++ **The Froghopper Attack:** https://www.foregenix.com/blog/anatomy-of-a-magento-attack-froghopper
++ https://www.hackingarticles.in/swagshop-hackthebox-walkthrough/
++ https://0xrick.github.io/hack-the-box/swagshop/
 
 
 # CVE Scripting
 + **CVE-N/A:** https://www.exploit-db.com/exploits/37811
 + **CVE-2015-1397:** https://www.exploit-db.com/exploits/37977
 + https://github.com/joren485/Magento-Shoplift-SQLI/blob/master/poc.py
++ https://github.com/that-faceless-coder/magento-exploit/blob/master/swagshop-exploit.py
 
 
 # References & Alternatives
 + https://vvmlist.github.io/#swagshop
++ https://ivanitlearning.wordpress.com/2020/09/15/hackthebox-swagshop/
++ https://epi052.gitlab.io/notes-to-self/blog/2019-09-12-hack-the-box-swagshop/
++ https://readmedium.com/en/https:/dtwh.medium.com/hack-the-box-swagshop-walkthrough-without-metasploit-8b9f03c480e7
 + https://0xdf.gitlab.io/2019/09/28/htb-swagshop.html
-+ https://www.hackingarticles.in/swagshop-hackthebox-walkthrough/
++ https://snowscan.io/htb-writeup-swagshop/#
++ https://xavilok.es/posts/SwagShop.php
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/swagshop-writeup-w-o-metasploit
++ https://eslam3kl.medium.com/hack-the-box-swagshop-892e1af6bee2
 + https://manuelvazquez-contact.gitbook.io/oscp-prep/hack-the-box/swagshop/scanning-and-enumeration
++ https://medium.com/@toneemarqus/swagshop-htb-manual-walkthrough-2023-oscp-prep-c67f54345fc0
 + https://medium.com/@v1per/swagshop-hackthebox-writeup-a23f18e6b88b
++ https://sarthaksaini.com/2019/may/swagshop/writeup.html
++ https://netosec.com/swagshop-hackthebox-writeup/
++ https://www.hackingarticles.in/swagshop-hackthebox-walkthrough/
++ https://0xrick.github.io/hack-the-box/swagshop/
++ https://www.jeroenvansaane.com/posts/htb/swagshop/
++ https://initinfosec.com/writeups/htb/2020/02/01/swagshop-htb-writeup/
++ https://coldfusionx.github.io/posts/SwagshopHTB/
 
 
 # For More
 + **A simple backdoor'ed Magento package:** https://github.com/lavalamp-/LavaMagentoBD
 + https://dustri.org/b/writing-a-simple-extensionbackdoor-for-magento.html
-
-
-  
++ https://epi052.gitlab.io/notes-to-self/blog/2019-09-12-hack-the-box-swagshop/#additional-resources
