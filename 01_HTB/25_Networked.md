@@ -12,7 +12,7 @@ First thing first, start with port scan to see which ports are open and which se
 + `ports=$(cat ports | awk -F " " '{print $4}' | awk -F "/" '{print $1}' | sort -n | tr '\n' ',' | sed 's/,$//')`
 + `sudo nmap -Pn -n -sV -sC -O -p$ports 10.10.10.146 --open`
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/936de3e3-86b1-4006-a7ef-6a3f0fe2aa32)
+
 
 + The result shows that 2 tcp ports are open:
 ```
