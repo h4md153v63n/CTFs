@@ -12,30 +12,26 @@ First thing first, start with port scan to see which ports are open and which se
 + `ports=$(cat ports | awk -F " " '{print $4}' | awk -F "/" '{print $1}' | sort -n | tr '\n' ',' | sed 's/,$//')`
 + `sudo nmap -Pn -n -sV -sC -O -p$ports 10.10.10.146 --open`
 
-
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/75a583b5-e3f7-4d7d-bc33-12c1747da5ec)
 
 + The result shows that 2 tcp ports are open:
 ```
-Port tcp 22: OpenSSH 7.6p1
-Port tcp 80: Apache httpd 2.4.29
+Port tcp 22: OpenSSH 7.4
+Port tcp 80: Apache httpd 2.4.6
 ```
 
 
 ## Enumeration
 + As usual, always start off with enumerating web server first.
 + Visit the web application.
-+ Navigate to `http://10.10.10.146/`, and no works.
++ Navigate to `http://10.10.10.146/`, and see the text.
 
-
-
-+ Add **.htb** into **hosts** file, and again revisit.
-
-
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/dfa167a8-c0a2-414c-8dd2-278a62540c7c)
 
 + The application is xxx that is an open-source e-commerce platform written in PHP.
 + As always, on each web app, start directory fuzzing:
 ```
-gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://xxx.htb/ -k -n -x html,php,txt -r -t 50
+gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://10.10.10.146/ -k -n -x html,php,txt -r -t 50
 ```
 
 
@@ -74,6 +70,7 @@ stty rows 55 columns 285
 # References & Alternatives
 + https://vvmlist.github.io/#Networked
 + https://0xdf.gitlab.io/2019/11/16/htb-networked.html
++ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/networked-writeup-w-o-metasploit
 + xxx
 
 
