@@ -220,11 +220,13 @@ BOOTPROTO=a whoami
 
 
 # CVE Scripting
-+ xxx
++ **ifcfg:** https://bugzilla.redhat.com/show_bug.cgi?id=1697473
++ https://vulmon.com/exploitdetails?qidtp=maillist_fulldisclosure&qid=e026a0c5f83df4fd532442e1324ffa4f
 
 
 # References & Alternatives
 + https://vvmlist.github.io/#Networked
++ https://0xrick.github.io/hack-the-box/networked/
 + https://infosecwriteups.com/hackthebox-networked-writeup-3d0a1276ad3c
 + https://0xdf.gitlab.io/2019/11/16/htb-networked.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/networked-writeup-w-o-metasploit
