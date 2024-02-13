@@ -219,10 +219,15 @@ BOOTPROTO=a whoami
 
 # Technical Knowledge
 + https://en.wikipedia.org/wiki/List_of_file_signatures
++ https://vk9-sec.com/local-file-upload-magic-byte-change-file-type
++ https://medium.com/@igordata/php-running-jpg-as-php-or-how-to-prevent-execution-of-user-uploaded-files-6ff021897389
++ https://book.hacktricks.xyz/pentesting-web/file-upload#file-upload-general-methodology
++ https://ivanitlearning.wordpress.com/2020/02/01/overthewire-natas11-13/
 
 
 # CVE Scripting
-+ **ifcfg:** https://seclists.org/fulldisclosure/2019/Apr/24
++ **ifcfg:** https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/s1-networkscripts-interfaces
++ https://seclists.org/fulldisclosure/2019/Apr/24
 + https://seclists.org/fulldisclosure/2019/Apr/27
 + https://bugzilla.redhat.com/show_bug.cgi?id=1697473
 + https://vulmon.com/exploitdetails?qidtp=maillist_fulldisclosure&qid=e026a0c5f83df4fd532442e1324ffa4f
@@ -230,10 +235,17 @@ BOOTPROTO=a whoami
 
 # References & Alternatives
 + https://vvmlist.github.io/#Networked
++ https://ivanitlearning.wordpress.com/2020/08/16/hackthebox-networked/
 + https://0xrick.github.io/hack-the-box/networked/
 + https://infosecwriteups.com/hackthebox-networked-writeup-3d0a1276ad3c
++ https://medium.com/@toneemarqus/networked-htb-manual-walkthrough-2023-oscp-journey-b38558b4bb0f
++ https://infosecwriteups.com/hackthebox-networked-93ebbd6a70e3
 + https://0xdf.gitlab.io/2019/11/16/htb-networked.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/networked-writeup-w-o-metasploit
 + https://www.hackingarticles.in/hack-the-box-networked-walkthrough/
++ https://danielxblack.ghost.io/hack-the-box-networked/
++ https://secopsbear.com/ctf/HTB-Retired/htb-networked/
 
 
+# For More
++ https://www.acunetix.com/blog/articles/web-shells-101-using-php-introduction-web-shells-part-2/
