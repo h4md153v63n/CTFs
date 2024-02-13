@@ -28,11 +28,16 @@ Port tcp 80: Apache httpd 2.4.6
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/dfa167a8-c0a2-414c-8dd2-278a62540c7c)
 
-+ The application is xxx that is an open-source e-commerce platform written in PHP.
++ Viev page source, and take note of **upload** with **galery** paths.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a06ac56d-8266-4ee5-99e1-96d5284435cc)
+
 + As always, on each web app, start directory fuzzing:
 ```
-gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://10.10.10.146/ -k -n -x html,php,txt -r -t 50
+gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://10.10.10.146/ -k -n -x html,php,txt -r -t 30
 ```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/360da068-3dd3-412f-80f2-5b85dd3d5ae4)
 
 
 ## Gaining Access
