@@ -28,7 +28,7 @@ Port tcp 80: Apache httpd 2.4.6
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/dfa167a8-c0a2-414c-8dd2-278a62540c7c)
 
-+ Viev page source, and take note of **upload** with **galery** paths.
++ Viev page source, and take note of **upload** with **gallery** paths.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a06ac56d-8266-4ee5-99e1-96d5284435cc)
 
