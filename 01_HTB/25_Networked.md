@@ -39,6 +39,17 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/360da068-3dd3-412f-80f2-5b85dd3d5ae4)
 
++ Visit **upload.php** page.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/02cf635c-1554-499f-a6ce-f996bf402e30)
+
++ Next, visit the **backup** directory. It contains a compressed file.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6e294d32-8a7e-4eda-9d1f-28aca1301525)
+
+
+
+
 
 ## Gaining Access
 
