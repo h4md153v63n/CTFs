@@ -102,9 +102,15 @@ stty rows 55 columns 285
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a949dd60-e50c-4d98-8c1b-93ff60a0657c)
 
 
+## Privilege Escalation: from 'www-data' to 'guly'
++ Escalate privileges to get the user flag.
++ Go to **/home/guly** directory, and list files.
++ **crontab.guly** file is interesting, and it runs **/home/guly/check_attack.php** every three minutes.
 
-## Privilege Escalation
-+ Escalate privileges to get the root flag.
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9b76943a-d7c7-486e-a01e-c019c359b3e5)
+
+
+
 
 
 
