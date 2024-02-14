@@ -1,0 +1,82 @@
+# Jarvis
+
+**Links:** [1](https://www.hackthebox.com/machines/Jarvis)  [2](https://app.hackthebox.com/machines/Jarvis)
+
+**Machine ip:** 10.10.10.143
+
+## Reconnaissance
+First thing first, start with port scan to see which ports are open and which services are running on those ports.
++ `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.143 -e tun0 > ports`
++ `ports=$(cat ports | awk -F " " '{print $4}' | awk -F "/" '{print $1}' | sort -n | tr '\n' ',' | sed 's/,$//')`
++ `sudo nmap -Pn -n -sV -sC -O -p$ports 10.10.10.143 --open`
+
+
+
++ The result shows that 2 tcp ports are open:
+```
+Port tcp 22: OpenSSH 7.4
+Port tcp 80: Apache httpd 2.4.6
+```
+
+
+## Enumeration
++ As usual, always start off with enumerating web server first.
++ Visit the web application.
++ Navigate to `http://10.10.10.143/`, and see the text.
+
+
+
++ Viev page source, and take note of **upload** with **gallery** paths.
+
+
+
++ As always, on each web app, start directory fuzzing:
+```
+gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://10.10.10.143/ -k -n -x html,php,txt -r -t 30
+```
+
+
+
+## Gaining Access
++ xxx
+
+
+
+### Shell Upgrade
++ We have partially interactive bash shell. Upgrade it to get a fully interactive shell, do more stable with a better shell.
+```
+python -c 'import pty; pty.spawn("/bin/bash")'
+script /dev/null -c bash
+CTRL^Z: Ctrl + Z
+stty raw -echo; fg
+reset
+terminal type? 'screen' or 'xterm'
+export TERM=xterm  
+export SHELL=bash
+stty rows 55 columns 285
+```
+
+
+
+## Privilege Escalation
++ Escalate privileges to get the root flag.
+
+
+
+
+# Technical Knowledge
++ xxx
+
+
+# CVE Scripting
++ xxx
+
+
+# References & Alternatives
++ https://vvmlist.github.io/#jarvis
++ xxx
+
+
+# For More
++ xxx
+
