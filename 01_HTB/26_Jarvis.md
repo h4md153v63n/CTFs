@@ -10,12 +10,13 @@ First thing first, start with port scan to see which ports are open and which se
 + `ports=$(cat ports | awk -F " " '{print $4}' | awk -F "/" '{print $1}' | sort -n | tr '\n' ',' | sed 's/,$//')`
 + `sudo nmap -Pn -n -sV -sC -O -p$ports 10.10.10.143 --open`
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/455ad88c-49a7-4563-9061-697165b520ef)
 
-
-+ The result shows that 2 tcp ports are open:
++ The result shows that 3 tcp ports are open:
 ```
-Port tcp 22: OpenSSH 7.4
-Port tcp 80: Apache httpd 2.4.6
+Port tcp 22: OpenSSH 7.4p1
+Port tcp 80: Apache httpd 2.4.25
+Port tcp 64999: Apache httpd 2.4.25
 ```
 
 
