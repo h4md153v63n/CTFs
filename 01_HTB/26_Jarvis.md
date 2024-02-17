@@ -43,6 +43,12 @@ gobuster dir -e -w /usr/share/wordlists/dirb/big.txt -u http://10.10.10.143/ -k 
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d111fe65-2ea8-4b72-b000-84f025ce03aa)
 
++ Check the phpmyadmin directory `http://10.10.10.143/phpmyadmin`.
++ Try to login with default credentials [1](https://codeless.co/phpmyadmin-default-password/) [2](https://forum.terra-master.com/en/viewtopic.php?t=1239) but that didn't work.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2e7fe78c-03be-493e-ab28-c760807965ef)
+
+
 + Then visit all the links in the application, and then visit `Rooms & Suites -> Book now!`
 + The **room.php** page takes in a **cod** parameter, and outputs the related room information.
 
