@@ -38,9 +38,15 @@ Port tcp 64999: Apache httpd 2.4.25
 + Next, view page source, and there's nothing useful.
 + As always, on each web app, start directory fuzzing:
 ```
-gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u http://10.10.10.143/ -k -n -x html,php,txt -r -t 15 --exclude-length 277
+gobuster dir -e -w /usr/share/wordlists/dirb/big.txt -u http://10.10.10.143/ -k -n -x html,php,txt -r -t 1 --exclude-length 277
 ```
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d111fe65-2ea8-4b72-b000-84f025ce03aa)
+
++ Then visit all the links in the application, and then visit `Rooms & Suites -> Book now!`
++ The **room.php** page takes in a **cod** parameter, and outputs the related room information.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/96b77e0c-d506-43d0-94e7-9270c591359b)
 
 
 
