@@ -25,16 +25,22 @@ Port tcp 64999: Apache httpd 2.4.25
 + Visit the web application.
 + Navigate to `http://10.10.10.143/`, and see the text.
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c079fbca-b984-477c-bf02-10070494fc78)
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/e9bf486d-d84c-4518-872f-96733fa8c68f)
 
-+ Viev page source, and take note of **upload** with **gallery** paths.
++ There are two discovered domain names. Add **supersecurehotel.htb** and **logger.htb** into the /etc/hosts file.
+```
+10.10.10.143 supersecurehotel.htb logger.htb
+```
 
-
-
++ Both domain names redirect to the same website.
++ Next, view page source, and there's nothing useful.
 + As always, on each web app, start directory fuzzing:
 ```
-gobuster dir -e -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://10.10.10.143/ -k -n -x html,php,txt -r -t 30
+gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u http://10.10.10.143/ -k -n -x html,php,txt -r -t 15 --exclude-length 277
 ```
+
 
 
 
