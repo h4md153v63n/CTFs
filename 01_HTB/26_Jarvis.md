@@ -51,6 +51,7 @@ gobuster dir -e -w /usr/share/wordlists/dirb/big.txt -u http://10.10.10.143/ -k 
 
 + Then visit all the links in the application, and then visit `Rooms & Suites -> Book now!`
 + The **room.php** page takes in a **cod** parameter, and outputs the related room information.
++ `http://10.10.10.143/room.php?cod=5` may be vulnerable to SQL injection. Check later.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/96b77e0c-d506-43d0-94e7-9270c591359b)
 
@@ -61,6 +62,17 @@ gobuster dir -e -w /usr/share/wordlists/dirb/big.txt -u http://10.10.10.143/ -k 
 + Then, view page source, and there's nothing.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2b9cd031-9d75-46b3-b745-7205f63e1071)
+
+
+## Exploitation
++ Check SQL Injection vulnerability.
++ Add single quotation `'` at the end of **cod** parameter. It doesn't crash the page or return 500, but the picture of the room disappear anymore.
++ No errors appeared since SQL errors may be suppressed.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1b967f4e-ba2b-4b6a-8025-0146eafa3e45)
+
++ Try to start by checking for a UNION injection.
++ 
 
 
 
