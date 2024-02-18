@@ -60,6 +60,8 @@ gobuster dir -e -w /usr/share/wordlists/dirb/big.txt -u http://10.10.10.143/ -k 
 
 + Then, view page source, and there's nothing.
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2b9cd031-9d75-46b3-b745-7205f63e1071)
+
 
 
 ## Gaining Access
