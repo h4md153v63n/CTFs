@@ -71,7 +71,6 @@ gobuster dir -e -w /usr/share/wordlists/dirb/big.txt -u http://10.10.10.143/ -k 
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1b967f4e-ba2b-4b6a-8025-0146eafa3e45)
 
-+ Try to start by checking for a UNION injection.
 + Add `AND 1=1;-- -` which is always true after **cod**. `-- -` comments out further SQL commands on that line.
 + The page url `http://10.10.10.143/room.php?cod=5%20AND%201=1;--%20-` displays correctly since **1=1** is always true.
 
@@ -96,6 +95,7 @@ gobuster dir -e -w /usr/share/wordlists/dirb/big.txt -u http://10.10.10.143/ -k 
 
 ### Step 1: Column Enumeration
 + The first thing in figuring out the structure of a SQL query is to determine how many columns the query uses.
++ Try to start by checking for a UNION injection.
 + This can be done using the SQL ORDER BY keyword.
 
 
