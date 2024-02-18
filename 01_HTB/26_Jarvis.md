@@ -72,7 +72,33 @@ gobuster dir -e -w /usr/share/wordlists/dirb/big.txt -u http://10.10.10.143/ -k 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1b967f4e-ba2b-4b6a-8025-0146eafa3e45)
 
 + Try to start by checking for a UNION injection.
-+ 
++ Add `AND 1=1;-- -` which is always true after **cod**. `-- -` comments out further SQL commands on that line.
++ The page url `http://10.10.10.143/room.php?cod=5%20AND%201=1;--%20-` displays correctly since **1=1** is always true.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6b4846ec-7931-45f5-9600-2616bad4ace4)
+
++ Append `AND 1=2;-- -` which is always false after **cod**.
++ The page url `http://10.10.10.143/room.php?cod=5%20AND%201=2;--%20-` doesn't show the room image since **1=2** is always false.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/49b8c89f-1cb7-4ab9-9129-b2fcac25b687)
+
++ **Alternatively**, try plus sign and minus sign.
++ When trying out math with the **plus** sign nothing changes, and **no** room 5 image gets shown: `http://10.10.10.143/room.php?cod=5+0`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f08e9136-60d7-4ea2-95e4-6aab4bf51800)
+  
++ When using math with a **minus** sign to subtract from the value, it displays that room 5: `http://10.10.10.143/room.php?cod=5-0`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/27faad12-dbec-4ab1-9c6a-1506dabea596)
+
++ **This means there is some SQL Injection to exploit.**
+
+
+### Step 1: Column Enumeration
++ The first thing in figuring out the structure of a SQL query is to determine how many columns the query uses.
++ This can be done using the SQL ORDER BY keyword.
+
+
 
 
 
