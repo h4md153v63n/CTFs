@@ -23,7 +23,7 @@ Port tcp 64999: Apache httpd 2.4.25
 ## Enumeration
 + As usual, always start off with enumerating web server first.
 + Visit the web application.
-+ Navigate to `http://10.10.10.143/`, and see the text.
++ **Firstly**, navigate to `http://10.10.10.143/`, and see the text.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c079fbca-b984-477c-bf02-10070494fc78)
 
@@ -53,6 +53,12 @@ gobuster dir -e -w /usr/share/wordlists/dirb/big.txt -u http://10.10.10.143/ -k 
 + The **room.php** page takes in a **cod** parameter, and outputs the related room information.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/96b77e0c-d506-43d0-94e7-9270c591359b)
+
++ **Secondly**, navigate to `http://10.10.10.143:64999/`, and see the text.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c6590eee-698b-4516-84e3-fbbbbff1759f)
+
++ Then, view page source, and there's nothing.
 
 
 
