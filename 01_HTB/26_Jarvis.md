@@ -67,7 +67,8 @@ gobuster dir -e -w /usr/share/wordlists/dirb/big.txt -u http://10.10.10.143/ -k 
 ## Exploitation
 + Check SQL Injection vulnerability.
 + Add single quotation `'` at the end of **cod** parameter. It doesn't crash the page or return 500, but the picture of the room disappear anymore.
-+ No errors appeared since SQL errors may be suppressed.
++ No errors appeared since SQL errors may be suppressed. 
++ Try to start by checking for a UNION injection.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1b967f4e-ba2b-4b6a-8025-0146eafa3e45)
 
@@ -95,11 +96,49 @@ gobuster dir -e -w /usr/share/wordlists/dirb/big.txt -u http://10.10.10.143/ -k 
 
 ### Step 1: Column Enumeration
 + The first thing in figuring out the structure of a SQL query is to determine how many columns the query uses.
-+ Try to start by checking for a UNION injection.
-+ This can be done using the SQL ORDER BY keyword.
++ So in order to enumerate the number of columns, incrementally use the ORDER BY keyword until the application either throws an error or no longer gives us a result.
++ **Firstly**, try `order by 7`: `http://10.10.10.143/room.php?cod=5%20order%20by%207`, and get an image.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3e5b781f-a8f7-499b-9859-81dc39344b06)
+
++ **Secondly**, try `order by 8`: `http://10.10.10.143/room.php?cod=5%20order%20by%208`, and get nothing! **So it means there are exactly 7 columns.** 
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/58315527-422b-454f-a443-ebdd9601c3b7)
+
++ **Alternatively**, make sure the number of columns match. Add nulls from **once** to **seven** times (**alternatively**, add "1", with or without the quotes or any other number).
++ The box is still blank until seventh. Continue to add nulls until there are seven, then the box reappears.
+```
+http://10.10.10.143/room.php?cod=5 union select null;-- -
+http://10.10.10.143/room.php?cod=5 union select null,null;-- -
+.
+.
+.
+.
+http://10.10.10.143/room.php?cod=5 union select null,null,null,null,null,null,null;-- -
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1eec0bda-c6d5-4f71-a230-196211f58706)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3f80055d-ef9f-44a9-9add-62490ff96f4c)
 
 
 
+### Step 2: Column Location and Type
++ The next step is to check which of these columns are actually visible (determine which of these columns are getting outputted on the page), and can be injected with the information we exfiltrate from the SQL DB.
++ Let's try the union statement `union select 1,2,3,4,5,6,7`: `http://10.10.10.143/room.php?cod=5%20union%20select%201,2,3,4,5,6,7`
++ That returns the output of the **first** select statement, but not the second. A possible reason is that the application only prints one entry at a time.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/955da967-6643-4138-bd4a-4f61947cdc0d)
+
++ Specify a non-existent cod value or something similar (test in the URL that it loads nothing first). So let's modify the query with **55 not 5** to give the first select statement a cod value that doesn't exist so that it prints out the result from the second statement.
++ Try `55 union select 1,2,3,4,5,6,7`: `http://10.10.10.143/room.php?cod=55%20union%20select%201,2,3,4,5,6,7`
++ Revealed which columns correspond to the elements in the page.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/e44c2913-2d8f-4e3a-9ecf-7f030a895a63)
+
++ Tells us columns 2,3,4,5 are injectible for exfiltration.
++ See that column 5 is the picture, 2 seems to be the room title, 3 must be the price, and 4 must be the description text.
++ The second parameter of the select statement is originally "Classic Double Room", and so the data type of that row is probably string. Maybe work with the second parameter.
 
 
 ## Gaining Access
