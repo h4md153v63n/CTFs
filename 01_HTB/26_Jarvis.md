@@ -178,6 +178,11 @@ stty rows 55 columns 285
 
 # References & Alternatives
 + https://vvmlist.github.io/#jarvis
++ https://ivanitlearning.wordpress.com/2020/10/14/hackthebox-jarvis/
++ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/jarvis-writeup-w-o-metasploit
++ https://0xdf.gitlab.io/2019/11/09/htb-jarvis.html
++ https://medium.com/@toneemarqus/jarvis-htb-manual-walkthrough-2023-oscp-prep-a8ea5df0587c
++ https://github.com/Kyuu-Ji/htb-write-up/blob/master/jarvis/write-up-jarvis.md
 + xxx
 
 
