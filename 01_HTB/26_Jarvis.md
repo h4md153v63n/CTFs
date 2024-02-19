@@ -258,9 +258,38 @@ stty rows 55 columns 285
 
 
 
-## Privilege Escalation
-+ Escalate privileges to get the root flag.
+## Privilege Escalation: from 'www-data' to 'pepper'
++ Escalate privileges to get the user flag.
++ Check what commands the user is able to run as another user without a password: `sudo -l`
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f6be1913-5e3d-40f3-9f52-fc9a95d3ac54)
+
++ The script is a python3 script used to manage and provide statistics on the webserver.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3bd5e772-f309-4fd5-9650-b12a1b456a63)
+
++ **exec_ping()** is called directly from main if the `-p` is given. The `-p` option calls the **exec_ping()** command. There's a system or subprocess call. That controls `'&', ';', '-', '`', '||', '|'` characters. 
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/73259250-7d4f-4c37-81bc-59119c98d5ef)
+
++ There's a clear command injection in the exec_ping code where the input is read to **command**.
++ Notice that the dollar sign is allowed, and run the command:
+```
+sudo -u pepper /var/www/Admin-Utilities/simpler.py -p
+
+Enter an IP: $(/bin/bash)
+```
+
++ The new shell is not working properly. It only shows stderr. Redirect stdout to our shell using: `>&2 /bin/bash`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/cd05cba2-ac58-4f92-9642-2d2ee150e7ca)
+
++ Get the pepper's shell, and read the user flag.
+
+
+## Privilege Escalation: from 'pepper' to 'root'
++ Escalate privileges to get the root flag.
++ 
 
 
 
