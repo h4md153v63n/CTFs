@@ -65,7 +65,7 @@ gobuster dir -e -w /usr/share/wordlists/dirb/big.txt -u http://10.10.10.143/ -k 
 
 
 ## Exploitation
-+ Check SQL Injection vulnerability.
++ Each room is directly referenced using the parameter **cod**, which could be a possible injection point, and check SQL Injection vulnerability.
 + Add single quotation `'` at the end of **cod** parameter. It doesn't crash the page or return 500, but the picture of the room disappear anymore.
 + No errors appeared since SQL errors may be suppressed. 
 + Try to start by checking for a UNION injection.
@@ -78,7 +78,7 @@ gobuster dir -e -w /usr/share/wordlists/dirb/big.txt -u http://10.10.10.143/ -k 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6b4846ec-7931-45f5-9600-2616bad4ace4)
 
 + Append `AND 1=2;-- -` which is always false after **cod**.
-+ The page url `http://10.10.10.143/room.php?cod=5%20AND%201=2;--%20-` doesn't show the room image since **1=2** is always false.
++ The page url `http://10.10.10.143/room.php?cod=5%20AND%201=2;--%20-`, and the server returns an **empty** room frame since **1=2** is always false.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/49b8c89f-1cb7-4ab9-9129-b2fcac25b687)
 
@@ -369,6 +369,7 @@ WantedBy=multi-user.target
 # References & Alternatives
 + https://vvmlist.github.io/#jarvis
 + https://shreyapohekar.com/blogs/jarvis-hackthebox-walkthrough/
++ https://pwnedcoffee.com/hackthebox/jarvis/
 + 
 + https://ivanitlearning.wordpress.com/2020/10/14/hackthebox-jarvis/
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/jarvis-writeup-w-o-metasploit
