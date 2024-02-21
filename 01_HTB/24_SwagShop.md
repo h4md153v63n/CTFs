@@ -197,22 +197,6 @@ sudo /usr/bin/vi /var/www/html/test -c ':!/bin/bash' /dev/null
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d5564321-38c6-4cd2-85ca-143258068944)
 
 
-# Technical Knowledge
-+ https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/advanced.html
-+ **Mage Scan:** https://github.com/steverobbins/magescan
-+ https://websec.wordpress.com/2014/12/08/magento-1-9-0-1-poi/
-+ https://medium.com/swlh/magento-exploitation-from-customer-to-server-user-access-70929e7bb634
-+ **The Froghopper Attack:** https://www.foregenix.com/blog/anatomy-of-a-magento-attack-froghopper
-+ https://www.hackingarticles.in/swagshop-hackthebox-walkthrough/
-+ https://0xrick.github.io/hack-the-box/swagshop/
-
-
-# CVE Scripting
-+ **CVE-N/A:** https://www.exploit-db.com/exploits/37811
-+ **CVE-2015-1397:** https://www.exploit-db.com/exploits/37977
-+ https://github.com/joren485/Magento-Shoplift-SQLI/blob/master/poc.py
-+ https://github.com/that-faceless-coder/magento-exploit/blob/master/swagshop-exploit.py
-
 
 # References & Alternatives
 + https://vvmlist.github.io/#swagshop
@@ -234,6 +218,24 @@ sudo /usr/bin/vi /var/www/html/test -c ':!/bin/bash' /dev/null
 + https://www.jeroenvansaane.com/posts/htb/swagshop/
 + https://initinfosec.com/writeups/htb/2020/02/01/swagshop-htb-writeup/
 + https://coldfusionx.github.io/posts/SwagshopHTB/
+
+
+
+# Technical Knowledge
++ https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/advanced.html
++ **Mage Scan:** https://github.com/steverobbins/magescan
++ https://websec.wordpress.com/2014/12/08/magento-1-9-0-1-poi/
++ https://medium.com/swlh/magento-exploitation-from-customer-to-server-user-access-70929e7bb634
++ **The Froghopper Attack:** https://www.foregenix.com/blog/anatomy-of-a-magento-attack-froghopper
++ https://www.hackingarticles.in/swagshop-hackthebox-walkthrough/
++ https://0xrick.github.io/hack-the-box/swagshop/
+
+
+# CVE Scripting
++ **CVE-N/A:** https://www.exploit-db.com/exploits/37811
++ **CVE-2015-1397:** https://www.exploit-db.com/exploits/37977
++ https://github.com/joren485/Magento-Shoplift-SQLI/blob/master/poc.py
++ https://github.com/that-faceless-coder/magento-exploit/blob/master/swagshop-exploit.py
 
 
 # For More
