@@ -43,11 +43,20 @@ gobuster dir -e -w /usr/share/wordlists/dirb/big.txt -u http://10.10.10.143/ -k 
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d111fe65-2ea8-4b72-b000-84f025ce03aa)
 
++ Also scan with nikto: `nikto -h http://10.10.10.143`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5c334f0d-673c-4ee6-9e23-4336443bc69b)
+
++ Check `http://10.10.10.143/phpmyadmin/ChangeLog` and `http://10.10.10.143/phpmyadmin/README`. **phpmyadmin 4.8.0** is discovered.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6f29f10a-387a-4be6-8e4c-8b0d979b05fa)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ae90c26a-97b4-403d-92aa-b1ac8b0850d2)
+
 + Check the phpmyadmin directory `http://10.10.10.143/phpmyadmin`.
 + Try to login with default credentials [1](https://codeless.co/phpmyadmin-default-password/) [2](https://forum.terra-master.com/en/viewtopic.php?t=1239) but that didn't work.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2e7fe78c-03be-493e-ab28-c760807965ef)
-
 
 + Then visit all the links in the application, and then visit `Rooms & Suites -> Book now!`
 + The **room.php** page takes in a **cod** parameter, and outputs the related room information.
@@ -62,16 +71,6 @@ gobuster dir -e -w /usr/share/wordlists/dirb/big.txt -u http://10.10.10.143/ -k 
 + Then, view page source, and there's nothing.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2b9cd031-9d75-46b3-b745-7205f63e1071)
-
-+ Scan with nikto: `nikto -h http://10.10.10.143`
-
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5c334f0d-673c-4ee6-9e23-4336443bc69b)
-
-+ Check `http://10.10.10.143/phpmyadmin/ChangeLog` and `http://10.10.10.143/phpmyadmin/README`. **phpmyadmin 4.8.0** is discovered.
-
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6f29f10a-387a-4be6-8e4c-8b0d979b05fa)
-
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ae90c26a-97b4-403d-92aa-b1ac8b0850d2)
 
 Check port scan and enumeration results:
 + **Port tcp 22, ssh:** There isn't any critical exploit associated with the version, so we need credentials for this service as well.
