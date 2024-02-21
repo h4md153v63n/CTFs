@@ -85,20 +85,10 @@ Check port scan and enumeration results:
 + Each room is directly referenced using the parameter **cod**, which could be a possible injection point, and check SQL Injection vulnerability.
 + **SQL injection can be really tricky but a lot less so with a proper methodology.** 
 + Add single quotation `'` at the end of **cod** parameter. It doesn't crash the page or return 500, but the picture of the room disappear anymore.
-+ No errors appeared since SQL errors may be suppressed.
-+ Try the time-based sqli, and check payload **cod=55 AND (SELECT 1 FROM (SELECT(SLEEP(60)))sqli)**.
-+ If it takes longer than usual for the response to come back to us, then we know it's vulnerable.
-+ The server will execute the **SLEEP(60)** command, and will take 1 minute to process the query. It is definitely a SQLi vulnerability.
-+ Visit `10.10.10.143/room.php?cod=55%20 AND (SELECT 1 FROM (SELECT(SLEEP(60)))sqli)`.
-
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8225e091-7885-44b1-b386-b1376648fb03)
-
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/38a113c0-321e-4b1f-8058-2e4d610a9167)
-
-+ Start by checking for a UNION injection.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1b967f4e-ba2b-4b6a-8025-0146eafa3e45)
 
++ No errors appeared since SQL errors may be suppressed.
 + Add `AND 1=1;-- -` which is always true after **cod**. `-- -` comments out further SQL commands on that line.
 + The page url `http://10.10.10.143/room.php?cod=5%20AND%201=1;--%20-` displays correctly since **1=1** is always true.
 
@@ -118,8 +108,17 @@ Check port scan and enumeration results:
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/27faad12-dbec-4ab1-9c6a-1506dabea596)
 
-+ **This means there is some SQL Injection to exploit.** Our approach is to enumerate the DBs first, then select one and enumerate the tables, select one and list the interesting entries which hopefully contain admin credentials.
++ Try the time-based sqli, and check payload **cod=55 AND (SELECT 1 FROM (SELECT(SLEEP(60)))sqli)**.
++ If it takes longer than usual for the response to come back to us, then we know it's vulnerable.
++ The server will execute the **SLEEP(60)** command, and will take 1 minute to process the query. It is definitely a SQLi vulnerability.
++ Visit `10.10.10.143/room.php?cod=55%20 AND (SELECT 1 FROM (SELECT(SLEEP(60)))sqli)`.
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8225e091-7885-44b1-b386-b1376648fb03)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/38a113c0-321e-4b1f-8058-2e4d610a9167)
+
++ **This means there is some SQL Injection to exploit.** Our approach is to enumerate the DBs first, then select one and enumerate the tables, select one and list the interesting entries which hopefully contain admin credentials.
++ Start by checking for a UNION injection.
 
 ### Step 1: Column Enumeration
 + The first thing in figuring out the structure of a SQL query is to determine how many columns the query uses.
