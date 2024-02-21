@@ -532,21 +532,6 @@ echo "system ('cp /bin/bash /tmp/rootbash; chmod +s /tmp/rootbash')" >> /usr/lib
 + For more, check https://hackmd.io/@Mecanico/Syu8fKUAc#⏫Root-Privesc.
 
 
-# Technical Knowledge
-+ [Python Library Hijacking](https://rastating.github.io/privilege-escalation-via-python-library-hijacking/): https://rastating.github.io/privilege-escalation-via-python-library-hijacking/
-+ https://www.tutorialspoint.com/What-are-pyc-files-in-Python
-+ https://ethicalhacs.com/admirer-hackthebox-walkthrough/
-+ https://www.hackingarticles.in/hack-the-box-friendzone-walkthrough/
-+ https://github.com/jebidiah-anthony/htb_friendzone
-
-
-# CVE Scripting
-+ **CVE-2019-10149**: https://github.com/Diefunction/CVE-2019-10149
-+ https://ivanitlearning.wordpress.com/2020/11/20/hackthebox-friendzone/
-+ **CVE-2021-3156**: https://github.com/blasty/CVE-2021-3156
-+ https://www.exploit-db.com/exploits/49522
-+ https://hackmd.io/@Mecanico/Syu8fKUAc#⏫Root-Privesc
-
 
 # References & Alternatives
 + https://vvmlist.github.io/#FriendZone
@@ -565,4 +550,21 @@ echo "system ('cp /bin/bash /tmp/rootbash; chmod +s /tmp/rootbash')" >> /usr/lib
 + https://hipotermia.pw/htb/friendzone
 + https://blog.mzfr.me/HackTheBox-writeups/Friendzone/
 + https://snowscan.io/htb-writeup-friendzone/#
+
+
+
+# Technical Knowledge
++ [Python Library Hijacking](https://rastating.github.io/privilege-escalation-via-python-library-hijacking/): https://rastating.github.io/privilege-escalation-via-python-library-hijacking/
++ https://www.tutorialspoint.com/What-are-pyc-files-in-Python
++ https://ethicalhacs.com/admirer-hackthebox-walkthrough/
++ https://www.hackingarticles.in/hack-the-box-friendzone-walkthrough/
++ https://github.com/jebidiah-anthony/htb_friendzone
+
+
+# CVE Scripting
++ **CVE-2019-10149**: https://github.com/Diefunction/CVE-2019-10149
++ https://ivanitlearning.wordpress.com/2020/11/20/hackthebox-friendzone/
++ **CVE-2021-3156**: https://github.com/blasty/CVE-2021-3156
++ https://www.exploit-db.com/exploits/49522
++ https://hackmd.io/@Mecanico/Syu8fKUAc#⏫Root-Privesc
 
