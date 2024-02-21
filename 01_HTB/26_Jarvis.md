@@ -279,7 +279,7 @@ database management system users password hashes:
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/456d2ac4-4fe4-4dd2-adf1-fe2ed4706eeb)
 
-+ The version of phpMyAdmin is 4.8.0, and check whether it has any exploits: `searchsploit phpMyAdmin 4.8`
++ **The version of phpMyAdmin is 4.8.0**, and check whether it has any exploits: `searchsploit phpMyAdmin 4.8`
 + There's a local file include (LFI) vulnerability that allows for remote code execution (RCE) with **CVE-2018-12613** [1](https://www.exploit-db.com/exploits/44928) [2](https://blog.vulnspy.com/2018/06/21/phpMyAdmin-4-8-x-Authorited-CLI-to-RCE/) [3-PoC](https://github.com/ssd-secure-disclosure/advisories/tree/master/SSD%20Advisory%20-%203700) [4](https://medium.com/@happyholic1203/phpmyadmin-4-8-0-4-8-1-remote-code-execution-257bcc146f8e) in this version. The exploits require authentication, so we'll use the discovered credentials in the above [1](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#step-3-enumerating-dbms-characteristics) [2](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#exploitation-method-2---sqlmap).
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4f986e6f-096f-4030-9912-23431041e16f)
