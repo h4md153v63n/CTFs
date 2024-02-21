@@ -221,6 +221,21 @@ BOOTPROTO=a whoami
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6a916b23-60f3-418b-bf65-88df19b141ff)
 
 
+
+# References & Alternatives
++ https://vvmlist.github.io/#Networked
++ https://ivanitlearning.wordpress.com/2020/08/16/hackthebox-networked/
++ https://0xrick.github.io/hack-the-box/networked/
++ https://infosecwriteups.com/hackthebox-networked-writeup-3d0a1276ad3c
++ https://medium.com/@toneemarqus/networked-htb-manual-walkthrough-2023-oscp-journey-b38558b4bb0f
++ https://infosecwriteups.com/hackthebox-networked-93ebbd6a70e3
++ https://0xdf.gitlab.io/2019/11/16/htb-networked.html
++ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/networked-writeup-w-o-metasploit
++ https://www.hackingarticles.in/hack-the-box-networked-walkthrough/
++ https://danielxblack.ghost.io/hack-the-box-networked/
++ https://secopsbear.com/ctf/HTB-Retired/htb-networked/
+
+
 # Technical Knowledge
 + https://en.wikipedia.org/wiki/List_of_file_signatures
 + https://vk9-sec.com/local-file-upload-magic-byte-change-file-type
@@ -235,20 +250,6 @@ BOOTPROTO=a whoami
 + https://seclists.org/fulldisclosure/2019/Apr/27
 + https://bugzilla.redhat.com/show_bug.cgi?id=1697473
 + https://vulmon.com/exploitdetails?qidtp=maillist_fulldisclosure&qid=e026a0c5f83df4fd532442e1324ffa4f
-
-
-# References & Alternatives
-+ https://vvmlist.github.io/#Networked
-+ https://ivanitlearning.wordpress.com/2020/08/16/hackthebox-networked/
-+ https://0xrick.github.io/hack-the-box/networked/
-+ https://infosecwriteups.com/hackthebox-networked-writeup-3d0a1276ad3c
-+ https://medium.com/@toneemarqus/networked-htb-manual-walkthrough-2023-oscp-journey-b38558b4bb0f
-+ https://infosecwriteups.com/hackthebox-networked-93ebbd6a70e3
-+ https://0xdf.gitlab.io/2019/11/16/htb-networked.html
-+ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/networked-writeup-w-o-metasploit
-+ https://www.hackingarticles.in/hack-the-box-networked-walkthrough/
-+ https://danielxblack.ghost.io/hack-the-box-networked/
-+ https://secopsbear.com/ctf/HTB-Retired/htb-networked/
 
 
 # For More
