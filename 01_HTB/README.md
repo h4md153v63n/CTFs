@@ -21,6 +21,7 @@
 |15  |Devvortex  [1](https://www.hackthebox.com/machines/devvortex)  [2](https://app.hackthebox.com/machines/Devvortex)|[Devvortex](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/22_Devvortex.md)|CVE-2023–23752, CVE-2023–26604, unix, subdomain, joomla, joomscan, improper access check, data exfiltration, rce, reverse shell, template, mysql, stored creds, bcrypt, hash/encrypted/encoded, john, hashcat, sudo, apport-cli|
 |16  |SwagShop  [1](https://www.hackthebox.com/machines/swagshop)  [2](https://app.hackthebox.com/machines/swagshop)|[SwagShop](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/24_SwagShop.md)|CVE-2015-1397, CVE:N/A [1](https://www.exploit-db.com/exploits/37811), unix, magento, e-commerce, cms, PHP Object Injection, deserialization, mechanize, authenticated rce, rce, file upload, reverse shell, sudo, gtfobins, magescan, Mage Scan, Magento package, burp, mysql, sqli, Froghopper Attack|
 |17  |Networked  [1](https://www.hackthebox.com/machines/Networked)  [2](https://app.hackthebox.com/machines/Networked)|[Networked](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/25_Networked.md)|unix, cron/scheduled tasks, rce, reverse shell, file upload, mime types, magic bytes, burp, source code inspection, exec(), sudo, system/config/backup file, tar, command injection, ifcfg, networking script, exiftool, steghide|
+|18  |Crafty  [1](https://www.hackthebox.com/machines/Crafty)  [2](https://app.hackthebox.com/machines/Crafty)|[Crafty]()|windows, |
 
 
 # Medium
