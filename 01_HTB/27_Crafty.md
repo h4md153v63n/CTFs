@@ -13,12 +13,12 @@ I solved the machine, but I won't publish a write-up.
 
 
 I share alternative solutions, and different approaches links in the below:
-+ xxx
++ x
 
 
 ## Tools
-+ xxx
++ x
 
 
 ## Technical Knowledge
-+ xxx
++ x
