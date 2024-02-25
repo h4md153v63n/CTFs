@@ -10,7 +10,9 @@
 ## Solutions
 I solved the machine, but I won't publish a write-up. 
 
+https://www.hackthebox.com/achievement/machine/184261/587
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/306dd1f4-466d-4ecd-b8f8-cee95bd3ce51)
 
 I share alternative solutions, and different approaches links in the below:
 + x
