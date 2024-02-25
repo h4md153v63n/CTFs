@@ -22,3 +22,8 @@ I share alternative solutions, and different approaches links in the below:
 
 ## Technical Knowledge
 + x
+
+
+## Problems Solution
++ **No module named 'colorama' in Python:** https://stackoverflow.com/questions/9846683/how-to-install-colorama-in-python
++ **No module named 'pynbt':**
