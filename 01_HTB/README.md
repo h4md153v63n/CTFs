@@ -40,7 +40,7 @@
 # Hard
 |S.No| Machine & Links         | Writeup | CVEs - Tags                                                               |
 |----|-------------------------|---------|---------------------------------------------------------------------------|
-|1   |                         |         |                                                                           |
+|1   |Analysis  [1](https://www.hackthebox.com/machines/Analysis)  [2](https://app.hackthebox.com/machines/Analysis)|[Analysis](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/28_Analysis.md)|windows, |
 
 
 # Insane
