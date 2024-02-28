@@ -25,7 +25,11 @@ I share alternative solutions, and different approaches links in the below:
 
 
 ## Tools
-+ x
++ **crackmapexec:** https://github.com/byt3bl33d3r/CrackMapExec
+  + https://youtu.be/fs-vOvaf6Tg
++ **NetExec:** https://github.com/Pennyw0rth/NetExec
+  + https://twitter.com/Infosecpat/status/1752058212478583186
+  + https://youtu.be/nOfK0YmeZV4
 
 
 ## Technical Knowledge
@@ -37,4 +41,5 @@ I share alternative solutions, and different approaches links in the below:
 + **/usr/lib/python3/dist-packages/certipy/__init__.py', which is also in package certipy-ad 4.7.0-0kali3:** https://medium.com/@init.d/certipy-or-certipy-ad-40a313992692
 + **Got error: module 'httpcore' has no attribute 'NetworkBackend':** https://medium.com/@pourya.mansouri/fixing-the-attributeerror-module-httpcore-has-no-attribute-networkbackend-issue-in-python-44c6286f1670
 + **[-] Got error: module 'httpcore' has no attribute 'CloseError':** https://github.com/geekan/MetaGPT/issues/254
-
++ **crackmapexec ValueError: too many values to unpack (expected 2):** https://github.com/byt3bl33d3r/CrackMapExec
+  + https://youtu.be/fs-vOvaf6Tg
