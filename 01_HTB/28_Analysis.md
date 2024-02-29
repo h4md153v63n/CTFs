@@ -37,7 +37,7 @@ I share alternative solutions, and different approaches links in the below:
   + https://github.com/antonioCoco/ConPtyShell/blob/master/Invoke-ConPtyShell.ps1
 + **PrivescCheck:** https://github.com/itm4n/PrivescCheck
   + https://github.com/itm4n/PrivescCheck/blob/master/PrivescCheck.ps1
-+ https://github.com/flozz/p0wny-shell
++ **p0wny-shell / powny-shell:** https://github.com/flozz/p0wny-shell
 + https://www.revshells.com
 
 
