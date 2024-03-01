@@ -23,7 +23,7 @@ I share alternative solutions, and different approaches links in the below:
 
 
 ## Technical Knowledge
-+ CVE-2023-41892: https://gist.github.com/gmh5225/8fad5f02c2cf0334249614eb80cbf4ce
++ **CVE-2023-41892:** https://gist.github.com/gmh5225/8fad5f02c2cf0334249614eb80cbf4ce
 + https://gist.github.com/its-sarin/c9b0a2638cf21a062cb522733fc2ec11
 + https://gist.githubusercontent.com/to016/b796ca3275fa11b5ab9594b1522f7226/raw/4742df53be0584c68d6f7550224948fc6709fea9/CVE-2023-41892-POC.md
-+ CVE-2023-26035: https://github.com/rvizx/CVE-2023-26035
++ **CVE-2023-26035:** https://github.com/rvizx/CVE-2023-26035
