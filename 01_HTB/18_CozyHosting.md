@@ -4,8 +4,6 @@
 
 **Machine ip:** 10.10.11.230
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f6860ccb-d2fb-4202-a39e-ca6c10fd32f0)
-
 
 ## Solutions
 I solved the machine, but I won't publish a write-up. 
