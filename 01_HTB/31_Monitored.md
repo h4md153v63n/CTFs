@@ -13,13 +13,16 @@ https://www.hackthebox.com/achievement/machine/184261/583
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9305dbb8-2a3b-4fd0-a5d2-7a9163b17b34)
 
 I share alternative solutions, and different approaches links in the below:
-+ https://medium.com/@chniko/monitored-hack-the-box-b2ba589f05ea
-+ https://readmedium.com/en/https:/batm4n.medium.com/monitored-hackthebox-walkthrough-2a86032bd841
-+ https://techyrick.com/monitored-htb/
-+ 
++ **log file:** http://jzcheng.cn/archives/monitored.html
+  + https://cn-sec.com/archives/2397323.html
+  + https://www.turkhackteam.org/konular/hackthebox-monitored.2054391/
++ **services/command:** https://medium.com/@chniko/monitored-hack-the-box-b2ba589f05ea
+  + https://readmedium.com/en/https:/batm4n.medium.com/monitored-hackthebox-walkthrough-2a86032bd841
+  + https://techyrick.com/monitored-htb/
 
 
 ## CVE Scripting
++ https://research.nccgroup.com/2023/12/13/technical-advisory-multiple-vulnerabilities-in-nagios-xi/
 + **CVE-2023–40931:** https://nvd.nist.gov/vuln/detail/CVE-2023-40931
   + https://medium.com/@n1ghtcr4wl3r/nagios-xi-vulnerability-cve-2023-40931-sql-injection-in-banner-ace8258c5567
   + https://outpost24.com/blog/nagios-xi-vulnerabilities/
