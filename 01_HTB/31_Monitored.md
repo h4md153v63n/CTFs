@@ -17,7 +17,8 @@ I share alternative solutions, and different approaches links in the below:
 
 
 ## CVE Scripting
-+ x
++ **CVE-2023–40931:** https://nvd.nist.gov/vuln/detail/CVE-2023-40931
++ https://medium.com/@n1ghtcr4wl3r/nagios-xi-vulnerability-cve-2023-40931-sql-injection-in-banner-ace8258c5567
 
 
 ## Tools
@@ -29,4 +30,4 @@ I share alternative solutions, and different approaches links in the below:
 
 
 ## Problems Solution
-+ -
++ **Nagios - The specified user account has been disabled or does not exist.:** https://support.nagios.com/forum/viewtopic.php?f=16&t=58783
