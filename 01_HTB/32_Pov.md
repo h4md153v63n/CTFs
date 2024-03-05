@@ -13,10 +13,13 @@ https://www.hackthebox.com/achievement/machine/184261/585
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5c718dd1-8657-480c-b58f-3cfb678f93d6)
 
 I share alternative solutions, and different approaches links in the below:
++ **LFI:** https://cn-sec.com/archives/2443653.html
++ **1. hashdump / ligolo / port forwarding / evil-winrm 2. winlogon:** https://xenoq.dev/htb-pov/
 + https://readmedium.com/en/https:/batm4n.medium.com/pov-hackthebox-walkthrough-b0dd001355a6
 + https://medium.com/@Siddhi./pov-hackthebox-walk-through-ca9400f3c74c
 + https://techyrick.com/pov-hackthebox-writeup/
 + https://infosecwriteups.com/pov-hackthebox-seasonal-machine-simple-writeup-by-karthikeyan-nagaraj-2024-7516c938c688
++ https://namiq.net/blog/htb-pov
 
 
 ## DotNet Deserialization Phase
@@ -45,6 +48,7 @@ Get the shell:
 + **Reverse Shell Generator ---> PowerShell #3 (Base64):** https://www.revshells.com/
   + https://payloads.net/Reverse/
   + https://weibell.github.io/reverse-shell-generator/
++ **Reverse powerShell cmdline payload generator (base64 encoded):** https://gist.github.com/tothi/ab288fb523a4b32b51a53e542d40fe58
 + **CyberChef:** https://gchq.github.io/CyberChef/
 + **psgetsystem:** https://github.com/decoder-it/psgetsystem
   + https://notes.morph3.blog/windows/privilege-escalation/sedebugprivilege
@@ -54,6 +58,7 @@ Get the shell:
 ## Technical Knowledge
 + **.Net/DotNet Deserialization - ViewState:** https://book.hacktricks.xyz/pentesting-web/deserialization/exploiting-__viewstate-parameter
 + **How to Get Credential Using PowerShell:** https://www.delftstack.com/howto/powershell/get-credential-using-powershell/
+  + https://mcpmag.com/articles/2017/07/20/save-and-read-sensitive-data-with-powershell.aspx
   + https://jatinpurohit.wordpress.com/2020/04/08/decrypt-pscredential-object-password-and-its-applications/
   + https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/add-credentials-to-powershell-functions?view=powershell-7.4
 
