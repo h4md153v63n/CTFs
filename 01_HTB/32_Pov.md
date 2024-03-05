@@ -13,11 +13,12 @@ https://www.hackthebox.com/achievement/machine/184261/585
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5c718dd1-8657-480c-b58f-3cfb678f93d6)
 
 I share alternative solutions, and different approaches links in the below:
-+ x
++ https://readmedium.com/en/https:/batm4n.medium.com/pov-hackthebox-walkthrough-b0dd001355a6
++ 
 
 
 
-## Serialization Phase
+## DotNet Deserialization Phase
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f404c6f3-6ab5-4c25-9581-0ab341103a8e)
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ca49f21e-bf57-47d2-a2cb-e1cb6e58795c)
