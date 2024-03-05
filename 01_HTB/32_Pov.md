@@ -15,8 +15,8 @@ https://www.hackthebox.com/achievement/machine/184261/585
 I share alternative solutions, and different approaches links in the below:
 + https://readmedium.com/en/https:/batm4n.medium.com/pov-hackthebox-walkthrough-b0dd001355a6
 + https://medium.com/@Siddhi./pov-hackthebox-walk-through-ca9400f3c74c
-+ 
-
++ https://techyrick.com/pov-hackthebox-writeup/
++ https://infosecwriteups.com/pov-hackthebox-seasonal-machine-simple-writeup-by-karthikeyan-nagaraj-2024-7516c938c688
 
 
 ## DotNet Deserialization Phase
@@ -46,6 +46,9 @@ Get the shell:
   + https://payloads.net/Reverse/
   + https://weibell.github.io/reverse-shell-generator/
 + **CyberChef:** https://gchq.github.io/CyberChef/
++ **psgetsystem:** https://github.com/decoder-it/psgetsystem
+  + https://notes.morph3.blog/windows/privilege-escalation/sedebugprivilege
++ **EnableAllTokenPrivs.ps1:** https://github.com/fashionproof/EnableAllTokenPrivs/tree/master
 
 
 ## Technical Knowledge
