@@ -35,7 +35,7 @@ Get the shell:
 
 
 ## CVE Scripting
-+ x
++ -
 
 
 ## Tools
@@ -44,10 +44,13 @@ Get the shell:
 + **Reverse Shell Generator ---> PowerShell #3 (Base64):** https://www.revshells.com/
   + https://payloads.net/Reverse/
   + https://weibell.github.io/reverse-shell-generator/
++ **CyberChef:** https://gchq.github.io/CyberChef/
 
 
 ## Technical Knowledge
-+ x
++ **How to Get Credential Using PowerShell:** https://www.delftstack.com/howto/powershell/get-credential-using-powershell/
+  + https://jatinpurohit.wordpress.com/2020/04/08/decrypt-pscredential-object-password-and-its-applications/
+  + https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/add-credentials-to-powershell-functions?view=powershell-7.4
 
 
 ## Problems Solution
