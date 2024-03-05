@@ -53,6 +53,11 @@ Get the shell:
 + **psgetsystem:** https://github.com/decoder-it/psgetsystem
   + https://notes.morph3.blog/windows/privilege-escalation/sedebugprivilege
 + **EnableAllTokenPrivs.ps1:** https://github.com/fashionproof/EnableAllTokenPrivs/tree/master
++ **Pivoting using ligolo:**
+	+ https://medium.com/@issam.qsous/mastering-multi-pivot-strategies-unleashing-ligolo-ngs-power-double-triple-and-even-quadruple-dca6b24c404c
+	+ https://www.youtube.com/watch?v=DM1B8S80EvQ&t=481s
+	+ https://github.com/nicocha30/ligolo-ng
+	+ https://medium.com/@issam.qsous/mastering-multi-pivot-strategies-unleashing-ligolo-ngs-power-double-triple-and-even-quadruple-dca6b24c404c
 
 
 ## Technical Knowledge
