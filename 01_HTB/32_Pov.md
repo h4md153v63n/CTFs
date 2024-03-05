@@ -14,6 +14,7 @@ https://www.hackthebox.com/achievement/machine/184261/585
 
 I share alternative solutions, and different approaches links in the below:
 + https://readmedium.com/en/https:/batm4n.medium.com/pov-hackthebox-walkthrough-b0dd001355a6
++ https://medium.com/@Siddhi./pov-hackthebox-walk-through-ca9400f3c74c
 + 
 
 
@@ -48,6 +49,7 @@ Get the shell:
 
 
 ## Technical Knowledge
++ **.Net/DotNet Deserialization - ViewState:** https://book.hacktricks.xyz/pentesting-web/deserialization/exploiting-__viewstate-parameter
 + **How to Get Credential Using PowerShell:** https://www.delftstack.com/howto/powershell/get-credential-using-powershell/
   + https://jatinpurohit.wordpress.com/2020/04/08/decrypt-pscredential-object-password-and-its-applications/
   + https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/add-credentials-to-powershell-functions?view=powershell-7.4
