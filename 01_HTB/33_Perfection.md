@@ -37,8 +37,8 @@ I share alternative solutions, and different approaches links in the below:
   + https://github.com/0xInfection/Awesome-WAF
   + https://nemesida-waf.medium.com/bypassing-waf-4cfa1aad16bf
 + **Escape characters / encoding and escaping:** https://www.geeksforgeeks.org/what-are-escape-characters-in-javascript/
-  + https://wiki.zenitel.com/wiki/Character_escape_codes
-  + https://gist.github.com/jonlabelle/7a76ecd29976aeb30877be326c683979
+  + **escape characters, line feed, Linefeed (newline), %0A:** https://wiki.zenitel.com/wiki/Character_escape_codes
+    + https://gist.github.com/jonlabelle/7a76ecd29976aeb30877be326c683979
   + https://docs.microfocus.com/OMi/10.62/Content/OMi/ExtGuide/ExtApps/URL_encoding.htm
   + https://www.werockyourweb.com/url-escape-characters/
   + https://www.onwebsecurity.com/security/properly-encoding-and-escaping-for-the-web.html
