@@ -26,6 +26,7 @@ I share alternative solutions, and different approaches links in the below:
 
 
 ## Technical Knowledge
++ https://www.shorebreaksecurity.com/blog/all-you-need-to-know-about-server-side-includes/
 + **SSTI (Server Side Template Injection):** https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection
   + https://portswigger.net/web-security/server-side-template-injection
   + https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Template%20Injection/README.md
@@ -35,6 +36,12 @@ I share alternative solutions, and different approaches links in the below:
   + https://hacken.io/discover/how-to-bypass-waf-hackenproof-cheat-sheet/
   + https://github.com/0xInfection/Awesome-WAF
   + https://nemesida-waf.medium.com/bypassing-waf-4cfa1aad16bf
++ **Escape characters / encoding and escaping:** https://www.geeksforgeeks.org/what-are-escape-characters-in-javascript/
+  + https://docs.microfocus.com/OMi/10.62/Content/OMi/ExtGuide/ExtApps/URL_encoding.htm
+  + https://www.werockyourweb.com/url-escape-characters/
+  + https://www.onwebsecurity.com/security/properly-encoding-and-escaping-for-the-web.html
+  + https://resources.infosecinstitute.com/topics/penetration-testing/manual-web-application-penetration-testing-suffix-prefix-fuzzing/
+  + https://community.sap.com/t5/technology-q-a/how-to-use-escape-characters-to-prevent-sql-injection/qaq-p/9650486
 + **sqlite:** https://sqlite.org/cli.html
   + https://www.tutlane.com/tutorial/sqlite/sqlite-commands
   + https://www.tutorialspoint.com/sqlite/sqlite_commands.htm
