@@ -21,7 +21,8 @@ I share alternative solutions, and different approaches links in the below:
 
 
 ## Tools
-+ -
++ **hashcat:** https://hashcat.net/wiki/doku.php?id=example_hashes
+  + https://mattw.io/hashID/types
 
 
 ## Technical Knowledge
