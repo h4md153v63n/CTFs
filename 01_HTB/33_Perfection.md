@@ -13,7 +13,7 @@ https://www.hackthebox.com/achievement/machine/184261/590
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/cf0a8d8a-7e39-4dfb-9d9c-10223ebbe926)
 
 I share alternative solutions, and different approaches links in the below:
-+ -
++ x
 
 
 ## CVE Scripting
