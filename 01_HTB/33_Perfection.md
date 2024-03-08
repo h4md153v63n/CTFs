@@ -13,7 +13,7 @@ https://www.hackthebox.com/achievement/machine/184261/590
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/cf0a8d8a-7e39-4dfb-9d9c-10223ebbe926)
 
 I share alternative solutions, and different approaches links in the below:
-+ xxx
++ https://medium.com/@lukasjohannesmoeller/htb-perfection-writeup-052f77706ba9
 
 
 ## CVE Scripting
@@ -23,6 +23,10 @@ I share alternative solutions, and different approaches links in the below:
 ## Tools
 + **hashcat:** https://hashcat.net/wiki/doku.php?id=example_hashes
   + https://mattw.io/hashID/types
++ **hurl:** https://hurl.dev/
+  + https://www.kali.org/tools/hurl/
+  + https://hurl.dev/docs/installation.html
+  + https://www.hackingtruth.in/2020/07/hurl-hexadecimal-and-url-encoder-decoder.html
 
 
 ## Technical Knowledge
