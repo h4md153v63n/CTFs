@@ -6,7 +6,7 @@
 
 
 ## Solutions
-I solved the machine, but I won't publish a write-up. 
+I solved the machine, but I won't publish a write-up.
 
 https://www.hackthebox.com/achievement/machine/184261/589
 
