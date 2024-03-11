@@ -17,7 +17,7 @@ I share alternative solutions, and different approaches links in the below:
 
 
 ## CVE Scripting
-+ x
++ x 
 
 
 ## Tools
