@@ -21,7 +21,7 @@ I share alternative solutions, and different approaches links in the below:
 
 
 ## Tools
-+ x
++ x 
 
 
 ## Technical Knowledge
