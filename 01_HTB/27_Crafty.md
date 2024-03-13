@@ -46,3 +46,8 @@ I share alternative solutions, and different approaches links in the below:
 ## Problems Solution
 + **No module named 'colorama' in Python:** https://stackoverflow.com/questions/9846683/how-to-install-colorama-in-python
 + **No module named 'pynbt'  in python:** https://stackoverflow.com/questions/64427580/modulenotfounderror-no-module-named-pynput
+
+
+## For More
++ **My presentation - Research on the Recall of the Log4j:** https://codingninjablogs.tech/recall-the-log4j-cb5e2b98d0de
+  + https://www.slideshare.net/hamdi_sevben/log4jpdf
