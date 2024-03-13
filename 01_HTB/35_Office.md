@@ -13,19 +13,30 @@ https://www.hackthebox.com/achievement/machine/184261/588
 ![Capture](https://github.com/h4md153v63n/CTFs/assets/5091265/5f52bc01-dfe0-4082-a762-0e54ecfb19bc)
 
 I share alternative solutions, and different approaches links in the below:
-+ x 
++ https://github.com/g1vi/AllTheWriteUps/blob/main/Hack%20the%20box/Season%204%20(winter%202024)/Week%2007.%20HTB%20-%20Office.MD
++ 
 
 
 ## CVE Scripting
-+ x 
++ **CVE-2023-23752:** https://www.cvedetails.com/cve/CVE-2023-23752
+  + https://github.com/0xNahim/CVE-2023-23752
++ **CVE-2023-2255 / Libre Office vulnerability:** https://github.com/elweth-sec/CVE-2023-2255
 
 
 ## Tools
-+ x 
++ **mimikatz:** https://github.com/ParrotSec/mimikatz
+  + https://github.com/gentilkiwi/mimikatz/releases
+  + https://github.com/gentilkiwi/mimikatz
+  + https://github.com/gentilkiwi/mimikatz/wiki
+  + https://github.com/gentilkiwi/mimikatz/wiki/howto-~-scheduled-tasks-credentials
+  + https://github.com/gentilkiwi/mimikatz/wiki/howto-~-credential-manager-saved-credentials
++ **PowerSploit:** https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1
++ **SharpGPOAbuse:** https://github.com/byronkg/SharpGPOAbuse
+  + https://github.com/FSecureLABS/SharpGPOAbuse
 
 
 ## Technical Knowledge
-+ x 
++ **joomla pentesting:** https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/joomla
 
 
 ## Problems Solution
