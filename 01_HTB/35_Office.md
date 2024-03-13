@@ -14,7 +14,7 @@ https://www.hackthebox.com/achievement/machine/184261/588
 
 I share alternative solutions, and different approaches links in the below:
 + https://github.com/g1vi/AllTheWriteUps/blob/main/Hack%20the%20box/Season%204%20(winter%202024)/Week%2007.%20HTB%20-%20Office.MD
-+ 
++ https://techyrick.com/office-htb-writeup-hackthebox/
 
 
 ## CVE Scripting
@@ -33,10 +33,13 @@ I share alternative solutions, and different approaches links in the below:
 + **PowerSploit:** https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1
 + **SharpGPOAbuse:** https://github.com/byronkg/SharpGPOAbuse
   + https://github.com/FSecureLABS/SharpGPOAbuse
++ **GodPotato:** https://github.com/BeichenDream/GodPotato
+  + https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/roguepotato-and-printspoofer#godpotato
 
 
 ## Technical Knowledge
 + **joomla pentesting:** https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/joomla
++ **Getting Passwords From Kerberos Pre-Authentication Packets:** https://vbscrub.com/2020/02/27/getting-passwords-from-kerberos-pre-authentication-packets/
 
 
 ## Problems Solution
