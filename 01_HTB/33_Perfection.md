@@ -13,7 +13,12 @@ https://www.hackthebox.com/achievement/machine/184261/590
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/cf0a8d8a-7e39-4dfb-9d9c-10223ebbe926)
 
 I share alternative solutions, and different approaches links in the below:
++ https://github.com/g1vi/AllTheWriteUps/blob/main/Hack%20the%20box/Season%204%20(winter%202024)/Week%2009.%20HTB%20-%20Perfection.MD
++ https://blog.csdn.net/qq_58869808/article/details/136460581
 + https://medium.com/@lukasjohannesmoeller/htb-perfection-writeup-052f77706ba9
++ https://blog.taipanbyte.ru/hackthebox/Perfection-HTB-Writeup
++ https://terminalintelligencesecurity.hashnode.dev/perfection-htb-writeup
++ https://medium.com/@jamesjarviscyber/perfection-hackthebox-walkthrough-management-summary-a493c71355ac
 
 
 ## CVE Scripting
@@ -31,9 +36,13 @@ I share alternative solutions, and different approaches links in the below:
 
 ## Technical Knowledge
 + https://www.shorebreaksecurity.com/blog/all-you-need-to-know-about-server-side-includes/
-+ **SSTI (Server Side Template Injection):** https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection
-  + https://portswigger.net/web-security/server-side-template-injection
++ **Webrick:** https://github.com/ruby/webrick
++ **Which is fastest? ERB vs. HAML vs. Slim?:** https://www.honeybadger.io/blog/ruby-template-performance-erb-haml-slim/
++ **SSTI (Server Side Template Injection):** https://portswigger.net/web-security/server-side-template-injection
+  + https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection
+    + https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection#erb-ruby
   + https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Template%20Injection/README.md
+    + https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection#ruby
 + **Bypass:** https://medium.com/@allypetitt/5-ways-i-bypassed-your-web-application-firewall-waf-43852a43a1c2
   + https://www.yeswehack.com/learn-bug-bounty/web-application-firewall-bypass
   + https://www.praetorian.com/blog/using-crlf-injection-to-bypass-akamai-web-app-firewall/
