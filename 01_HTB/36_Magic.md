@@ -11,8 +11,10 @@ I solved the machine, but I won't publish a write-up.
 
 
 I share alternative solutions, and different approaches links in the below:
++ https://vvmlist.github.io/#magic
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/magic-writeup-w-o-metasploit
-+ x
++ https://0xdf.gitlab.io/2020/08/22/htb-magic.html
++ 
 
 
 ## CVE Scripting
