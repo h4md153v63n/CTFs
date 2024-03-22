@@ -14,8 +14,9 @@ https://www.hackthebox.com/achievement/machine/184261/241
 
 I share alternative solutions, and different approaches links in the below:
 + https://vvmlist.github.io/#magic
-+ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/magic-writeup-w-o-metasploit
 + https://0xdf.gitlab.io/2020/08/22/htb-magic.html
++ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/magic-writeup-w-o-metasploit
++ 
 + 
 
 
@@ -28,7 +29,7 @@ I share alternative solutions, and different approaches links in the below:
 
 
 ## Technical Knowledge
-+ x 
++ **Mimetype or Magic bytes:** https://en.wikipedia.org/wiki/List_of_file_signatures
 
 
 ## Problems Solution
