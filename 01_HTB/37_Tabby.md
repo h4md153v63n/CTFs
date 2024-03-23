@@ -25,7 +25,7 @@ I share alternative solutions, and different approaches links in the below:
 
 
 ## Technical Knowledge
-+ x
++ 
 
 
 ## Problems Solution
