@@ -24,13 +24,19 @@ I share alternative solutions, and different approaches links in the below:
 
 
 ## Tools
-+ **LXD Alpina Linux image builder:** https://github.com/saghul/lxd-alpine-builder
 + **What is WAR?:** https://0xdf.gitlab.io/2020/11/07/htb-tabby.html#beyond-root---what-is-war
++ **Deploy A New Application Archive (WAR) Remotely:** https://tomcat.apache.org/tomcat-9.0-doc/manager-howto.html#Deploy_A_New_Application_Archive_(WAR)_Remotely
++ **LXD Alpina Linux image builder:** https://github.com/saghul/lxd-alpine-builder
 
 
 ## Technical Knowledge
++ **File Inclusion / LFI:** https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/File%20Inclusion/Intruders
 + **LXC Exploitation:** https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/02_Brainfuck.md#privilege-escalation
   + https://0xdf.gitlab.io/2020/11/07/htb-tabby.html#lxc-exploitation
+  + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/tabby-writeup-w-o-metasploit#id-5805
++ **lxd/lxc Group - Privilege escalation:** https://book.hacktricks.xyz/linux-hardening/privilege-escalation/interesting-groups-linux-pe/lxd-privilege-escalation
+  + https://reboare.github.io/lxd/lxd-escape.html
+  + https://materials.rangeforce.com/tutorial/2019/12/07/Privilege-Escalation-Docker-LXD-Groups/
 + **Better LXC Root:** https://blog.m0noc.com/2018/10/lxc-container-privilege-escalation-in.html
 + **Apache Tomcat:** https://tomcat.apache.org
 + **Tomcat exploit variant : host-manager:** https://www.certilience.fr/2019/03/tomcat-exploit-variant-host-manager/
