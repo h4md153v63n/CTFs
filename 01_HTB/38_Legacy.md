@@ -5,11 +5,15 @@
 **Machine ip:** 10.10.10.4
 
 ## Reconnaissance
-+ x
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/f9fb11ab-3893-4b05-9445-a3025431d537)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/56aa3613-f795-4f39-ae91-c937740f5ff4)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3b75c385-baa0-4aae-b31d-fae7e20d48c1)
 
 
 ## Enumeration
-+ x
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a4ec1a7b-5542-4821-88b7-9220180785e1)
 
 
 ## Gaining Access
