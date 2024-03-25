@@ -71,7 +71,7 @@ smbserver.py win /usr/share/windows-binaries/
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/168b61ac-c71d-4f60-8568-a9e1223f669a)
 
 
-### Method 2: [CVE-2017-0143 (ms17-010) / Shadow Brokers](https://0xdf.gitlab.io/2019/02/21/htb-legacy.html#ms-17-010)
+### Method 2: CVE-2017-0143 (ms17-010) / Eternal Blue / Shadow Brokers [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/legacy-writeup-w-o-metasploit#d6e0) [2](https://0xdf.gitlab.io/2019/02/21/htb-legacy.html#ms-17-010)
 + Try [1](https://github.com/helviojunior/MS17-010) [2](https://github.com/helviojunior/MS17-010/blob/master/send_and_execute.py)
 + The exploit didn't work on me due to the below impacket errors:
   + [no module named impacket](https://forum.hackthebox.com/t/impacket-module-not-found-but-installed/3561)
@@ -91,20 +91,21 @@ smbserver.py win /usr/share/windows-binaries/
 + **CVE-2008-4250 (ms08-067) / Conficker:**
   + https://github.com/jivoi/pentest/blob/master/exploit_win/ms08-067.py
   + https://raw.githubusercontent.com/jivoi/pentest/master/exploit_win/ms08-067.py
-+ **CVE-2017-0143 (ms17-010) / Shadow Brokers:**
++ **CVE-2017-0143 (ms17-010) / Eternal Blue / Shadow Brokers:**
   + https://github.com/helviojunior/MS17-010
     + https://github.com/helviojunior/MS17-010/blob/master/send_and_execute.py
   + https://github.com/worawit/MS17-010
 
 
 ## Tools
-+ **windows-binaries:** /usr/share/windows-binaries
++ **windows-binaries / whoami.exe:** /usr/share/windows-binaries
   + https://0xdf.gitlab.io/2019/02/21/htb-legacy.html#beyond-root---whoami
-+ **smbserver.py:** https://0xdf.gitlab.io/2019/02/21/htb-legacy.html#beyond-root---whoami
++ **smbserver.py:** /usr/share/doc/python3-impacket/examples/smbserver.py
+  + https://0xdf.gitlab.io/2019/02/21/htb-legacy.html#beyond-root---whoami
 
 
 ## Technical Knowledge
-+ x
++ **how to exploit the Eternal Blue vulnerability without using Metasploit:** https://ethicalhackingguru.com/how-to-exploit-ms17-010-eternal-blue-without-metasploit/
 
 
 ## Problems Solution
