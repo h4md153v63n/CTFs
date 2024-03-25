@@ -20,7 +20,8 @@
 
 
 # References & Alternatives
-+ x
++ https://vvmlist.github.io/#legacy
++ 
 
 
 ## CVE Scripting
