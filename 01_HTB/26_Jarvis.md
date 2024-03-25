@@ -4,6 +4,9 @@
 
 **Machine ip:** 10.10.10.143
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8485a935-eadc-44ab-9690-21943f68101b)
+
+
 ## Reconnaissance
 First thing first, start with port scan to see which ports are open and which services are running on those ports.
 + `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.143 -e tun0 > ports`
