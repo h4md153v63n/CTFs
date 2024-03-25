@@ -4,6 +4,9 @@
 
 **Machine ip:** 10.10.10.4
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0a9f2486-def8-4367-a7c3-52d48f4ae128)
+
+
 ## Reconnaissance
 ```
 sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.4 -e tun0 > ports
