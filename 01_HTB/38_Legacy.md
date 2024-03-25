@@ -83,30 +83,47 @@ smbserver.py win /usr/share/windows-binaries/
 
 
 ### Method 3: CVE-2008-4250 (ms08-067) / Conficker -> Metasploit Solution
-+ **windows/smb/ms08_067_netapi:** https://github.com/7h3rAm/7h3rAm.github.io/blob/master/_posts/htb-legacy.md
++ **windows/smb/ms08_067_netapi:** https://www.rapid7.com/db/modules/exploit/windows/smb/ms08_067_netapi/
+  + https://github.com/7h3rAm/7h3rAm.github.io/blob/master/_posts/htb-legacy.md
   + https://readmedium.com/en/https:/theosintion.medium.com/htb-retired-box-walkthrough-legacy-147bbcc9ff02
   + https://medium.com/@JAlblas/hackthebox-legacy-walkthrough-cb067c572a50
+
+
+### Method 4: CVE-2017-0143 (ms17-010) / Eternal Blue / Shadow Brokers -> Metasploit Solution
++ **exploit/windows/smb/ms17_010_psexec:** https://ethicalhacs.com/legacy-hackthebox-walkthrough/
+  + https://bri5ee.sh/hack%20the%20box/2021/05/24/htb-legacy.html
+  + https://vostdev.wordpress.com/2021/01/17/htb-legacy-walk-through/
+  + https://slv3rfx.com/posts/htb-legacy-writeup/
 
 
 # References & Alternatives
 + https://vvmlist.github.io/#legacy
 + **ms08-067 / ms17-010:** https://0xdf.gitlab.io/2019/02/21/htb-legacy.html
+  + https://systemweakness.com/oscp-preparation-hack-the-box-2-legacy-557dc3f0e384
 + **ms17-010:** https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/legacy-writeup-w-o-metasploit
   + https://medium.com/@toneemarqus/legacy-hackthebox-walkthrough-2023-tonee-55189d9f6035
++ **metasploit exploit/windows/smb/ms17_010_psexec:** https://ethicalhacs.com/legacy-hackthebox-walkthrough/
+  + https://slv3rfx.com/posts/htb-legacy-writeup/
+  + https://bri5ee.sh/hack%20the%20box/2021/05/24/htb-legacy.html
+  + https://vostdev.wordpress.com/2021/01/17/htb-legacy-walk-through/
 + **ms08-067:** https://benheater.com/hackthebox-legacy/
-+ **metasploit windows/smb/ms08_067_netapi:** https://github.com/7h3rAm/7h3rAm.github.io/blob/master/_posts/htb-legacy.md
++ **metasploit windows/smb/ms08_067_netapi:** https://www.rapid7.com/db/modules/exploit/windows/smb/ms08_067_netapi/
+  + https://github.com/7h3rAm/7h3rAm.github.io/blob/master/_posts/htb-legacy.md
   + https://readmedium.com/en/https:/theosintion.medium.com/htb-retired-box-walkthrough-legacy-147bbcc9ff02
   + https://medium.com/@JAlblas/hackthebox-legacy-walkthrough-cb067c572a50
-  + 
+  + https://www.freecodecamp.org/news/keep-calm-and-hack-the-box-legacy/
+  + https://www.hackingarticles.in/hack-the-box-challenge-legacy-walkthrough/
 
 
 ## CVE Scripting
 + **CVE-2008-4250 (ms08-067) / Conficker:** https://www.exploit-db.com/exploits/40279
     + https://nvd.nist.gov/vuln/detail/cve-2008-4250
     + https://learn.microsoft.com/en-us/security-updates/securitybulletins/2008/ms08-067
+    + https://www.rapid7.com/blog/post/2014/02/03/new-ms08-067/
+    + https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4250
   + https://github.com/jivoi/pentest/blob/master/exploit_win/ms08-067.py
   + https://raw.githubusercontent.com/jivoi/pentest/master/exploit_win/ms08-067.py
-+ **CVE-2017-0143 (ms17-010) / Eternal Blue / Shadow Brokers:**
++ **CVE-2017-0143 (ms17-010) / Eternal Blue / Shadow Brokers:** https://www.exploit-db.com/exploits/43970
   + https://github.com/helviojunior/MS17-010
     + https://github.com/helviojunior/MS17-010/blob/master/send_and_execute.py
   + https://github.com/c0d3cr4f73r/MS17-010_CVE-2017-0143
@@ -121,6 +138,7 @@ smbserver.py win /usr/share/windows-binaries/
 
 
 ## Technical Knowledge
++ **139,445 - Pentesting SMB:** https://book.hacktricks.xyz/network-services-pentesting/pentesting-smb
 + **how to exploit the Eternal Blue vulnerability without using Metasploit:** https://ethicalhackingguru.com/how-to-exploit-ms17-010-eternal-blue-without-metasploit/
 
 
