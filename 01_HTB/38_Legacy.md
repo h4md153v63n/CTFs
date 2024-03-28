@@ -81,7 +81,7 @@ smbserver.py win /usr/share/windows-binaries/
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/168b61ac-c71d-4f60-8568-a9e1223f669a)
 
 
-### Method 2: CVE-2017-0143 (ms17-010) / Eternal Blue / Shadow Brokers [1](https://0xdf.gitlab.io/2021/05/11/htb-blue.html#python-script) [2](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/legacy-writeup-w-o-metasploit#d6e0) [3](https://0xdf.gitlab.io/2019/02/21/htb-legacy.html#ms-17-010)
+### Method 2: CVE-2017-0143 (ms17-010) / Eternal Blue / Shadow Brokers / WannaCry [1](https://0xdf.gitlab.io/2021/05/11/htb-blue.html#python-script) [2](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/legacy-writeup-w-o-metasploit#d6e0) [3](https://0xdf.gitlab.io/2019/02/21/htb-legacy.html#ms-17-010)
 + Try [1](https://0xdf.gitlab.io/2021/05/11/htb-blue.html#python-script) [2](https://github.com/helviojunior/MS17-010) [3](https://github.com/helviojunior/MS17-010/blob/master/send_and_execute.py)
 + The exploit didn't work on me due to the below impacket errors:
   + [no module named impacket](https://forum.hackthebox.com/t/impacket-module-not-found-but-installed/3561)
@@ -132,6 +132,7 @@ smbserver.py win /usr/share/windows-binaries/
   + https://github.com/jivoi/pentest/blob/master/exploit_win/ms08-067.py
   + https://raw.githubusercontent.com/jivoi/pentest/master/exploit_win/ms08-067.py
 + **CVE-2017-0143 (ms17-010) / Eternal Blue / Shadow Brokers / WannaCry:** https://www.exploit-db.com/exploits/43970
+    + https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-0143
   + https://github.com/helviojunior/MS17-010
     + https://github.com/helviojunior/MS17-010/blob/master/send_and_execute.py
   + https://github.com/c0d3cr4f73r/MS17-010_CVE-2017-0143
@@ -143,6 +144,7 @@ smbserver.py win /usr/share/windows-binaries/
   + https://0xdf.gitlab.io/2019/02/21/htb-legacy.html#beyond-root---whoami
 + **smbserver.py:** /usr/share/doc/python3-impacket/examples/smbserver.py
   + https://0xdf.gitlab.io/2019/02/21/htb-legacy.html#beyond-root---whoami
++ **impacket:** https://github.com/fortra/impacket
 
 
 ## Technical Knowledge
