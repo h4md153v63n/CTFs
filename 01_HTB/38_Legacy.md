@@ -101,6 +101,11 @@ smbserver.py win /usr/share/windows-binaries/
   + https://bri5ee.sh/hack%20the%20box/2021/05/24/htb-legacy.html
   + https://vostdev.wordpress.com/2021/01/17/htb-legacy-walk-through/
   + https://slv3rfx.com/posts/htb-legacy-writeup/
+ 
+
+### Method 5: [CVE-2017-0144](https://www.exploit-db.com/exploits/42315) Solution is the same as on [Blue Machine's Method 1](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/39_Blue.md#method-1-cve-2017-0144---manual-solution) - Manual Solution
++ Try with **CVE-2017-0144** manual solution [1](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/39_Blue.md#method-1-cve-2017-0144---manual-solution) [https://vostdev.wordpress.com/2021/01/17/htb-legacy-walk-through/](2)
++ **Alternatively**, try **metasploit solution** like [Blue Machine's Method 2](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/39_Blue.md#method-2-cve-2017-0144---metasploit-solution)
 
 
 # References & Alternatives
@@ -111,9 +116,9 @@ smbserver.py win /usr/share/windows-binaries/
   + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/legacy-writeup-w-o-metasploit
   + https://medium.com/@toneemarqus/legacy-hackthebox-walkthrough-2023-tonee-55189d9f6035
 + **metasploit exploit/windows/smb/ms17_010_psexec:** https://ethicalhacs.com/legacy-hackthebox-walkthrough/
+  + https://vostdev.wordpress.com/2021/01/17/htb-legacy-walk-through/
   + https://slv3rfx.com/posts/htb-legacy-writeup/
   + https://bri5ee.sh/hack%20the%20box/2021/05/24/htb-legacy.html
-  + https://vostdev.wordpress.com/2021/01/17/htb-legacy-walk-through/
 + **ms08-067:** https://benheater.com/hackthebox-legacy/
 + **metasploit windows/smb/ms08_067_netapi:** https://www.rapid7.com/db/modules/exploit/windows/smb/ms08_067_netapi/
   + https://github.com/7h3rAm/7h3rAm.github.io/blob/master/_posts/htb-legacy.md
