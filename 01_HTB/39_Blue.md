@@ -34,6 +34,18 @@ nmap --script vuln 10.10.10.40
 
 
 ## Exploitation & Gaining Access
+```
+searchsploit ms17-010
+
+searchsploit -m 42315
+
+mv 42315.py ms17-010.py
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0ff3583a-8c7e-46f7-a6b0-27fbd1a5692b)
+
+
+
 
 
 
