@@ -88,10 +88,10 @@ whoami
 
 
 ### Method 2: Metasploit Solution [1](https://0xdf.gitlab.io/2021/05/11/htb-blue.html#metasploit)
-+ Try with metasploit solution [1](https://0xdf.gitlab.io/2021/05/11/htb-blue.html#metasploit)
++ Try with metasploit solution [1](https://0xdf.gitlab.io/2021/05/11/htb-blue.html#metasploit) [2](https://u1sp00kies.medium.com/hack-the-box-htb-blue-walkthrough-7dac9505bc9c)
 
 
-### Method 3: [](https://0xdf.gitlab.io/2021/05/11/htb-blue.html#python-script) is the same as on [Blue Machine's Method 2](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/38_Legacy.md#method-2-cve-2017-0143-ms17-010--eternal-blue--shadow-brokers--wannacry-1-2-3)
+### Method 3: [](https://0xdf.gitlab.io/2021/05/11/htb-blue.html#python-script) is the same as on [Blue Machine's Method 2](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/38_Legacy.md#method-2-cve-2017-0143-ms17-010--eternal-blue--shadow-brokers--wannacry--notpetya-1-2-3)
 + Try **CVE-2017-0143** [1](https://0xdf.gitlab.io/2021/05/11/htb-blue.html#python-script)
 
 
@@ -104,8 +104,8 @@ whoami
 
 
 ## CVE Scripting
-+ **CVE-2017-0144 / ms17-010 / Eternal Blue / Shadow Brokers / WannaCry:** https://www.exploit-db.com/exploits/42315
-+ **CVE-2017-0143 / ms17-010 / Eternal Blue / Shadow Brokers / WannaCry:** https://www.exploit-db.com/exploits/43970
++ **CVE-2017-0144 / ms17-010 / Eternal Blue / Shadow Brokers / WannaCry / NotPetya:** https://www.exploit-db.com/exploits/42315
++ **CVE-2017-0143 / ms17-010 / Eternal Blue / Shadow Brokers / WannaCry / NotPetya:** https://www.exploit-db.com/exploits/43970
     + https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-0143
   + https://github.com/helviojunior/MS17-010
     + https://github.com/helviojunior/MS17-010/blob/master/send_and_execute.py
@@ -134,3 +134,4 @@ whoami
 + https://msrc.microsoft.com/blog/2017/05/customer-guidance-for-wannacrypt-attacks/
 + **Shadow Brokers:** https://en.wikipedia.org/wiki/The_Shadow_Brokers
 + **WannaCry ransomware attack:** https://en.wikipedia.org/wiki/WannaCry_ransomware_attack
+  + https://darknetdiaries.com/episode/73/
