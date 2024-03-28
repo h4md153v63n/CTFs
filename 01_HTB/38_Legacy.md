@@ -81,7 +81,7 @@ smbserver.py win /usr/share/windows-binaries/
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/168b61ac-c71d-4f60-8568-a9e1223f669a)
 
 
-### Method 2: CVE-2017-0143 (ms17-010) / Eternal Blue / Shadow Brokers / WannaCry [1](https://0xdf.gitlab.io/2021/05/11/htb-blue.html#python-script) [2](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/legacy-writeup-w-o-metasploit#d6e0) [3](https://0xdf.gitlab.io/2019/02/21/htb-legacy.html#ms-17-010)
+### Method 2: CVE-2017-0143 (ms17-010) / Eternal Blue / Shadow Brokers / WannaCry / NotPetya [1](https://0xdf.gitlab.io/2021/05/11/htb-blue.html#python-script) [2](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/legacy-writeup-w-o-metasploit#d6e0) [3](https://0xdf.gitlab.io/2019/02/21/htb-legacy.html#ms-17-010)
 + Try [1](https://0xdf.gitlab.io/2021/05/11/htb-blue.html#python-script) [2](https://github.com/helviojunior/MS17-010) [3](https://github.com/helviojunior/MS17-010/blob/master/send_and_execute.py)
 + The exploit didn't work on me due to the below impacket errors:
   + [no module named impacket](https://forum.hackthebox.com/t/impacket-module-not-found-but-installed/3561)
@@ -96,7 +96,7 @@ smbserver.py win /usr/share/windows-binaries/
   + https://medium.com/@JAlblas/hackthebox-legacy-walkthrough-cb067c572a50
 
 
-### Method 4: CVE-2017-0143 (ms17-010) / Eternal Blue / Shadow Brokers -> Metasploit Solution
+### Method 4: CVE-2017-0143 (ms17-010) / Eternal Blue / Shadow Brokers / WannaCry / NotPetya -> Metasploit Solution
 + **exploit/windows/smb/ms17_010_psexec:** https://ethicalhacs.com/legacy-hackthebox-walkthrough/
   + https://bri5ee.sh/hack%20the%20box/2021/05/24/htb-legacy.html
   + https://vostdev.wordpress.com/2021/01/17/htb-legacy-walk-through/
@@ -131,7 +131,7 @@ smbserver.py win /usr/share/windows-binaries/
     + https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4250
   + https://github.com/jivoi/pentest/blob/master/exploit_win/ms08-067.py
   + https://raw.githubusercontent.com/jivoi/pentest/master/exploit_win/ms08-067.py
-+ **CVE-2017-0143 (ms17-010) / Eternal Blue / Shadow Brokers / WannaCry:** https://www.exploit-db.com/exploits/43970
++ **CVE-2017-0143 (ms17-010) / Eternal Blue / Shadow Brokers / WannaCry / NotPetya:** https://www.exploit-db.com/exploits/43970
     + https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-0143
   + https://github.com/helviojunior/MS17-010
     + https://github.com/helviojunior/MS17-010/blob/master/send_and_execute.py
@@ -162,3 +162,4 @@ smbserver.py win /usr/share/windows-binaries/
 + **Finding XP Pro SP3 as "Windows-2000-LAN-Manager":** https://community.cisco.com/t5/archived-small-business-support/finding-xp-pro-sp3-as-quot-windows-2000-lan-manager-quot/td-p/3270323
 + **Shadow Brokers:** https://en.wikipedia.org/wiki/The_Shadow_Brokers
 + **WannaCry ransomware attack:** https://en.wikipedia.org/wiki/WannaCry_ransomware_attack
+  + https://darknetdiaries.com/episode/73/
