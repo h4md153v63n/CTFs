@@ -88,7 +88,11 @@ whoami
 
 
 ### Method 2: Metasploit Solution [1](https://0xdf.gitlab.io/2021/05/11/htb-blue.html#metasploit)
++ Try with metasploit solution [1](https://0xdf.gitlab.io/2021/05/11/htb-blue.html#metasploit)
 
+
+### Method 3: [](https://0xdf.gitlab.io/2021/05/11/htb-blue.html#python-script) is the same as on [Blue Machine's Method 2](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/38_Legacy.md#method-2-cve-2017-0143-ms17-010--eternal-blue--shadow-brokers--wannacry-1-2-3)
++ Try **CVE-2017-0143** [1](https://0xdf.gitlab.io/2021/05/11/htb-blue.html#python-script)
 
 
 # References & Alternatives
@@ -101,19 +105,26 @@ whoami
 
 ## CVE Scripting
 + **CVE-2017-0144 / ms17-010 / Eternal Blue / Shadow Brokers / WannaCry:** https://www.exploit-db.com/exploits/42315
-+ **CVE-2017-0143 / ms17-010 / Eternal Blue / Shadow Brokers / WannaCry:** https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-0143
++ **CVE-2017-0143 / ms17-010 / Eternal Blue / Shadow Brokers / WannaCry:** https://www.exploit-db.com/exploits/43970
+    + https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-0143
+  + https://github.com/helviojunior/MS17-010
+    + https://github.com/helviojunior/MS17-010/blob/master/send_and_execute.py
+  + https://github.com/c0d3cr4f73r/MS17-010_CVE-2017-0143
+  + https://github.com/worawit/MS17-010
 
 
 ## Tools
 + **mysmb.py:** https://raw.githubusercontent.com/worawit/MS17-010/master/mysmb.py
   + https://github.com/worawit/MS17-010
++ **impacket:** https://github.com/fortra/impacket
 
 
 ## Technical Knowledge
-+ x
++ **139,445 - Pentesting SMB:** https://book.hacktricks.xyz/network-services-pentesting/pentesting-smb
++ **how to exploit the Eternal Blue vulnerability without using Metasploit:** https://ethicalhackingguru.com/how-to-exploit-ms17-010-eternal-blue-without-metasploit/
 
 
-## Problems Solution: The same as on [Legacy Machine](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/38_Legacy.md#problems-solution)
+## Problems Solution: The same as on [Legacy Machine's Problems Solution](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/38_Legacy.md#problems-solution)
 + https://0xdf.gitlab.io/2021/05/11/htb-blue.html#python-script
 + [no module named impacket](https://forum.hackthebox.com/t/impacket-module-not-found-but-installed/3561)
 + [package 'dsinternals' requires a different python 2.7.18 not in ' =3.4'](https://medium.com/@CustosClarus/thank-you-i-have-been-able-to-open-the-virtual-env-with-source-impacket-venv-bin-activate-d5945901ce0c)
