@@ -32,10 +32,22 @@ nmap --script vuln 10.10.10.40
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/be27653c-bed5-41e6-bf76-9b531c32a044)
 
+```
+smbmap -H 10.10.10.40 -u guest -p ''
+
+smbclient //10.10.10.40/share
+
+smbclient //10.10.10.40/users
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/19694aa3-0564-4de5-b490-bd57dd9f1df0)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/e9cef959-7fd1-4f26-8943-d5097d0ca541)
+
 
 ## Exploitation & Gaining Access & Privilege Escalation
 
-### Method 1: [CVE-2017-0144](https://www.exploit-db.com/exploits/42315)
+### Method 1: [CVE-2017-0144](https://www.exploit-db.com/exploits/42315) - Manual Solution
 ```
 searchsploit ms17-010
 
@@ -75,6 +87,9 @@ whoami
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7b30f7bd-8ec0-4e8b-902b-78ed57b5660b)
 
 
+### Method 2: Metasploit Solution [1](https://0xdf.gitlab.io/2021/05/11/htb-blue.html#metasploit)
+
+
 
 # References & Alternatives
 + https://vvmlist.github.io/#blue
@@ -85,8 +100,8 @@ whoami
 
 
 ## CVE Scripting
-+ **CVE-2017-0144:** https://www.exploit-db.com/exploits/42315
-+ **CVE-2017-0143:** https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-0143
++ **CVE-2017-0144 / ms17-010 / Eternal Blue / Shadow Brokers / WannaCry:** https://www.exploit-db.com/exploits/42315
++ **CVE-2017-0143 / ms17-010 / Eternal Blue / Shadow Brokers / WannaCry:** https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-0143
 
 
 ## Tools
@@ -98,10 +113,13 @@ whoami
 + x
 
 
-## Problems Solution
-+ x
+## Problems Solution: The same as on [Legacy Machine](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/38_Legacy.md#problems-solution)
++ https://0xdf.gitlab.io/2021/05/11/htb-blue.html#python-script
++ [no module named impacket](https://forum.hackthebox.com/t/impacket-module-not-found-but-installed/3561)
++ [package 'dsinternals' requires a different python 2.7.18 not in ' =3.4'](https://medium.com/@CustosClarus/thank-you-i-have-been-able-to-open-the-virtual-env-with-source-impacket-venv-bin-activate-d5945901ce0c)
 
 
 ## For More
 + https://msrc.microsoft.com/blog/2017/05/customer-guidance-for-wannacrypt-attacks/
-+ 
++ **Shadow Brokers:** https://en.wikipedia.org/wiki/The_Shadow_Brokers
++ **WannaCry ransomware attack:** https://en.wikipedia.org/wiki/WannaCry_ransomware_attack
