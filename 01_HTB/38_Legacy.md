@@ -137,6 +137,7 @@ smbserver.py win /usr/share/windows-binaries/
     + https://github.com/helviojunior/MS17-010/blob/master/send_and_execute.py
   + https://github.com/c0d3cr4f73r/MS17-010_CVE-2017-0143
   + https://github.com/worawit/MS17-010
+  + https://github.com/3ndG4me/AutoBlue-MS17-010
 
 
 ## Tools
@@ -149,6 +150,7 @@ smbserver.py win /usr/share/windows-binaries/
 
 ## Technical Knowledge
 + **139,445 - Pentesting SMB:** https://book.hacktricks.xyz/network-services-pentesting/pentesting-smb
+  + https://www.hackingarticles.in/a-little-guide-to-smb-enumeration/
 + **how to exploit the Eternal Blue vulnerability without using Metasploit:** https://ethicalhackingguru.com/how-to-exploit-ms17-010-eternal-blue-without-metasploit/
 
 
@@ -156,10 +158,17 @@ smbserver.py win /usr/share/windows-binaries/
 + https://0xdf.gitlab.io/2021/05/11/htb-blue.html#python-script
 + [no module named impacket](https://forum.hackthebox.com/t/impacket-module-not-found-but-installed/3561)
 + [package 'dsinternals' requires a different python 2.7.18 not in ' =3.4'](https://medium.com/@CustosClarus/thank-you-i-have-been-able-to-open-the-virtual-env-with-source-impacket-venv-bin-activate-d5945901ce0c)
++ https://unix.stackexchange.com/questions/654723/cant-install-python2-modules-kali-2020
 
 
 ## For More
 + **Finding XP Pro SP3 as "Windows-2000-LAN-Manager":** https://community.cisco.com/t5/archived-small-business-support/finding-xp-pro-sp3-as-quot-windows-2000-lan-manager-quot/td-p/3270323
++ https://learn.microsoft.com/en-us/security-updates/securitybulletins/2017/ms17-010
++ https://msrc.microsoft.com/blog/2017/05/customer-guidance-for-wannacrypt-attacks/
++ https://www.sentinelone.com/blog/eternalblue-nsa-developed-exploit-just-wont-die/
 + **Shadow Brokers:** https://en.wikipedia.org/wiki/The_Shadow_Brokers
 + **WannaCry ransomware attack:** https://en.wikipedia.org/wiki/WannaCry_ransomware_attack
   + https://darknetdiaries.com/episode/73/
++ https://cwe.mitre.org/data/definitions/680.html
++ https://andyrussellcronin.wordpress.com/2012/04/13/understanding-heap-spraying/
++ https://www.sentinelone.com/blog/malicious-input-how-hackers-use-shellcode/
