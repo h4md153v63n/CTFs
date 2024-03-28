@@ -91,7 +91,7 @@ whoami
 + Try with metasploit solution [1](https://ethicalhacs.com/blue-hackthebox-walkthrough/) [2](https://www.rapid7.com/db/modules/exploit/windows/smb/ms17_010_eternalblue/) [3](https://0xdf.gitlab.io/2021/05/11/htb-blue.html#metasploit) [4](https://u1sp00kies.medium.com/hack-the-box-htb-blue-walkthrough-7dac9505bc9c)
 
 
-### Method 3: [CVE-2017-0143](https://0xdf.gitlab.io/2021/05/11/htb-blue.html#python-script) Manual Solution is the same as on [Blue Machine's Method 2](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/38_Legacy.md#method-2-cve-2017-0143-ms17-010--eternal-blue--shadow-brokers--wannacry--notpetya-1-2-3)
+### Method 3: [CVE-2017-0143](https://0xdf.gitlab.io/2021/05/11/htb-blue.html#python-script) Manual Solution is the same as on [Legacy Machine's Method 2](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/38_Legacy.md#method-2-cve-2017-0143-ms17-010--eternal-blue--shadow-brokers--wannacry--notpetya-1-2-3)
 + Try **CVE-2017-0143** [1](https://0xdf.gitlab.io/2021/05/11/htb-blue.html#python-script) [2](https://systemweakness.com/hacktheboxs-blue-writeup-8f1d51c70c46) [3](https://systemweakness.com/hackthebox-writeup-blue-1e07a98ae505#4f92)
 
 
