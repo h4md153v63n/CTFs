@@ -26,7 +26,11 @@ sudo nmap -Pn -n -sV -sC -O -p$ports 10.10.10.40 --open
 
 
 ## Enumeration
+```
+nmap --script vuln 10.10.10.40
+```
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/be27653c-bed5-41e6-bf76-9b531c32a044)
 
 
 ## Exploitation & Gaining Access
