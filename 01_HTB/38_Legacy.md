@@ -143,6 +143,9 @@ smbserver.py win /usr/share/windows-binaries/
   + https://github.com/c0d3cr4f73r/MS17-010_CVE-2017-0143
   + https://github.com/worawit/MS17-010
   + https://github.com/3ndG4me/AutoBlue-MS17-010
++ **CVE-2017-0144 / ms17-010 / Eternal Blue / Shadow Brokers / WannaCry / NotPetya:** https://www.exploit-db.com/exploits/42315
+    + https://nvd.nist.gov/vuln/detail/CVE-2017-0144
+  + https://www.rapid7.com/db/modules/exploit/windows/smb/ms17_010_eternalblue/
 
 
 ## Tools
