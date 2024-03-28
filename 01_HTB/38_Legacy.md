@@ -131,7 +131,7 @@ smbserver.py win /usr/share/windows-binaries/
     + https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4250
   + https://github.com/jivoi/pentest/blob/master/exploit_win/ms08-067.py
   + https://raw.githubusercontent.com/jivoi/pentest/master/exploit_win/ms08-067.py
-+ **CVE-2017-0143 (ms17-010) / Eternal Blue / Shadow Brokers:** https://www.exploit-db.com/exploits/43970
++ **CVE-2017-0143 (ms17-010) / Eternal Blue / Shadow Brokers / WannaCry:** https://www.exploit-db.com/exploits/43970
   + https://github.com/helviojunior/MS17-010
     + https://github.com/helviojunior/MS17-010/blob/master/send_and_execute.py
   + https://github.com/c0d3cr4f73r/MS17-010_CVE-2017-0143
@@ -158,5 +158,5 @@ smbserver.py win /usr/share/windows-binaries/
 
 ## For More
 + **Finding XP Pro SP3 as "Windows-2000-LAN-Manager":** https://community.cisco.com/t5/archived-small-business-support/finding-xp-pro-sp3-as-quot-windows-2000-lan-manager-quot/td-p/3270323
-+ https://en.wikipedia.org/wiki/The_Shadow_Brokers
-+ https://en.wikipedia.org/wiki/WannaCry_ransomware_attack
++ **Shadow Brokers:** https://en.wikipedia.org/wiki/The_Shadow_Brokers
++ **WannaCry ransomware attack:** https://en.wikipedia.org/wiki/WannaCry_ransomware_attack
