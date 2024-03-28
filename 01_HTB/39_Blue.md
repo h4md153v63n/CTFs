@@ -12,14 +12,17 @@
 ```
 sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.40 -e tun0 > ports
 
+sort -n -k4 ports
+
 ports=$(cat ports | awk -F " " '{print $4}' | awk -F "/" '{print $1}' | sort -n | tr '\n' ',' | sed 's/,$//')
 
 sudo nmap -Pn -n -sV -sC -O -p$ports 10.10.10.40 --open
 
-sudo nmap -Pn -n -sV -sC -sU -O -p$ports 10.10.10.40 --open
 ```
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/541cf98d-1908-45af-a6ea-4bfc302fdf55)
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1acc49b7-1b38-4c2f-8f43-2c7d42f91b00)
 
 
 ## Enumeration
