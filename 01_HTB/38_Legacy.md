@@ -81,8 +81,8 @@ smbserver.py win /usr/share/windows-binaries/
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/168b61ac-c71d-4f60-8568-a9e1223f669a)
 
 
-### Method 2: CVE-2017-0143 (ms17-010) / Eternal Blue / Shadow Brokers [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/legacy-writeup-w-o-metasploit#d6e0) [2](https://0xdf.gitlab.io/2019/02/21/htb-legacy.html#ms-17-010)
-+ Try [1](https://github.com/helviojunior/MS17-010) [2](https://github.com/helviojunior/MS17-010/blob/master/send_and_execute.py)
+### Method 2: CVE-2017-0143 (ms17-010) / Eternal Blue / Shadow Brokers [1](https://0xdf.gitlab.io/2021/05/11/htb-blue.html#python-script) [2](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/legacy-writeup-w-o-metasploit#d6e0) [3](https://0xdf.gitlab.io/2019/02/21/htb-legacy.html#ms-17-010)
++ Try [1](https://0xdf.gitlab.io/2021/05/11/htb-blue.html#python-script) [2](https://github.com/helviojunior/MS17-010) [3](https://github.com/helviojunior/MS17-010/blob/master/send_and_execute.py)
 + The exploit didn't work on me due to the below impacket errors:
   + [no module named impacket](https://forum.hackthebox.com/t/impacket-module-not-found-but-installed/3561)
   + [package 'dsinternals' requires a different python 2.7.18 not in ' =3.4'](https://medium.com/@CustosClarus/thank-you-i-have-been-able-to-open-the-virtual-env-with-source-impacket-venv-bin-activate-d5945901ce0c)
@@ -107,7 +107,8 @@ smbserver.py win /usr/share/windows-binaries/
 + https://vvmlist.github.io/#legacy
 + **ms08-067 / ms17-010:** https://0xdf.gitlab.io/2019/02/21/htb-legacy.html
   + https://systemweakness.com/oscp-preparation-hack-the-box-2-legacy-557dc3f0e384
-+ **ms17-010:** https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/legacy-writeup-w-o-metasploit
++ **ms17-010:** https://0xdf.gitlab.io/2021/05/11/htb-blue.html#python-script
+  + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/legacy-writeup-w-o-metasploit
   + https://medium.com/@toneemarqus/legacy-hackthebox-walkthrough-2023-tonee-55189d9f6035
 + **metasploit exploit/windows/smb/ms17_010_psexec:** https://ethicalhacs.com/legacy-hackthebox-walkthrough/
   + https://slv3rfx.com/posts/htb-legacy-writeup/
@@ -150,6 +151,7 @@ smbserver.py win /usr/share/windows-binaries/
 
 
 ## Problems Solution
++ https://0xdf.gitlab.io/2021/05/11/htb-blue.html#python-script
 + [no module named impacket](https://forum.hackthebox.com/t/impacket-module-not-found-but-installed/3561)
 + [package 'dsinternals' requires a different python 2.7.18 not in ' =3.4'](https://medium.com/@CustosClarus/thank-you-i-have-been-able-to-open-the-virtual-env-with-source-impacket-venv-bin-activate-d5945901ce0c)
 
