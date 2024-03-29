@@ -84,6 +84,7 @@ Run
 
 ## Privilege Escalation
 ```
+# On the target machine:
 systeminfo
 ```
 
