@@ -24,6 +24,10 @@ sudo nmap -Pn -n -sV -sC -O -p$ports 10.10.10.5 --open
 
 ## Enumeration
 ```
+ftp anonymous@10.10.10.5
+
+# or
+
 ftp 10.10.10.5
 
 Name (10.10.10.5:kali): anonymous
