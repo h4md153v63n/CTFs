@@ -130,14 +130,28 @@ MS11-046.exe
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bdb02526-aad4-4391-86f4-7160e7e7ab36)
 
 
-### Method 2: MS10-015 - Metasploit Solution
-Try the solution [1](https://0xdf.gitlab.io/2019/03/05/htb-devel.html#privesc-alternative-with-metasploit)
+### Method 2: MS10-015 / ms15_051 / ms14_058 / ms13_053 - Metasploit Solution
++ Solution **MS10-015** [1](https://0xdf.gitlab.io/2019/03/05/htb-devel.html#privesc-alternative-with-metasploit) [2](https://medium.com/@crn33/htb-devel-walkthrough-e9afa95fc21b) [3](https://infosecwriteups.com/devel-from-hackthebox-21c6436acf52)
++ Solution **ms15_051** [1](https://medium.com/@JAlblas/hack-the-box-devel-guided-mode-walkthrough-f83f5b803ce7)
++ Solution **ms14_058** [1](https://ethicalhacs.com/devel-hackthebox-walkthrough/)
++ Solution **ms13_053** [1](https://blog.yekki.co.uk/htb-devel/)
+
+
+### Method 3: Juicy Potato
++ Solution **Juicy Potato** [1](https://rizemon.github.io/posts/devel-htb/) [2](https://yogeshwarram-g.gitbook.io/hackthebox/windows/devil#privilege-escalation)
 
 
 # References & Alternatives
 + https://vvmlist.github.io/#devel
 + https://systemweakness.com/htb-devel-4a205fd1aa25
++ https://github.com/7h3rAm/7h3rAm.github.io/blob/master/_posts/htb-devel.md
 + rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/devel-writeup-w-o-metasploit
++ https://ivanitlearning.wordpress.com/2020/07/30/hackthebox-devel/
++ https://0xdf.gitlab.io/2019/03/05/htb-devel.html
+  + https://medium.com/@JAlblas/hack-the-box-devel-guided-mode-walkthrough-f83f5b803ce7
+  + https://medium.com/@crn33/htb-devel-walkthrough-e9afa95fc21b
+  + https://ethicalhacs.com/devel-hackthebox-walkthrough/
+  + https://blog.yekki.co.uk/htb-devel/
 
 
 ## CVE Scripting
@@ -151,14 +165,16 @@ Try the solution [1](https://0xdf.gitlab.io/2019/03/05/htb-devel.html#privesc-al
   + https://github.com/danielmiessler/SecLists/blob/master/Web-Shells/FuzzDB/cmd.aspx
   + /usr/share/davtest/backdoors/aspx_cmd.aspx
   + /usr/share/seclists/Web-Shells/FuzzDB/cmd.aspx
+  + https://github.com/borjmz/aspx-reverse-shell/blob/master/shell.aspx
 + **msfvenom:** https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/msfvenom
 + **nishang / Invoke-PowerShellTcp:** https://github.com/samratashok/nishang/blob/master/Shells/Invoke-PowerShellTcp.ps1
 
 
 ## Technical Knowledge
 + **Watson:** https://github.com/rasta-mouse/Watson
-+ **WindowsExploits:** https://github.com/abatchy17/WindowsExploits
++ **Windows Exploits:** https://github.com/abatchy17/WindowsExploits
   + https://github.com/abatchy17/WindowsExploits/blob/5e9c25cda54fe33fb6e1fd3ae60512a1113b41df/MS11-046/40564.c
++ **Windows Exploit Suggester:** https://github.com/AonCyberLabs/Windows-Exploit-Suggester
 
 
 ## Problems Solution
@@ -166,4 +182,5 @@ Try the solution [1](https://0xdf.gitlab.io/2019/03/05/htb-devel.html#privesc-al
 
 
 ## For More
-+ -
++ **Juicy Potato:** https://github.com/ivanitlearning/Juicy-Potato-x86/releases
+  + https://github.com/ivanitlearning/Juicy-Potato-x86
