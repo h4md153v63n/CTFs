@@ -42,8 +42,10 @@ dir
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8f62462c-3a38-4713-85c3-4d48866cbec0)
 
 
-## Exploitation & Gaining Access 
+## Exploitation & Gaining Access
 Download, and transfer asp webshell using [cmd.aspx](https://raw.githubusercontent.com/tennc/webshell/master/fuzzdb-webshell/asp/cmd.aspx).
+
+**Alternatively**, use **msfvenom** [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/devel-writeup-w-o-metasploit#id-4ff1) [2](https://systemweakness.com/htb-devel-4a205fd1aa25)
 
 ```
 # On the target machine with ftp connection:
@@ -95,6 +97,8 @@ Search  **windows 7 build 7600 x86 privilege escalation** on the internet.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5f6364c1-4f41-4730-be7a-50517bec0105)
 
+Donwload, and try [**CVE-2011-1249**](https://www.exploit-db.com/exploits/40564).
+
 ```
 # On the kali attack vm:
 searchsploit ms11-046
@@ -127,16 +131,18 @@ MS11-046.exe
 
 # References & Alternatives
 + https://vvmlist.github.io/#devel
-+ x
++ https://systemweakness.com/htb-devel-4a205fd1aa25
++ rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/devel-writeup-w-o-metasploit
 
 
 ## CVE Scripting
-+ x
++ **CVE-2011-1249 / MS11–046 / afd.sys** https://www.exploit-db.com/exploits/40564
 
 
 ## Tools
 + **webshell / cmd.aspx:** https://raw.githubusercontent.com/tennc/webshell/master/fuzzdb-webshell/asp/cmd.aspx
   + https://github.com/nikicat/web-malware-collection/blob/master/Backdoors/ASP/cmd.aspx
++ **msfvenom:** https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/msfvenom
 
 
 ## Technical Knowledge
