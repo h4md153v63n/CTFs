@@ -23,6 +23,22 @@ sudo nmap -Pn -n -sV -sC -O -p$ports 10.10.10.5 --open
 
 
 ## Enumeration
+```
+ftp 10.10.10.5
+
+Name (10.10.10.5:kali): anonymous
+Password:
+
+dir
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5149c861-836c-4c01-adf3-c5e5c3ad24d8)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/239327b2-ccb6-453a-9645-357665efbd90)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/be372bf9-cf9c-4971-b0a9-197bc61a24ae)
+
+
 
 
 
