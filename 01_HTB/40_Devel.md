@@ -80,6 +80,14 @@ Run
 
 
 ## Privilege Escalation
+```
+systeminfo
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/89b2ddc2-3b53-41b6-9dc8-56745f3290dc)
+
+
+
 
 
 
