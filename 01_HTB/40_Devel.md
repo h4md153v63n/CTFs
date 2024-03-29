@@ -145,7 +145,7 @@ MS11-046.exe
 + https://vvmlist.github.io/#devel
 + https://systemweakness.com/htb-devel-4a205fd1aa25
 + https://github.com/7h3rAm/7h3rAm.github.io/blob/master/_posts/htb-devel.md
-+ rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/devel-writeup-w-o-metasploit
++ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/devel-writeup-w-o-metasploit
 + https://ivanitlearning.wordpress.com/2020/07/30/hackthebox-devel/
 + https://0xdf.gitlab.io/2019/03/05/htb-devel.html
   + https://medium.com/@JAlblas/hack-the-box-devel-guided-mode-walkthrough-f83f5b803ce7
