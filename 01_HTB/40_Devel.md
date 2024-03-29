@@ -86,10 +86,9 @@ systeminfo
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/89b2ddc2-3b53-41b6-9dc8-56745f3290dc)
 
-Search  `windows 7 build 7600 x86 privilege escalation` on the internet.
+Search  **windows 7 build 7600 x86 privilege escalation** on the internet.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5f6364c1-4f41-4730-be7a-50517bec0105)
-
 
 ```
 searchsploit ms11-046
