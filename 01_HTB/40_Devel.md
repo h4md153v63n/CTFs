@@ -95,6 +95,7 @@ Search  **windows 7 build 7600 x86 privilege escalation** on the internet.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5f6364c1-4f41-4730-be7a-50517bec0105)
 
 ```
+# On the kali attack vm:
 searchsploit ms11-046
 
 searchsploit -m 40564
