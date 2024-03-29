@@ -86,6 +86,8 @@ Run
 
 
 ## Privilege Escalation
+
+### Method 1: [**CVE-2011-1249**](https://www.exploit-db.com/exploits/40564) / MS11-046 - Manual Solution
 ```
 # On the target machine:
 systeminfo
@@ -128,6 +130,9 @@ MS11-046.exe
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bdb02526-aad4-4391-86f4-7160e7e7ab36)
 
 
+### Method 2: MS10-015 - Metasploit Solution
+Try the solution [1](https://0xdf.gitlab.io/2019/03/05/htb-devel.html#privesc-alternative-with-metasploit)
+
 
 # References & Alternatives
 + https://vvmlist.github.io/#devel
@@ -137,21 +142,28 @@ MS11-046.exe
 
 ## CVE Scripting
 + **CVE-2011-1249 / MS11–046 / afd.sys** https://www.exploit-db.com/exploits/40564
+  + https://github.com/abatchy17/WindowsExploits/blob/5e9c25cda54fe33fb6e1fd3ae60512a1113b41df/MS11-046/40564.c
 
 
 ## Tools
 + **webshell / cmd.aspx:** https://raw.githubusercontent.com/tennc/webshell/master/fuzzdb-webshell/asp/cmd.aspx
   + https://github.com/nikicat/web-malware-collection/blob/master/Backdoors/ASP/cmd.aspx
+  + https://github.com/danielmiessler/SecLists/blob/master/Web-Shells/FuzzDB/cmd.aspx
+  + /usr/share/davtest/backdoors/aspx_cmd.aspx
+  + /usr/share/seclists/Web-Shells/FuzzDB/cmd.aspx
 + **msfvenom:** https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/msfvenom
++ **nishang / Invoke-PowerShellTcp:** https://github.com/samratashok/nishang/blob/master/Shells/Invoke-PowerShellTcp.ps1
 
 
 ## Technical Knowledge
-+ x
++ **Watson:** https://github.com/rasta-mouse/Watson
++ **WindowsExploits:** https://github.com/abatchy17/WindowsExploits
+  + https://github.com/abatchy17/WindowsExploits/blob/5e9c25cda54fe33fb6e1fd3ae60512a1113b41df/MS11-046/40564.c
 
 
 ## Problems Solution
-+ x
++ -
 
 
 ## For More
-+ x
++ -
