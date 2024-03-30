@@ -11,6 +11,7 @@ I solved the machine, but I won't publish a write-up.
 https://www.hackthebox.com/achievement/machine/184261/594
 
 I share alternative solutions, and different approaches links in the below:
++ https://rishabhrai02.medium.com/headless-htb-machine-bd4ff3943b64
 + 
 
 
