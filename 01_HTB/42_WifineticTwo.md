@@ -11,6 +11,7 @@ I solved the machine, but I won't publish a write-up.
 https://www.hackthebox.com/achievement/machine/184261/593
 
 I share alternative solutions, and different approaches links in the below:
++ https://vulnerable.sh/posts/htb_wifinetictwo/
 + https://mrbandwidth.medium.com/wifinetictwo-writeup-walkthrough-htb-hackthebox-remote-code-execution-33b501b69579
 + https://onurcangencbilkent.medium.com/wifinetictwo-writeup-code-injection-hackthebox-to-be-continue-5509436b2287
 + 
@@ -23,7 +24,7 @@ I share alternative solutions, and different approaches links in the below:
 
 
 ## Tools
-+ **WPS brute force:** https://github.com/kimocoder/OneShot/blob/master/oneshot.py
++ **oneshot / WPS brute force:** https://github.com/kimocoder/OneShot/blob/master/oneshot.py
   + https://github.com/kimocoder/OneShot
 
 
