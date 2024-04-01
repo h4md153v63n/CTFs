@@ -2,7 +2,7 @@
 
 **Links:** [1](https://www.hackthebox.com/machines/Headless)  [2](https://app.hackthebox.com/machines/Headless)
 
-**Machine ip:** 10.10.11.8
+**Machine ip:** 10.10.11.8 
 
 
 ## Solutions
