@@ -1,5 +1,7 @@
 # Crafty
 
+**OS:** Windows
+
 **Level:** Easy
 
 **Links:** [1](https://www.hackthebox.com/machines/Crafty)  [2](https://app.hackthebox.com/machines/Crafty)
