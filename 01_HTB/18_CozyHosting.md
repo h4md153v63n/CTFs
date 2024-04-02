@@ -1,5 +1,7 @@
 # CozyHosting
 
+**Level:** Easy
+
 **Links:** [1](https://www.hackthebox.com/machines/cozyhosting)  [2](https://app.hackthebox.com/machines/CozyHosting)
 
 **Machine ip:** 10.10.11.230
