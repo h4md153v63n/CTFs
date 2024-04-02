@@ -1,5 +1,7 @@
 # Magic 
 
+**OS:** Linux
+
 **Level:** Medium
 
 **Links:** [1](https://www.hackthebox.com/machines/Magic)  [2](https://app.hackthebox.com/machines/Magic)
