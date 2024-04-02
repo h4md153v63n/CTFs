@@ -1,5 +1,7 @@
 # Devvortex
 
+**OS:** Linux
+
 **Level:** Easy
 
 **Links:** [1](https://www.hackthebox.com/machines/devvortex)  [2](https://app.hackthebox.com/machines/Devvortex)
