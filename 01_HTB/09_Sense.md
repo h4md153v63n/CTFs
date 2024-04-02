@@ -1,5 +1,7 @@
 # Sense
 
+**OS:** Linux
+
 **Level:** Easy
 
 **Links:** [1](https://www.hackthebox.com/machines/sense)  [2](https://app.hackthebox.com/machines/Sense)
