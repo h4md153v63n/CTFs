@@ -1,5 +1,7 @@
 # WifineticTwo 
 
+**OS:** Linux
+
 **Level:** Medium
 
 **Links:** [1](https://www.hackthebox.com/machines/WifineticTwo)  [2](https://app.hackthebox.com/machines/WifineticTwo)
