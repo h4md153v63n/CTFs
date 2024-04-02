@@ -1,5 +1,7 @@
 # Manager
 
+**Level:** Medium
+
 **Links:** [1](https://www.hackthebox.com/machines/Manager)  [2](https://app.hackthebox.com/machines/Manager)
 
 **Machine ip:** 10.10.11.236
