@@ -1,5 +1,7 @@
 # Nineveh
 
+**Level:** Medium
+
 **Links:** [1](https://www.hackthebox.com/machines/nineveh)  [2](https://app.hackthebox.com/machines/Nineveh)
 
 **Machine ip:** 10.10.10.43
