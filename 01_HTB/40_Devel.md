@@ -1,5 +1,7 @@
 # Devel 
 
+**Level:** Easy
+
 **Links:** [1](https://www.hackthebox.com/machines/Devel)  [2](https://app.hackthebox.com/machines/Devel)
 
 **Machine ip:** 10.10.10.5
