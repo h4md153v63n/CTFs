@@ -1,5 +1,7 @@
 # Office 
 
+**Level:** Hard
+
 **Links:** [1](https://www.hackthebox.com/machines/Office)  [2](https://app.hackthebox.com/machines/Office)
 
 **Machine ip:** 10.10.11.3
