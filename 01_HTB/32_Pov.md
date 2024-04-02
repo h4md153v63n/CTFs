@@ -1,5 +1,7 @@
 # Pov
 
+**OS:** Windows
+
 **Level:** Medium
 
 **Links:** [1](https://www.hackthebox.com/machines/Pov)  [2](https://app.hackthebox.com/machines/Pov)
