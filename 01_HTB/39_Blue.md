@@ -1,5 +1,7 @@
 # Blue 
 
+**OS:** Windows
+
 **Level:** Easy
 
 **Links:** [1](https://www.hackthebox.com/machines/Blue)  [2](https://app.hackthebox.com/machines/Blue)
