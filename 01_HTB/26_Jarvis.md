@@ -1,5 +1,7 @@
 # Jarvis
 
+**Level:** Medium
+
 **Links:** [1](https://www.hackthebox.com/machines/Jarvis)  [2](https://app.hackthebox.com/machines/Jarvis)
 
 **Machine ip:** 10.10.10.143
