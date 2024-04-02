@@ -1,6 +1,8 @@
 # Networked
 This machine was challenging (and is also rated Harder than oscp as per Tj null's list) due to the requirement of reading code, and the weird method of privilege escalation. However, I found the privesc method interesting as I had never seen it before.
 
+**OS:** Linux
+
 **Level:** Easy
 
 **Links:** [1](https://www.hackthebox.com/machines/Networked)  [2](https://app.hackthebox.com/machines/Networked)
