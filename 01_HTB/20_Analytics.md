@@ -1,5 +1,7 @@
 # Analytics
 
+**OS:** Linux
+
 **Level:** Easy
 
 **Links:** [1](https://www.hackthebox.com/machines/analytics)  [2](https://app.hackthebox.com/machines/Analytics)
