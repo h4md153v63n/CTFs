@@ -1,5 +1,7 @@
 # Analysis
 
+**Level:** Hard
+
 **Links:** [1](https://www.hackthebox.com/machines/Analysis)  [2](https://app.hackthebox.com/machines/Analysis)
 
 **Machine ip:** 10.10.11.250
