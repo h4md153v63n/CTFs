@@ -1,5 +1,7 @@
 # Magic 
 
+**Level:** Medium
+
 **Links:** [1](https://www.hackthebox.com/machines/Magic)  [2](https://app.hackthebox.com/machines/Magic)
 
 **Machine ip:** 10.10.10.185
