@@ -1,5 +1,7 @@
 # Jab
 
+**OS:** Windows
+
 **Level:** Medium
 
 **Links:** [1](https://www.hackthebox.com/machines/Jab)  [2](https://app.hackthebox.com/machines/Jab)
