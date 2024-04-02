@@ -1,6 +1,6 @@
 # Poison
 
-**OS:** Linux
+**OS:** FreeBSD
 
 **Level:** Medium
 
