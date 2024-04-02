@@ -1,5 +1,7 @@
 # Blue 
 
+**Level:** Easy
+
 **Links:** [1](https://www.hackthebox.com/machines/Blue)  [2](https://app.hackthebox.com/machines/Blue)
 
 **Machine ip:** 10.10.10.40
