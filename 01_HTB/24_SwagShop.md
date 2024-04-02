@@ -1,6 +1,8 @@
 # SwagShop
 [This box was definitely more complicated than what its rating suggested. Seems like machines released from 2019 onwards are more difficult in general even if marked Easy. It takes editing multiple exploits just to get a shell.](https://ivanitlearning.wordpress.com/2020/09/15/hackthebox-swagshop/)
 
+**OS:** Linux
+
 **Level:** Easy
 
 **Links:** [1](https://www.hackthebox.com/machines/swagshop)  [2](https://app.hackthebox.com/machines/swagshop)
