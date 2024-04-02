@@ -1,5 +1,7 @@
 # Office 
 
+**OS:** Windows
+
 **Level:** Hard
 
 **Links:** [1](https://www.hackthebox.com/machines/Office)  [2](https://app.hackthebox.com/machines/Office)
