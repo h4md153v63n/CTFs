@@ -1,5 +1,7 @@
 # Irked
 
+**OS:** Linux
+
 **Level:** Easy
 
 **Links:** [1](https://www.hackthebox.com/machines/irked)  [2](https://app.hackthebox.com/machines/Irked)
