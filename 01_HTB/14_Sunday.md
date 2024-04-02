@@ -1,6 +1,6 @@
 # Sunday
 
-**OS:** Linux
+**OS:** Solaris
 
 **Level:** Easy
 
