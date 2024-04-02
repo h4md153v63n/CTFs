@@ -1,5 +1,7 @@
 # Keeper
 
+**Level:** Easy
+
 **Links:** [1](https://www.hackthebox.com/machines/keeper)  [2](https://app.hackthebox.com/machines/Keeper)
 
 **Machine ip:** 10.10.11.227
