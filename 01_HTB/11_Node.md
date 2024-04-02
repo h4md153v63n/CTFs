@@ -1,5 +1,7 @@
 # Node
 
+**Level:** Medium
+
 **Links:** [1](https://www.hackthebox.com/machines/node)  [2](https://app.hackthebox.com/machines/Node)
 
 **Machine ip:** 10.10.10.58
