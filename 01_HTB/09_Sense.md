@@ -1,6 +1,6 @@
 # Sense
 
-**OS:** Linux
+**OS:** FreeBSD
 
 **Level:** Easy
 
