@@ -1,5 +1,7 @@
 # Surveillance
 
+**OS:** Linux
+
 **Level:** Medium
 
 **Links:** [1](https://www.hackthebox.com/machines/surveillance)  [2](https://app.hackthebox.com/machines/Surveillance)
