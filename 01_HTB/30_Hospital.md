@@ -1,5 +1,7 @@
 # Hospital 
 
+**Level:** Medium
+
 **Links:** [1](https://www.hackthebox.com/machines/Hospital)  [2](https://app.hackthebox.com/machines/Hospital)
 
 **Machine ip:** 10.10.11.241
