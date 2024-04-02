@@ -1,5 +1,7 @@
 # WifineticTwo 
 
+**Level:** Medium
+
 **Links:** [1](https://www.hackthebox.com/machines/WifineticTwo)  [2](https://app.hackthebox.com/machines/WifineticTwo)
 
 **Machine ip:** 10.10.11.7
