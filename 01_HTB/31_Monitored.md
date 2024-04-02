@@ -1,5 +1,7 @@
 # Monitored
 
+**OS:** Linux
+
 **Level:** Medium
 
 **Links:** [1](https://www.hackthebox.com/machines/Monitored)  [2](https://app.hackthebox.com/machines/Monitored)
