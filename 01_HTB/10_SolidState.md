@@ -1,5 +1,7 @@
 # SolidState
 
+**Level:** Medium
+
 **Links:** [1](https://www.hackthebox.com/machines/solidstate)  [2](https://app.hackthebox.com/machines/SolidState)
 
 **Machine ip:** 10.10.10.51
