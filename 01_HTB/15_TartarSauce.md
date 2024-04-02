@@ -1,5 +1,7 @@
 # TartarSauce
 
+**OS:** Linux
+
 **Level:** Medium
 
 **Links:** [1](https://www.hackthebox.com/machines/tartarsauce)  [2](https://app.hackthebox.com/machines/TartarSauce)
