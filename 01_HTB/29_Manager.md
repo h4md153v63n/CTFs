@@ -1,5 +1,7 @@
 # Manager
 
+**OS:** Windows
+
 **Level:** Medium
 
 **Links:** [1](https://www.hackthebox.com/machines/Manager)  [2](https://app.hackthebox.com/machines/Manager)
