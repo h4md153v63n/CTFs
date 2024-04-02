@@ -1,5 +1,7 @@
 # Monitored
 
+**Level:** Medium
+
 **Links:** [1](https://www.hackthebox.com/machines/Monitored)  [2](https://app.hackthebox.com/machines/Monitored)
 
 **Machine ip:** 10.10.11.248
