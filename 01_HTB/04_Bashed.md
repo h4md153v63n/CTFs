@@ -1,5 +1,7 @@
 # Bashed
 
+**Level:** Easy
+
 **Links:** [1](https://www.hackthebox.com/machines/bashed)  [2](https://app.hackthebox.com/machines/Bashed)
 
 **Machine ip:** 10.10.10.68
