@@ -1,5 +1,7 @@
 # Sunday
 
+**Level:** Easy
+
 **Links:** [1](https://www.hackthebox.com/machines/sunday)  [2](https://app.hackthebox.com/machines/Sunday)
 
 **Machine ip:** 10.10.10.76
