@@ -127,6 +127,8 @@ Get the shell as **nt authority\system**, and root flag.
   + https://www.geeksforgeeks.org/how-to-fix-syntaxerror-unicode-error-unicodeescape-codec-cant-decode-bytes/
   + https://community.alteryx.com/t5/Alteryx-Designer-Desktop-Discussions/Error-unicodeescape-codec-can-t-decode-bytes/td-p/427540
 + **SyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)?:**
+  + https://www.w3docs.com/snippets/python/what-does-syntaxerror-missing-parentheses-in-call-to-print-mean-in-python.html
+  + https://stackoverflow.com/questions/25445439/what-does-syntaxerror-missing-parentheses-in-call-to-print-mean-in-python
 + **ModuleNotFoundError: No module named 'urllib2':**
   + https://www.easytweaks.com/module-not-found-urllib2/
   + https://youtu.be/jfD_9DoWGlI?t=63
