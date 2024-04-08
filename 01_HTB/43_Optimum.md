@@ -29,7 +29,7 @@ sudo nmap -Pn -n -sV -sC -O -p$ports 10.10.10.8 --open
 
 ## Exploitation & Gaining Access
 
-### CVE-2014-6287 [1](https://www.exploit-db.com/exploits/39161) [2](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/optimum-writeup-w-o-metasploit#id-4a01)
+### Method 1: CVE-2014-6287 [1](https://www.exploit-db.com/exploits/39161) [2](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/optimum-writeup-w-o-metasploit#id-4a01)
 
 ```
 searchsploit hfs 2.3
@@ -70,6 +70,10 @@ python3 39161.py 10.10.10.8 80
 #### Alternative Shell: Invoke-PowerShellTcpOneLine.ps1
 
 **Alternatively**, try powershell shell as **Invoke-PowerShellTcpOneLine.ps1** [1](https://github.com/samratashok/nishang/blob/master/Shells/Invoke-PowerShellTcpOneLine.ps1) [2](https://0xdf.gitlab.io/2021/03/17/htb-optimum.html#shell)
+
+
+### Method 2: Metasploit Solution [1](https://www.exploit-db.com/exploits/34926)
++ Review the alternative solution [1](https://medium.com/@joemcfarland/hack-the-box-optimum-writeup-36ccdffbeacd)
 
 
 ## Privilege Escalation
@@ -120,7 +124,7 @@ Get the shell as **nt authority\system**, and read the root flag.
 
 
 ## Method 2: MS16-032
-+ Review the alternative solution [1](https://0xdf.gitlab.io/2021/03/17/htb-optimum.html#ms16-032)
++ Review the alternative solution [1](https://0xdf.gitlab.io/2021/03/17/htb-optimum.html#ms16-032) [2](https://medium.com/@joemcfarland/hack-the-box-optimum-writeup-36ccdffbeacd)
 
 
 # References & Alternatives
