@@ -67,6 +67,11 @@ python3 39161.py 10.10.10.8 80
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0b3ad525-c717-4f8c-a61c-6bf6381ab8f2)
 
 
+#### Alternative Shell: Invoke-PowerShellTcpOneLine.ps1
+
+**Alternatively**, try powershell shell as **Invoke-PowerShellTcpOneLine.ps1** [1](https://github.com/samratashok/nishang/blob/master/Shells/Invoke-PowerShellTcpOneLine.ps1) [2](https://0xdf.gitlab.io/2021/03/17/htb-optimum.html#shell)
+
+
 ## Privilege Escalation
 
 ### Method 1: MS16-098 / Kernel [1](https://www.exploit-db.com/exploits/41020) [2](https://gitlab.com/exploit-database/exploitdb-bin-sploits/-/raw/main/bin-sploits/41020.exe) [3](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/optimum-writeup-w-o-metasploit#id-4f80)
@@ -114,6 +119,10 @@ Get the shell as **nt authority\system**, and read the root flag.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4616bddf-9e5c-47fc-ad79-1f42c84449c8)
 
 
+## Method 2: MS16-032
++ Review the alternative solution [1](https://0xdf.gitlab.io/2021/03/17/htb-optimum.html#ms16-032)
+
+
 # References & Alternatives
 + https://vvmlist.github.io/#Optimum
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/optimum-writeup-w-o-metasploit
@@ -128,13 +137,20 @@ Get the shell as **nt authority\system**, and read the root flag.
 + **MS16-098 / Kernel:**
   + https://www.exploit-db.com/exploits/41020
     + https://gitlab.com/exploit-database/exploitdb-bin-sploits/-/raw/main/bin-sploits/41020.exe
- + https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS16-098
-   + https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS16-098/bfill.exe
+  + https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS16-098
+    + https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS16-098/bfill.exe
++ **MS16-032:** 
+  + https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source/privesc/Invoke-MS16032.ps1
 
 
 ## Tools
 + /usr/share/windows-resources/binaries/
++ **Invoke-PowerShellTcpOneLine.ps1:** https://github.com/samratashok/nishang/blob/master/Shells/Invoke-PowerShellTcpOneLine.ps1
 + **Windows Exploit Suggester:** https://github.com/AonCyberLabs/Windows-Exploit-Suggester
++ **winPEAS:** https://github.com/peass-ng/PEASS-ng/tree/master/winPEAS
++ **Watson:** https://github.com/rasta-mouse/Watson
+  + **Sherlock:** https://github.com/rasta-mouse/Sherlock
+  + https://0xdf.gitlab.io/2018/10/27/htb-bounty.html#enumeration
 
 
 ## Technical Knowledge
@@ -160,4 +176,4 @@ Get the shell as **nt authority\system**, and read the root flag.
 
 
 ## For More
-- x
+- **How-to: Detecting 64 bit vs 32 bit:** https://ss64.com/nt/syntax-64bit.html
