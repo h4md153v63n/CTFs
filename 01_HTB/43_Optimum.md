@@ -137,7 +137,7 @@ Get the shell as **nt authority\system**, and read the root flag.
 + Metasploit solutions [1](https://ethicalhacs.com/optimum-hackthebox-walkthrough/) [2](https://cybertoucan.gitbook.io/htb/windows/optimum#type-1-root-access-w-metasploit) [3](https://medium.com/@joemcfarland/hack-the-box-optimum-writeup-36ccdffbeacd)
 
 
-## Method 2: CVE-2016-7214 / MS16-135 [1](https://nvd.nist.gov/vuln/detail/CVE-2016-7214) [2](https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS16-135)
+## Method 3: CVE-2016-7214 / MS16-135 [1](https://nvd.nist.gov/vuln/detail/CVE-2016-7214) [2](https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS16-135)
 + Review the alternative solutions [1](https://cybertoucan.gitbook.io/htb/windows/optimum#privilege-escalation-1)
 
 
