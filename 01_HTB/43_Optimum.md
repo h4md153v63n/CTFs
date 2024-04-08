@@ -21,7 +21,7 @@ ports=$(cat ports | awk -F " " '{print $4}' | awk -F "/" '{print $1}' | sort -n 
 sudo nmap -Pn -n -sV -sC -O -p$ports 10.10.10.8 --open
 ```
 
-
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6bd17850-1383-4bb9-9363-f840a535bbc5)
 
 
 ## Enumeration
