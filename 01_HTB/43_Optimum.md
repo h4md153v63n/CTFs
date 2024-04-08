@@ -67,17 +67,17 @@ python3 39161.py 10.10.10.8 80
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0b3ad525-c717-4f8c-a61c-6bf6381ab8f2)
 
 
-#### Method 2: CVE-2014-6287 [1](https://www.exploit-db.com/exploits/34668)
+### Method 2: CVE-2014-6287 [1](https://www.exploit-db.com/exploits/34668)
 Review the alternative solutions [1](https://benheater.com/hackthebox-optimum/#manual-exploit) [2](https://0xdf.gitlab.io/2021/03/17/htb-optimum.html#shell) [3](https://pencer.io/ctf/ctf-htb-optimum/#initial-shell)
 
 **Alternatively**, try powershell shell as **Invoke-PowerShellTcpOneLine.ps1** [1](https://github.com/samratashok/nishang/blob/master/Shells/Invoke-PowerShellTcpOneLine.ps1) [2](https://0xdf.gitlab.io/2021/03/17/htb-optimum.html#shell)
 
 
-#### Method 3: CVE-2014-6287 [1](https://www.exploit-db.com/exploits/49584)
+### Method 3: CVE-2014-6287 [1](https://www.exploit-db.com/exploits/49584)
 Review the alternative solution [1](https://www.dotnetrussell.com/index.php/2021/08/20/hackthebox-optimum-walkthrough/)
 
 
-#### Method 4: CVE-2014-6287 [1](https://www.exploit-db.com/exploits/49125)
+### Method 4: CVE-2014-6287 [1](https://www.exploit-db.com/exploits/49125)
 Review the alternative solution [1](https://systemweakness.com/oscp-preparation-hack-the-box-8-optimum-2c8da9435596)
 
 
