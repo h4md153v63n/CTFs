@@ -68,13 +68,21 @@ python3 39161.py 10.10.10.8 80
 
 
 #### Method 2: CVE-2014-6287 [1](https://www.exploit-db.com/exploits/34668)
-Review the alternative solutions [1](https://benheater.com/hackthebox-optimum/#manual-exploit) [2](https://0xdf.gitlab.io/2021/03/17/htb-optimum.html#shell)
+Review the alternative solutions [1](https://benheater.com/hackthebox-optimum/#manual-exploit) [2](https://0xdf.gitlab.io/2021/03/17/htb-optimum.html#shell) [3](https://pencer.io/ctf/ctf-htb-optimum/#initial-shell)
 
 **Alternatively**, try powershell shell as **Invoke-PowerShellTcpOneLine.ps1** [1](https://github.com/samratashok/nishang/blob/master/Shells/Invoke-PowerShellTcpOneLine.ps1) [2](https://0xdf.gitlab.io/2021/03/17/htb-optimum.html#shell)
 
 
-### Method 3: Metasploit Solution [1](https://www.exploit-db.com/exploits/34926)
-+ Review the alternative solution [1](https://medium.com/@joemcfarland/hack-the-box-optimum-writeup-36ccdffbeacd) [2](https://www.siberportal.org/red-team/penetration-testing/hack-the-box-optimum-cozumu/)
+#### Method 3: CVE-2014-6287 [1](https://www.exploit-db.com/exploits/49584)
+Review the alternative solution [1](https://www.dotnetrussell.com/index.php/2021/08/20/hackthebox-optimum-walkthrough/)
+
+
+#### Method 4: CVE-2014-6287 [1](https://www.exploit-db.com/exploits/49125)
+Review the alternative solution [1](https://systemweakness.com/oscp-preparation-hack-the-box-8-optimum-2c8da9435596)
+
+
+### Method 5: Metasploit Solution [1](https://www.exploit-db.com/exploits/34926)
++ Review the alternative solution [1](https://ethicalhacs.com/optimum-hackthebox-walkthrough/) [2](https://medium.com/@joemcfarland/hack-the-box-optimum-writeup-36ccdffbeacd) [3](https://www.siberportal.org/red-team/penetration-testing/hack-the-box-optimum-cozumu/)
 
 
 ## Privilege Escalation
@@ -125,7 +133,12 @@ Get the shell as **nt authority\system**, and read the root flag.
 
 
 ## Method 2: [CVE-2016-0099 / MS16-032](https://www.exploit-db.com/exploits/39719/)
-+ Review the alternative solutionS [1](https://benheater.com/hackthebox-optimum/#kali) [2](https://0xdf.gitlab.io/2021/03/17/htb-optimum.html#ms16-032) [3](https://medium.com/@joemcfarland/hack-the-box-optimum-writeup-36ccdffbeacd)
++ Review the alternative solutions [1](https://benheater.com/hackthebox-optimum/#kali) [2](https://0xdf.gitlab.io/2021/03/17/htb-optimum.html#ms16-032) 
++ Metasploit solutions [1](https://ethicalhacs.com/optimum-hackthebox-walkthrough/) [2](https://cybertoucan.gitbook.io/htb/windows/optimum#type-1-root-access-w-metasploit) [3](https://medium.com/@joemcfarland/hack-the-box-optimum-writeup-36ccdffbeacd)
+
+
+## Method 2: CVE-2016-7214 / MS16-135 [1](https://nvd.nist.gov/vuln/detail/CVE-2016-7214) [2](https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS16-135)
++ Review the alternative solutions [1](https://cybertoucan.gitbook.io/htb/windows/optimum#privilege-escalation-1)
 
 
 # References & Alternatives
@@ -134,7 +147,14 @@ Get the shell as **nt authority\system**, and read the root flag.
   + https://medium.com/@toneemarqus/optimum-htb-manual-walkthrough-2023-tonee-e2a53fb59b1d
 + https://0xdf.gitlab.io/2021/03/17/htb-optimum.html
   + https://benheater.com/hackthebox-optimum
-+ https://medium.com/@joemcfarland/hack-the-box-optimum-writeup-36ccdffbeacd
++ https://pencer.io/ctf/ctf-htb-optimum
++ https://ivanitlearning.wordpress.com/2020/08/01/hackthebox-optimum/
++ https://systemweakness.com/oscp-preparation-hack-the-box-8-optimum-2c8da9435596
++ https://cybertoucan.gitbook.io/htb/windows/optimum
++ https://www.hackingarticles.in/hack-the-box-challenge-optimum-walkthrough/
++ https://ethicalhacs.com/optimum-hackthebox-walkthrough/
+  + https://github.com/Bengman/CTF-writeups/blob/master/Hackthebox/optimum.md
+  + https://medium.com/@joemcfarland/hack-the-box-optimum-writeup-36ccdffbeacd
   + https://www.siberportal.org/red-team/penetration-testing/hack-the-box-optimum-cozumu/
 
 
@@ -143,6 +163,8 @@ Get the shell as **nt authority\system**, and read the root flag.
   + https://www.exploit-db.com/exploits/39161
     + https://www.exploit-db.com/exploits/34926
   + https://www.exploit-db.com/exploits/34668
+  + https://www.exploit-db.com/exploits/49584
+  + https://www.exploit-db.com/exploits/49125
   + https://nvd.nist.gov/vuln/detail/CVE-2014-6287
 + **MS16-098 / Kernel:**
   + https://www.exploit-db.com/exploits/41020
@@ -152,6 +174,9 @@ Get the shell as **nt authority\system**, and read the root flag.
 + **CVE-2016-0099 / MS16-032:**
   + https://www.exploit-db.com/exploits/39719/
   + https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source/privesc/Invoke-MS16032.ps1
++ **CVE-2016-7214 / MS16-135:** 
+  + https://nvd.nist.gov/vuln/detail/CVE-2016-7214
+  + https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS16-135
 
 
 ## Tools
@@ -165,7 +190,7 @@ Get the shell as **nt authority\system**, and read the root flag.
 
 
 ## Technical Knowledge
-+ x
++ -
 
 
 ## Problems Solution
