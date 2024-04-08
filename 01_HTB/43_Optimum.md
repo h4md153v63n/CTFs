@@ -67,18 +67,19 @@ python3 39161.py 10.10.10.8 80
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0b3ad525-c717-4f8c-a61c-6bf6381ab8f2)
 
 
-#### Alternative Shell: Invoke-PowerShellTcpOneLine.ps1
+#### Method 2: CVE-2014-6287 [1](https://www.exploit-db.com/exploits/34668)
+Review the alternative solutions [1](https://benheater.com/hackthebox-optimum/#manual-exploit) [2](https://0xdf.gitlab.io/2021/03/17/htb-optimum.html#shell)
 
 **Alternatively**, try powershell shell as **Invoke-PowerShellTcpOneLine.ps1** [1](https://github.com/samratashok/nishang/blob/master/Shells/Invoke-PowerShellTcpOneLine.ps1) [2](https://0xdf.gitlab.io/2021/03/17/htb-optimum.html#shell)
 
 
-### Method 2: Metasploit Solution [1](https://www.exploit-db.com/exploits/34926)
-+ Review the alternative solution [1](https://medium.com/@joemcfarland/hack-the-box-optimum-writeup-36ccdffbeacd)
+### Method 3: Metasploit Solution [1](https://www.exploit-db.com/exploits/34926)
++ Review the alternative solution [1](https://medium.com/@joemcfarland/hack-the-box-optimum-writeup-36ccdffbeacd) [2](https://www.siberportal.org/red-team/penetration-testing/hack-the-box-optimum-cozumu/)
 
 
 ## Privilege Escalation
 
-### Method 1: MS16-098 / Kernel [1](https://www.exploit-db.com/exploits/41020) [2](https://gitlab.com/exploit-database/exploitdb-bin-sploits/-/raw/main/bin-sploits/41020.exe) [3](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/optimum-writeup-w-o-metasploit#id-4f80)
+### Method 1: MS16-098 / Kernel [1](https://www.exploit-db.com/exploits/41020) [2](https://gitlab.com/exploit-database/exploitdb-bin-sploits/-/raw/main/bin-sploits/41020.exe) [3](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/optimum-writeup-w-o-metasploit#id-4f80) [4](https://benheater.com/hackthebox-optimum/#windows-exploit-suggester)
 
 **Alternative** links [1](https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS16-098) [2](https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS16-098/bfill.exe)
 
@@ -123,8 +124,8 @@ Get the shell as **nt authority\system**, and read the root flag.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4616bddf-9e5c-47fc-ad79-1f42c84449c8)
 
 
-## Method 2: MS16-032
-+ Review the alternative solution [1](https://0xdf.gitlab.io/2021/03/17/htb-optimum.html#ms16-032) [2](https://medium.com/@joemcfarland/hack-the-box-optimum-writeup-36ccdffbeacd)
+## Method 2: [CVE-2016-0099 / MS16-032](https://www.exploit-db.com/exploits/39719/)
++ Review the alternative solutionS [1](https://benheater.com/hackthebox-optimum/#kali) [2](https://0xdf.gitlab.io/2021/03/17/htb-optimum.html#ms16-032) [3](https://medium.com/@joemcfarland/hack-the-box-optimum-writeup-36ccdffbeacd)
 
 
 # References & Alternatives
@@ -132,18 +133,24 @@ Get the shell as **nt authority\system**, and read the root flag.
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/optimum-writeup-w-o-metasploit
   + https://medium.com/@toneemarqus/optimum-htb-manual-walkthrough-2023-tonee-e2a53fb59b1d
 + https://0xdf.gitlab.io/2021/03/17/htb-optimum.html
+  + https://benheater.com/hackthebox-optimum
++ https://medium.com/@joemcfarland/hack-the-box-optimum-writeup-36ccdffbeacd
+  + https://www.siberportal.org/red-team/penetration-testing/hack-the-box-optimum-cozumu/
 
 
 ## CVE Scripting
 + **CVE-2014-6287:**
   + https://www.exploit-db.com/exploits/39161
+    + https://www.exploit-db.com/exploits/34926
+  + https://www.exploit-db.com/exploits/34668
   + https://nvd.nist.gov/vuln/detail/CVE-2014-6287
 + **MS16-098 / Kernel:**
   + https://www.exploit-db.com/exploits/41020
     + https://gitlab.com/exploit-database/exploitdb-bin-sploits/-/raw/main/bin-sploits/41020.exe
   + https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS16-098
     + https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS16-098/bfill.exe
-+ **MS16-032:** 
++ **CVE-2016-0099 / MS16-032:**
+  + https://www.exploit-db.com/exploits/39719/
   + https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source/privesc/Invoke-MS16032.ps1
 
 
@@ -177,6 +184,7 @@ Get the shell as **nt authority\system**, and read the root flag.
   + https://github.com/ThomasTJdev/python_gdork_sqli/issues/1
 + **xlrd.biffh.XLRDError: Excel xlsx file; not supported:**
   + https://stackoverflow.com/questions/65254535/xlrd-biffh-xlrderror-excel-xlsx-file-not-supported
+  + https://benheater.com/hackthebox-optimum/#install-required-python-module
 
 
 ## For More
