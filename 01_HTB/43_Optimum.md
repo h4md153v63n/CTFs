@@ -11,7 +11,6 @@
 ![Optimum](https://github.com/h4md153v63n/CTFs/assets/5091265/f0fe7004-231f-495f-b3b2-8af6d4e6d81a)
 
 
-
 ## Reconnaissance
 ```
 sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.8 -e tun0 > ports
@@ -64,6 +63,19 @@ python3 39161.py 10.10.10.8 80
 
 
 ## Privilege Escalation
+```
+# On the kali attack vm:
+python2 windows-exploit-suggester.py --update
+
+python2 windows-exploit-suggester.py --database 2024-04-08-mssb.xls --systeminfo systeminfo.txt
+
+# On the target machine:
+systeminfo
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a43d3006-c5f2-4141-9446-154e5c8169ea)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c48e9398-e5c2-4853-9bd8-1b9d0596b083)
 
 
 
@@ -97,6 +109,8 @@ python3 39161.py 10.10.10.8 80
   + https://blog.finxter.com/fix-import-error-no-module-named-urllib2-python/
 + **ERROR: Could not find a version that satisfies the requirement urllib (from versions: none):**
   + https://github.com/ThomasTJdev/python_gdork_sqli/issues/1
++ **xlrd.biffh.XLRDError: Excel xlsx file; not supported:**
+  + https://stackoverflow.com/questions/65254535/xlrd-biffh-xlrderror-excel-xlsx-file-not-supported
 
 
 ## For More
