@@ -87,6 +87,7 @@ python3 39161.py 10.10.10.8 80
 
 ## Problems Solution
 + **SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape:**
+  + https://youtu.be/rNmF991BSTE?t=40
   + https://www.geeksforgeeks.org/how-to-fix-syntaxerror-unicode-error-unicodeescape-codec-cant-decode-bytes/
   + https://community.alteryx.com/t5/Alteryx-Designer-Desktop-Discussions/Error-unicodeescape-codec-can-t-decode-bytes/td-p/427540
 + **SyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)?:**
