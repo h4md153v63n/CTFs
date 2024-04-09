@@ -24,7 +24,7 @@ sudo nmap -Pn -n -sV -sC -O -p$ports 10.10.10.9 --open
 
 
 ## Enumeration
-
+ 
 
 
 ## Exploitation & Gaining Access
