@@ -37,7 +37,7 @@ sudo nmap -Pn -n -sV -sC -O -p$ports 10.10.10.9 --open
 
 # References & Alternatives
 + https://vvmlist.github.io/#Bastard
-+  
++ 
 
 
 ## CVE Scripting
