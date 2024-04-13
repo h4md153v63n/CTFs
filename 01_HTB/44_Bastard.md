@@ -57,6 +57,28 @@ Modify the below lines in the exploit code:
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4da43bf7-5ca8-4fdf-ab20-f738bcc18380)
 
+Run the exploit: `php 41564.php`
+
+In case of **PHP Fatal error:  Uncaught Error: Call to undefined function curl_init()** error, run `sudo apt install php-curl` to install **php-curl**:
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/293cb05e-6870-46cc-812d-1185ac050fa2)
+
+Rerun the exploit: `php 41564.php`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c9ce7b40-75f7-4047-bd2f-bfcc56c55d26)
+
+It creates 2 files: **session.json** and **user.json**. View the content of **session.json**.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/e77c653b-928b-4d12-84a1-3cff4f22c232)
+
+**session.json** file gives a valid session cookie for admin user.
+
+Add the cookie with the Cookie Editor plugin on the browser:
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4210ab1b-d35e-4598-b99c-08e18a850221)
+
+Refresh the browser:
+
 
 
 
@@ -88,7 +110,9 @@ Modify the below lines in the exploit code:
 
 
 ## Problems Solution
-+ 
++ **PHP Fatal error:  Uncaught Error: Call to undefined function curl_init():** 
+  + https://stackoverflow.com/questions/6382539/call-to-undefined-function-curl-init
+  + https://enginetemplates.com/call-to-undefined-function-curl_init/
 
 
 ## For More
