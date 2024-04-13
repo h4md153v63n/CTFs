@@ -22,8 +22,7 @@ sudo nmap -Pn -n -sV -sC -O -p$ports 10.10.10.9 --open
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3af46416-e08d-4b5c-bdfb-0d8a16c4e1fb)
 
-
-
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c9205d7a-b825-43c2-b71b-15b0456a3bb3)
 
 
 ## Enumeration
