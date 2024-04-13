@@ -49,6 +49,15 @@ gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u http://10.10.10.9/ -k
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0ccab42b-9061-43f5-9c20-7b7c06453c46)
 
+Test **http://10.10.10.9/rest** on the browser or using **curl**.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/575bf492-5f0d-4771-b1b2-9a4d444580b6)
+
+Modify the below lines in the exploit code:
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4da43bf7-5ca8-4fdf-ab20-f738bcc18380)
+
+
 
 
 
