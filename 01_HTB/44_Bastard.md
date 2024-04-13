@@ -34,13 +34,22 @@ Check **http://10.10.10.9/CHANGELOG.txt**.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5163edd8-e04c-472a-bd4e-45e64c7c4083)
 
-Run searchsploit.
+Run searchsploit:
+
 ```
 searchsploit drupal 7.x
 
 searchsploit -m 41564
 ```
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d11fa67b-28a5-4a61-a50f-57a97b5b080c)
+
+```
+gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u http://10.10.10.9/ -k -n -r -t 10 --exclude-length 1233
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0ccab42b-9061-43f5-9c20-7b7c06453c46)
+
+
 
 
 
