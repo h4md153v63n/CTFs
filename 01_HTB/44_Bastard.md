@@ -27,11 +27,20 @@ sudo nmap -Pn -n -sV -sC -O -p$ports 10.10.10.9 --open
 
 ## Enumeration
 Visit **http://10.10.10.9**.
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/cf5880f4-a25e-4c05-9b77-86ee83268cc1)
 
 Check **http://10.10.10.9/CHANGELOG.txt**.
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5163edd8-e04c-472a-bd4e-45e64c7c4083)
 
+Run searchsploit.
+```
+searchsploit drupal 7.x
+
+searchsploit -m 41564
+```
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d11fa67b-28a5-4a61-a50f-57a97b5b080c)
 
 
 
