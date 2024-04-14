@@ -131,6 +131,8 @@ Check the solution [1](https://0xdf.gitlab.io/2019/03/12/htb-bastard.html#drupal
 
 
 ## Privilege Escalation
+
+### Method 1: MS10–059
 Run `systeminfo` command:
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c0ed2707-e0cb-481d-b467-a6d5aaaf90df)
@@ -171,7 +173,8 @@ Get the shell as **nt authority\system**, and read the root flag:
 + https://vvmlist.github.io/#Bastard
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/bastard-writeup-w-o-metasploit
 + https://0xdf.gitlab.io/2019/03/12/htb-bastard.html
-+ 
++ https://medium.com/@siddharth.singhal1995/hackthebox-walkthrough-bastard-7-a56cfef566f4
+    + https://medium.com/@toneemarqus/bastard-htb-manual-walkthrough-2023-oscp-journey-b47fc418f3d
 
 
 ## CVE Scripting
@@ -191,6 +194,8 @@ Get the shell as **nt authority\system**, and read the root flag:
 + **droopescan:**
     + https://www.geeksforgeeks.org/droopescan-cms-based-web-applications-scanner/
     + https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/drupal
++ **Windows Exploit Suggester:**
+    + https://github.com/AonCyberLabs/Windows-Exploit-Suggester
 
 
 ## Technical Knowledge
@@ -208,4 +213,5 @@ Get the shell as **nt authority\system**, and read the root flag:
 + https://www.ambionics.io/blog/drupal-services-module-rce
 + https://en.wikipedia.org/wiki/Internet_Information_Services
 + https://hashcat.net/wiki/doku.php?id=example_hashes
++ https://www.techtarget.com/whatis/definition/Drupal
 
