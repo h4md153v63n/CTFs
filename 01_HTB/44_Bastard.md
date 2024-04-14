@@ -34,6 +34,8 @@ Check **http://10.10.10.9/CHANGELOG.txt**.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5163edd8-e04c-472a-bd4e-45e64c7c4083)
 
+Also try to run **droopescan** to enumerate the Drupal site [1](https://0xdf.gitlab.io/2019/03/12/htb-bastard.html#drupal---tcp-80)
+
 
 ## Exploitation & Gaining Access
 
@@ -60,6 +62,10 @@ gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u http://10.10.10.9/ -k
 Test **http://10.10.10.9/rest** on the browser or using **curl**.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/575bf492-5f0d-4771-b1b2-9a4d444580b6)
+
+`curl http://10.10.10.9/rest`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/dcd60e3d-a566-4697-966d-4c8fbcad26b2)
 
 Modify the below lines in the exploit code:
 
@@ -114,6 +120,16 @@ Get the revershell, and read user flag:
 Check the different solution [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/bastard-writeup-w-o-metasploit#id-03d0)
 
 
+### Method 3: Drupalgeddon2 -> CVE-2018-7600 [1](https://www.exploit-db.com/exploits/44449)
+Check the solution [1](https://0xdf.gitlab.io/2019/03/12/htb-bastard.html#drupalgeddon2)
+
+Control the links [1](https://www.exploit-db.com/exploits/44449) [2](https://github.com/dreadlocked/Drupalgeddon2) [3](https://unit42.paloaltonetworks.com/unit42-exploit-wild-drupalgeddon2-analysis-cve-2018-7600/#pu3blic-exploits)
+
+
+### Method 4: Drupalgeddon3 -> CVE-2018-7602 [1](https://www.exploit-db.com/exploits/44542)
+Check the solution [1](https://0xdf.gitlab.io/2019/03/12/htb-bastard.html#drupalgeddon3)
+
+
 ## Privilege Escalation
 Run `systeminfo` command:
 
@@ -160,23 +176,36 @@ Get the shell as **nt authority\system**, and read the root flag:
 
 ## CVE Scripting
 + **Drupal:** CVE:N/A [1](https://www.exploit-db.com/exploits/41564)
++ **Drupalgeddon2 / CVE-2018-7600:**
+    + https://www.exploit-db.com/exploits/44449
+    + https://github.com/dreadlocked/Drupalgeddon2
+    + https://unit42.paloaltonetworks.com/unit42-exploit-wild-drupalgeddon2-analysis-cve-2018-7600/#pu3blic-exploits
++ **Drupalgeddon3 / CVE-2018-7602:**
+    + https://www.exploit-db.com/exploits/44542
 + **MS10–059:**
     + https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS10-059/MS10-059.exe 
 
 
 ## Tools
 + **netcat:** https://eternallybored.org/misc/netcat/
++ **droopescan:**
+    + https://www.geeksforgeeks.org/droopescan-cms-based-web-applications-scanner/
+    + https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/drupal
 
 
 ## Technical Knowledge
-+  
++ **pentesting drupal:**
+    + https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/drupal
 
 
 ## Problems Solution
 + **PHP Fatal error:  Uncaught Error: Call to undefined function curl_init():** 
-  + https://stackoverflow.com/questions/6382539/call-to-undefined-function-curl-init
-  + https://enginetemplates.com/call-to-undefined-function-curl_init/
+    + https://stackoverflow.com/questions/6382539/call-to-undefined-function-curl-init
+    + https://enginetemplates.com/call-to-undefined-function-curl_init/
 
 
 ## For More
 + https://www.ambionics.io/blog/drupal-services-module-rce
++ https://en.wikipedia.org/wiki/Internet_Information_Services
++ https://hashcat.net/wiki/doku.php?id=example_hashes
+
