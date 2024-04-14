@@ -105,6 +105,22 @@ Get the revershell, and read user flag:
 
 
 ## Privilege Escalation
+Run `systeminfo` command:
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c0ed2707-e0cb-481d-b467-a6d5aaaf90df)
+
+Run Windows Exploit Suggester:
+
+```
+# On the kali attack vm:
+python2 windows-exploit-suggester.py --update
+
+python2 windows-exploit-suggester.py --database 2024-04-14-mssb.xls --systeminfo systeminfo.txt
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1c85b903-336c-44b0-8e07-07b9f66c9861)
+
+
 
 
 
