@@ -36,6 +36,8 @@ Check **http://10.10.10.9/CHANGELOG.txt**.
 
 Also try to run **droopescan** to enumerate the Drupal site [1](https://0xdf.gitlab.io/2019/03/12/htb-bastard.html#drupal---tcp-80)
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3dbaa18e-48c7-45c9-9a6a-e5f6a86d879c)
+
 
 ## Exploitation & Gaining Access
 
@@ -117,11 +119,11 @@ Get the revershell, and read user flag:
 
 
 ### Method 2: Drupal Session Cookie Bypass and Code/Command Injection
-Check the different solution [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/bastard-writeup-w-o-metasploit#id-03d0)
+Check the different solution [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/bastard-writeup-w-o-metasploit#id-03d0) [2](https://teckk2.github.io/writeup/2017/12/21/Bastard.html)
 
 
 ### Method 3: Drupalgeddon2 -> CVE-2018-7600 [1](https://www.exploit-db.com/exploits/44449)
-Check the solution [1](https://0xdf.gitlab.io/2019/03/12/htb-bastard.html#drupalgeddon2) [2](https://www.hackingarticles.in/bastard-hackthebox-walkthrough/)
+Check the solution [1](https://0xdf.gitlab.io/2019/03/12/htb-bastard.html#drupalgeddon2) [2](https://www.hackingarticles.in/bastard-hackthebox-walkthrough/) [3](https://benheater.com/hackthebox-bastard/#service-enumeration) [4](https://ethicalhacs.com/bastard-hackthebox-walkthrough/)
 
 Control the links [1](https://www.exploit-db.com/exploits/44449) [2](https://github.com/dreadlocked/Drupalgeddon2) [3](https://unit42.paloaltonetworks.com/unit42-exploit-wild-drupalgeddon2-analysis-cve-2018-7600/#pu3blic-exploits)
 
@@ -137,6 +139,12 @@ Run `systeminfo` command:
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c0ed2707-e0cb-481d-b467-a6d5aaaf90df)
 
+```
+systeminfo | findstr /B /C:"Host Name" /C:"OS Name" /C:"OS Version" /C:"System Type" /C:"Hotfix(s)"
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c0440563-e3a0-47c0-85c0-a1adb55d091a)
+
 Run Windows Exploit Suggester:
 
 ```
@@ -150,7 +158,7 @@ python2 windows-exploit-suggester.py --database 2024-04-14-mssb.xls --systeminfo
 
 There are many exploits for privilege escalation here, but for now try **MS10–059**.
 
-Download [exploit](https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS10-059/MS10-059.exe), and transfer to the target victim, then prepare netcat listener, and run the **MS10–059.exe**:
+Download exploit [1](https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS10-059/MS10-059.exe) [2](https://github.com/ASR511-OO7/windows-kernel-exploits/tree/master/MS10-059), and transfer to the target victim, then prepare netcat listener, and run the **MS10–059.exe**:
 
 ```
 # On the kali attack vm:
@@ -169,18 +177,43 @@ Get the shell as **nt authority\system**, and read the root flag:
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7d279287-cbd6-42b2-8a42-fa6be81d17b6)
 
 
-### Method 2: Juicy Potato
-Check the solution [1](https://www.hackingarticles.in/bastard-hackthebox-walkthrough/)
+### Method 2: ms16_014 - metasploit solution
+Check the solution [1](https://ethicalhacs.com/bastard-hackthebox-walkthrough/)
 
-Check for [more details]().
+
+### Method 3: Juicy Potato
+Check the solution [1](https://www.hackingarticles.in/bastard-hackthebox-walkthrough/) [2](https://benheater.com/hackthebox-bastard/#privilege-escalation) [3](https://juggernaut-sec.com/hackthebox-bastard/) [4](https://ivanitlearning.wordpress.com/2020/09/21/hackthebox-bastard/) [5](https://www.jeroenvansaane.com/posts/htb/bastard/)
+
+Check Windows Server 2008 R2 Enterprise [CLSID](https://github.com/ohpe/juicy-potato/tree/master/CLSID/Windows_Server_2008_R2_Enterprise).
+
+Check for more details [1](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/44_Bastard.md#juicy-potato) [2](https://c-cracks.tumblr.com/post/618402658690187265/htb-bastard).
+
+
+### Method 4: [MS15-051](https://www.exploit-db.com/exploits/37049)
+Check the solution [1](https://0xdf.gitlab.io/2019/03/12/htb-bastard.html#ms15-051) [2](https://blog.artis3nal.com/writeups/htb-bastard/) [3](https://pencer.io/ctf/ctf-htb-bastard/#privilege-escalation) [4](https://initinfosec.com/writeups/htb/2020/02/10/bastard-htb-writeup/)
+
+**Alternatively**, check the different solutions [1](https://rizemon.github.io/posts/bastard-htb/) [2](https://www.puckiestyle.nl/htb-bastard/)
 
 
 # References & Alternatives
 + https://vvmlist.github.io/#Bastard
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/bastard-writeup-w-o-metasploit
+    + https://pencer.io/ctf/ctf-htb-bastard/#alternative-way-to-get-code-execution
+    + https://teckk2.github.io/writeup/2017/12/21/Bastard.html
 + https://0xdf.gitlab.io/2019/03/12/htb-bastard.html
+    + https://benheater.com/hackthebox-bastard/
 + https://medium.com/@siddharth.singhal1995/hackthebox-walkthrough-bastard-7-a56cfef566f4
     + https://medium.com/@toneemarqus/bastard-htb-manual-walkthrough-2023-oscp-journey-b47fc418f3d
+    	+ https://pencer.io/ctf/ctf-htb-bastard/#alternative-ippsec-method
++ https://www.hackingarticles.in/bastard-hackthebox-walkthrough/
+    + https://juggernaut-sec.com/hackthebox-bastard/
+    + https://ivanitlearning.wordpress.com/2020/09/21/hackthebox-bastard/
+    + https://www.jeroenvansaane.com/posts/htb/bastard/
+    + https://c-cracks.tumblr.com/post/618402658690187265/htb-bastard
++ https://rizemon.github.io/posts/bastard-htb/
++ https://ethicalhacs.com/bastard-hackthebox-walkthrough/
++ https://github.com/AlexPerucchini/Hack-The-Box/blob/master/systems/bastard-htb.md
+    + https://github.com/Bengman/CTF-writeups/blob/master/Hackthebox/bastard.md
 
 
 ## CVE Scripting
@@ -188,16 +221,21 @@ Check for [more details]().
 + **Drupalgeddon2 / CVE-2018-7600:**
     + https://www.exploit-db.com/exploits/44449
     + https://github.com/dreadlocked/Drupalgeddon2
+    + https://github.com/pimps/CVE-2018-7600
     + https://unit42.paloaltonetworks.com/unit42-exploit-wild-drupalgeddon2-analysis-cve-2018-7600/#pu3blic-exploits
 + **Drupalgeddon3 / CVE-2018-7602:**
     + https://www.exploit-db.com/exploits/44542
 + **MS10–059:**
-    + https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS10-059/MS10-059.exe 
+    + https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS10-059/MS10-059.exe
+    + https://github.com/ASR511-OO7/windows-kernel-exploits/tree/master/MS10-059
++ **MS15-051:**
+    + https://www.exploit-db.com/exploits/37049
 
 
 ## Tools
 + **netcat:** https://eternallybored.org/misc/netcat/
 + **droopescan:**
+    + https://github.com/SamJoan/droopescan
     + https://www.geeksforgeeks.org/droopescan-cms-based-web-applications-scanner/
     + https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/drupal
 + **Windows Exploit Suggester:**
@@ -212,10 +250,12 @@ Check for [more details]().
 ## Problems Solution
 + **PHP Fatal error:  Uncaught Error: Call to undefined function curl_init():** 
     + https://stackoverflow.com/questions/6382539/call-to-undefined-function-curl-init
+    + https://www.cyberciti.biz/faq/php-fatal-error-call-to-undefined-function-curl_init-in-homehttpdaincludesfunctions-php1/
     + https://enginetemplates.com/call-to-undefined-function-curl_init/
 
 
-## Juicy Potato
+## Juicy Potato - Rotten Potato
++ https://juggernaut-sec.com/seimpersonateprivilege/
 + https://github.com/ivanitlearning/Juicy-Potato-x86
 	+ https://github.com/ivanitlearning/Juicy-Potato-x86/releases
 	+ https://github.com/ohpe/juicy-potato/releases
@@ -231,8 +271,10 @@ Check for [more details]().
 
 
 ## For More
++ https://www.drupal.org/drupalorg/docs/apis/rest-and-other-apis
 + https://www.ambionics.io/blog/drupal-services-module-rce
 + https://en.wikipedia.org/wiki/Internet_Information_Services
 + https://hashcat.net/wiki/doku.php?id=example_hashes
 + https://www.techtarget.com/whatis/definition/Drupal
++ https://stackoverflow.com/questions/2887282/how-to-find-version-of-drupal-installed
 
