@@ -208,7 +208,8 @@ Get the shell as **nt authority\system**.
 + https://foxglovesecurity.com/2017/08/25/abusing-token-privileges-for-windows-local-privilege-escalation/
 
 
-## For More -> Juicy-Potato
+## Juicy-Potato
++ https://juggernaut-sec.com/seimpersonateprivilege/
 + https://github.com/ivanitlearning/Juicy-Potato-x86
 	+ https://github.com/ivanitlearning/Juicy-Potato-x86/releases
 	+ https://github.com/ohpe/juicy-potato/releases
