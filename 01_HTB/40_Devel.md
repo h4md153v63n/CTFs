@@ -208,16 +208,16 @@ Get the shell as **nt authority\system**.
 + https://foxglovesecurity.com/2017/08/25/abusing-token-privileges-for-windows-local-privilege-escalation/
 
 
-## For More
-- https://github.com/ivanitlearning/Juicy-Potato-x86
-	- https://github.com/ivanitlearning/Juicy-Potato-x86/releases
-	- https://github.com/ohpe/juicy-potato/releases
-	- https://github.com/ohpe/juicy-potato/
-- **CLSID:**
-	- https://ohpe.it/juicy-potato/CLSID/
-	- https://github.com/ohpe/juicy-potato/tree/master/CLSID
-- https://hunter2.gitbook.io/darthsidious/privilege-escalation/juicy-potato
-	- https://ohpe.it/juicy-potato/
-	- https://ivanitlearning.wordpress.com/2019/07/20/potato-privilege-escalation-exploits-for-windows/
-	- https://rizemon.github.io/posts/devel-htb/
-	- https://yogeshwarram-g.gitbook.io/hackthebox/windows/devil#privilege-escalation
+## For More -> Juicy-Potato
++ https://github.com/ivanitlearning/Juicy-Potato-x86
+	+ https://github.com/ivanitlearning/Juicy-Potato-x86/releases
+	+ https://github.com/ohpe/juicy-potato/releases
+	+ https://github.com/ohpe/juicy-potato/
++ **CLSID:**
+	+ https://ohpe.it/juicy-potato/CLSID/
+	+ https://github.com/ohpe/juicy-potato/tree/master/CLSID
++ https://hunter2.gitbook.io/darthsidious/privilege-escalation/juicy-potato
+	+ https://ohpe.it/juicy-potato/
+	+ https://ivanitlearning.wordpress.com/2019/07/20/potato-privilege-escalation-exploits-for-windows/
+	+ https://rizemon.github.io/posts/devel-htb/
+	+ https://yogeshwarram-g.gitbook.io/hackthebox/windows/devil#privilege-escalation
