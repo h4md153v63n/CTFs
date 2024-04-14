@@ -208,7 +208,7 @@ Get the shell as **nt authority\system**.
 + https://foxglovesecurity.com/2017/08/25/abusing-token-privileges-for-windows-local-privilege-escalation/
 
 
-## Juicy-Potato
+## Juicy-Potato - Rotten Potato
 + https://juggernaut-sec.com/seimpersonateprivilege/
 + https://github.com/ivanitlearning/Juicy-Potato-x86
 	+ https://github.com/ivanitlearning/Juicy-Potato-x86/releases
@@ -216,6 +216,8 @@ Get the shell as **nt authority\system**.
 	+ https://github.com/ohpe/juicy-potato/
 + **CLSID:**
 	+ https://ohpe.it/juicy-potato/CLSID/
+
+
 	+ https://github.com/ohpe/juicy-potato/tree/master/CLSID
 + https://hunter2.gitbook.io/darthsidious/privilege-escalation/juicy-potato
 	+ https://ohpe.it/juicy-potato/
