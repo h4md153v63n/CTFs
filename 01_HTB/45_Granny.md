@@ -30,7 +30,7 @@ Visit **http://10.10.10.15**.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6c195f8b-51e0-4e25-bb23-ac0b0deee900)
 
-Directory fuzzing:
+Directory fuzzing, and there's nothing useful here:
 
 `gobuster dir -e -w /usr/share/wordlists/dirb/common.txt -u http://10.10.10.15/ -k -n -r -t 50`
 
@@ -105,9 +105,9 @@ python2 windows-exploit-suggester.py --database 2024-04-15-mssb.xls --systeminfo
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/287d5c3d-4949-47e9-a841-b029af5fe2f0)
 
-There are many exploits for privilege escalation here, but for now try **MS15-051**.
+There are many exploits for privilege escalation here, but for now try **MS15-051**: [Microsoft Windows Server 2003 — Token Kidnapping Local Privilege Escalation](https://www.exploit-db.com/exploits/6705).
 
-Download exploit [1](https://github.com/Re4son/Churrasco), and transfer to the target victim, then prepare netcat listener, and run the MS15-051.exe:
+Download exploit [1](https://github.com/Re4son/Churrasco), and transfer to the target victim, then prepare netcat listener, and run it:
 
 ```
 # On the kali attack vm:
@@ -132,6 +132,10 @@ Get the shell as **nt authority\system**, and read both user.txt flag and root.t
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/86116b29-e1bd-41bd-b658-be751f8e5c84)
 
 
+### Method 2: MS14-058 -> Metasploit Solution
+Check the solution [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/granny-writeup-w-o-and-w-metasploit#id-317c)
+
+
 # References & Alternatives
 + https://vvmlist.github.io/#Granny
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/granny-writeup-w-o-and-w-metasploit
@@ -142,14 +146,21 @@ Get the shell as **nt authority\system**, and read both user.txt flag and root.t
 + **MS15-051:**
   + https://www.exploit-db.com/exploits/6705
   + https://github.com/Re4son/Churrasco
+  + 
 
 
 ## Tools
-+ x
++ **davtest:**
+  + https://www.kali.org/tools/davtest/
+  + https://cirt.net/DAVTest
+  + https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/put-method-webdav
++ **Windows Exploit Suggester:**
+  + https://github.com/AonCyberLabs/Windows-Exploit-Suggester
 
 
 ## Technical Knowledge
-+ x
++ **WebDav Vulnerability:**
+  + https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/put-method-webdav
 
 
 ## Problems Solution
@@ -157,4 +168,4 @@ Get the shell as **nt authority\system**, and read both user.txt flag and root.t
 
 
 ## For More
-+ x
++ https://asfiyashaikh.medium.com/windows-privilege-escalation-using-sudo-su-ae5573feccd9
