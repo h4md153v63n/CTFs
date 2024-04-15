@@ -26,6 +26,11 @@ sudo nmap -Pn -n -sV -sC -O -p$ports 10.10.10.15 --open
 
 
 ## Enumeration
+Visit **http://10.10.10.15**.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6c195f8b-51e0-4e25-bb23-ac0b0deee900)
+
+
 
 
 
