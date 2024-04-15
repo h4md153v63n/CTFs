@@ -58,6 +58,9 @@ mv shell.aspx shell.txt
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/03d4a892-0847-4152-9540-70b82ce26b5f)
 
+**Alternative shells:**
++ `/usr/share/webshells/aspx/cmdasp.aspx`
+
 Upload it using curl with PUT method, and rename it back to the original file type aspx using curl with MOVE option:
 
 ```
@@ -133,12 +136,13 @@ Get the shell as **nt authority\system**, and read both user.txt flag and root.t
 
 
 ### Method 2: MS14-058 -> Metasploit Solution
-Check the solution [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/granny-writeup-w-o-and-w-metasploit#id-317c)
+Check the solution [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/granny-writeup-w-o-and-w-metasploit#id-317c) [2](https://0xdf.gitlab.io/2019/03/06/htb-granny.html#ms14-058)
 
 
 # References & Alternatives
 + https://vvmlist.github.io/#Granny
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/granny-writeup-w-o-and-w-metasploit
++ https://0xdf.gitlab.io/2019/03/06/htb-granny.html
 + 
 
 
@@ -156,6 +160,9 @@ Check the solution [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparat
   + https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/put-method-webdav
 + **Windows Exploit Suggester:**
   + https://github.com/AonCyberLabs/Windows-Exploit-Suggester
++ .aspx shells:
+  + msfvenom 
+  + `/usr/share/webshells/aspx/cmdasp.aspx`
 
 
 ## Technical Knowledge
@@ -164,8 +171,10 @@ Check the solution [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparat
 
 
 ## Problems Solution
-+ x
++ 
 
 
 ## For More
 + https://asfiyashaikh.medium.com/windows-privilege-escalation-using-sudo-su-ae5573feccd9
++ https://linux.die.net/man/1/cadaver
+
