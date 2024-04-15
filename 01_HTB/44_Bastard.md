@@ -134,7 +134,7 @@ Check the solution [1](https://0xdf.gitlab.io/2019/03/12/htb-bastard.html#drupal
 
 ## Privilege Escalation
 
-### Method 1: MS10–059
+### Method 1: MS10-059
 Run `systeminfo` command:
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c0ed2707-e0cb-481d-b467-a6d5aaaf90df)
@@ -156,9 +156,9 @@ python2 windows-exploit-suggester.py --database 2024-04-14-mssb.xls --systeminfo
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1c85b903-336c-44b0-8e07-07b9f66c9861)
 
-There are many exploits for privilege escalation here, but for now try **MS10–059**.
+There are many exploits for privilege escalation here, but for now try **MS10-059**.
 
-Download exploit [1](https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS10-059/MS10-059.exe) [2](https://github.com/ASR511-OO7/windows-kernel-exploits/tree/master/MS10-059), and transfer to the target victim, then prepare netcat listener, and run the **MS10–059.exe**:
+Download exploit [1](https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS10-059/MS10-059.exe) [2](https://github.com/ASR511-OO7/windows-kernel-exploits/tree/master/MS10-059), and transfer to the target victim, then prepare netcat listener, and run the **MS10-059.exe**:
 
 ```
 # On the kali attack vm:
@@ -225,7 +225,7 @@ Check the solution [1](https://0xdf.gitlab.io/2019/03/12/htb-bastard.html#ms15-0
     + https://unit42.paloaltonetworks.com/unit42-exploit-wild-drupalgeddon2-analysis-cve-2018-7600/#pu3blic-exploits
 + **Drupalgeddon3 / CVE-2018-7602:**
     + https://www.exploit-db.com/exploits/44542
-+ **MS10–059:**
++ **MS10-059:**
     + https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS10-059/MS10-059.exe
     + https://github.com/ASR511-OO7/windows-kernel-exploits/tree/master/MS10-059
 + **MS15-051:**
