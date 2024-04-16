@@ -44,7 +44,7 @@ Check the allowed HTTP methods: `davtest --url http://10.10.10.15`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ed156ba0-61f4-4c6b-b74a-0d1eb796979b)
 
-**Alternatively**, try to use [cadaver](https://hackmd.io/@Mecanico/HyvmSscrc).
+**Alternatively**, try to use **cadaver** [1](https://hackmd.io/@Mecanico/HyvmSscrc) [2](https://ivanitlearning.wordpress.com/2020/07/27/hackthebox-granny-grandpa/).
 
 
 ## Exploitation & Gaining Access
@@ -176,14 +176,18 @@ Check the solution [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparat
 Metasploit module [1](https://www.rapid7.com/db/modules/exploit/windows/iis/iis_webdav_scstoragepathfromurl/)
 
 
-### Method 3: MS14-070 -> Metasploit Solution
-Check the solution [1](https://www.freecodecamp.org/news/keep-calm-and-hack-the-box-granny/) 
+### Method 3: MS14-070 / CVE-2014-1767 -> With/Without Metasploit
+Check the solutions [1-metasploit](https://www.freecodecamp.org/news/keep-calm-and-hack-the-box-granny/) [2](https://vostdev.wordpress.com/2021/02/15/htb-grandpa-granny-walk-through/)
+
+Without metasploit [1](https://vostdev.wordpress.com/2021/02/15/htb-grandpa-granny-walk-through/).
 
 Metasploit module [1](https://www.rapid7.com/db/modules/exploit/windows/local/ms14_070_tcpip_ioctl/)
 
 
 ### Method 4: ms10_015 -> Metasploit Solution
 Check the solution [1](https://ethicalhacs.com/granny-hackthebox-walkthrough/)
+
+**Alternatively**, check the different solutions [1](https://www.hackingarticles.in/hack-the-box-challenge-granny-walkthrough/)
 
 
 # References & Alternatives
@@ -197,16 +201,23 @@ Check the solution [1](https://ethicalhacs.com/granny-hackthebox-walkthrough/)
 + https://steflan-security.com/hack-the-box-granny-walkthrough/)
 + https://bros10.github.io/posts/Granny/
 + https://hackmd.io/@Mecanico/HyvmSscrc
+  + https://www.jeroenvansaane.com/posts/htb/granny/
++ https://korbinian-spielvogel.de/posts/granny-writeup/
++ https://ivanitlearning.wordpress.com/2020/07/27/hackthebox-granny-grandpa/
++ https://www.hackingarticles.in/hack-the-box-challenge-granny-walkthrough/
 
 
 ## CVE Scripting
 + **MS15-051 / MS09-012:**
   + https://www.exploit-db.com/exploits/6705
+  + https://www.rapid7.com/db/modules/exploit/windows/local/ms15_051_client_copy_image/
   + https://github.com/Re4son/Churrasco
     + https://github.com/Re4son/Churrasco/raw/master/churrasco.exe
     + https://binaryregion.wordpress.com/2021/08/04/privilege-escalation-windows-churrasco-exe/
   + /usr/share/sqlninja/apps/churrasco.exe
   + https://medium.com/@nmappn/windows-privelege-escalation-via-token-kidnapping-6195edd2660e
+  + https://dl.packetstormsecurity.net/papers/presentations/TokenKidnapping.pdf
+  + https://github.com/Re4son/Churrasco/blob/master/DEFCON-18-Cerrudo-Token-Kidnapping-Revenge.pdf
 + **CVE-2017-7269:**
   + https://www.exploit-db.com/exploits/41738
   + https://www.exploit-db.com/exploits/41992
@@ -217,7 +228,8 @@ Check the solution [1](https://ethicalhacs.com/granny-hackthebox-walkthrough/)
   + https://github.com/c0d3cr4f73r/CVE-2017-7269
 + **MS14-058:**
   + https://www.rapid7.com/db/modules/exploit/windows/iis/iis_webdav_scstoragepathfromurl/
-+ **MS14-070:**
++ **MS14-070 / CVE-2014-1767:**
+  + https://www.exploit-db.com/exploits/39525
   + https://www.rapid7.com/db/modules/exploit/windows/local/ms14_070_tcpip_ioctl/
 
 
@@ -272,5 +284,4 @@ Check the solution [1](https://ethicalhacs.com/granny-hackthebox-walkthrough/)
 + https://en.wikipedia.org/wiki/Return-oriented_programming
 + https://asfiyashaikh.medium.com/windows-privilege-escalation-using-sudo-su-ae5573feccd9
 + https://linux.die.net/man/1/cadaver
-+ https://dl.packetstormsecurity.net/papers/presentations/TokenKidnapping.pdf
 
