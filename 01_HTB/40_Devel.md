@@ -195,6 +195,9 @@ Get the shell as **nt authority\system**.
   + https://github.com/borjmz/aspx-reverse-shell/blob/master/shell.aspx
 + **msfvenom:** https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/msfvenom
 + **nishang / Invoke-PowerShellTcp:** https://github.com/samratashok/nishang/blob/master/Shells/Invoke-PowerShellTcp.ps1
++ **Windows Exploit Suggester:**
+  + https://github.com/AonCyberLabs/Windows-Exploit-Suggester
++ **local exploit suggester:** https://www.rapid7.com/db/modules/post/multi/recon/local_exploit_suggester/
 
 
 ## Technical Knowledge
