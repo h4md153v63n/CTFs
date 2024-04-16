@@ -167,7 +167,7 @@ Get the shell as **nt authority\system**, and read both user.txt flag and root.t
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/86116b29-e1bd-41bd-b658-be751f8e5c84)
 
-**Alternatively**, check the [metasploit solution](https://steflan-security.com/hack-the-box-granny-walkthrough/) 
+**Alternatively**, check the [metasploit solution](https://steflan-security.com/hack-the-box-granny-walkthrough/).
 
 
 ### Method 2: MS14-058 -> Metasploit Solution
