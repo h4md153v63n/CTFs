@@ -239,7 +239,8 @@ Check the solution [1](https://0xdf.gitlab.io/2019/03/12/htb-bastard.html#ms15-0
     + https://www.geeksforgeeks.org/droopescan-cms-based-web-applications-scanner/
     + https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/drupal
 + **Windows Exploit Suggester:**
-    + https://github.com/AonCyberLabs/Windows-Exploit-Suggester
+  + https://github.com/AonCyberLabs/Windows-Exploit-Suggester
++ **local exploit suggester:** https://www.rapid7.com/db/modules/post/multi/recon/local_exploit_suggester/
 
 
 ## Technical Knowledge
