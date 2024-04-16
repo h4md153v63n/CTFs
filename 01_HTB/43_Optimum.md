@@ -182,7 +182,9 @@ Get the shell as **nt authority\system**, and read the root flag.
 ## Tools
 + /usr/share/windows-resources/binaries/
 + **Invoke-PowerShellTcpOneLine.ps1:** https://github.com/samratashok/nishang/blob/master/Shells/Invoke-PowerShellTcpOneLine.ps1
-+ **Windows Exploit Suggester:** https://github.com/AonCyberLabs/Windows-Exploit-Suggester
++ **Windows Exploit Suggester:**
+  + https://github.com/AonCyberLabs/Windows-Exploit-Suggester
++ **local exploit suggester:** https://www.rapid7.com/db/modules/post/multi/recon/local_exploit_suggester/
 + **winPEAS:** https://github.com/peass-ng/PEASS-ng/tree/master/winPEAS
 + **Watson:** https://github.com/rasta-mouse/Watson
   + **Sherlock:** https://github.com/rasta-mouse/Sherlock
