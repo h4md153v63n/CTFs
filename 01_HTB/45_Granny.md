@@ -44,6 +44,8 @@ Check the allowed HTTP methods: `davtest --url http://10.10.10.15`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ed156ba0-61f4-4c6b-b74a-0d1eb796979b)
 
+**Alternatively**, try to use [cadaver](https://hackmd.io/@Mecanico/HyvmSscrc).
+
 
 ## Exploitation & Gaining Access
 
@@ -119,7 +121,7 @@ whoami /all
 We accomplish the prerequisites for **JuicyPotato** but knowing that the version of the server is older that the normal support for the JuicyPotato exploit we are gonna use a different version called churrasco.exe that we can use on **Server 2003** and **Windows XP**. 
 
 + Here's a complete guide of how to use it click **here**: https://binaryregion.wordpress.com/2021/08/04/privilege-escalation-windows-churrasco-exe/
-+ Check the solution [1](https://hackmd.io/@Mecanico/HyvmSscrc)
++ Check the solutions [1](https://hackmd.io/@Mecanico/HyvmSscrc) [2](https://dm7500.github.io/oscp-prep/2020-01-31-HTB-Granny/#privilege-escalation)
 + Check for more details [1](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/45_Granny.md#juicy-potato---rotten-potato) 
 
 Run Windows Exploit Suggester:
@@ -270,4 +272,5 @@ Check the solution [1](https://ethicalhacs.com/granny-hackthebox-walkthrough/)
 + https://en.wikipedia.org/wiki/Return-oriented_programming
 + https://asfiyashaikh.medium.com/windows-privilege-escalation-using-sudo-su-ae5573feccd9
 + https://linux.die.net/man/1/cadaver
++ https://dl.packetstormsecurity.net/papers/presentations/TokenKidnapping.pdf
 
