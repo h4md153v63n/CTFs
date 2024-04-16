@@ -97,7 +97,7 @@ Check the solution [1](https://ethicalhacs.com/granny-hackthebox-walkthrough/)
 
 ## Privilege Escalation
 
-### Method 1: MS09-012 & MS15-051 [1](https://github.com/Re4son/Churrasco) / CVE:N/A [2](https://www.exploit-db.com/exploits/6705) -> token kidnapping
+### Method 1: JuicyPotato & MS09-012 & MS15-051 [1](https://github.com/Re4son/Churrasco) / CVE:N/A [2](https://www.exploit-db.com/exploits/6705) -> token kidnapping
 Run `systeminfo` command:
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6515a046-7ff5-44d9-97c0-9474442fb379)
@@ -107,6 +107,20 @@ systeminfo | findstr /B /C:"Host Name" /C:"OS Name" /C:"OS Version" /C:"System T
 ```
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/20c25173-1276-4990-ad97-70c861e7ff03)
+
+```
+whoami /priv
+
+whoami /all
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/69daf92b-1996-4360-9f47-996fa82ecd7b)
+
+We accomplish the prerequisites for **JuicyPotato** but knowing that the version of the server is older that the normal support for the JuicyPotato exploit we are gonna use a different version called churrasco.exe that we can use on **Server 2003** and **Windows XP**. 
+
++ Here's a complete guide of how to use it click **here**: https://binaryregion.wordpress.com/2021/08/04/privilege-escalation-windows-churrasco-exe/
++ Check the solution [1](https://hackmd.io/@Mecanico/HyvmSscrc)
++ Check for more details [1](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/45_Granny.md#juicy-potato---rotten-potato) 
 
 Run Windows Exploit Suggester:
 
@@ -121,7 +135,7 @@ python2 windows-exploit-suggester.py --database 2024-04-15-mssb.xls --systeminfo
 
 There are many exploits for privilege escalation here, but for now try **MS15-051**: [Microsoft Windows Server 2003 — Token Kidnapping Local Privilege Escalation](https://www.exploit-db.com/exploits/6705).
 
-**Check the links** [**1-MS09-012**](https://bros10.github.io/posts/Granny/) [**2-MS09-012**](https://medium.com/@nmappn/windows-privelege-escalation-via-token-kidnapping-6195edd2660e).
+**Alternatively**, check the links [**1-MS09-012**](https://bros10.github.io/posts/Granny/) [**2-MS09-012**](https://medium.com/@nmappn/windows-privelege-escalation-via-token-kidnapping-6195edd2660e).
 
 Download exploit [1](https://github.com/Re4son/Churrasco), and transfer to the target victim, then prepare netcat listener, and run it:
 
@@ -154,27 +168,19 @@ Get the shell as **nt authority\system**, and read both user.txt flag and root.t
 **Alternatively**, check the [metasploit solution](https://steflan-security.com/hack-the-box-granny-walkthrough/) 
 
 
-### Method 2: Juicy Potato
-Check the solution [1](https://hackmd.io/@Mecanico/HyvmSscrc) 
-
-Check Windows Server 2008 R2 Enterprise [CLSID](https://github.com/ohpe/juicy-potato/tree/master/CLSID/Windows_Server_2008_R2_Enterprise).
-
-Check for more details [1](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/44_Bastard.md#juicy-potato) 
-
-
-### Method 3: MS14-058 -> Metasploit Solution
+### Method 2: MS14-058 -> Metasploit Solution
 Check the solution [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/granny-writeup-w-o-and-w-metasploit#id-317c) [2](https://0xdf.gitlab.io/2019/03/06/htb-granny.html#ms14-058)
 
 Metasploit module [1](https://www.rapid7.com/db/modules/exploit/windows/iis/iis_webdav_scstoragepathfromurl/)
 
 
-### Method 4: MS14-070 -> Metasploit Solution
+### Method 3: MS14-070 -> Metasploit Solution
 Check the solution [1](https://www.freecodecamp.org/news/keep-calm-and-hack-the-box-granny/) 
 
 Metasploit module [1](https://www.rapid7.com/db/modules/exploit/windows/local/ms14_070_tcpip_ioctl/)
 
 
-### Method 5: ms10_015 -> Metasploit Solution
+### Method 4: ms10_015 -> Metasploit Solution
 Check the solution [1](https://ethicalhacs.com/granny-hackthebox-walkthrough/)
 
 
@@ -196,6 +202,7 @@ Check the solution [1](https://ethicalhacs.com/granny-hackthebox-walkthrough/)
   + https://www.exploit-db.com/exploits/6705
   + https://github.com/Re4son/Churrasco
     + https://github.com/Re4son/Churrasco/raw/master/churrasco.exe
+    + https://binaryregion.wordpress.com/2021/08/04/privilege-escalation-windows-churrasco-exe/
   + /usr/share/sqlninja/apps/churrasco.exe
   + https://medium.com/@nmappn/windows-privelege-escalation-via-token-kidnapping-6195edd2660e
 + **CVE-2017-7269:**
