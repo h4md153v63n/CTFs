@@ -47,7 +47,7 @@ Check the allowed HTTP methods: `davtest --url http://10.10.10.15`
 
 ## Exploitation & Gaining Access
 
-### Method 1: [WebDav Vulnerability](https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/put-method-webdav#iis5-6-webdav-vulnerability)
+### Method 1: WebDav Vulnerability [1](https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/put-method-webdav#iis5-6-webdav-vulnerability) [2](https://vk9-sec.com/exploiting-webdav/)
 Generate a reverse shell with msfvenom:
 
 ```
@@ -144,12 +144,21 @@ Get the shell as **nt authority\system**, and read both user.txt flag and root.t
 ### Method 2: MS14-058 -> Metasploit Solution
 Check the solution [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/granny-writeup-w-o-and-w-metasploit#id-317c) [2](https://0xdf.gitlab.io/2019/03/06/htb-granny.html#ms14-058)
 
+Metasploit module [1](https://www.rapid7.com/db/modules/exploit/windows/iis/iis_webdav_scstoragepathfromurl/)
+
+
+### Method 3: MS14-070 -> Metasploit Solution
+Check the solution [1](https://www.freecodecamp.org/news/keep-calm-and-hack-the-box-granny/) 
+
+Metasploit module [1](https://www.rapid7.com/db/modules/exploit/windows/local/ms14_070_tcpip_ioctl/)
+
 
 # References & Alternatives
 + https://vvmlist.github.io/#Granny
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/granny-writeup-w-o-and-w-metasploit
 + https://0xdf.gitlab.io/2019/03/06/htb-granny.html
 + https://nimanthadeshappriya.medium.com/hack-the-box-granny-writeup-without-metasploit-864848ffffff
++ https://medium.com/@toneemarqus/granny-htb-manual-walkthrough-2023-tonee-183fb453e15b
 + 
 
 
@@ -157,10 +166,18 @@ Check the solution [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparat
 + **MS15-051:**
   + https://www.exploit-db.com/exploits/6705
   + https://github.com/Re4son/Churrasco
+    + https://github.com/Re4son/Churrasco/raw/master/churrasco.exe
 + **CVE-2017-7269:**
   + https://www.exploit-db.com/exploits/41738
+    + https://nvd.nist.gov/vuln/detail/CVE-2017-7269
+    + https://www.cvedetails.com/cve/CVE-2017-7269/
+    + https://www.rapid7.com/db/modules/exploit/windows/iis/iis_webdav_scstoragepathfromurl/
   + https://github.com/g0rx/iis6-exploit-2017-CVE-2017-7269
   + https://github.com/c0d3cr4f73r/CVE-2017-7269
++ **MS14-058:**
+  + https://www.rapid7.com/db/modules/exploit/windows/iis/iis_webdav_scstoragepathfromurl/
++ **MS14-070:**
+  + https://www.rapid7.com/db/modules/exploit/windows/local/ms14_070_tcpip_ioctl/
 
 
 ## Tools
@@ -168,8 +185,10 @@ Check the solution [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparat
   + https://www.kali.org/tools/davtest/
   + https://cirt.net/DAVTest
   + https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/put-method-webdav
++ **nmap - Script http-webdav-scan:** https://nmap.org/nsedoc/scripts/http-webdav-scan.html
 + **Windows Exploit Suggester:**
   + https://github.com/AonCyberLabs/Windows-Exploit-Suggester
++ **local exploit suggester:** https://www.rapid7.com/db/modules/post/multi/recon/local_exploit_suggester/
 + .aspx shells:
   + msfvenom 
   + `/usr/share/webshells/aspx/cmdasp.aspx`
@@ -178,6 +197,7 @@ Check the solution [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparat
 ## Technical Knowledge
 + **WebDav Vulnerability:**
   + https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/put-method-webdav
+  + https://vk9-sec.com/exploiting-webdav/
 
 
 ## Problems Solution
@@ -185,6 +205,9 @@ Check the solution [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparat
 
 
 ## For More
++ https://en.wikipedia.org/wiki/WebDAV
++ https://en.wikipedia.org/wiki/Return-oriented_programming
++ https://www.ibm.com/docs/en/cognos-analytics/11.1.0?topic=services-configuring-webdav-iis
 + https://asfiyashaikh.medium.com/windows-privilege-escalation-using-sudo-su-ae5573feccd9
 + https://linux.die.net/man/1/cadaver
 
