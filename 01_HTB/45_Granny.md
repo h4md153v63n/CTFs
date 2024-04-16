@@ -99,7 +99,7 @@ Check the solution [1](https://ethicalhacs.com/granny-hackthebox-walkthrough/)
 
 ## Privilege Escalation
 
-### Method 1: JuicyPotato & MS09-012 & MS15-051 [1](https://github.com/Re4son/Churrasco) / CVE:N/A [2](https://www.exploit-db.com/exploits/6705) -> token kidnapping
+### Method 1: Juicy Potato & MS09-012 & MS15-051 [1](https://github.com/Re4son/Churrasco) / CVE:N/A [2](https://www.exploit-db.com/exploits/6705) -> token kidnapping
 Run `systeminfo` command:
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6515a046-7ff5-44d9-97c0-9474442fb379)
