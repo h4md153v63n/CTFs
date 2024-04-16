@@ -60,6 +60,7 @@ mv shell.aspx shell.txt
 
 **Alternative shells:**
 + `/usr/share/webshells/aspx/cmdasp.aspx`
++ https://github.com/borjmz/aspx-reverse-shell/blob/master/shell.aspx
 
 Upload it using curl with PUT method, and rename it back to the original file type aspx using curl with MOVE option:
 
@@ -85,18 +86,18 @@ We got the shell, and there's no privilege to read user.txt flag.
 
 
 ### Method 2: [CVE-2017-7269](https://www.exploit-db.com/exploits/41738)
-Check the solution [1](https://nimanthadeshappriya.medium.com/hack-the-box-granny-writeup-without-metasploit-864848ffffff)
+Check the solution [1](https://nimanthadeshappriya.medium.com/hack-the-box-granny-writeup-without-metasploit-864848ffffff) [2](https://bros10.github.io/posts/Granny/)
 
 Exploit poc links [1](https://github.com/g0rx/iis6-exploit-2017-CVE-2017-7269) [2](https://github.com/c0d3cr4f73r/CVE-2017-7269)
 
 
 ### Method 3: [CVE-2017-7269](https://www.exploit-db.com/exploits/41992) -> Metasploit Solution
-Check the solution [1](https://ethicalhacs.com/granny-hackthebox-walkthrough/)
+Check the solution [1](https://ethicalhacs.com/granny-hackthebox-walkthrough/) 
 
 
 ## Privilege Escalation
 
-### Method 1: MS15-051 [1](https://github.com/Re4son/Churrasco) / CVE:N/A [2](https://www.exploit-db.com/exploits/6705)
+### Method 1: MS09-012 & MS15-051 [1](https://github.com/Re4son/Churrasco) / CVE:N/A [2](https://www.exploit-db.com/exploits/6705) -> token kidnapping
 Run `systeminfo` command:
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6515a046-7ff5-44d9-97c0-9474442fb379)
@@ -119,6 +120,8 @@ python2 windows-exploit-suggester.py --database 2024-04-15-mssb.xls --systeminfo
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/287d5c3d-4949-47e9-a841-b029af5fe2f0)
 
 There are many exploits for privilege escalation here, but for now try **MS15-051**: [Microsoft Windows Server 2003 — Token Kidnapping Local Privilege Escalation](https://www.exploit-db.com/exploits/6705).
+
+**Check the links** [**1-MS09-012**](https://bros10.github.io/posts/Granny/) [**2-MS09-012**](https://medium.com/@nmappn/windows-privelege-escalation-via-token-kidnapping-6195edd2660e).
 
 Download exploit [1](https://github.com/Re4son/Churrasco), and transfer to the target victim, then prepare netcat listener, and run it:
 
@@ -148,20 +151,30 @@ Get the shell as **nt authority\system**, and read both user.txt flag and root.t
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/86116b29-e1bd-41bd-b658-be751f8e5c84)
 
+**Alternatively**, check the [metasploit solution](https://steflan-security.com/hack-the-box-granny-walkthrough/) 
 
-### Method 2: MS14-058 -> Metasploit Solution
+
+### Method 2: Juicy Potato
+Check the solution [1](https://hackmd.io/@Mecanico/HyvmSscrc) 
+
+Check Windows Server 2008 R2 Enterprise [CLSID](https://github.com/ohpe/juicy-potato/tree/master/CLSID/Windows_Server_2008_R2_Enterprise).
+
+Check for more details [1](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/44_Bastard.md#juicy-potato) 
+
+
+### Method 3: MS14-058 -> Metasploit Solution
 Check the solution [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/granny-writeup-w-o-and-w-metasploit#id-317c) [2](https://0xdf.gitlab.io/2019/03/06/htb-granny.html#ms14-058)
 
 Metasploit module [1](https://www.rapid7.com/db/modules/exploit/windows/iis/iis_webdav_scstoragepathfromurl/)
 
 
-### Method 3: MS14-070 -> Metasploit Solution
+### Method 4: MS14-070 -> Metasploit Solution
 Check the solution [1](https://www.freecodecamp.org/news/keep-calm-and-hack-the-box-granny/) 
 
 Metasploit module [1](https://www.rapid7.com/db/modules/exploit/windows/local/ms14_070_tcpip_ioctl/)
 
 
-### Method 4: ms10_015 -> Metasploit Solution
+### Method 5: ms10_015 -> Metasploit Solution
 Check the solution [1](https://ethicalhacs.com/granny-hackthebox-walkthrough/)
 
 
@@ -173,13 +186,18 @@ Check the solution [1](https://ethicalhacs.com/granny-hackthebox-walkthrough/)
 + https://medium.com/@toneemarqus/granny-htb-manual-walkthrough-2023-tonee-183fb453e15b
 + https://ethicalhacs.com/granny-hackthebox-walkthrough/
 + https://benheater.com/hackthebox-granny/
++ https://steflan-security.com/hack-the-box-granny-walkthrough/)
++ https://bros10.github.io/posts/Granny/
++ https://hackmd.io/@Mecanico/HyvmSscrc
 
 
 ## CVE Scripting
-+ **MS15-051:**
++ **MS15-051 / MS09-012:**
   + https://www.exploit-db.com/exploits/6705
   + https://github.com/Re4son/Churrasco
     + https://github.com/Re4son/Churrasco/raw/master/churrasco.exe
+  + /usr/share/sqlninja/apps/churrasco.exe
+  + https://medium.com/@nmappn/windows-privelege-escalation-via-token-kidnapping-6195edd2660e
 + **CVE-2017-7269:**
   + https://www.exploit-db.com/exploits/41738
   + https://www.exploit-db.com/exploits/41992
@@ -203,9 +221,13 @@ Check the solution [1](https://ethicalhacs.com/granny-hackthebox-walkthrough/)
 + **Windows Exploit Suggester:**
   + https://github.com/AonCyberLabs/Windows-Exploit-Suggester
 + **local exploit suggester:** https://www.rapid7.com/db/modules/post/multi/recon/local_exploit_suggester/
-+ .aspx shells:
++ **.aspx** shells:
   + msfvenom 
   + `/usr/share/webshells/aspx/cmdasp.aspx`
+  + https://github.com/borjmz/aspx-reverse-shell/blob/master/shell.aspx
++ **cadaver:**
+  + https://www.kali.org/tools/cadaver/
+  + https://notroj.github.io/cadaver/
 
 
 ## Technical Knowledge
@@ -216,6 +238,22 @@ Check the solution [1](https://ethicalhacs.com/granny-hackthebox-walkthrough/)
 
 ## Problems Solution
 + 
+
+
+## Juicy Potato - Rotten Potato
++ https://juggernaut-sec.com/seimpersonateprivilege/
++ https://github.com/ivanitlearning/Juicy-Potato-x86
+	+ https://github.com/ivanitlearning/Juicy-Potato-x86/releases
+	+ https://github.com/ohpe/juicy-potato/releases
+	+ https://github.com/ohpe/juicy-potato/
++ **CLSID:**
+	+ https://ohpe.it/juicy-potato/CLSID/
+	+ https://github.com/ohpe/juicy-potato/tree/master/CLSID
++ https://hunter2.gitbook.io/darthsidious/privilege-escalation/juicy-potato
+	+ https://ohpe.it/juicy-potato/
+	+ https://ivanitlearning.wordpress.com/2019/07/20/potato-privilege-escalation-exploits-for-windows/
+	+ https://rizemon.github.io/posts/devel-htb/
+	+ https://yogeshwarram-g.gitbook.io/hackthebox/windows/devil#privilege-escalation
 
 
 ## For More
