@@ -47,7 +47,7 @@ Check the allowed HTTP methods: `davtest --url http://10.10.10.15`
 
 ## Exploitation & Gaining Access
 
-### Method 1: 
+### Method 1: [WebDav Vulnerability](https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/put-method-webdav#iis5-6-webdav-vulnerability)
 Generate a reverse shell with msfvenom:
 
 ```
@@ -82,6 +82,12 @@ curl http://10.10.10.15/shell.aspx
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3a072777-cb2a-4d6d-b136-0577b7f52fb0)
 
 We got the shell, and there's no privilege to read user.txt flag.
+
+
+### Method 2: [CVE-2017-7269](https://www.exploit-db.com/exploits/41738)
+Check the solution [1](https://nimanthadeshappriya.medium.com/hack-the-box-granny-writeup-without-metasploit-864848ffffff)
+
+Exploit poc links [1](https://github.com/g0rx/iis6-exploit-2017-CVE-2017-7269) [2](https://github.com/c0d3cr4f73r/CVE-2017-7269)
 
 
 ## Privilege Escalation
@@ -143,6 +149,7 @@ Check the solution [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparat
 + https://vvmlist.github.io/#Granny
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/granny-writeup-w-o-and-w-metasploit
 + https://0xdf.gitlab.io/2019/03/06/htb-granny.html
++ https://nimanthadeshappriya.medium.com/hack-the-box-granny-writeup-without-metasploit-864848ffffff
 + 
 
 
@@ -150,7 +157,10 @@ Check the solution [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparat
 + **MS15-051:**
   + https://www.exploit-db.com/exploits/6705
   + https://github.com/Re4son/Churrasco
-  + 
++ **CVE-2017-7269:**
+  + https://www.exploit-db.com/exploits/41738
+  + https://github.com/g0rx/iis6-exploit-2017-CVE-2017-7269
+  + https://github.com/c0d3cr4f73r/CVE-2017-7269
 
 
 ## Tools
