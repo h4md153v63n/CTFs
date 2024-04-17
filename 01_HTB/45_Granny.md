@@ -11,6 +11,14 @@
 ![Granny](https://github.com/h4md153v63n/CTFs/assets/5091265/69e37688-dfcb-49cc-810a-ec81fec1581b)
 
 
+# Sections
++ [Reconnaissance](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/45_Granny.md#reconnaissance)
++ [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/45_Granny.md#enumeration)
++ [Exploitation & Gaining Access](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/45_Granny.md#exploitation--gaining-access)
++ [Privilege Escalation](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/45_Granny.md#privilege-escalation)
++ [Links](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/45_Granny.md#links)
+
+
 ## Reconnaissance
 ```
 sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.15 -e tun0 > ports
@@ -189,6 +197,9 @@ Check the solution [1](https://ethicalhacs.com/granny-hackthebox-walkthrough/)
 
 **Alternatively**, check the different solutions [1](https://www.hackingarticles.in/hack-the-box-challenge-granny-walkthrough/)
 
+---
+
+# Links
 
 # References & Alternatives
 + https://vvmlist.github.io/#Granny
