@@ -11,6 +11,13 @@
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/cb79db62-10d4-4597-be41-cbf4600ee2c2)
 
 
+# Sections
++ [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/13_Poison.md#enumeration)
++ [Gaining Access](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/13_Poison.md#gaining-access)
++ [Privilege Escalation](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/13_Poison.md#privilege-escalation)
++ [Links](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/13_Poison.md#links)
+
+
 ## Enumeration
 First thing first, start port scan:
 + `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.84 -e tun0 > ports`
@@ -124,6 +131,9 @@ Port 80: Apache httpd 2.4.29
 + **Alternatively**, crack secret file using the script [1](https://github.com/jeroennijhof/vncpwd)  [2](https://github.com/trinitronx/vncpasswd.py).
 + Then login using the decrypted password: `vncviewer 127.0.0.1:7777`
 
+---
+
+# Links
 
 # References & Alternatives
 + https://vvmlist.github.io/#poison
