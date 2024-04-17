@@ -11,6 +11,15 @@
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9d294738-c3c0-45cf-8ea8-499a863825fa)
 
 
+# Sections
++ [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/15_TartarSauce.md#enumeration)
++ [Gaining Access](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/15_TartarSauce.md#gaining-access)
++ [Privilege Escalation: from 'www-data' to 'onuma'](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/15_TartarSauce.md#privilege-escalation-from-www-data-to-onuma)
++ [Privilege Escalation: from 'onuma' to 'root' (No root shell here!)](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/15_TartarSauce.md#privilege-escalation-from-onuma-to-root-no-root-shell-here)
++ [Getting 'root flag'](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/15_TartarSauce.md#getting-root-flag)
++ [Links](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/15_TartarSauce.md#links)
+
+
 ## Enumeration
 First thing first, start port scan:
 + `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.88 -e tun0 > ports`
@@ -396,6 +405,9 @@ until [[ $(find /var/tmp/ -maxdepth 1 -type f -name '.*') ]] ; do sleep 3 ; done
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/af638d09-99ef-479d-b797-32ef38eb553c)
 
+---
+
+# Links
 
 # References & Alternatives
 + https://vvmlist.github.io/#TartarSauce
