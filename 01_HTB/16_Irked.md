@@ -11,6 +11,14 @@
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/9a69c46b-d01a-4b04-a017-c941d6d634e6)
 
 
+# Sections
++ [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/16_Irked.md#enumeration)
++ [Gaining Access](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/16_Irked.md#gaining-access)
++ [Privilege Escalation: from 'ircd' to 'djmardov'](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/16_Irked.md#privilege-escalation-from-ircd-to-djmardov)
++ [Privilege Escalation: from 'djmardov' to 'root'](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/16_Irked.md#privilege-escalation-from-djmardov-to-root)
++ [Links](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/16_Irked.md#links)
+
+
 ## Enumeration
 First thing first, start port scan:
 + `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.117 -e tun0 > ports`
@@ -195,6 +203,7 @@ steghide extract -sf irked.jpg -p UPupDOWNdownLRlrBAbaSSss
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/52f52285-3812-4d81-bf7b-927e71b9ae4c)
 
 
+# Links
 
 # References & Alternatives
 + https://vvmlist.github.io/#irked
