@@ -202,6 +202,7 @@ steghide extract -sf irked.jpg -p UPupDOWNdownLRlrBAbaSSss
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/52f52285-3812-4d81-bf7b-927e71b9ae4c)
 
+---
 
 # Links
 
