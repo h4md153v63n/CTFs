@@ -11,6 +11,14 @@
 ![Optimum](https://github.com/h4md153v63n/CTFs/assets/5091265/f0fe7004-231f-495f-b3b2-8af6d4e6d81a)
 
 
+# Sections
++ [Reconnaissance](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/43_Optimum.md#reconnaissance)
++ [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/43_Optimum.md#enumeration)
++ [Exploitation & Gaining Access](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/43_Optimum.md#exploitation--gaining-access)
++ [Privilege Escalation](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/43_Optimum.md#privilege-escalation)
++ [Links](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/43_Optimum.md#links)
+
+
 ## Reconnaissance
 ```
 sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.8 -e tun0 > ports
@@ -140,6 +148,9 @@ Get the shell as **nt authority\system**, and read the root flag.
 ## Method 3: CVE-2016-7214 / MS16-135 [1](https://nvd.nist.gov/vuln/detail/CVE-2016-7214) [2](https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS16-135)
 + Review the alternative solutions [1](https://cybertoucan.gitbook.io/htb/windows/optimum#privilege-escalation-1)
 
+---
+
+# Links
 
 # References & Alternatives
 + https://vvmlist.github.io/#Optimum
