@@ -11,6 +11,14 @@
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1092590f-7061-4a76-88f9-23af8f61494c)
 
 
+## Sections
++ [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/01_Lame.md#enumeration)
++ [Findings](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/01_Lame.md#findings)
++ [Exploits](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/01_Lame.md#exploits)
++ [Privilege Escalation](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/01_Lame.md#privilege-escalation)
++ [Links](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/01_Lame.md#links)
+
+
 ## Enumeration
 + `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.3 -e tun0 > ports`
 ```
