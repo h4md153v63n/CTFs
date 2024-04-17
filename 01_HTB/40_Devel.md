@@ -11,6 +11,14 @@
 ![devel](https://github.com/h4md153v63n/CTFs/assets/5091265/9ab7e4a6-088a-4d20-88e1-5bc25641cfa1)
 
 
+# Sections
++ [Reconnaissance](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/40_Devel.md#reconnaissance)
++ [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/40_Devel.md#enumeration)
++ [Exploitation & Gaining Access](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/40_Devel.md#exploitation--gaining-access)
++ [Privilege Escalation](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/40_Devel.md#privilege-escalation)
++ [Links](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/40_Devel.md#links)
+
+
 ## Reconnaissance
 ```
 sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.5 -e tun0 > ports
@@ -167,6 +175,9 @@ Get the shell as **nt authority\system**.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/5a1a8fc1-d563-4fab-8c71-42e8a5e0d8eb)
 
+---
+
+# Links
 
 # References & Alternatives
 + https://vvmlist.github.io/#devel
