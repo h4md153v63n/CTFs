@@ -11,6 +11,14 @@
 ![Bastard](https://github.com/h4md153v63n/CTFs/assets/5091265/84d54684-632c-4ac5-ac8e-146a4b2d7267)
 
 
+# Sections
++ [Reconnaissance](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/44_Bastard.md#reconnaissance)
++ [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/44_Bastard.md#enumeration)
++ [Exploitation & Gaining Access](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/44_Bastard.md#exploitation--gaining-access)
++ [Privilege Escalation](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/44_Bastard.md#privilege-escalation)
++ [Links](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/44_Bastard.md#links)
+
+
 ## Reconnaissance
 ```
 sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.9 -e tun0 > ports
@@ -194,6 +202,9 @@ Check the solution [1](https://0xdf.gitlab.io/2019/03/12/htb-bastard.html#ms15-0
 
 **Alternatively**, check the different solutions [1](https://rizemon.github.io/posts/bastard-htb/) [2](https://www.puckiestyle.nl/htb-bastard/)
 
+---
+
+# Links
 
 # References & Alternatives
 + https://vvmlist.github.io/#Bastard
