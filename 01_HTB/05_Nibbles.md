@@ -11,6 +11,13 @@
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/691e8039-49fa-4cf0-a6fd-0c54dbb34c30)
 
 
+## Sections
++ [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/05_Nibbles.md#enumeration)
++ [Gaining Access](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/05_Nibbles.md#gaining-access)
++ [Privilege Escalation](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/05_Nibbles.md#privilege-escalation)
++ [Links](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/05_Nibbles.md#links)
+
+
 ## Enumeration
 + `./nmapAutomator.sh -H 10.10.10.75 -t All`
 ```
@@ -269,6 +276,8 @@ bash
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/905a5a63-bb34-4ce0-805e-bd44d6d8ccfc)
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2b882521-2b36-4314-9a10-ca2394f638ac)
 
+
+# Links
 
 # References & Alternatives
 + https://vvmlist.github.io/#nibbles
