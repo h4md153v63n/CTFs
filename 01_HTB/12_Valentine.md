@@ -11,6 +11,13 @@
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/ef2b4554-d23c-4c58-9bb2-30e7df7a9824)
 
 
+# Sections
++ [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/12_Valentine.md#enumeration)
++ [Gainin Access](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/12_Valentine.md#gainin-access)
++ [Privilege Escalation](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/12_Valentine.md#privilege-escalation)
++ [Links](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/12_Valentine.md#links)
+
+
 ## Enumeration
 First thing first, start port scan:
 + `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.79 -e tun0 > ports`
@@ -179,6 +186,8 @@ gcc -pthread 40839.c -o exploit -lcrypt
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1a64fd13-4e8a-4a5c-9e60-070aca2760ec)
 
+
+# Links
 
 # References & Alternatives
 + https://vvmlist.github.io/#valentine
