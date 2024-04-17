@@ -11,6 +11,14 @@
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3df7d6e7-fb25-44e6-b806-8f9a4a8e627f)
 
 
+# Sections
++ [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/11_Node.md#enumeration)
++ [Gainin Access](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/11_Node.md#gainin-access)
++ [Privilege Escalation: from 'mark' to 'tom'](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/11_Node.md#privilege-escalation-from-mark-to-tom)
++ [Privilege Escalation: from 'tom' to 'root'](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/11_Node.md#privilege-escalation-from-tom-to-root)
++ [Links](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/11_Node.md#links)
+
+
 ## Enumeration
 First thing first, start port scan:
 + `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.58 -e tun0 > ports`
@@ -312,6 +320,9 @@ cat root.txt
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/58658eaa-f0bc-43f9-94c6-7da273786cfa)
 
+---
+
+# Links
 
 # References & Alternatives
 + https://0xdf.gitlab.io/2021/06/08/htb-node.html
