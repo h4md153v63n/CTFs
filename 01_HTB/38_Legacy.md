@@ -15,7 +15,7 @@
 + [Reconnaissance](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/38_Legacy.md#reconnaissance)
 + [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/38_Legacy.md#enumeration)
 + [Exploitation & Gaining Access & Privilege Escalation](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/38_Legacy.md#exploitation--gaining-access--privilege-escalation)
-+ [Links])(https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/38_Legacy.md#links)
++ [Links](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/38_Legacy.md#links)
 
 
 ## Reconnaissance
