@@ -11,6 +11,15 @@
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0532c5d5-597a-4322-96b4-4e25cfeb8e29)
 
 
+# Sections
++ [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/02_Brainfuck.md#enumeration)
++ [Findings](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/02_Brainfuck.md#findings)
++ [Exploits](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/02_Brainfuck.md#exploits)
++ [Gaining Access](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/02_Brainfuck.md#gaining-access)
++ [Privilege Escalation](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/02_Brainfuck.md#privilege-escalation)
++ [Links](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/02_Brainfuck.md#links)
+
+
 ## Enumeration
 + `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.17 -e tun0 > ports`
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2131bd03-d3bc-47ad-b0e0-5386ecbaaed1)
@@ -562,6 +571,9 @@ Then run these commands:
 + `cd /mnt/root/root`
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/51b549db-190c-4407-8854-02e2527e7cca)
 
+---
+
+# Links
 
 # References & Alternatives
 + https://0xdf.gitlab.io/2022/05/16/htb-brainfuck.html
