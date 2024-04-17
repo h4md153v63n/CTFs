@@ -11,6 +11,17 @@
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1327406c-3351-477c-965e-4691e330732c)
 
 
+# Sections
++ [Reconnaissance](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/17_FriendZone.md#reconnaissance)
++ [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/17_FriendZone.md#enumeration)
++ [Gaining Access](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/17_FriendZone.md#gaining-access)
++ [Privilege Escalation: from 'www-data' to 'friend'](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/17_FriendZone.md#privilege-escalation-from-www-data-to-friend)
++ [Privilege Escalation: from 'friend' to 'root'](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/17_FriendZone.md#privilege-escalation-from-friend-to-root)
++ [Create A Bogus Python Library: An Alternative to Root Privilege Escalation](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/17_FriendZone.md#create-a-bogus-python-library-an-alternative-to-root-privilege-escalation)
++ Root Privilege Escalation: Alternatives [1](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/17_FriendZone.md#root-privilege-escalation-alternative-1) [2](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/17_FriendZone.md#root-privilege-escalation-alternative-2)
++ [Links](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/17_FriendZone.md#links)
+
+
 ## Reconnaissance
 First thing first, start with port scan to see which ports are open and which services are running on those ports.
 + `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.123 -e tun0 > ports`
@@ -535,7 +546,9 @@ echo "system ('cp /bin/bash /tmp/rootbash; chmod +s /tmp/rootbash')" >> /usr/lib
 + Check [CVE-2021-3156](https://www.exploit-db.com/exploits/49522) for Sudo Baron Samedit vulnerability, and try to exploit using https://github.com/blasty/CVE-2021-3156.
 + For more, check https://hackmd.io/@Mecanico/Syu8fKUAc#⏫Root-Privesc.
 
+---
 
+# Links
 
 # References & Alternatives
 + https://vvmlist.github.io/#FriendZone
@@ -554,7 +567,6 @@ echo "system ('cp /bin/bash /tmp/rootbash; chmod +s /tmp/rootbash')" >> /usr/lib
 + https://hipotermia.pw/htb/friendzone
 + https://blog.mzfr.me/HackTheBox-writeups/Friendzone/
 + https://snowscan.io/htb-writeup-friendzone/#
-
 
 
 # Technical Knowledge
