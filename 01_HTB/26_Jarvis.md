@@ -11,6 +11,20 @@
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8485a935-eadc-44ab-9690-21943f68101b)
 
 
+# Sections
++ [Reconnaissance](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#reconnaissance)
++ [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#enumeration)
++ [Exploitation: Method 1](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#exploitation-method-1)
++ [Exploitation: Method 2 - sqlmap](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#exploitation-method-2---sqlmap)
++ [Gaining Access: Method 1 - LFI](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#gaining-access-method-1---lfi)
++ [Gaining Access: Method 2 - SQLi (manual)](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#gaining-access-method-2---sqli-manual)
++ [Gaining Access: Method 3 - sqlmap (--file-write & --file-dest) (no write permission)](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#gaining-access-method-3---sqlmap---file-write----file-dest-no-write-permission)
++ [Gaining Access: Method 4 - sqlmap (--os-shell)](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#gaining-access-method-4---sqlmap---os-shell)
++ [Privilege Escalation: from 'www-data' to 'pepper'](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#privilege-escalation-from-www-data-to-pepper)
++ [Privilege Escalation: from 'pepper' to 'root'](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#privilege-escalation-from-pepper-to-root)
++ [Links](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/26_Jarvis.md#links)
+
+
 ## Reconnaissance
 First thing first, start with port scan to see which ports are open and which services are running on those ports.
 + `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.143 -e tun0 > ports`
@@ -525,6 +539,9 @@ WantedBy=multi-user.target
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1e77d5f4-ba24-4fa3-a075-d274510fdb03)
 
+---
+
+# Links
 
 # References & Alternatives
 + https://vvmlist.github.io/#jarvis
