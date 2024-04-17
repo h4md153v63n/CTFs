@@ -11,6 +11,13 @@
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/197dcde6-c564-41a2-83c6-17d2fc0e5895)
 
 
+# Sections
++ [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/07_Cronos.md#enumeration)
++ [Gainin Access](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/07_Cronos.md#gainin-access)
++ [Privilege Escalation](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/07_Cronos.md#privilege-escalation)
++ [Links](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/07_Cronos.md#links)
+
+
 ## Enumeration
 + `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.13 -e tun0 > ports`
 + `ports=$(cat ports | awk -F " " '{print $4}' | awk -F "/" '{print $1}' | sort -n | tr '\n' ',' | sed 's/,$//')`
@@ -113,6 +120,9 @@ gobuster dns -d cronos.htb -w /usr/share/wordlists/seclists/Discovery/DNS/nameli
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/bca0fd82-2a1b-4293-bbe0-8f697cba3cdd)
 
+---
+
+# Links
 
 # References & Alternatives
 + https://vvmlist.github.io/#cronos
