@@ -11,7 +11,7 @@
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/691e8039-49fa-4cf0-a6fd-0c54dbb34c30)
 
 
-## Sections
+# Sections
 + [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/05_Nibbles.md#enumeration)
 + [Gaining Access](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/05_Nibbles.md#gaining-access)
 + [Privilege Escalation](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/05_Nibbles.md#privilege-escalation)
