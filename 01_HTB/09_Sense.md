@@ -11,6 +11,12 @@
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/e379c135-5e25-4ae9-abb1-13ee23189ff6)
 
 
+# Sections
++ [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/09_Sense.md#enumeration)
++ [Privilege Escalation](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/09_Sense.md#privilege-escalation)
++ [Links](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/09_Sense.md#links)
+
+
 ## Enumeration
 + `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.60 -e tun0 > ports`
 + `ports=$(cat ports | awk -F " " '{print $4}' | awk -F "/" '{print $1}' | sort -n | tr '\n' ',' | sed 's/,$//')`
@@ -83,6 +89,8 @@ password: company defaults
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/35e0d755-020d-4e1f-92e6-e8405893a3c0)
 
+
+# Links
 
 # References & Alternatives
 + https://vvmlist.github.io/#sense
