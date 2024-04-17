@@ -11,6 +11,12 @@
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/a8b31b09-f318-49b3-a8b6-0faa07b52c0d)
 
 
+# Sections
++ [Reconnaissance](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/39_Blue.md#reconnaissance)
++ [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/39_Blue.md#enumeration)
++ [Exploitation & Gaining Access & Privilege Escalation](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/39_Blue.md#exploitation--gaining-access--privilege-escalation)
++ [Links](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/39_Blue.md#links)
+
 
 ## Reconnaissance
 ```
@@ -98,6 +104,9 @@ whoami
 ### Method 3: [CVE-2017-0143](https://0xdf.gitlab.io/2021/05/11/htb-blue.html#python-script) Manual Solution is the same as on [Legacy Machine's Method 2](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/38_Legacy.md#method-2-cve-2017-0143-ms17-010--eternal-blue--shadow-brokers--wannacry--notpetya-1-2-3)
 + Try **CVE-2017-0143** [1](https://0xdf.gitlab.io/2021/05/11/htb-blue.html#python-script) [2](https://systemweakness.com/hacktheboxs-blue-writeup-8f1d51c70c46) [3](https://systemweakness.com/hackthebox-writeup-blue-1e07a98ae505#4f92)
 
+---
+
+# Links
 
 # References & Alternatives
 + https://vvmlist.github.io/#blue
