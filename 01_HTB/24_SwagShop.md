@@ -11,6 +11,15 @@
 
 ![SwagShop](https://github.com/h4md153v63n/CTFs/assets/5091265/73292ad2-0089-44f9-8d3c-a09b29f7a81d)
 
+
+# Sections
++ [Reconnaissance](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/24_SwagShop.md#reconnaissance)
++ [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/24_SwagShop.md#enumeration)
++ [Gaining Access](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/24_SwagShop.md#gaining-access)
++ [Privilege Escalation](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/24_SwagShop.md#privilege-escalation)
++ [Links](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/24_SwagShop.md#links)
+
+
 ## Reconnaissance
 First thing first, start with port scan to see which ports are open and which services are running on those ports.
 + `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.140 -e tun0 > ports`
@@ -200,7 +209,9 @@ sudo /usr/bin/vi /var/www/html/test -c ':!/bin/bash' /dev/null
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/d5564321-38c6-4cd2-85ca-143258068944)
 
+---
 
+# Links
 
 # References & Alternatives
 + https://vvmlist.github.io/#swagshop
