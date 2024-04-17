@@ -11,6 +11,16 @@ This machine was challenging (and is also rated Harder than oscp as per Tj null'
 
 ![networked](https://github.com/h4md153v63n/CTFs/assets/5091265/92cd2294-7d07-497d-8f0d-7ed00d4d5c9f)
 
+
+# Sections
++ [Reconnaissance](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/25_Networked.md#reconnaissance)
++ [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/25_Networked.md#enumeration)
++ [Gaining Access](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/25_Networked.md#gaining-access)
++ [Privilege Escalation: from 'www-data' to 'guly'](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/25_Networked.md#privilege-escalation-from-www-data-to-guly)
++ [Privilege Escalation: from 'guly' to 'root'](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/25_Networked.md#privilege-escalation-from-guly-to-root)
++ [Links](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/25_Networked.md#links)
+
+
 ## Reconnaissance
 First thing first, start with port scan to see which ports are open and which services are running on those ports.
 + `sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.146 -e tun0 > ports`
@@ -224,7 +234,9 @@ BOOTPROTO=a whoami
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6a916b23-60f3-418b-bf65-88df19b141ff)
 
+---
 
+# Links
 
 # References & Alternatives
 + https://vvmlist.github.io/#Networked
