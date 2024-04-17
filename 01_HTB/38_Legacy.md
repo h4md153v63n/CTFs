@@ -11,6 +11,13 @@
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/0a9f2486-def8-4367-a7c3-52d48f4ae128)
 
 
+# Sections
++ [Reconnaissance](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/38_Legacy.md#reconnaissance)
++ [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/38_Legacy.md#enumeration)
++ [Exploitation & Gaining Access & Privilege Escalation](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/38_Legacy.md#exploitation--gaining-access--privilege-escalation)
++ [Links])(https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/38_Legacy.md#links)
+
+
 ## Reconnaissance
 ```
 sudo masscan -p1-65535,U:1-65535 --rate=1000 10.10.10.4 -e tun0 > ports
@@ -111,6 +118,9 @@ smbserver.py win /usr/share/windows-binaries/
 + Try with **CVE-2017-0144** manual solution [1](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/39_Blue.md#method-1-cve-2017-0144---manual-solution) [https://vostdev.wordpress.com/2021/01/17/htb-legacy-walk-through/](2)
 + **Alternatively**, try **metasploit solution** like [Blue Machine's Method 2](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/39_Blue.md#method-2-cve-2017-0144---metasploit-solution)
 
+---
+
+# Links
 
 # References & Alternatives
 + https://vvmlist.github.io/#legacy
