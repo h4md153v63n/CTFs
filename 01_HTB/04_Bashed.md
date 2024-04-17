@@ -11,7 +11,7 @@
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/6cf650ac-4c3d-4149-9393-626c443b2480)
 
 
-## Sections
+# Sections
 + [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/04_Bashed.md#enumeration)
 + [Gaining Access](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/04_Bashed.md#gaining-access)
 + [Privilege Escalation](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/04_Bashed.md#privilege-escalation)
