@@ -186,6 +186,7 @@ gcc -pthread 40839.c -o exploit -lcrypt
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1a64fd13-4e8a-4a5c-9e60-070aca2760ec)
 
+---
 
 # Links
 
