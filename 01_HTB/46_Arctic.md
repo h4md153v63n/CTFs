@@ -52,6 +52,7 @@ sudo nmap -Pn -n -sV -sC -O -p$ports 10.10.10.11 --open
 # References & Alternatives
 + https://vvmlist.github.io/#Arctic
 + https://0xdf.gitlab.io/2020/05/19/htb-arctic.html
++ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/arctic-writeup-w-o-metasploit
 + 
 
 
