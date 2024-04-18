@@ -51,7 +51,8 @@ sudo nmap -Pn -n -sV -sC -O -p$ports 10.10.10.11 --open
 
 # References & Alternatives
 + https://vvmlist.github.io/#Arctic
-+ x
++ https://0xdf.gitlab.io/2020/05/19/htb-arctic.html
++ 
 
 
 ## CVE Scripting
