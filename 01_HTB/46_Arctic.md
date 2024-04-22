@@ -61,7 +61,7 @@ sudo nmap -Pn -n -sV -sC -O -p$ports 10.10.10.11 --open
 
 
 ## Tools
-+ x 
++ x
 
 
 ## Technical Knowledge
