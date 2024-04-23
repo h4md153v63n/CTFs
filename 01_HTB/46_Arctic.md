@@ -26,6 +26,10 @@ ports=$(cat ports | awk -F " " '{print $4}' | awk -F "/" '{print $1}' | sort -n 
 sudo nmap -Pn -n -sV -sC -O -p$ports 10.10.10.11 --open
 ```
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2a63e599-4daa-4749-9bce-3fdd108a0fb8)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1fb88333-4181-436f-afa1-c5b07366bca2)
+
 
 
 
