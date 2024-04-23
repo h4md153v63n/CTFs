@@ -31,10 +31,16 @@ sudo nmap -Pn -n -sV -sC -O -p$ports 10.10.10.11 --open
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/1fb88333-4181-436f-afa1-c5b07366bca2)
 
 
-
-
 ## Enumeration
+Visit **http://10.10.10.11:8500/**
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/2d1d0c15-3bc9-4a1e-b45f-2bbfc5ab816f)
+
+Check consecutively **http://10.10.10.11:8500/CFIDE/** -> **http://10.10.10.11:8500/CFIDE/administrator/**
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/3ffa0ee5-63da-4a34-802b-d94c1505c0b2)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/dc394261-f2e2-4ff1-8097-2bff1c424d5e)
 
 
 ## Exploitation & Gaining Access
