@@ -148,7 +148,7 @@ Get the shell as **nt authority\system**, and read root.txt flag:
 
 
 ## Technical Knowledge
-+ x 
++ x  
 
 
 ## Problems Solution
