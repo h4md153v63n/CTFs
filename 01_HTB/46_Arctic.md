@@ -87,7 +87,7 @@ Check the solution on [1](https://0xdf.gitlab.io/2020/05/19/htb-arctic.html#path
 
 ## Privilege Escalation
 
-### Method 1: MS10-059
+### Method 1: MS10-059 / Kernel Exploit
 Run `systeminfo` command:
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/eff27157-eea5-4e03-9f32-e6c80e696f91)
@@ -158,7 +158,7 @@ Get the shell as **nt authority\system**, and read root.txt flag:
   + https://www.exploit-db.com/exploits/14641
   + https://www.rapid7.com/db/modules/auxiliary/scanner/http/coldfusion_locale_traversal/
   + https://www.gnucitizen.org/blog/coldfusion-directory-traversal-faq-cve-2010-2861/
-+ **MS10-059:**
++ **MS10-059 / Kernel Exploit:**
   + https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS10-059
     + https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS10-059/MS10-059.exe
   + https://github.com/egre55/windows-kernel-exploits/tree/master/MS10-059:%20Chimichurri/Compiled
@@ -167,12 +167,27 @@ Get the shell as **nt authority\system**, and read root.txt flag:
 ## Tools
 + **Windows Exploit Suggester:**
   + https://github.com/AonCyberLabs/Windows-Exploit-Suggester
++ **Windows Exploit Suggester 2:**
+  + https://github.com/7Ragnarok7/Windows-Exploit-Suggester-2
++ **WES-NG:**
+  + https://github.com/bitsadmin/wesng
 + **crackstation.net:** https://crackstation.net
 + **CFM webshell:** https://github.com/reider-roque/pentest-tools/blob/master/shells/webshell.cfm
++ **PowerUp:**
+  + https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1 
++ **accesschk64.exe:**
+  + https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite
 
 
 ## Technical Knowledge
 + https://www.speedguide.net/port.php?port=8500
++ https://github.com/SecWiki/windows-kernel-exploits
+  + https://juggernaut-sec.com/kernel-exploits-part-1/
+  + https://juggernaut-sec.com/kernel-exploits-part-2/
++ https://juggernaut-sec.com/hackthebox-arctic/#Local_Enumeration_Using_Manual_Techniques_and_PowerUpps1
+  + https://juggernaut-sec.com/weak-service-file-permissions/
+  + https://juggernaut-sec.com/weak-service-permissions-windows-privilege-escalation/
+  + https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite
 
 
 ## Problems Solution
