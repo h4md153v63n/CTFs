@@ -130,7 +130,7 @@ Get the shell as **nt authority\system**, and read root.txt flag:
 
 
 ### Method 2: Juicy Potato
-+ Check the solution on **Juicy Potato** [1](https://juggernaut-sec.com/hackthebox-arctic/#Elevating_Privileges_to_SYSTEM_–_Method_1_Juicy_Potato)
++ Check the solution on **Juicy Potato** [1](https://juggernaut-sec.com/hackthebox-arctic/#Elevating_Privileges_to_SYSTEM_–_Method_1_Juicy_Potato) [2](https://www.linkedin.com/pulse/htb-arctic-10101011-caleb-cline-ftlxc)
 + Check for [more details](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/46_Arctic.md#juicy-potato---rotten-potato) 
 
 
@@ -144,6 +144,7 @@ Get the shell as **nt authority\system**, and read root.txt flag:
   + https://0xdf.gitlab.io/2020/05/19/htb-arctic.html
   + https://cyberkareem.medium.com/hackthebox-arctic-walkthrough-13e1920d0cca
 + https://juggernaut-sec.com/hackthebox-arctic/
+  + https://www.linkedin.com/pulse/htb-arctic-10101011-caleb-cline-ftlxc
 
 
 ## CVE Scripting
@@ -195,6 +196,7 @@ Get the shell as **nt authority\system**, and read root.txt flag:
 
 
 ## Juicy Potato - Rotten Potato
++ https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/privilege-escalation-abusing-tokens
 + https://juggernaut-sec.com/seimpersonateprivilege/
 + https://github.com/ivanitlearning/Juicy-Potato-x86
 	+ https://github.com/ivanitlearning/Juicy-Potato-x86/releases
