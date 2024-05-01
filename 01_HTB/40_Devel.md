@@ -231,8 +231,6 @@ Get the shell as **nt authority\system**.
 	+ https://github.com/ohpe/juicy-potato/
 + **CLSID:**
 	+ https://ohpe.it/juicy-potato/CLSID/
-
-
 	+ https://github.com/ohpe/juicy-potato/tree/master/CLSID
 + https://hunter2.gitbook.io/darthsidious/privilege-escalation/juicy-potato
 	+ https://ohpe.it/juicy-potato/
