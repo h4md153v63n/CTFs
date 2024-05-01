@@ -144,7 +144,7 @@ Get the shell as **nt authority\system**, and read root.txt flag:
 
 
 ## Tools
-+ x  
++ x 
 
 
 ## Technical Knowledge
