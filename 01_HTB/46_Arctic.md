@@ -45,7 +45,7 @@ Check consecutively **http://10.10.10.11:8500/CFIDE/** -> **http://10.10.10.11:8
 
 ## Exploitation & Gaining Access
 
-### Method 1: [CVE-2009-2265](https://github.com/c0d3cr4f73r/CVE-2009-2265/blob/main/upload.py) - Without Metasploit
+### Method 1: [CVE-2009-2265](https://github.com/c0d3cr4f73r/CVE-2009-2265/blob/main/upload.py) - Arbitrary File Upload
 `searchsploit ColdFusion 8.0`
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/8ebb9589-7dde-449e-b246-753a5516da14)
@@ -76,13 +76,13 @@ Get the revershell, and read the user.txt flag.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c7c29511-3e4a-44e2-a455-cbb6fde1a4a6)
 
-**Alternatively**, check on [Exploit Analysis](https://0xdf.gitlab.io/2020/05/19/htb-arctic.html#path-1-unauthenticated-rce).
+**Alternatively**, check on Exploit Analysis **[1]**(https://0xdf.gitlab.io/2020/05/19/htb-arctic.html#path-1-unauthenticated-rce) **[2]**(https://juggernaut-sec.com/hackthebox-arctic/#Exploiting_CVE-2009-2265_%E2%80%93_Arbitrary_File_Upload)
 
 
 ### Method 2: [CVE-2010-2861](https://www.exploit-db.com/exploits/14641) - Directory Traversal / Password Hash Leak / Upload JSP
 Check the solution on [1](https://0xdf.gitlab.io/2020/05/19/htb-arctic.html#path-2-leak-hash-upload-jsp) [2](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/arctic-writeup-w-o-metasploit#id-33df)
 
-**Alternatively**, **firstly**, check on [crackstation.net](https://0xdf.gitlab.io/2020/05/19/htb-arctic.html#path-2-leak-hash-upload-jsp) to view cracked leaked password hash.
+**Alternatively**, **firstly**, check on crackstation.net [1](https://0xdf.gitlab.io/2020/05/19/htb-arctic.html#path-2-leak-hash-upload-jsp) [2](https://juggernaut-sec.com/hackthebox-arctic/#Exploiting_CVE-2009-2265_–_Arbitrary_File_Upload) to view cracked leaked password hash.
 
 
 ## Privilege Escalation
@@ -139,26 +139,32 @@ Get the shell as **nt authority\system**, and read root.txt flag:
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/arctic-writeup-w-o-metasploit
   + https://0xdf.gitlab.io/2020/05/19/htb-arctic.html
   + https://cyberkareem.medium.com/hackthebox-arctic-walkthrough-13e1920d0cca
-+ 
++ https://juggernaut-sec.com/hackthebox-arctic/
 
 
 ## CVE Scripting
-+ **CVE-2009-2265:**
++ **CVE-2009-2265 / Arbitrary File Upload:**
   + https://github.com/c0d3cr4f73r/CVE-2009-2265
     + https://github.com/c0d3cr4f73r/CVE-2009-2265/blob/main/upload.py
     + https://raw.githubusercontent.com/nipunsomani/Adobe-ColdFusion-8-File-Upload-Exploit/main/exploit.py
+  + https://www.exploit-db.com/exploits/16788
+  + https://www.rapid7.com/db/modules/exploit/windows/http/coldfusion_fckeditor/
+    + https://www.exploit-db.com/exploits/50057
++ **CVE-2010-2861 / Directory Traversal Vulnerability:**
+  + https://www.exploit-db.com/exploits/14641
+  + https://www.rapid7.com/db/modules/auxiliary/scanner/http/coldfusion_locale_traversal/
+  + https://www.gnucitizen.org/blog/coldfusion-directory-traversal-faq-cve-2010-2861/
 + **MS10-059:**
   + https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS10-059
     + https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS10-059/MS10-059.exe
   + https://github.com/egre55/windows-kernel-exploits/tree/master/MS10-059:%20Chimichurri/Compiled
-+ **CVE-2010-2861 / Directory Traversal Vulnerability:**
-  + https://www.exploit-db.com/exploits/14641
 
 
 ## Tools
 + **Windows Exploit Suggester:**
   + https://github.com/AonCyberLabs/Windows-Exploit-Suggester
 + **crackstation.net:** https://crackstation.net
++ **CFM webshell:** https://github.com/reider-roque/pentest-tools/blob/master/shells/webshell.cfm
 
 
 ## Technical Knowledge
