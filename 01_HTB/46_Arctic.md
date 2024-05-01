@@ -76,7 +76,7 @@ Get the revershell, and read the user.txt flag.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c7c29511-3e4a-44e2-a455-cbb6fde1a4a6)
 
-**Alternatively**, check on Exploit Analysis **[1]**(https://0xdf.gitlab.io/2020/05/19/htb-arctic.html#path-1-unauthenticated-rce) **[2]**(https://juggernaut-sec.com/hackthebox-arctic/#Exploiting_CVE-2009-2265_%E2%80%93_Arbitrary_File_Upload)
+**Alternatively**, check on Exploit Analysis **[1]**(https://0xdf.gitlab.io/2020/05/19/htb-arctic.html#path-1-unauthenticated-rce) **[2]**(https://juggernaut-sec.com/hackthebox-arctic/#Exploiting_CVE-2009-2265_%E2%80%93_Arbitrary_File_Upload) [3](https://benheater.com/hackthebox-arctic/#exploit)
 
 
 ### Method 2: [CVE-2010-2861](https://www.exploit-db.com/exploits/14641) - Directory Traversal / Password Hash Leak / Upload JSP
@@ -145,6 +145,8 @@ Get the shell as **nt authority\system**, and read root.txt flag:
   + https://cyberkareem.medium.com/hackthebox-arctic-walkthrough-13e1920d0cca
 + https://juggernaut-sec.com/hackthebox-arctic/
   + https://www.linkedin.com/pulse/htb-arctic-10101011-caleb-cline-ftlxc
++ https://benheater.com/hackthebox-arctic/
++ https://ivanitlearning.wordpress.com/2020/08/03/hackthebox-arctic/
 
 
 ## CVE Scripting
@@ -155,6 +157,7 @@ Get the shell as **nt authority\system**, and read root.txt flag:
   + https://www.exploit-db.com/exploits/16788
   + https://www.rapid7.com/db/modules/exploit/windows/http/coldfusion_fckeditor/
     + https://www.exploit-db.com/exploits/50057
+  + https://codewatch.org/2013/12/07/manually-penetrating-the-fckedit-vulnerability-cve-2009-2265/
 + **CVE-2010-2861 / Directory Traversal Vulnerability:**
   + https://www.exploit-db.com/exploits/14641
   + https://www.rapid7.com/db/modules/auxiliary/scanner/http/coldfusion_locale_traversal/
@@ -213,6 +216,9 @@ Get the shell as **nt authority\system**, and read root.txt flag:
 
 
 ## For More
++ https://en.wikipedia.org/wiki/Adobe_ColdFusion#Adobe_ColdFusion_8
 + https://nets.ec/Coldfusion_hacking#Logging_In
 + https://nets.ec/Coldfusion_hacking#Writing_Shell_to_File
++ https://www.carnal0wnage.com/papers/LARES-ColdFusion.pdf
++ https://vimeo.com/51406410
 
