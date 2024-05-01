@@ -144,7 +144,7 @@ Get the shell as **nt authority\system**, and read root.txt flag:
 
 ## CVE Scripting
 + **CVE-2009-2265:**
-  + https://github.com/c0d3cr4f73r/CVE-2009-2265/tree/main
+  + https://github.com/c0d3cr4f73r/CVE-2009-2265
     + https://github.com/c0d3cr4f73r/CVE-2009-2265/blob/main/upload.py
     + https://raw.githubusercontent.com/nipunsomani/Adobe-ColdFusion-8-File-Upload-Exploit/main/exploit.py
 + **MS10-059:**
@@ -153,7 +153,6 @@ Get the shell as **nt authority\system**, and read root.txt flag:
   + https://github.com/egre55/windows-kernel-exploits/tree/master/MS10-059:%20Chimichurri/Compiled
 + **CVE-2010-2861 / Directory Traversal Vulnerability:**
   + https://www.exploit-db.com/exploits/14641
-
 
 
 ## Tools
