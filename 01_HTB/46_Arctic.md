@@ -87,7 +87,7 @@ Check the solution on [1](https://0xdf.gitlab.io/2020/05/19/htb-arctic.html#path
 
 ## Privilege Escalation
 
-### Method 1: 
+### Method 1: MS10-059
 Run `systeminfo` command:
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/eff27157-eea5-4e03-9f32-e6c80e696f91)
@@ -128,6 +128,10 @@ Get the shell as **nt authority\system**, and read root.txt flag:
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/03b09a37-ec6e-4c65-8fdf-f1a0fc7ae8d8)
 
+
+### Method 2: Juicy Potato
++ Check the solution on **Juicy Potato** [1](https://juggernaut-sec.com/hackthebox-arctic/#Elevating_Privileges_to_SYSTEM_–_Method_1_Juicy_Potato)
++ Check for more details 
 
 
 ---
@@ -173,6 +177,22 @@ Get the shell as **nt authority\system**, and read root.txt flag:
 
 ## Problems Solution
 + -
+
+
+## Juicy Potato - Rotten Potato
++ https://juggernaut-sec.com/seimpersonateprivilege/
++ https://github.com/ivanitlearning/Juicy-Potato-x86
+	+ https://github.com/ivanitlearning/Juicy-Potato-x86/releases
+	+ https://github.com/ohpe/juicy-potato/releases
+	+ https://github.com/ohpe/juicy-potato/
++ **CLSID:**
+	+ https://ohpe.it/juicy-potato/CLSID/
+	+ https://github.com/ohpe/juicy-potato/tree/master/CLSID
++ https://hunter2.gitbook.io/darthsidious/privilege-escalation/juicy-potato
+	+ https://ohpe.it/juicy-potato/
+	+ https://ivanitlearning.wordpress.com/2019/07/20/potato-privilege-escalation-exploits-for-windows/
+	+ https://rizemon.github.io/posts/devel-htb/
+	+ https://yogeshwarram-g.gitbook.io/hackthebox/windows/devil#privilege-escalation
 
 
 ## For More
