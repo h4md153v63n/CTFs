@@ -13,7 +13,10 @@
 
 # Sections
 + [Reconnaissance](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/46_Arctic.md#reconnaissance)
-+ x
++ [Enumeration](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/46_Arctic.md#enumeration)
++ [Exploitation & Gaining Access](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/46_Arctic.md#exploitation--gaining-access)
++ [Privilege Escalation](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/46_Arctic.md#privilege-escalation)
++ [Metasploit Solutions](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/46_Arctic.md#metasploit-solutions)
 + [Links](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/46_Arctic.md#links)
 
 
