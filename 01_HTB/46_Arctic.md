@@ -87,7 +87,7 @@ Check the solution on [1](https://0xdf.gitlab.io/2020/05/19/htb-arctic.html#path
 
 ## Privilege Escalation
 
-### Method 1: MS10-059 / Kernel Exploit
+### Method 1: CVE-2010-2554 / MS10-059 / Kernel Exploit
 Run `systeminfo` command:
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/eff27157-eea5-4e03-9f32-e6c80e696f91)
@@ -142,10 +142,11 @@ Get the shell as **nt authority\system**, and read root.txt flag:
 + https://vvmlist.github.io/#Arctic
 + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/arctic-writeup-w-o-metasploit
   + https://0xdf.gitlab.io/2020/05/19/htb-arctic.html
+  + https://benheater.com/hackthebox-arctic/
   + https://cyberkareem.medium.com/hackthebox-arctic-walkthrough-13e1920d0cca
+  + https://medium.com/@toneemarqus/arctic-htb-manual-walkthrough-2023-oscp-journey-84fd7ab89349
 + https://juggernaut-sec.com/hackthebox-arctic/
   + https://www.linkedin.com/pulse/htb-arctic-10101011-caleb-cline-ftlxc
-+ https://benheater.com/hackthebox-arctic/
 + https://ivanitlearning.wordpress.com/2020/08/03/hackthebox-arctic/
 
 
@@ -162,10 +163,13 @@ Get the shell as **nt authority\system**, and read root.txt flag:
   + https://www.exploit-db.com/exploits/14641
   + https://www.rapid7.com/db/modules/auxiliary/scanner/http/coldfusion_locale_traversal/
   + https://www.gnucitizen.org/blog/coldfusion-directory-traversal-faq-cve-2010-2861/
-+ **MS10-059 / Kernel Exploit:**
++ **CVE-2010-2554 / MS10-059 / Kernel Exploit:**
   + https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS10-059
     + https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS10-059/MS10-059.exe
   + https://github.com/egre55/windows-kernel-exploits/tree/master/MS10-059:%20Chimichurri/Compiled
+  + https://www.exploit-db.com/exploits/14610
+    + https://nvd.nist.gov/vuln/detail/CVE-2010-2554
+    + https://learn.microsoft.com/en-us/security-updates/securitybulletins/2010/ms10-059
 
 
 ## Tools
