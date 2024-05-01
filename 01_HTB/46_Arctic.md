@@ -77,6 +77,13 @@ Get the revershell, and read the user.txt flag.
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c7c29511-3e4a-44e2-a455-cbb6fde1a4a6)
 
 
+**Alternatively**, check Directory Traversal Vulnerability: [CVE-2010-2861](https://www.exploit-db.com/exploits/14641) on [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/arctic-writeup-w-o-metasploit#id-33df)
+
+
+### Method 2:
+Check the solution 1
+
+
 ## Privilege Escalation
 
 ### Method 1: 
@@ -129,9 +136,8 @@ Get the shell as **nt authority\system**, and read root.txt flag:
 # References & Alternatives
 + https://vvmlist.github.io/#Arctic
 + https://cyberkareem.medium.com/hackthebox-arctic-walkthrough-13e1920d0cca
-+ x 
+  + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/arctic-writeup-w-o-metasploit
 + https://0xdf.gitlab.io/2020/05/19/htb-arctic.html
-+ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/arctic-writeup-w-o-metasploit
 + 
 
 
@@ -142,7 +148,11 @@ Get the shell as **nt authority\system**, and read root.txt flag:
     + https://raw.githubusercontent.com/nipunsomani/Adobe-ColdFusion-8-File-Upload-Exploit/main/exploit.py
 + **MS10-059:**
   + https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS10-059
-  + https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS10-059/MS10-059.exe
+    + https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS10-059/MS10-059.exe
+  + https://github.com/egre55/windows-kernel-exploits/tree/master/MS10-059:%20Chimichurri/Compiled
++ **CVE-2010-2861 / Directory Traversal Vulnerability:**
+  + https://www.exploit-db.com/exploits/14641
+
 
 
 ## Tools
