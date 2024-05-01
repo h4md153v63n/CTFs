@@ -267,6 +267,7 @@ Check the solution [1](https://0xdf.gitlab.io/2019/03/12/htb-bastard.html#ms15-0
 
 
 ## Juicy Potato - Rotten Potato
++ https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/privilege-escalation-abusing-tokens?trk=article-ssr-frontend-pulse_little-text-block
 + https://juggernaut-sec.com/seimpersonateprivilege/
 + https://github.com/ivanitlearning/Juicy-Potato-x86
 	+ https://github.com/ivanitlearning/Juicy-Potato-x86/releases
