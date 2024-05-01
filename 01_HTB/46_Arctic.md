@@ -139,12 +139,15 @@ Get the shell as **nt authority\system**, and read root.txt flag:
 + **CVE-2009-2265:**
   + https://github.com/c0d3cr4f73r/CVE-2009-2265/tree/main
     + https://github.com/c0d3cr4f73r/CVE-2009-2265/blob/main/upload.py
+    + https://raw.githubusercontent.com/nipunsomani/Adobe-ColdFusion-8-File-Upload-Exploit/main/exploit.py
 + **MS10-059:**
   + https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS10-059
+  + https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS10-059/MS10-059.exe
 
 
 ## Tools
-+ x
++ **Windows Exploit Suggester:**
+  + https://github.com/AonCyberLabs/Windows-Exploit-Suggester
 
 
 ## Technical Knowledge
