@@ -76,12 +76,13 @@ Get the revershell, and read the user.txt flag.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c7c29511-3e4a-44e2-a455-cbb6fde1a4a6)
 
+**Alternatively**, check on [Exploit Analysis](https://0xdf.gitlab.io/2020/05/19/htb-arctic.html#path-1-unauthenticated-rce).
 
-**Alternatively**, check Directory Traversal Vulnerability: [CVE-2010-2861](https://www.exploit-db.com/exploits/14641) on [1](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/arctic-writeup-w-o-metasploit#id-33df)
 
+### Method 2: [CVE-2010-2861](https://www.exploit-db.com/exploits/14641) - Directory Traversal / Password Hash Leak / Upload JSP
+Check the solution on [1](https://0xdf.gitlab.io/2020/05/19/htb-arctic.html#path-2-leak-hash-upload-jsp) [2](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/arctic-writeup-w-o-metasploit#id-33df)
 
-### Method 2:
-Check the solution 1
+**Alternatively**, **firstly**, check on [crackstation.net](https://0xdf.gitlab.io/2020/05/19/htb-arctic.html#path-2-leak-hash-upload-jsp) to view cracked leaked password hash.
 
 
 ## Privilege Escalation
@@ -135,9 +136,9 @@ Get the shell as **nt authority\system**, and read root.txt flag:
 
 # References & Alternatives
 + https://vvmlist.github.io/#Arctic
-+ https://cyberkareem.medium.com/hackthebox-arctic-walkthrough-13e1920d0cca
-  + https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/arctic-writeup-w-o-metasploit
-+ https://0xdf.gitlab.io/2020/05/19/htb-arctic.html
++ https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/windows-boxes/arctic-writeup-w-o-metasploit
+  + https://0xdf.gitlab.io/2020/05/19/htb-arctic.html
+  + https://cyberkareem.medium.com/hackthebox-arctic-walkthrough-13e1920d0cca
 + 
 
 
@@ -158,16 +159,18 @@ Get the shell as **nt authority\system**, and read root.txt flag:
 ## Tools
 + **Windows Exploit Suggester:**
   + https://github.com/AonCyberLabs/Windows-Exploit-Suggester
++ **crackstation.net:** https://crackstation.net
 
 
 ## Technical Knowledge
-+ x 
++ https://www.speedguide.net/port.php?port=8500
 
 
 ## Problems Solution
-+ x 
++ -
 
 
 ## For More
-+ x  
++ https://nets.ec/Coldfusion_hacking#Logging_In
++ https://nets.ec/Coldfusion_hacking#Writing_Shell_to_File
 
