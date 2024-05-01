@@ -130,8 +130,16 @@ Get the shell as **nt authority\system**, and read root.txt flag:
 
 
 ### Method 2: Juicy Potato
-+ Check the solution on **Juicy Potato** [1](https://juggernaut-sec.com/hackthebox-arctic/#Elevating_Privileges_to_SYSTEM_–_Method_1_Juicy_Potato) [2](https://www.linkedin.com/pulse/htb-arctic-10101011-caleb-cline-ftlxc)
++ Check the solution on **Juicy Potato** [1](https://juggernaut-sec.com/hackthebox-arctic/#Elevating_Privileges_to_SYSTEM_–_Method_1_Juicy_Potato) [2](https://www.linkedin.com/pulse/htb-arctic-10101011-caleb-cline-ftlxc) [3](https://dm7500.github.io/oscp-prep/2020-03-02-HTB-Arctic/#juicypotato)
 + Check for [more details](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/46_Arctic.md#juicy-potato---rotten-potato) 
+
+
+### Method 3: MS15-051
++ Check the solution on [1](https://www.jeroenvansaane.com/posts/htb/arctic/#privilege-escalation)
+
+
+## Metasploit Solutions
+Check the metasploit solutions: [1](https://ethicalhacs.com/arctic-hackthebox-walkthrough/) [2](https://pencer.io/ctf/ctf-htb-arctic/)
 
 
 ---
@@ -148,6 +156,9 @@ Get the shell as **nt authority\system**, and read root.txt flag:
 + https://juggernaut-sec.com/hackthebox-arctic/
   + https://www.linkedin.com/pulse/htb-arctic-10101011-caleb-cline-ftlxc
 + https://ivanitlearning.wordpress.com/2020/08/03/hackthebox-arctic/
++ https://dm7500.github.io/oscp-prep/2020-03-02-HTB-Arctic
++ https://ethicalhacs.com/arctic-hackthebox-walkthrough/
++ https://pencer.io/ctf/ctf-htb-arctic
 
 
 ## CVE Scripting
@@ -170,6 +181,8 @@ Get the shell as **nt authority\system**, and read root.txt flag:
   + https://www.exploit-db.com/exploits/14610
     + https://nvd.nist.gov/vuln/detail/CVE-2010-2554
     + https://learn.microsoft.com/en-us/security-updates/securitybulletins/2010/ms10-059
++ **MS15-051:**
+  + https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS15-051/MS15-051-KB3045171.zip
 
 
 ## Tools
@@ -225,4 +238,3 @@ Get the shell as **nt authority\system**, and read root.txt flag:
 + https://nets.ec/Coldfusion_hacking#Writing_Shell_to_File
 + https://www.carnal0wnage.com/papers/LARES-ColdFusion.pdf
 + https://vimeo.com/51406410
-
