@@ -131,7 +131,7 @@ Get the shell as **nt authority\system**, and read root.txt flag:
 
 ### Method 2: Juicy Potato
 + Check the solution on **Juicy Potato** [1](https://juggernaut-sec.com/hackthebox-arctic/#Elevating_Privileges_to_SYSTEM_–_Method_1_Juicy_Potato)
-+ Check for more details 
++ Check for [more details](https://github.com/h4md153v63n/CTFs/blob/main/01_HTB/46_Arctic.md#juicy-potato---rotten-potato) 
 
 
 ---
