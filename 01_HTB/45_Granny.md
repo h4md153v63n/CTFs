@@ -273,6 +273,7 @@ Check the solution [1](https://ethicalhacs.com/granny-hackthebox-walkthrough/)
 
 
 ## Juicy Potato - Rotten Potato
++ https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/privilege-escalation-abusing-tokens
 + https://juggernaut-sec.com/seimpersonateprivilege/
 + https://github.com/ivanitlearning/Juicy-Potato-x86
 	+ https://github.com/ivanitlearning/Juicy-Potato-x86/releases
