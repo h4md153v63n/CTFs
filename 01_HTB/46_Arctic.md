@@ -79,7 +79,7 @@ Get the revershell, and read the user.txt flag.
 
 ![image](https://github.com/h4md153v63n/CTFs/assets/5091265/c7c29511-3e4a-44e2-a455-cbb6fde1a4a6)
 
-**Alternatively**, check on Exploit Analysis [1](https://0xdf.gitlab.io/2020/05/19/htb-arctic.html#path-1-unauthenticated-rce) [2](https://juggernaut-sec.com/hackthebox-arctic/#Exploiting_CVE-2009-2265_%E2%80%93_Arbitrary_File_Upload) [3](https://benheater.com/hackthebox-arctic/#exploit)
+**Alternatively**, check on Exploit Analysis: [1](https://0xdf.gitlab.io/2020/05/19/htb-arctic.html#path-1-unauthenticated-rce) [2](https://juggernaut-sec.com/hackthebox-arctic/#Exploiting_CVE-2009-2265_%E2%80%93_Arbitrary_File_Upload) [3](https://benheater.com/hackthebox-arctic/#exploit)
 
 
 ### Method 2: [CVE-2010-2861](https://www.exploit-db.com/exploits/14641) - Directory Traversal / Password Hash Leak / Upload JSP
